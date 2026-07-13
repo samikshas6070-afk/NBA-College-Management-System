@@ -1,0 +1,511 @@
+/* ===========================
+   GLOBAL
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#f5f5f5;
+}
+
+#root{
+    width:100%;
+    height:100%;
+}
+
+/* ===========================
+   MAIN PAGE
+=========================== */
+
+.welcome-page{
+    width:100%;
+    height:100vh;
+    display:flex;
+    overflow:hidden;
+    background:#ffffff;
+}
+
+/* ===========================
+   LEFT PANEL
+=========================== */
+
+.left-panel{
+
+    width:38%;
+    height:100%;
+
+    background:linear-gradient(
+    180deg,
+    #173b97 0%,
+    #173b97 100%
+    );
+
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    padding:45px 50px;
+
+    z-index:2;
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.logo-area{
+
+    width:105px;
+    height:105px;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:0px 8px 18px rgba(0,0,0,.15);
+
+}
+
+.nba-logo{
+
+    width:92px;
+    height:92px;
+
+    object-fit:contain;
+
+}
+
+/* ===========================
+   LEFT CONTENT
+=========================== */
+
+.left-content{
+
+    margin-bottom:110px;
+
+}
+
+.left-content h1{
+
+    color:white;
+
+    font-size:56px;
+
+    line-height:1.05;
+
+    font-weight:800;
+
+    letter-spacing:.4px;
+
+}
+
+.left-content p{
+
+    margin-top:18px;
+
+    font-size:18px;
+
+    color:#c8d8ff;
+
+}
+
+/* ===========================
+   BUTTON CONTAINER
+=========================== */
+
+.button-area{
+
+    margin-top:65px;
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+/* ===========================
+   RIGHT PANEL
+=========================== */
+
+.right-panel{
+
+    width:62%;
+
+    height:100%;
+
+    background:white;
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* ===========================
+   BIG CURVE
+=========================== */
+
+.curve-wrapper{
+
+    position:absolute;
+
+    left:-170px;
+
+    top:-80px;
+
+    width:650px;
+
+    height:1200px;
+
+    z-index:1;
+
+}
+
+.curve-svg{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+}
+
+/* ===========================
+   WELCOME TEXT POSITION
+=========================== */
+
+.welcome-text{
+
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+
+    margin-left:120px;
+
+}
+/*==========================================
+            BUTTONS
+==========================================*/
+
+.login-btn,
+.register-btn{
+    width:180px;
+    height:60px;
+    border:none;
+    border-radius:14px;
+    font-size:22px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all .3s ease;
+}
+
+/* Login Button */
+
+.login-btn{
+
+    background:#ffffff;
+    color:#1843A4;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.18);
+
+}
+
+.login-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.22);
+
+}
+
+/* Register Button */
+
+.register-btn{
+
+    background:linear-gradient(
+    135deg,
+    #3E82FF,
+    #0058E5
+    );
+
+    color:white;
+
+    box-shadow:
+    0 10px 22px rgba(0,0,0,.22);
+
+}
+
+.register-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 16px 28px rgba(0,0,0,.28);
+
+}
+
+/*==========================================
+         WELCOME TEXT
+==========================================*/
+
+.welcome-text{
+
+    width:700px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.welcome-text h2{
+
+    font-size:60px;
+
+    font-weight:700;
+
+    color:#1743A0;
+
+    margin-bottom:18px;
+
+    letter-spacing:.3px;
+
+}
+
+.welcome-text p{
+
+    width:640px;
+
+    font-size:22px;
+
+    color:#6f6f6f;
+
+    line-height:1.7;
+
+}
+
+/*==========================================
+          RIGHT PANEL ALIGNMENT
+==========================================*/
+
+.right-panel{
+
+    padding-right:80px;
+
+
+    
+}
+
+/*==========================================
+         SMOOTH EFFECT
+==========================================*/
+
+.left-panel,
+.right-panel,
+button{
+
+    transition:.35s;
+
+}
+.right-panel{
+    width:60%;
+    height:100vh;
+    background:#ffffff;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.curve-svg{
+
+    position:absolute;
+
+    left:-170px;
+
+    top:0;
+
+    width:330px;
+
+    height:100%;
+
+    z-index:2;
+
+}
+
+.welcome-content{
+
+    position:relative;
+
+    z-index:5;
+
+    margin-left:120px;
+
+    text-align:center;
+
+}
+
+.welcome-content h2{
+
+    font-size:58px;
+
+    color:#1742A0;
+
+    font-weight:700;
+
+}
+
+.welcome-content p{
+
+    width:600px;
+
+    margin:auto;
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    color:#777;
+
+    line-height:1.8;
+
+}
+/* =====================================================
+   RIGHT PANEL
+===================================================== */
+
+.right-panel{
+    position:relative;
+    width:62%;
+    height:100vh;
+    background:#ffffff;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* =====================================================
+   CURVE
+===================================================== */
+
+.curve-svg{
+
+    position:absolute;
+
+    left:-210px;
+
+    top:0;
+
+    width:470px;
+
+    height:100vh;
+
+    z-index:1;
+
+    filter:drop-shadow(10px 0px 15px rgba(0,0,0,.08));
+
+}
+
+/* =====================================================
+   WELCOME CONTENT
+===================================================== */
+
+.welcome-content{
+
+    position:relative;
+
+    z-index:5;
+
+    width:650px;
+
+    margin-left:140px;
+
+    text-align:center;
+
+}
+
+.welcome-content h2{
+
+    font-size:56px;
+
+    font-weight:700;
+
+    color:#17429D;
+
+    margin-bottom:22px;
+
+    letter-spacing:.5px;
+
+}
+
+.welcome-content p{
+
+    width:600px;
+
+    margin:auto;
+
+    color:#6f6f6f;
+
+    font-size:22px;
+
+    line-height:1.8;
+
+}
+
+/* =====================================================
+   EXTRA WHITE CURVE EFFECT
+===================================================== */
+
+.right-panel::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-160px;
+
+    top:-120px;
+
+    width:350px;
+
+    height:130%;
+
+    background:#ffffff;
+
+    border-radius:50%;
+
+    z-index:0;
+
+}

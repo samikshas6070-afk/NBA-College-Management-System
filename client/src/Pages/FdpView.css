@@ -1,0 +1,163 @@
+.fdp-view{
+    padding:30px;
+    background:#f5f7fc;
+    min-height:100vh;
+}
+
+.view-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.view-header h2{
+    margin:0;
+    color:#0d47a1;
+    font-size:30px;
+    font-weight:700;
+}
+
+.add-btn{
+    background:#16a34a;
+    color:#fff;
+    border:none;
+    padding:12px 24px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.add-btn:hover{
+    background:#15803d;
+    transform:translateY(-2px);
+}
+
+.fdp-table{
+    width:100%;
+    table-layout:fixed;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.fdp-table thead tr{
+    background:#0d47a1;
+}
+
+.fdp-table th{
+    background:#0d47a1;
+    color:#fff;
+    padding:15px;
+    text-align:center;
+    font-size:15px;
+    font-weight:600;
+    border:1px solid #dbe4f0;
+}
+
+.fdp-table td{
+    padding:16px;
+    text-align:center;
+    vertical-align:middle;
+    border:1px solid #dbe4f0;
+    color:#333;
+    font-size:14px;
+}
+
+.fdp-table tbody tr:hover{
+    background:#f4f8ff;
+}
+
+.fdp-table tbody td{
+    height:55px;
+}
+
+.fdp-table th:nth-child(1){
+    width:70px;
+}
+
+.fdp-table th:nth-child(2){
+    width:220px;
+}
+
+.fdp-table th:nth-child(3){
+    width:170px;
+}
+
+.fdp-table th:nth-child(4){
+    width:110px;
+}
+
+.fdp-table th:nth-child(5){
+    width:120px;
+}
+
+.fdp-table th:nth-child(6){
+    width:140px;
+}
+
+.fdp-table th:nth-child(7){
+    width:120px;
+}
+
+.fdp-table th:nth-child(8){
+    width:130px;
+}
+
+.action-btn{
+    border:none;
+    color:#fff;
+    padding:8px 10px;
+    margin:2px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+}
+
+.view-btn{
+    background:#2563eb;
+}
+
+.download-btn{
+    background:#16a34a;
+}
+
+.print-btn{
+    background:#f59e0b;
+}
+
+.edit-btn{
+    background:#7c3aed;
+}
+
+.delete-btn{
+    background:#dc2626;
+}
+
+.action-btn:hover{
+    transform:scale(1.05);
+}
+
+.bottom-buttons{
+    margin-top:25px;
+}
+
+.back-btn{
+    background:#6b7280;
+    color:#fff;
+    border:none;
+    padding:12px 24px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+}
+
+.back-btn:hover{
+    background:#4b5563;
+}

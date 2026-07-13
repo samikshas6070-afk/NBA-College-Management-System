@@ -1,0 +1,322 @@
+/* MAIN PAGE */
+
+.matrix-page{
+  width:100%;
+  min-height:100vh;
+  padding:20px;
+  background:#f4f6fb;
+}
+
+.matrix-card{
+  width:100%;
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+
+.matrix-header{
+  background:linear-gradient(
+    90deg,
+    #304ffe,
+    #9c4dff
+  );
+  color:white;
+  padding:20px 25px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:24px;
+  font-weight:600;
+}
+
+/* DEPARTMENT */
+
+.dept-section{
+  padding:25px;
+}
+
+.dept-section{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:25px;
+}
+
+.dept-section label{
+    min-width:120px;
+    font-size:22px;
+    font-weight:600;
+}
+
+.dept-section select{
+    width:550px;
+    height:55px;
+    border-radius:10px;
+    font-size:18px;
+    padding:0 15px;
+}
+.dept-section select{
+  width:440px;
+  height:55px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  padding:0 15px;
+  font-size:18px;
+}
+
+/* TABLE */
+
+.table-wrapper{
+  width:100%;
+  overflow-x:auto;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th{
+  background:#f7f8fc;
+  border:1px solid #e5e7eb;
+  padding:16px;
+  font-size:18px;
+}
+
+td{
+  border:1px solid #e5e7eb;
+  padding:16px;
+  font-size:18px;
+  text-align:center;
+}
+
+/* ACTION BUTTONS */
+.action-cell{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.edit-btn,
+.delete-btn{
+  background:none;
+  border:none;
+  cursor:pointer;
+  font-size:18px;
+  padding:0;
+}
+
+.edit-btn{
+  color:#7c4dff;
+}
+
+.delete-btn{
+  color:#ff4d4f;
+}
+/* FOOTER BUTTONS */
+
+.matrix-buttons{
+  display:flex;
+  flex-direction:row !important;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  padding:35px;
+}
+
+.save-btn,
+.update-btn,
+.delete-main-btn{
+  width:180px;
+  height:55px;
+  border:none;
+  border-radius:10px;
+  color:white;
+  font-size:18px;
+  font-weight:600;
+  cursor:pointer;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+}
+
+.save-btn{
+  background:#22c55e;
+}
+
+.update-btn{
+  background:#2563eb;
+}
+
+.delete-main-btn{
+  background:#ef4444;
+}
+
+/* HOVER */
+
+.save-btn:hover,
+.update-btn:hover,
+.delete-main-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover{
+  opacity:.9;
+}
+.next-page-btn{
+  width:180px;
+  height:55px;
+  border:none;
+  border-radius:10px;
+  background:#7c3aed;
+  color:white;
+  font-size:18px;
+  font-weight:600;
+  cursor:pointer;
+}
+.action-cell{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+}
+
+.edit-btn,
+.delete-btn{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.edit-btn{
+    background:#f3e8ff;
+    color:#7c3aed;
+}
+
+.delete-btn{
+    background:#fee2e2;
+    color:#ef4444;
+}
+.course-name{
+    min-width:260px;
+    width:260px;
+    text-align:left;
+    padding:12px;
+    white-space:normal;
+    word-break:break-word;
+    line-height:28px;
+    font-size:16px;
+    font-weight:500;
+}
+.all-course-table td:first-child,
+.all-course-table th:first-child{
+
+    min-width:110px;
+
+    font-weight:600;
+
+}
+.all-course-table input{
+
+    width:55px;
+    height:38px;
+
+    text-align:center;
+
+    border:1px solid #d6d6d6;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+}
+.action-cell{
+
+    min-width:120px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+.edit-btn{
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#ede3ff;
+
+    color:#7c3aed;
+
+    cursor:pointer;
+
+}
+.delete-btn{
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#ffe4e4;
+
+    color:#ef4444;
+
+    cursor:pointer;
+
+}
+.all-course-table{
+
+    width:max-content;
+
+    min-width:100%;
+
+    border-collapse:collapse;
+
+}
+.table-wrapper{
+
+    width:100%;
+
+    overflow-x:auto;
+
+}
+.all-course-table td{
+
+    padding:14px;
+
+    vertical-align:middle;
+
+}
+.previous-page-btn{
+    width:180px;
+    height:55px;
+    border:none;
+    border-radius:10px;
+    background:#d67a09;
+    color:white;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+}

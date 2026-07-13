@@ -1,0 +1,81 @@
+.internship-view{
+    padding:30px;
+    background:#f5f7fc;
+    min-height:100vh;
+}
+
+.view-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.view-header h2{
+    margin:0;
+    color:#0d47a1;
+    font-size:30px;
+    font-weight:700;
+}
+
+.add-btn{
+    background:#16a34a;
+    color:#fff;
+    border:none;
+    padding:12px 24px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.add-btn:hover{
+    background:#15803d;
+    transform:translateY(-2px);
+}
+
+.internship-table{
+    width:100%;
+    table-layout:fixed;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.internship-table th{
+    background:#0d47a1;
+    color:#fff;
+    padding:15px;
+    text-align:center;
+    border:1px solid #dbe4f0;
+}
+
+.internship-table td{
+    padding:16px;
+    text-align:center;
+    border:1px solid #dbe4f0;
+}
+
+.internship-table tbody tr:hover{
+    background:#f4f8ff;
+}
+
+.bottom-buttons{
+    margin-top:25px;
+}
+
+.back-btn{
+    background:#6b7280;
+    color:#fff;
+    border:none;
+    padding:12px 24px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.back-btn:hover{
+    background:#4b5563;
+}

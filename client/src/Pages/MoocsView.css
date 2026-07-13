@@ -1,0 +1,58 @@
+.moocs-view{
+    padding:30px;
+    background:#f5f7fc;
+    min-height:100vh;
+}
+
+.view-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.view-header h2{
+    color:#0d47a1;
+    margin:0;
+}
+
+.add-btn{
+    background:#16a34a;
+    color:#fff;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.moocs-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.moocs-table th{
+    background:#0d47a1;
+    color:#fff;
+    padding:14px;
+}
+
+.moocs-table td{
+    border:1px solid #ddd;
+    padding:14px;
+    text-align:center;
+}
+
+.bottom-buttons{
+    margin-top:25px;
+}
+
+.back-btn{
+    background:#6b7280;
+    color:#fff;
+    border:none;
+    padding:12px 22px;
+    border-radius:8px;
+    cursor:pointer;
+}

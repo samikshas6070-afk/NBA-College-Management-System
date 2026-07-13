@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.complex-container {
+  padding: 30px;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+/* Header */
+
+.complex-header {
+  margin-bottom: 25px;
+}
+
+.complex-title-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+.complex-badge{
+  width:45px;
+  height:45px;
+  border-radius:10px;
+  background:#4f46e5;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-weight:600;
+  font-size:16px;
+}
+.complex-title-section{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.complex-title-section p{
+  color:#64748b;
+  font-size:15px;
+}
+
+/* Card */
+.complex-card{
+  background:#fff;
+  border-radius:15px;
+  padding:20px;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  overflow-x:auto;
+}
+
+/* Table */
+
+.complex-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.complex-table thead{
+  background:#fff;
+}
+
+.complex-table th,
+.complex-table td{
+  border:1px solid #d9d9d9;
+  padding:16px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.complex-table th{
+  color:#000;
+  font-weight:600;
+}
+.complex-table td {
+  padding: 18px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.complex-table tbody tr:hover {
+  background: #f8fafc;
+}
+.file-input{
+    display:block;
+    width:220px;
+    margin:0 auto 8px auto;
+}
+
+/* Action Buttons */
+
+.action-buttons{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-top:8px;
+}
+
+.view-btn{
+    width:60px;
+    height:30px;
+    background:#dff2ff;
+    color:#0284c7;
+    border:none;
+    border-radius:5px;
+    font-size:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:4px;
+}
+
+.download-btn{
+    width:90px;
+    height:30px;
+    background:#16a34a;
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    font-size:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:4px;
+}
+.action-buttons button {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+/* View */
+
+
+.view-btn:hover {
+  background: #bae6fd;
+}
+
+/* Download */
+
+
+.download-btn:hover {
+  background: #e9d5ff;
+}
+
+/* Bottom Buttons */
+
+.bottom-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.bottom-buttons button {
+  min-width: 140px;
+  height: 48px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.bottom-buttons button:hover {
+  transform: translateY(-2px);
+}
+
+/* Previous */
+
+.previous-btn {
+  background: linear-gradient(135deg, #ff7b00, #ff5e00);
+}
+
+/* Back */
+
+.back-btn {
+  background: #e5e7eb;
+  color: #374151 !important;
+  border: 1px solid #d1d5db;
+}
+
+/* Save */
+
+.save-btn {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+/* Delete */
+
+.delete-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+/* Submit */
+
+.submit-btn {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+/* Print */
+
+.print-btn {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+/* Next */
+
+.next-btn {
+  background: linear-gradient(135deg, #14b8a6, #0f766e);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .complex-container {
+    padding: 15px;
+  }
+
+  .complex-title-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .complex-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .bottom-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bottom-buttons button {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+.description-box{
+    width:100%;
+    height:90px;
+    padding:10px;
+    border:1px solid #d1d5db;
+    border-radius:6px;
+    background:#fff;
+    resize:none;
+    font-size:14px;
+    color:#111827;
+    outline:none;
+    font-family:"Poppins",sans-serif;
+}
+.complex-table th:first-child,
+.complex-table td:first-child{
+    text-align: center;
+    vertical-align: middle;
+}

@@ -1,0 +1,224 @@
+
+/* =====================================================
+   PROGRAM ATTAINMENT CONTAINER
+===================================================== */
+
+.program-attainment-container{
+    width:100%;
+    min-height:100vh;
+    background:#f4f7fb;
+    padding:25px;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.program-attainment-header{
+    background:#ffffff;
+    border-radius:15px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.header-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.criteria-badge{
+    width:55px;
+    height:55px;
+    background:#4f46e5;
+    color:#fff;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    font-weight:600;
+}
+
+.header-left h2{
+    font-size:34px;
+    color:#0f172a;
+    margin-bottom:5px;
+}
+
+.header-left p{
+    font-size:15px;
+    color:#64748b;
+}
+
+/* =====================================================
+   TABLE CARD
+===================================================== */
+
+.program-attainment-card{
+    background:#ffffff;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+/* =====================================================
+   TABLE
+===================================================== */
+
+.program-attainment-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.program-attainment-table thead tr{
+    background:#f1f5f9;
+}
+
+.program-attainment-table th{
+    padding:15px;
+    border:1px solid #dbe4f0;
+    text-align:center;
+    font-size:15px;
+    font-weight:600;
+    color:#1e293b;
+}
+
+.program-attainment-table td{
+    padding:18px;
+    border:1px solid #e5e7eb;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.program-attainment-table tbody tr{
+    background:#ffffff;
+}
+
+.program-attainment-table tbody tr:hover{
+    background:#f8fbff;
+    transition:0.3s;
+}
+
+/* Column Width */
+
+.program-attainment-table th:nth-child(1),
+.program-attainment-table td:nth-child(1){
+    width:8%;
+}
+
+.program-attainment-table th:nth-child(2),
+.program-attainment-table td:nth-child(2){
+    width:28%;
+}
+
+.program-attainment-table th:nth-child(3),
+.program-attainment-table td:nth-child(3){
+    width:34%;
+}
+
+.program-attainment-table th:nth-child(4),
+.program-attainment-table td:nth-child(4){
+    width:30%;
+}
+/* =====================================================
+   DESCRIPTION BOX
+===================================================== */
+
+.description-box{
+    width:100%;
+    min-height:90px;
+    padding:10px 12px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    background:#fff;
+    color:#374151;
+    font-size:14px;
+    line-height:1.5;
+    resize:none;
+    outline:none;
+    overflow:auto;
+}
+
+/* =====================================================
+   ACTION SECTION
+===================================================== */
+
+.action-section{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+}
+
+/* File Upload */
+
+.program-attainment-table input[type="file"]{
+    width:220px;
+    font-size:13px;
+}
+
+/* View & Download Buttons */
+
+.action-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+}
+
+.view-btn,
+.download-btn{
+    width:110px;
+    height:38px;
+    border:none;
+    border-radius:6px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    font-size:14px;
+    font-weight:500;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.view-btn{
+    background:#0ea5e9;
+    color:#fff;
+}
+
+.view-btn:hover{
+    background:#0284c7;
+}
+
+.download-btn{
+    background:#16a34a;
+    color:#fff;
+}
+
+.download-btn:hover{
+    background:#15803d;
+}
+.program-attainment-footer{
+    display:flex !important;
+    flex-direction:row !important;
+    justify-content:center !important;
+    gap:12px !important;
+}
+
+.program-attainment-footer button{
+    width:auto !important;
+    display:inline-flex !important;
+}
+
+.action-buttons{
+    display:flex !important;
+    flex-direction:row !important;
+    gap:10px !important;
+}
+
+.action-buttons button{
+    width:110px !important;
+    display:inline-flex !important;
+}

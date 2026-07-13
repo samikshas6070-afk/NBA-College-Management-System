@@ -1,0 +1,16 @@
+# React
+client/node_modules
+client/build
+
+# Backend
+server/node_modules
+
+# Uploaded documents
+server/uploads/*
+
+# Environment variables
+.env
+server/.env
+
+# Logs
+*.log

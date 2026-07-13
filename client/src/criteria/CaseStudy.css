@@ -1,0 +1,452 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins",sans-serif;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+.case-container{
+    padding:30px;
+    margin-left:20px;   /* Sidebar पासून gap */
+    background:#f5f7fb;
+    min-height:100vh;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+.case-header{
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    margin-bottom:25px;
+    width:100%;
+}
+
+.case-title-section{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.case-badge{
+    width:45px;
+    height:45px;
+    border-radius:10px;
+    background:#4f46e5;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:600;
+    font-size:18px;
+}
+
+.case-title-section h2{
+    margin:0;
+    color:#0f172a;
+    font-size:22px;
+    font-weight:700;
+}
+
+.case-title-section p{
+    margin-top:4px;
+    color:#64748b;
+    font-size:15px;
+}
+
+.industry-title-section{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.industry-badge{
+  background:#4f46e5;
+  color:#fff;
+  padding:10px 14px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:14px;
+}
+
+.industry-title-section h2{
+  margin:0;
+  font-size:20px;
+  color:#1f2937;
+}
+
+.industry-title-section p{
+  margin:3px 0 0;
+  font-size:13px;
+  color:#6b7280;
+}
+
+.upload-count{
+  margin-top:5px;
+  font-size:13px;
+  font-weight:600;
+  color:#2563eb;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+/* ===========================
+   CARD
+=========================== */
+.case-card{
+    background:#fff;
+    padding:20px;
+    border-radius:18px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    overflow:hidden;
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+.case-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+}
+
+.case-table thead{
+    background:#f4f6fb;
+}
+
+.case-table th{
+    padding:14px;
+    border:1px solid #dcdcdc;
+    font-size:15px;
+    font-weight:600;
+    color:#1e293b;
+    text-align:center;
+}
+
+.case-table td{
+    border:1px solid #dcdcdc;
+    padding:16px 14px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.case-table tbody tr{
+    height:120px;
+}
+
+.case-table td:first-child{
+    width:80px;
+    font-size:24px;
+    font-weight:500;
+}
+
+.case-table td:nth-child(2){
+    width:220px;
+    font-size:18px;
+    font-weight:500;
+}
+/* =====================================================
+   FILE INPUT
+===================================================== */
+
+.industry-table input[type="file"]{
+  width:180px;
+  margin:auto;
+  display:block;
+  font-size:12px;
+  padding:5px;
+}
+
+.attachment-cell{
+  text-align:center;
+}
+
+.pdf-text{
+  display:block;
+  margin-top:5px;
+  font-size:12px;
+  color:#6b7280;
+}
+.file-input{
+    width:100%;
+    border:1px solid #d7d7d7;
+    border-radius:6px;
+    padding:4px;
+    font-size:13px;
+    background:#fff;
+}
+
+/* Browser default button like screenshot */
+
+.file-input::file-selector-button{
+    background:#f5f5f5;
+    border:1px solid #bdbdbd;
+    border-radius:3px;
+    padding:4px 10px;
+    cursor:pointer;
+    color:#222;
+}
+
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+
+
+/* Common Button */
+.action-buttons{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-top:10px;
+}
+
+.action-buttons button{
+    border:none;
+    border-radius:5px;
+    padding:7px 14px;
+    font-size:13px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.view-btn{
+    background:#dff4ff !important;
+    color:#0284c7 !important;
+}
+
+.download-btn{
+    background:#16a34a !important;
+    color:#fff !important;
+}
+/* View */
+
+.view-btn:hover{
+  background:#c8eaff !important;
+}
+
+/* Download */
+
+
+
+.download-btn:hover{
+  background:#15803d !important;
+}
+/* =====================================================
+   BOTTOM BUTTONS
+===================================================== */
+
+.bottom-buttons{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.bottom-buttons button{
+  min-width:140px;
+  height:48px;
+  border:none;
+  border-radius:10px;
+  color:#ffffff;
+  font-size:15px;
+  font-weight:500;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  transition:all .3s ease;
+}
+
+.bottom-buttons button:hover{
+  transform:translateY(-2px);
+}
+
+/* Previous */
+
+.previous-btn{
+  background:linear-gradient(135deg,#ff7b00,#ff5e00);
+}
+
+/* Back */
+
+.back-btn{
+  background:linear-gradient(135deg,#1ea7fd,#0284c7);
+}
+
+/* Save */
+
+.save-btn{
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+}
+
+/* Delete */
+
+.delete-btn{
+  background:linear-gradient(135deg,#ef4444,#dc2626);
+}
+
+/* Submit */
+
+.submit-btn{
+  background:linear-gradient(135deg,#4f7cff,#2563eb);
+}
+
+/* Print */
+
+.print-btn{
+  background:linear-gradient(135deg,#9b5cff,#7c3aed);
+}
+
+/* Next */
+
+.next-btn{
+  background:linear-gradient(135deg,#14b8a6,#0f766e);
+}
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:768px){
+
+  .industry-container{
+    padding:15px;
+  }
+
+  .industry-header{
+    padding:15px;
+  }
+
+  .industry-card{
+    padding:15px;
+  }
+
+  .industry-title-section{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+
+  .industry-title-section h2{
+    font-size:18px;
+  }
+
+  .industry-title-section p{
+    font-size:12px;
+  }
+
+  .upload-count{
+    font-size:12px;
+  }
+
+  .industry-table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+
+  .industry-table th{
+    padding:12px;
+    font-size:14px;
+  }
+
+  .industry-table td{
+    padding:12px;
+    font-size:13px;
+  }
+
+  .industry-table input[type="file"]{
+    width:160px;
+  }
+
+  .action-buttons{
+    flex-direction:column;
+    gap:6px;
+  }
+
+  .action-buttons button{
+    width:90px;
+    height:32px;
+    font-size:11px;
+  }
+
+  .bottom-buttons{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .bottom-buttons button{
+    width:100%;
+    max-width:320px;
+    height:45px;
+    font-size:14px;
+  }
+
+}
+.industry-table th:first-child,
+.industry-table td:first-child{
+    text-align:center !important;
+    width:80px;
+}
+.file-action-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+.case-table td:last-child {
+  text-align: left;
+}
+.case-table td {
+  vertical-align: middle;
+}
+.description-box{
+    width:100%;
+    height:90px;
+    padding:10px;
+    border:1px solid #d1d5db;
+    border-radius:6px;
+    background:#fff;
+    resize:none;
+    font-size:14px;
+    color:#111827;
+    outline:none;
+    font-family:"Poppins", sans-serif;
+}
+.case-table{
+    width:100%;
+    border-collapse:collapse;
+    border:1px solid #d9d9d9;
+}
+
+.case-table th,
+.case-table td{
+    border:1px solid #d9d9d9;
+    padding:16px;
+    vertical-align:middle;
+}
+
+.case-table thead{
+    background:#fff;
+}
+
+.case-table th{
+    font-weight:600;
+    text-align:center;
+}

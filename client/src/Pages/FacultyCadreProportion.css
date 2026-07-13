@@ -1,0 +1,350 @@
+/* ================= PAGE SCOPE ================= */
+
+.fcp-page,
+.fcp-page *{
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+.fcp-page{
+    margin:0;
+    padding:20px;
+    background:#eef3fa;
+    min-height:100vh;
+}
+
+/* ================= MAIN CARD ================= */
+
+.main-card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid #dbe4f2;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+/* ================= HEADER ================= */
+
+.fcp-header{
+    background:linear-gradient(90deg,#0a43a4,#1c67d7);
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:22px 30px;
+    color:#fff;
+}
+
+.circle53{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#ff9800;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:26px;
+    font-weight:700;
+    color:#fff;
+}
+
+.header-content h2{
+    font-size:28px;
+    margin-bottom:5px;
+}
+
+.header-content p{
+    font-size:15px;
+    opacity:.9;
+}
+
+/* ================= DETAILS ================= */
+
+.details-card{
+    margin:20px;
+    border:1px solid #dbe4f2;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.table-heading{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.left-title,
+.right-title{
+    background:#edf4ff;
+    color:#123ea3;
+    text-align:center;
+    font-size:18px;
+    font-weight:700;
+    padding:15px;
+    border-bottom:1px solid #dbe4f2;
+}
+
+.left-title{
+    border-right:1px solid #dbe4f2;
+}
+
+.faculty-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.field{
+    border-right:1px solid #dbe4f2;
+    border-bottom:1px solid #dbe4f2;
+    padding:14px;
+}
+
+.field:nth-child(4),
+.field:nth-child(8){
+    border-right:none;
+}
+
+.field label{
+    display:block;
+    text-align:center;
+    color:#1746a2;
+    font-weight:600;
+    font-size:14px;
+    line-height:20px;
+    min-height:58px;
+}
+
+.field input{
+    width:100%;
+    height:42px;
+    margin-top:10px;
+    border:1px solid #cfd9ea;
+    border-radius:8px;
+    text-align:center;
+    font-size:16px;
+}
+
+.field input:focus{
+    border-color:#1565c0;
+    outline:none;
+}
+
+/* ================= MARKS ================= */
+
+.marks-card{
+    margin:20px;
+    border:1px solid #dbe4f2;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.marks-row{
+    display:grid;
+    grid-template-columns:2fr 4fr 2fr;
+}
+
+.marks-title{
+    padding:18px;
+    background:#edf4ff;
+    color:#123ea3;
+    font-weight:700;
+    text-align:center;
+    border-right:1px solid #dbe4f2;
+}
+
+.formula-box{
+    padding:18px;
+    text-align:center;
+    color:#1746a2;
+    font-weight:600;
+    border-right:1px solid #dbe4f2;
+}
+
+.marks-result{
+    padding:18px;
+    text-align:center;
+    font-size:30px;
+    font-weight:700;
+    color:#0b8f38;
+}
+
+/* ================= TABLE ================= */
+
+.calculation-card{
+    margin:20px;
+    border:1px solid #dbe4f2;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.calculation-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.calculation-table th{
+    background:#edf4ff;
+    color:#123ea3;
+    padding:14px;
+    border:1px solid #dbe4f2;
+    font-size:16px;
+}
+
+.calculation-table td{
+    padding:14px;
+    border:1px solid #dbe4f2;
+    text-align:center;
+    font-size:15px;
+}
+
+.calculation-table td:first-child{
+    text-align:left;
+    padding-left:18px;
+}
+
+.total-row td{
+    background:#f2fff2;
+    color:#14863d;
+    font-weight:700;
+}
+
+.final-row td{
+    background:#e5f8e8;
+    color:#0d8f37;
+    font-size:18px;
+    font-weight:700;
+}
+/* ================= REPORT ================= */
+
+.report-card{
+    margin:20px;
+    border:1px solid #dbe4f2;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.report-header{
+    background:#edf4ff;
+    color:#123ea3;
+    padding:16px 20px;
+    font-size:18px;
+    font-weight:700;
+}
+
+.report-body{
+    padding:20px;
+}
+
+.report-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+    border-bottom:1px solid #ececec;
+}
+
+.report-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:16px;
+    font-weight:600;
+}
+
+.report-icon{
+    color:#1565c0;
+}
+
+.view-btn{
+    background:#1565c0;
+    color:#fff;
+    border:none;
+    padding:10px 22px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.upload-box{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.upload-btn{
+    background:#ff9800;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.file-name{
+    color:#666;
+}
+
+.remarks-section{
+    margin-top:20px;
+}
+
+.remarks-section label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:700;
+}
+
+.remarks-section textarea{
+    width:100%;
+    height:90px;
+    border:1px solid #dbe4f2;
+    border-radius:8px;
+    padding:12px;
+    resize:none;
+}
+
+/* ================= BUTTONS ================= */
+
+.action-buttons{
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+    padding:20px;
+}
+
+.action-buttons button{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 22px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+}
+
+.previous-btn{
+    background:#f2f2f2;
+    color:#444;
+    border:1px solid #ddd;
+}
+
+.save-btn{
+    background:#ff9800;
+    color:#fff;
+}
+
+.submit-btn{
+    background:#1565c0;
+    color:#fff;
+}
+
+.previous-btn:hover{
+    background:#e6e6e6;
+}
+
+.save-btn:hover{
+    background:#f57c00;
+}
+
+.submit-btn:hover{
+    background:#0d47a1;
+}

@@ -1,0 +1,304 @@
+/* =====================================================
+   GOOGLE FONT
+===================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.sdg-page{
+    width:100%;
+    min-height:100vh;
+    background:#f4f7fb;
+    padding:25px;
+    font-family:"Poppins",sans-serif;
+    box-sizing:border-box;
+}
+
+.sdg-page *{
+    box-sizing:border-box;
+}
+
+.sdg-container{
+    width:100%;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.page-header{
+    background:#fff;
+    border-radius:18px;
+    padding:25px 30px;
+    box-shadow:0 6px 16px rgba(0,0,0,.08);
+    margin-bottom:22px;
+}
+
+.header-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.criteria-circle{
+    width:58px;
+    height:58px;
+    border-radius:14px;
+    background:#4f46e5;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    font-weight:700;
+}
+
+.header-content h2{
+    font-size:20px;
+    color:#111827;
+    margin-bottom:6px;
+}
+
+.header-content p{
+    color:#6b7280;
+    font-size:14px;
+}
+
+/* =====================================================
+   TABLE CARD
+===================================================== */
+
+.table-card{
+    background:#fff;
+    border-radius:18px;
+    padding:20px;
+    box-shadow:0 6px 16px rgba(0,0,0,.08);
+    overflow-x:auto;
+}
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.sdg-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.sdg-table th{
+    background:#f8fafc;
+    color:#111827;
+    font-size:15px;
+    font-weight:600;
+    padding:16px;
+    border:1px solid #e5e7eb;
+    text-align:center;
+}
+
+.sdg-table td{
+    border:1px solid #e5e7eb;
+    padding:18px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.sdg-table tbody tr:hover{
+    background:#f8fbff;
+}
+
+/* =====================================================
+   ACTION
+===================================================== */
+
+.action-area{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:16px;
+}
+
+.action-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+}
+
+/* =====================================================
+   FILE
+===================================================== */
+
+.action-area input[type="file"]{
+    width:230px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    padding:5px;
+    background:#fff;
+}
+/* =====================================================
+   VIEW BUTTON
+===================================================== */
+
+.view-btn{
+    width:110px;
+    height:38px;
+    border:1px solid #6366f1;
+    background:#fff;
+    color:#4f46e5;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.view-btn:hover{
+    background:#4f46e5;
+    color:#fff;
+}
+
+/* =====================================================
+   DOWNLOAD BUTTON
+===================================================== */
+
+.download-btn{
+    width:120px;
+    height:38px;
+    border:1px solid #16a34a;
+    background:#fff;
+    color:#16a34a;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.download-btn:hover{
+    background:#16a34a;
+    color:#fff;
+}
+
+/* =====================================================
+   BOTTOM BUTTONS
+===================================================== */
+
+.bottom-buttons{
+    margin-top:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.right-buttons{
+    display:flex;
+    gap:12px;
+}
+
+/* =====================================================
+   COMMON BUTTONS
+===================================================== */
+
+.back-btn,
+.save-btn,
+.delete-btn,
+.submit-btn,
+.next-btn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    border:none;
+    border-radius:8px;
+    padding:11px 22px;
+
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+/* Previous */
+
+.back-btn{
+    background:#64748b;
+    color:#fff;
+}
+
+.back-btn:hover{
+    background:#475569;
+}
+
+/* Save */
+
+.save-btn{
+    background:#f59e0b;
+    color:#fff;
+}
+
+.save-btn:hover{
+    background:#d97706;
+}
+
+/* Delete */
+
+.delete-btn{
+    background:#ef4444;
+    color:#fff;
+}
+
+.delete-btn:hover{
+    background:#dc2626;
+}
+
+/* Submit */
+
+.submit-btn{
+    background:#2563eb;
+    color:#fff;
+}
+
+.submit-btn:hover{
+    background:#1d4ed8;
+}
+
+/* Next */
+
+.next-btn{
+    background:#16a34a;
+    color:#fff;
+}
+
+.next-btn:hover{
+    background:#15803d;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:768px){
+
+    .bottom-buttons{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .right-buttons{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .action-buttons{
+        flex-direction:column;
+    }
+
+    .action-area input[type="file"]{
+        width:100%;
+    }
+}

@@ -1,0 +1,865 @@
+/* =====================================================
+   GOOGLE FONT
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.assessment-container{
+    width:96%;
+    margin:25px auto;
+    padding:20px;
+    background:#f4f7fc;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+.assessment-container *,
+.assessment-container *::before,
+.assessment-container *::after{
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* =====================================================
+   TOP FILTER BAR
+===================================================== */
+
+.assessment-container .top-bar{
+
+    background:#ffffff;
+
+    border-radius:14px;
+
+    padding:22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    gap:18px;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.06);
+
+}
+
+.assessment-container .filter-box{
+
+    flex:1;
+
+}
+
+.assessment-container .filter-box label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#4b5563;
+
+}
+
+.assessment-container .select-box{
+
+    height:48px;
+
+    border:1px solid #d9dde7;
+
+    border-radius:8px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 10px;
+
+    transition:.3s;
+
+    background:#fff;
+
+}
+
+.assessment-container .select-box:hover{
+
+    border-color:#6c63ff;
+
+}
+
+.assessment-container .select-box .icon{
+
+    color:#6c63ff;
+
+    font-size:18px;
+
+    margin-right:12px;
+
+}
+
+.assessment-container .select-box select{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    font-size:14px;
+
+    color:#374151;
+
+    cursor:pointer;
+
+}
+
+/* =====================================================
+   TOP BUTTONS
+===================================================== */
+
+.assessment-container .top-buttons{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.assessment-container .report-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    height:46px;
+
+    padding:0 20px;
+
+    background:#ffffff;
+
+    border:1px solid #d7dce5;
+
+    border-radius:8px;
+
+    color:#5b5df7;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.assessment-container .report-btn:hover{
+
+    background:#eef1ff;
+
+}
+
+.assessment-container .draft-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    height:46px;
+
+    padding:0 22px;
+
+    background:#5b5df7;
+
+    border:none;
+
+    border-radius:8px;
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.assessment-container .draft-btn:hover{
+
+    background:#4338ca;
+
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.assessment-container .assessment-card{
+
+    background:#fff;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+    overflow-x:auto;
+
+}
+
+.assessment-container .assessment-card:hover{
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+/* =====================================================
+   CARD HEADER
+===================================================== */
+
+.assessment-container .assessment-header{
+
+    background:#fff;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+}
+
+.assessment-container .assessment-title-section{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.assessment-container .assessment-badge{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:10px;
+
+    background:#4f46e5;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+
+.assessment-container .assessment-title-section h2{
+
+    font-size:32px;
+
+    color:#0f172a;
+
+}
+
+.assessment-container .assessment-title-section p{
+
+    color:#64748b;
+
+}
+/* =====================================================
+   TABLE
+===================================================== */
+
+.assessment-container .table-wrapper{
+
+    width:100%;
+
+    overflow-x:auto;
+
+}
+
+.assessment-container .assessment-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:#fff;
+
+}
+
+.assessment-container .assessment-table thead{
+
+    background:#fff;
+
+}
+
+.assessment-container .assessment-table thead th{
+
+    background:#fff;
+
+    color:#000 !important;
+
+    border:1px solid #d9d9d9;
+
+    padding:16px;
+
+    text-align:center;
+
+    font-weight:600;
+
+}
+
+.assessment-container .assessment-table tbody td{
+
+    padding:10px 12px;
+
+    border:1px solid #d9d9d9;
+
+    font-size:14px;
+
+    color:#374151;
+
+    vertical-align:middle;
+
+    text-align:center;
+
+}
+
+.assessment-container .assessment-table tbody tr{
+
+    transition:.3s;
+
+    height:32px;
+
+}
+
+.assessment-container .assessment-table tbody tr:hover{
+
+    background:#f8f9ff;
+
+}
+
+.assessment-container .sr-column{
+
+    width:90px;
+
+    text-align:center;
+
+}
+
+.assessment-container .action-column{
+
+    width:240px;
+
+    text-align:center;
+
+}
+
+/* =====================================================
+   FILE INPUT
+===================================================== */
+
+.assessment-container .file-input{
+
+    display:block;
+
+    width:220px;
+
+    margin:0 auto 10px;
+
+}
+
+.assessment-container .file-input:hover{
+
+    border-color:#5b5df7;
+
+}
+
+.assessment-container .assessment-table td input[type="file"]{
+
+    height:26px !important;
+
+    padding:0 !important;
+
+    font-size:12px;
+
+}
+
+/* =====================================================
+   DESCRIPTION BOX
+===================================================== */
+
+.assessment-container .description-box{
+
+    width:100%;
+
+    height:90px;
+
+    padding:10px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:6px;
+
+    resize:none;
+
+    background:#fff;
+
+    font-size:14px;
+
+}
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+
+.assessment-container .action-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:8px;
+
+    margin-top:6px;
+
+}
+
+.assessment-container .view-btn{
+
+    width:58px;
+
+    height:30px;
+
+    background:#dff2ff;
+
+    color:#0284c7;
+
+    border:none;
+
+    border-radius:5px;
+
+    font-size:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.assessment-container .view-btn:hover{
+
+    background:#059669;
+
+    color:#fff;
+
+    transform:translateY(-2px);
+
+}
+
+.assessment-container .download-btn{
+
+    width:90px;
+
+    height:30px;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:5px;
+
+    font-size:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.assessment-container .download-btn:hover{
+
+    background:#2563eb;
+
+    transform:translateY(-2px);
+
+}
+
+.assessment-container .assessment-table td button{
+
+    height:26px !important;
+
+    padding:2px 8px !important;
+
+    margin:0;
+
+}
+/* =====================================================
+   BOTTOM BUTTONS
+===================================================== */
+
+.assessment-container .bottom-buttons{
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.assessment-container .bottom-buttons button{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    min-width:130px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+    color:#fff;
+
+}
+
+/* Previous */
+
+.assessment-container .previous-btn{
+
+    background:#6366f1;
+
+}
+
+.assessment-container .previous-btn:hover{
+
+    background:#4f46e5;
+
+    transform:translateY(-2px);
+
+}
+
+/* Back */
+
+.assessment-container .back-btn{
+
+    background:#6b7280;
+
+}
+
+.assessment-container .back-btn:hover{
+
+    background:#4b5563;
+
+    transform:translateY(-2px);
+
+}
+
+/* Save */
+
+.assessment-container .save-btn{
+
+    background:#10b981;
+
+}
+
+.assessment-container .save-btn:hover{
+
+    background:#059669;
+
+    transform:translateY(-2px);
+
+}
+
+/* Delete */
+
+.assessment-container .delete-btn{
+
+    background:#ef4444;
+
+}
+
+.assessment-container .delete-btn:hover{
+
+    background:#dc2626;
+
+    transform:translateY(-2px);
+
+}
+
+/* Submit */
+
+.assessment-container .submit-btn{
+
+    background:#3b82f6;
+
+}
+
+.assessment-container .submit-btn:hover{
+
+    background:#2563eb;
+
+    transform:translateY(-2px);
+
+}
+
+/* Print */
+
+.assessment-container .print-btn{
+
+    background:#8b5cf6;
+
+}
+
+.assessment-container .print-btn:hover{
+
+    background:#7c3aed;
+
+    transform:translateY(-2px);
+
+}
+
+/* Next */
+
+.assessment-container .next-btn{
+
+    background:#f59e0b;
+
+}
+
+.assessment-container .next-btn:hover{
+
+    background:#d97706;
+
+    transform:translateY(-2px);
+
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.assessment-container .table-wrapper::-webkit-scrollbar{
+
+    height:8px;
+
+}
+
+.assessment-container .table-wrapper::-webkit-scrollbar-track{
+
+    background:#eef2ff;
+
+}
+
+.assessment-container .table-wrapper::-webkit-scrollbar-thumb{
+
+    background:#6366f1;
+
+    border-radius:20px;
+
+}
+
+.assessment-container .table-wrapper::-webkit-scrollbar-thumb:hover{
+
+    background:#4338ca;
+
+}
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width:1200px){
+
+    .assessment-container .top-bar{
+        flex-wrap:wrap;
+    }
+
+    .assessment-container .filter-box{
+        width:48%;
+        flex:none;
+    }
+
+}
+
+@media (max-width:992px){
+
+    .assessment-container .top-bar{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .assessment-container .filter-box{
+        width:100%;
+    }
+
+    .assessment-container .top-buttons{
+        width:100%;
+    }
+
+    .assessment-container .report-btn,
+    .assessment-container .draft-btn{
+        flex:1;
+        justify-content:center;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .assessment-container{
+        width:98%;
+        padding:15px;
+    }
+
+    .assessment-container .assessment-header{
+        padding:18px;
+    }
+
+    .assessment-container .assessment-title-section{
+        gap:12px;
+    }
+
+    .assessment-container .assessment-badge{
+        width:38px;
+        height:38px;
+        font-size:14px;
+    }
+
+    .assessment-container .assessment-title-section h2{
+        font-size:24px;
+    }
+
+    .assessment-container .assessment-title-section p{
+        font-size:13px;
+    }
+
+    .assessment-container .assessment-table{
+        min-width:900px;
+    }
+
+    .assessment-container .bottom-buttons{
+        justify-content:center;
+    }
+
+    .assessment-container .bottom-buttons button{
+        width:48%;
+        min-width:auto;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .assessment-container{
+        width:100%;
+        padding:10px;
+    }
+
+    .assessment-container .assessment-header{
+        padding:15px;
+    }
+
+    .assessment-container .assessment-title-section{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .assessment-container .assessment-title-section h2{
+        font-size:20px;
+    }
+
+    .assessment-container .assessment-title-section p{
+        font-size:12px;
+    }
+
+    .assessment-container .top-buttons{
+        flex-direction:column;
+    }
+
+    .assessment-container .report-btn,
+    .assessment-container .draft-btn{
+        width:100%;
+    }
+
+    .assessment-container .bottom-buttons button{
+        width:100%;
+    }
+
+    .assessment-container .file-input{
+        width:100%;
+    }
+
+}
+.evolution-container .page-buttons{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:14px !important;
+    flex-wrap:wrap !important;
+    margin-top:28px !important;
+}
+
+.evolution-container .page-buttons button{
+    min-width:115px !important;
+    height:46px !important;
+    padding:0 22px !important;
+    border:none !important;
+    border-radius:8px !important;
+    color:#fff !important;
+    font-size:15px !important;
+    font-weight:600 !important;
+    cursor:pointer !important;
+}

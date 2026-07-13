@@ -1,0 +1,913 @@
+/* =====================================================
+   GOOGLE FONT
+===================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* =====================================================
+   MAIN CONTAINER (SCOPED)
+===================================================== */
+
+.evolution-container{
+    min-height:100vh;
+    padding:30px;
+    background:#f5f7fb;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+.evolution-container *,
+.evolution-container *::before,
+.evolution-container *::after{
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+/* =====================================================
+   CONTENT WIDTH
+===================================================== */
+
+.evolution-container .evolution-content{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* =====================================================
+   HEADER CARD
+===================================================== */
+
+.evolution-container .evolution-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:#fff;
+
+    padding:20px 25px;
+
+    border-radius:14px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+}
+
+.evolution-container .evolution-header h2{
+
+    color:#001b5e;
+
+    font-size:24px;
+
+    font-weight:600;
+
+}
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.evolution-container .back-btn{
+
+    background:#001b5e;
+
+    color:#fff;
+
+    border:none;
+
+    padding:9px 18px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+.evolution-container .back-btn:hover{
+
+    background:#2563eb;
+
+}
+
+/* =====================================================
+   PROJECT HEADER
+===================================================== */
+
+.evolution-container .project-header-card{
+
+    background:#fff;
+
+    padding:24px 28px;
+
+    border-radius:18px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+}
+
+.evolution-container .project-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.evolution-container .project-number{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:12px;
+
+    background:#4f46e5;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+.evolution-container .project-title-text h2{
+
+    font-size:30px;
+
+    color:#111827;
+
+    font-weight:700;
+
+}
+
+.evolution-container .project-title-text p{
+
+    margin-top:6px;
+
+    font-size:15px;
+
+    color:#6b7280;
+
+}
+
+/* =====================================================
+   SECTION CARD
+===================================================== */
+
+.evolution-container .section-card{
+
+    background:#fff;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    border-radius:12px;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+}
+
+.evolution-container .section-title{
+
+    color:#001b5e;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+    border-left:5px solid #2563eb;
+
+    padding-left:10px;
+
+}
+/* =====================================================
+   DOCUMENT CARD
+===================================================== */
+
+.evolution-container .document-card{
+
+    background:#fff;
+
+    padding:25px;
+
+    margin-top:25px;
+
+    border-radius:12px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+    overflow-x:auto;
+
+}
+
+/* =====================================================
+   DOCUMENT TABLE
+===================================================== */
+
+.evolution-container .document-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.evolution-container .document-table th{
+
+    background:#001b5e;
+
+    color:#fff;
+
+    padding:14px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    text-align:center;
+
+    border:1px solid #d9d9d9;
+
+}
+
+.evolution-container .document-table td{
+
+    padding:12px;
+
+    border:1px solid #d9d9d9;
+
+    text-align:center;
+
+    font-size:14px;
+
+    color:#374151;
+
+    vertical-align:middle;
+
+}
+
+.evolution-container .document-table tbody tr:nth-child(even){
+
+    background:#fafafa;
+
+}
+
+.evolution-container .document-table tbody tr:hover{
+
+    background:#f5f8ff;
+
+}
+
+/* =====================================================
+   TABLE COLUMN SIZE
+===================================================== */
+
+.evolution-container .document-table th:first-child{
+
+    width:70px;
+
+}
+
+.evolution-container .document-table th:nth-child(2){
+
+    width:220px;
+
+}
+
+.evolution-container .document-table th:nth-child(3){
+
+    width:250px;
+
+}
+
+.evolution-container .document-table th:last-child{
+
+    width:180px;
+
+}
+
+/* =====================================================
+   SERIAL NUMBER
+===================================================== */
+
+.evolution-container .project-sr{
+
+    color:#2563eb;
+
+    font-weight:600;
+
+}
+
+/* =====================================================
+   DESCRIPTION TEXTAREA
+===================================================== */
+
+.evolution-container .document-table textarea{
+
+    width:220px;
+
+    height:70px;
+
+    padding:8px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+    resize:none;
+
+    font-size:13px;
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+.evolution-container .document-table textarea:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+}
+
+/* =====================================================
+   FILE INPUT
+===================================================== */
+
+.evolution-container .document-table input[type="file"]{
+
+    width:220px;
+
+    padding:8px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+    background:#fafafa;
+
+    font-size:12px;
+
+}
+
+.evolution-container .file-name{
+
+    margin-top:8px;
+
+    background:#eef4ff;
+
+    padding:5px 8px;
+
+    border-radius:5px;
+
+    display:inline-block;
+
+    max-width:200px;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+
+    color:#2563eb;
+
+    font-size:12px;
+
+}
+
+/* =====================================================
+   VIEW & DOWNLOAD BUTTONS
+===================================================== */
+
+.evolution-container .view-btn,
+.evolution-container .download-btn{
+
+    border:none;
+
+    padding:7px 12px;
+
+    margin:3px;
+
+    border-radius:5px;
+
+    color:#fff;
+
+    font-size:12px;
+
+    cursor:pointer;
+
+    min-width:70px;
+
+    transition:.3s;
+
+}
+
+.evolution-container .view-btn{
+
+    background:#2563eb;
+
+}
+
+.evolution-container .download-btn{
+
+    background:#16a34a;
+
+}
+
+.evolution-container .view-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+.evolution-container .download-btn:hover{
+
+    background:#15803d;
+
+}
+
+/* =====================================================
+   ICON BUTTON
+===================================================== */
+
+.evolution-container .icon-btn{
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:50%;
+
+    border:none;
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    margin:3px;
+
+}
+/* =====================================================
+   TOP ACTION BUTTONS
+===================================================== */
+
+.evolution-container .top-actions{
+
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+    margin-bottom:20px;
+
+}
+
+.evolution-container .top-actions button{
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    border:none;
+    padding:9px 16px;
+
+    border-radius:6px;
+
+    color:#fff;
+
+    font-size:13px;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+.evolution-container .save-btn{
+
+    background:#2563eb;
+
+}
+
+.evolution-container .delete-btn{
+
+    background:#dc2626;
+
+}
+
+.evolution-container .submit-btn{
+
+    background:#16a34a;
+
+}
+
+.evolution-container .print-btn{
+
+    background:#7c3aed;
+
+}
+
+.evolution-container .top-actions button:hover{
+
+    opacity:.85;
+
+}
+
+/* =====================================================
+   BOTTOM BUTTONS
+===================================================== */
+
+.evolution-container .bottom-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+.evolution-container .bottom-buttons button{
+
+    padding:10px 22px;
+
+    border:none;
+
+    border-radius:6px;
+
+    font-size:14px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    background:#001b5e;
+
+    transition:.3s ease;
+
+}
+
+.evolution-container .bottom-buttons button:hover{
+
+    background:#2563eb;
+
+}
+
+/* =====================================================
+   NAVIGATION BUTTONS
+===================================================== */
+
+.evolution-container .navigation-buttons{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:30px;
+
+    padding:20px;
+
+    background:#fff;
+
+    border-radius:12px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+
+}
+
+.evolution-container .navigation-buttons button{
+
+    padding:10px 25px;
+
+    border:none;
+
+    border-radius:7px;
+
+    color:#fff;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+.evolution-container .previous-btn{
+
+    background:#64748b;
+
+}
+
+.evolution-container .next-btn{
+
+    background:#2563eb;
+
+}
+
+.evolution-container .navigation-buttons button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* =====================================================
+   BUTTON GROUP FIX
+===================================================== */
+
+.evolution-container .bottom-actions{
+
+    display:flex;
+
+    gap:12px;
+
+    align-items:center;
+
+}
+
+.evolution-container .bottom-actions button{
+
+    padding:10px 20px;
+
+    border:none;
+
+    border-radius:6px;
+
+    color:#fff;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+/* =====================================================
+   BUTTON COLORS
+===================================================== */
+
+.evolution-container .save-btn{
+
+    background:#2563eb;
+
+}
+
+.evolution-container .delete-btn{
+
+    background:#dc2626;
+
+}
+
+.evolution-container .submit-btn{
+
+    background:#16a34a;
+
+}
+
+.evolution-container .print-btn{
+
+    background:#7c3aed;
+
+}
+
+.evolution-container .previous-btn{
+
+    background:#64748b;
+
+}
+
+.evolution-container .next-btn{
+
+    background:#2563eb;
+
+}
+
+.evolution-container .back-btn{
+
+    background:#475569;
+
+}
+
+.evolution-container .back-btn:hover{
+
+    background:#334155;
+
+}
+/* =====================================================
+   PRINT STYLE
+===================================================== */
+
+@media print{
+
+    .evolution-container{
+        padding:0;
+        background:#fff;
+    }
+
+    .evolution-container .top-actions,
+    .evolution-container .back-btn,
+    .evolution-container .navigation-buttons,
+    .evolution-container .bottom-buttons,
+    .evolution-container input[type="file"],
+    .evolution-container .view-btn,
+    .evolution-container .download-btn{
+        display:none !important;
+    }
+
+    .evolution-container .document-card,
+    .evolution-container .section-card,
+    .evolution-container .project-header-card{
+        box-shadow:none;
+        border:1px solid #ddd;
+    }
+
+    .evolution-container .document-table th{
+    background:#f8fafc;
+    color:#000;
+    padding:16px;
+    font-size:14px;
+    font-weight:700;
+    text-align:center;
+    border:1px solid #d9d9d9;
+}
+
+    .evolution-container .document-table td{
+    padding:18px 14px;
+    height:130px;
+    border:1px solid #d9d9d9;
+    text-align:center;
+    font-size:15px;
+    color:#374151;
+    vertical-align:middle;
+}
+
+}
+
+/* =====================================================
+   SCROLL BAR
+===================================================== */
+
+.evolution-container .document-card::-webkit-scrollbar{
+
+    height:8px;
+
+}
+
+.evolution-container .document-card::-webkit-scrollbar-track{
+
+    background:#eef2ff;
+
+}
+
+.evolution-container .document-card::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
+
+    border-radius:10px;
+
+}
+
+.evolution-container .document-card::-webkit-scrollbar-thumb:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width:900px){
+
+    .evolution-container .evolution-header{
+        flex-direction:column;
+        gap:15px;
+        align-items:flex-start;
+    }
+
+    .evolution-container .project-title{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+   .evolution-container .top-actions{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin-top:25px;
+    margin-bottom:0;
+}
+    .evolution-container .navigation-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:14px;
+    margin-top:25px;
+    padding:0;
+    background:transparent;
+    box-shadow:none;
+}
+
+    .evolution-container .document-table textarea{
+    width:275px;
+    height:90px;
+    padding:12px;
+    border:1px solid #cfd6df;
+    border-radius:7px;
+    resize:none;
+    font-size:14px;
+    background:#fff;
+}
+    .evolution-container .document-table input[type="file"]{
+    width:220px;
+    padding:6px;
+    border:1px solid #cfd6df;
+    border-radius:7px;
+    background:#fff;
+    font-size:13px;
+    margin-bottom:10px;
+}
+
+}
+
+@media (max-width:600px){
+
+    .evolution-container{
+        padding:15px;
+    }
+
+    .evolution-container .document-card{
+        padding:15px;
+    }
+
+    .evolution-container .document-table{
+        min-width:800px;
+    }
+
+    .evolution-container .document-table th,
+    .evolution-container .document-table td{
+        padding:8px;
+        font-size:12px;
+    }
+
+    .evolution-container .document-table textarea{
+        width:140px;
+    }
+
+    .evolution-container .project-title-text h2{
+        font-size:22px;
+    }
+
+    .evolution-container .evolution-header h2{
+        font-size:20px;
+    }
+
+    .evolution-container .bottom-buttons{
+        flex-wrap:wrap;
+    }
+
+    .evolution-container .bottom-buttons button,
+    .evolution-container .navigation-buttons button,
+    .evolution-container .top-actions button{
+        width:100%;
+    }
+
+}
+
+.evolution-container .previous-btn{ background:#64748b !important; }
+.evolution-container .back-btn{ background:#475569 !important; }
+.evolution-container .save-btn{ background:#2563eb !important; }
+.evolution-container .delete-btn{ background:#ef4444 !important; }
+.evolution-container .submit-btn{ background:#16a34a !important; }
+.evolution-container .print-btn{ background:#7c3aed !important; }
+.evolution-container .next-btn{ background:#2563eb !important; }

@@ -1,0 +1,159 @@
+.menu a {
+  color: white !important;
+  text-decoration: none !important;
+  display: block;
+}
+
+.menu a:visited {
+  color: white !important;
+}
+
+.menu a:hover {
+  color: white !important;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.sidebar{
+  width:250px;
+  min-height:100vh;
+  background:#002b75;
+  color:white;
+}
+
+.logo-section{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:20px;
+}
+
+.logo-img{
+  width:75px;
+  height:75px;
+  border-radius:50%;
+}
+
+.logo-text h2{
+  margin:0;
+  font-size:36px;
+  font-weight:700;
+}
+
+.logo-text p{
+  margin:0;
+  font-size:14px;
+}
+
+.menu{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.menu li{
+  padding:14px 18px;
+  font-size:15px;
+  font-weight:500;
+}
+
+.criteria-header{
+  background:linear-gradient(
+    90deg,
+    #3b5cff,
+    #9b2eff
+  );
+  font-weight:600;
+}
+
+.criteria-title{
+  padding:14px 18px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.submenu-item{
+  display:block;
+  padding:12px 22px 12px 42px;
+  font-size:14px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  border-radius:6px;
+  margin:4px 10px;
+  transition:0.25s;
+}
+.main-container{
+  display:flex;
+  min-height:100vh;
+}
+
+.content{
+  flex:1;
+  background:#f4f6f9;
+}
+
+.topbar{
+  height:70px;
+  background:#0068c9;
+  color:white;
+  display:flex;
+  align-items:center;
+  padding:0 25px;
+}
+
+.page-content{
+  padding:20px;
+}
+
+.submenu-active{
+  display:block;
+  padding:12px 22px 12px 42px;
+  font-size:14px;
+  background:#35589f;
+  border-radius:6px;
+  margin:4px 10px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.submenu-item:hover{
+   background:#35589f;
+}

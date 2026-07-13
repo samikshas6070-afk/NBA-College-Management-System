@@ -1,0 +1,396 @@
+.course-matrix-page{
+  padding:25px;
+  background:#f5f7fb;
+  min-height:100vh;
+}
+
+/* Title */
+
+.page-title h1{
+  margin:0 0 20px;
+  color:#1b2559;
+  font-size:34px;
+  font-weight:700;
+}
+
+/* Filter Section */
+
+.filter-card{
+  background:white;
+  border-radius:12px;
+  padding:20px;
+  display:flex;
+  gap:20px;
+  align-items:end;
+  margin-bottom:20px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.filter-box{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.filter-box label{
+  margin-bottom:8px;
+  font-size:14px;
+  font-weight:600;
+  color:#333;
+}
+
+.filter-box select{
+  height:45px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  padding:0 12px;
+  font-size:15px;
+}
+
+.download-btn{
+  background:white;
+  color:#3d4cff;
+  border:1px solid #3d4cff;
+  height:45px;
+  padding:0 20px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* Section Card */
+
+.section-card{
+  background:white;
+  border-radius:12px;
+  margin-bottom:20px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+  overflow:hidden;
+}
+
+.section-header{
+  background:linear-gradient(
+    90deg,
+    #304ffe,
+    #8e44ff
+  );
+  color:white;
+  padding:12px 20px;
+  font-size:18px;
+  font-weight:600;
+}
+
+.section-content{
+  display:flex;
+  gap:25px;
+  padding:20px;
+}
+
+.left-content{
+  flex:1;
+}
+
+.top-row{
+  display:flex;
+  gap:15px;
+  margin-bottom:15px;
+}
+
+.top-row select{
+  height:42px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  padding:0 12px;
+  min-width:180px;
+}
+
+.add-btn{
+  background:white;
+  border:1px solid #304ffe;
+  color:#304ffe;
+  padding:10px 15px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* Table */
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+table th{
+  background:#f7f8fc;
+  border:1px solid #e5e7eb;
+  padding:10px;
+  text-align:center;
+  font-size:14px;
+}
+
+table td:last-child{
+  text-align:center;
+}
+
+.action-buttons{
+  display:flex;
+  flex-direction:row !important;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+}
+
+table tbody tr:hover{
+  background:#fafbff;
+}
+
+/* Upload Panel */
+.upload-panel{
+  width:280px;
+  min-height:250px;
+  border:2px dashed #d7d7d7;
+  border-radius:10px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  text-align:center;
+}
+
+.pdf-name{
+  margin-top:15px;
+  color:#090a13;
+  font-weight:600;
+  word-break:break-all;
+}
+
+.upload-icon{
+  font-size:45px;
+  color:#304ffe;
+  margin-bottom:10px;
+}
+
+.upload-panel h4{
+  margin:10px 0 5px;
+  color:#1b2559;
+}
+
+.upload-panel p{
+  margin-bottom:15px;
+  color:#777;
+  font-size:13px;
+}
+
+.upload-panel input[type="file"]{
+  width:180px;
+}
+
+/* Action Buttons */
+.icon-btn{
+  width:38px;
+  height:38px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:15px;
+}
+
+.edit{
+  background:#4361ee;
+}
+
+.delete{
+  background:#ff4d4f;
+}
+
+.view-btn{
+  background:#304ffe;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+/* Footer Buttons */
+/* FOOTER BUTTONS */
+
+.footer-buttons{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+/* COMMON SIZE */
+
+.previous-btn,
+.draft-btn,
+.submit-btn,
+.next-page-btn{
+  width:160px;
+  height:50px;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  font-weight:600;
+  color:white;
+  cursor:pointer;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* COLORS */
+
+.previous-btn{
+  background:#f97316;
+}
+
+.draft-btn{
+  background:#4361ee;
+}
+
+.submit-btn{
+  background:#16a34a;
+}
+
+.next-page-btn{
+  background:#7c3aed;
+}
+
+/* HOVER */
+
+.previous-btn:hover,
+.draft-btn:hover,
+.submit-btn:hover,
+.next-page-btn:hover,
+.add-btn:hover,
+.download-btn:hover{
+  opacity:0.9;
+}
+.action-buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn{
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+table input {
+  width: 45px;
+  height: 30px;
+  text-align: center;
+}
+.print-btn{
+    width: 160px;
+    height: 50px;
+    background:#1d79c5;
+    color:white;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    transition:.3s;
+}
+
+
+.matrix-save-btn{
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+}
+.upload-panel{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+.upload-box{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+width:280px;
+
+}
+
+
+.document-actions{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+  justify-content:center;
+}
+
+.view-btn,
+.download-btn-upload,
+.print-btn-upload{
+
+  border:none;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:14px;
+  font-weight:600;
+}
+
+.view-btn{
+  background:#0d6efd;
+  color:white;
+}
+
+.download-btn-upload{
+  background:#198754;
+  color:white;
+}
+
+.print-btn-upload{
+  background:#fd7e14;
+  color:white;
+}

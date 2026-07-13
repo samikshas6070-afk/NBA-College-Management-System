@@ -1,0 +1,302 @@
+/* Container */
+.capstone-container {
+  padding: 25px;
+  background: #f4f7fc;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Header */
+.capstone-header {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+.capstone-title-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.capstone-badge {
+  background: #4f46e5;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.capstone-title-section h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #1f2937;
+}
+
+.capstone-title-section p {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Card */
+.capstone-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+/* Table */
+/* ================= TABLE ================= */
+
+.capstone-table{
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+}
+
+.capstone-table th{
+  background:#ffffff;
+  color:#000;
+  border:1px solid #d9d9d9;
+  padding:16px;
+  text-align:center;
+  font-size:16px;
+  font-weight:600;
+}
+
+.capstone-table td{
+  border:1px solid #d9d9d9;
+  padding:16px;
+  font-size:14px;
+  vertical-align:middle;
+}
+
+.capstone-table tbody tr:hover{
+  background:#f8f9fc;
+}
+
+/* Upload Input */
+
+/* ================= ATTACHMENT COLUMN ================= */
+
+.capstone-table td:last-child{
+  width:260px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+/* File Input */
+
+.capstone-table input[type="file"]{
+  display:block;
+  width:180px;
+  margin:0 auto 12px;
+  font-size:13px;
+}
+
+/* Action Buttons */
+
+.action-buttons{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+}
+
+.action-buttons button{
+  width:95px;
+  height:34px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:13px;
+  font-weight:500;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+
+/* View */
+
+.capstone-view-btn{
+  background:#dff3ff !important;
+  color:#0284c7 !important;
+  border:1px solid #bfe4ff;
+}
+
+.capstone-view-btn:hover{
+  background:#cfeeff !important;
+}
+
+/* Download */
+
+.capstone-download-btn{
+  background:#16a34a !important;
+  color:#fff !important;
+  border:1px solid #16a34a;
+}
+
+.capstone-download-btn:hover{
+  background:#15803d !important;
+}
+.capstone-table input[type="file"] {
+  font-size: 12px;
+  padding: 5px;
+}
+
+/* Buttons inside table */
+.capstone-table button {
+  border: none;
+  padding: 6px 10px;
+  margin-right: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: 0.2s;
+}
+
+/* View */
+.capstone-view-btn {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+.capstone-view-btn:hover {
+  background: #bae6fd;
+}
+/* Print */
+.capstone-print-btn {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.capstone-print-btn:hover {
+  background: #fecaca;
+}
+
+/* Bottom Buttons */
+.capstone-bottom-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Common Bottom Button Style */
+.capstone-bottom-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;  /* 👈 center alignment */
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* shared button style */
+.capstone-bottom-buttons button {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+/* Common Button Style */
+
+.capstone-bottom-buttons button {
+  min-width: 140px;
+  height: 48px;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.capstone-bottom-buttons button:hover {
+  transform: translateY(-2px);
+}
+
+
+/* Previous */
+.capstone-previous-btn {
+  background: linear-gradient(135deg, #ff7b00, #ff5e00) !important;
+  color: white !important;
+}
+
+/* Back */
+
+.capstone-back-btn {
+  background: linear-gradient(135deg, #1ea7fd, #0284c7);
+  color: white;
+}
+
+/* Save */
+
+.capstone-save-btn {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+}
+
+/* Delete */
+
+.capstone-delete-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+/* Submit */
+
+.capstone-submit-btn {
+  background: linear-gradient(135deg, #4f7cff, #2563eb);
+  color: white;
+}
+
+/* Print */
+
+.capstone-print-btn {
+  background: linear-gradient(135deg, #9b5cff, #7c3aed);
+  color: white;
+}
+
+/* Next */
+
+.capstone-next-btn {
+  background: linear-gradient(135deg, #14b8a6, #0f766e);
+  color: white;
+}
+.back-btn {
+  background: #6b7280 !important;
+  color: white !important;
+}
+.description-box{
+    width:100%;
+    height:90px;
+    padding:10px;
+    border:1px solid #d1d5db;
+    border-radius:6px;
+    background:#fff;
+    resize:none;
+    font-size:14px;
+    color:#111827;
+    outline:none;
+    font-family:"Poppins", sans-serif;
+}

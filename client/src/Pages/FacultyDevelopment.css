@@ -1,0 +1,201 @@
+.faculty-development{
+
+padding:30px;
+
+background:#f5f7fb;
+
+min-height:100vh;
+
+}
+
+.page-header{
+
+margin-bottom:30px;
+
+}
+
+.page-header h2{
+
+margin:0;
+
+font-size:30px;
+
+color:#1e3a8a;
+
+}
+
+.page-header p{
+
+margin-top:8px;
+
+color:#666;
+
+}
+
+.fd-card{
+
+background:#fff;
+
+border-radius:12px;
+
+padding:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.fd-card:hover{
+
+transform:translateY(-3px);
+
+}
+
+.fd-left{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.fd-icon{
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+background:#dbeafe;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:24px;
+
+}
+
+.fd-left h3{
+
+margin:0;
+
+font-size:19px;
+
+color:#1e3a8a;
+
+}
+
+.fd-left p{
+
+margin-top:8px;
+
+color:#666;
+
+font-size:14px;
+
+}
+
+.fd-buttons{
+
+display:flex;
+
+gap:12px;
+
+}
+
+.view-btn{
+
+background:#2563eb;
+
+color:#fff;
+
+border:none;
+
+padding:10px 18px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-weight:600;
+
+}
+
+.add-btn{
+
+background:#16a34a;
+
+color:#fff;
+
+border:none;
+
+padding:10px 18px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-weight:600;
+
+}
+
+.view-btn:hover{
+
+background:#1d4ed8;
+
+}
+
+.add-btn:hover{
+
+background:#15803d;
+
+}
+.module-navigation{
+    margin-top:35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.module-prev,
+.module-next{
+    border:none;
+    padding:14px 28px;
+    border-radius:10px;
+    font-size:16px;
+    font-weight:600;
+    color:#fff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.module-prev{
+    background:#6b7280;
+}
+
+.module-prev:hover{
+    background:#4b5563;
+}
+
+.module-next{
+    background:#203a96;
+}
+
+.module-next:hover{
+    background:#302e9b;
+}

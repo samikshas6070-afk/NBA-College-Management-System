@@ -1,0 +1,64 @@
+.resource-view{
+    padding:30px;
+    background:#f5f7fc;
+    min-height:100vh;
+}
+
+.view-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.view-header h2{
+    margin:0;
+    color:#0d47a1;
+}
+
+.add-btn{
+    background:#16a34a;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.resource-table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.resource-table th,
+.resource-table td{
+    border:1px solid #ddd;
+    padding:14px;
+    text-align:center;
+}
+
+.resource-table th{
+    background:#0d47a1;
+    color:white;
+}
+
+.bottom-buttons{
+    margin-top:25px;
+}
+
+.back-btn{
+    background:#6b7280;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:8px;
+    cursor:pointer;
+}
+.resource-table td:nth-child(8){
+    max-width:150px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}

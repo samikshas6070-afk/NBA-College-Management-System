@@ -1,0 +1,393 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins",sans-serif;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.industry-container{
+  padding:25px;
+  background:#f4f7fc;
+  min-height:100vh;
+  font-family:"Poppins",sans-serif;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.industry-header{
+  background:#ffffff;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  margin-bottom:20px;
+}
+
+.industry-title-section{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.industry-badge{
+  background:#4f46e5;
+  color:#fff;
+  padding:10px 14px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:14px;
+}
+
+.industry-title-section h2{
+  margin:0;
+  font-size:20px;
+  color:#1f2937;
+}
+
+.industry-title-section p{
+  margin:3px 0 0;
+  font-size:13px;
+  color:#6b7280;
+}
+
+.upload-count{
+  margin-top:5px;
+  font-size:13px;
+  font-weight:600;
+  color:#2563eb;
+}
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.industry-card{
+  background:#ffffff;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 2px 10px rgba(0,0,0,.06);
+}
+/* =====================================================
+   TABLE
+===================================================== */
+.industry-table{
+    width:100%;
+    border-collapse:collapse;
+    border:1px solid #dcdcdc;
+}
+.industry-table thead{
+    background:#f8fafc;
+    color:#111827;
+}
+.industry-table th{
+  background:#ffffff;
+  color:#000;
+  border:1px solid #d9d9d9;
+  padding:16px;
+  text-align:center;
+  font-size:16px;
+  font-weight:600;
+  vertical-align:middle;
+}
+
+.industry-table td{
+    border:1px solid #dcdcdc;
+    padding:18px;
+    text-align:center;
+}
+
+
+.industry-table tbody tr{
+  transition:.2s;
+}
+
+.industry-table tbody tr:hover{
+  background:#f9fafb;
+}
+
+/* =====================================================
+   FILE INPUT
+===================================================== */
+
+.industry-table input[type="file"]{
+  width:180px;
+  margin:auto;
+  display:block;
+  font-size:12px;
+  padding:5px;
+}
+
+.attachment-cell{
+  text-align:center;
+}
+
+.pdf-text{
+  display:block;
+  margin-top:5px;
+  font-size:12px;
+  color:#6b7280;
+}
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+
+.action-buttons{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  margin-top:10px;
+}
+
+/* Common Button */
+
+.action-buttons button{
+  border:none;
+  width:95px;
+  height:34px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:500;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  transition:.2s;
+}
+
+
+
+.view-btn:hover{
+    background:#cfecff;
+}
+
+.download-btn:hover{
+    background:#15803d;
+}
+
+
+/* =====================================================
+   BOTTOM BUTTONS
+===================================================== */
+
+.bottom-buttons{
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.bottom-buttons button{
+  min-width:140px;
+  height:48px;
+  border:none;
+  border-radius:10px;
+  color:#ffffff;
+  font-size:15px;
+  font-weight:500;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  transition:all .3s ease;
+}
+
+.bottom-buttons button:hover{
+  transform:translateY(-2px);
+}
+
+/* Previous */
+
+.previous-btn{
+  background:linear-gradient(135deg,#ff7b00,#ff5e00);
+}
+
+/* Back */
+
+.back-btn{
+  background:linear-gradient(135deg,#1ea7fd,#0284c7);
+}
+
+/* Save */
+
+.save-btn{
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+}
+
+/* Delete */
+
+.delete-btn{
+  background:linear-gradient(135deg,#ef4444,#dc2626);
+}
+
+/* Submit */
+
+.submit-btn{
+  background:linear-gradient(135deg,#4f7cff,#2563eb);
+}
+
+/* Print */
+
+.print-btn{
+  background:linear-gradient(135deg,#9b5cff,#7c3aed);
+}
+
+/* Next */
+
+.next-btn{
+  background:linear-gradient(135deg,#14b8a6,#0f766e);
+}
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:768px){
+
+  .industry-container{
+    padding:15px;
+  }
+
+  .industry-header{
+    padding:15px;
+  }
+
+  .industry-card{
+    padding:15px;
+  }
+
+  .industry-title-section{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+
+  .industry-title-section h2{
+    font-size:18px;
+  }
+
+  .industry-title-section p{
+    font-size:12px;
+  }
+
+  .upload-count{
+    font-size:12px;
+  }
+
+  .industry-table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+
+  .industry-table th{
+    padding:12px;
+    font-size:14px;
+  }
+
+  .industry-table td{
+    padding:12px;
+    font-size:13px;
+  }
+
+  .industry-table input[type="file"]{
+    width:160px;
+  }
+
+  .action-buttons{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+}
+  .action-buttons button{
+    width:90px;
+    height:32px;
+    font-size:11px;
+  }
+
+  .bottom-buttons{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .bottom-buttons button{
+    width:100%;
+    max-width:320px;
+    height:45px;
+    font-size:14px;
+  }
+
+}
+.industry-table th:first-child,
+.industry-table td:first-child{
+    text-align:center !important;
+    width:80px;
+}
+.file-input{
+    width:220px;
+    font-size:12px;
+    margin-bottom:8px;
+}
+.description-box{
+    width:100%;
+    height:90px;
+    padding:8px;
+    border:1px solid #d1d5db;
+    border-radius:6px;
+    resize:none;
+    background:#fff;
+    font-size:14px;
+    color:#111827;
+}
+.attachment-box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+}
+
+.file-input{
+    width:220px;
+    margin-bottom:15px;   /* Choose File आणि buttons मध्ये gap */
+}
+
+.attachment-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    width:100%;
+     margin-top:12px !important;
+}
+
+.view-btn{
+    width:60px;
+    height:30px;
+    font-size:12px;
+    border:none;
+    border-radius:5px;
+    background:#dff2ff;
+    color:#0284c7;
+}
+
+.download-btn{
+    width:90px;
+    height:30px;
+    font-size:12px;
+    border:none;
+    border-radius:5px;
+    background:#16a34a;
+    color:#fff;
+}

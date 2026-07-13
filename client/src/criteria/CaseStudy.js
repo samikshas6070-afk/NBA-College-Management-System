@@ -105,7 +105,7 @@ function CaseStudy() {
       formData.append("documentName", row.documentName);
 
       const res = await axios.post(
-        "http://localhost:5000/criteria/upload",
+        "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/upload",
         formData,
         {
           headers: {
@@ -139,7 +139,7 @@ function CaseStudy() {
   try {
 
     await axios.delete(
-      "http://localhost:5000/criteria/deleteAll/2.5"
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/deleteAll/2.5"
     );
 
     setFiles({});
@@ -164,7 +164,7 @@ function CaseStudy() {
   try {
 
     await axios.post(
-      "http://localhost:5000/criteria/submit",
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/submit",
       {
         criteriaNo: "2.5"
       }

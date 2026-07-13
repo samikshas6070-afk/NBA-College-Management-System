@@ -12,7 +12,7 @@ useEffect(() => {
 const loadMemberships = async () => {
   try {
     const res = await axios.get(
-      "http://localhost:5000/api/memberships"
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/api/memberships"
     );
 
     setRecords(res.data);
@@ -28,7 +28,7 @@ const handleDelete = async (id) => {
   try {
 
     await axios.delete(
-      `http://localhost:5000/api/memberships/${id}`
+      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/api/memberships/${id}`
     );
 
     loadMemberships();

@@ -38,7 +38,7 @@ function IndustrialTrainingInternship() {
     try {
   
       const res = await axios.get(
-        "http://localhost:5000/criteria3/files/3.4"
+        "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria3/files/3.4"
       );
   
       const file = res.data.files.find(
@@ -51,7 +51,7 @@ function IndustrialTrainingInternship() {
       }
   
       window.open(
-        `http://localhost:5000/${file.file_path.replace(/\\/g, "/")}`,
+        `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/${file.file_path.replace(/\\/g, "/")}`,
         "_blank"
       );
   
@@ -68,7 +68,7 @@ function IndustrialTrainingInternship() {
     try {
   
       const res = await axios.get(
-        "http://localhost:5000/criteria3/files/3.4"
+        "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria3/files/3.4"
       );
   
       const file = res.data.files.find(
@@ -83,7 +83,7 @@ function IndustrialTrainingInternship() {
       const link = document.createElement("a");
   
       link.href =
-        `http://localhost:5000/${file.file_path.replace(/\\/g, "/")}`;
+        `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/${file.file_path.replace(/\\/g, "/")}`;
   
       link.download = file.file_name;
   
@@ -124,7 +124,7 @@ function IndustrialTrainingInternship() {
         formData.append("documentName", row.documentName);
   
         await axios.post(
-          "http://localhost:5000/criteria3/upload",
+          "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria3/upload",
           formData,
           {
             headers: {
@@ -151,7 +151,7 @@ function IndustrialTrainingInternship() {
     try {
   
       await axios.delete(
-        "http://localhost:5000/criteria3/deleteAll/3.4"
+        "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria3/deleteAll/3.4"
       );
   
       setFiles({});
@@ -172,7 +172,7 @@ function IndustrialTrainingInternship() {
     try {
   
       await axios.post(
-        "http://localhost:5000/criteria3/submit",
+        "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria3/submit",
         {
           criteriaNo: "3.4",
         }

@@ -33,7 +33,7 @@ function ProgramAttainment() {
   try {
 
     const res = await axios.get(
-      "http://localhost:5000/criteria3/files/3.8"
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria3/files/3.8"
     );
 
     const file = res.data.files.find(
@@ -46,7 +46,7 @@ function ProgramAttainment() {
     }
 
     window.open(
-      `http://localhost:5000/${file.file_path.replace(/\\/g, "/")}`,
+      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/${file.file_path.replace(/\\/g, "/")}`,
       "_blank"
     );
 
@@ -63,7 +63,7 @@ const handleDownload = async (row) => {
   try {
 
     const res = await axios.get(
-      "http://localhost:5000/criteria3/files/3.8"
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria3/files/3.8"
     );
 
     const file = res.data.files.find(
@@ -78,7 +78,7 @@ const handleDownload = async (row) => {
     const link = document.createElement("a");
 
     link.href =
-      `http://localhost:5000/${file.file_path.replace(/\\/g, "/")}`;
+      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/${file.file_path.replace(/\\/g, "/")}`;
 
     link.download = file.file_name;
 
@@ -120,7 +120,7 @@ formData.append("documentName", row.name);
 formData.append("description", row.description);
 
       await axios.post(
-        "http://localhost:5000/criteria3/upload",
+        "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria3/upload",
         formData,
         {
           headers: {
@@ -147,7 +147,7 @@ const handleDelete = async () => {
   try {
 
     await axios.delete(
-      "http://localhost:5000/criteria3/deleteAll/3.8"
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria3/deleteAll/3.8"
     );
 
     setFiles({});
@@ -168,7 +168,7 @@ const handleSubmit = async () => {
   try {
 
     await axios.post(
-      "http://localhost:5000/criteria3/submit",
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria3/submit",
       {
         criteriaNo: "3.8",
       }

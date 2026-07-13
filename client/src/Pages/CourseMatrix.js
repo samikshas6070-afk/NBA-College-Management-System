@@ -49,7 +49,7 @@ const loadCourseMatrix = async () => {
   try {
 
     const res = await fetch(
-      "http://localhost:5000/get-course-matrix"
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/get-course-matrix"
     );
 
     const data = await res.json();
@@ -83,7 +83,7 @@ const [courseOutcome, setCourseOutcome] = useState("");
 const loadCourseOutcomes = async () => {
 
   const res = await fetch(
-    "http://localhost:5000/get-course-outcomes"
+    "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/get-course-outcomes"
   );
 
   const data = await res.json();
@@ -135,7 +135,7 @@ useEffect(() => {
 const loadCourseSummary = async()=>{
 
 const res=await fetch(
-"http://localhost:5000/get-course-summary"
+"http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/get-course-summary"
 );
 
 const data=await res.json();
@@ -150,7 +150,7 @@ const loadSubjects = async () => {
   if (!department) return;
 
   const res = await fetch(
-    `http://localhost:5000/get-subjects/${department}`
+    `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/get-subjects/${department}`
   );
 
   const data = await res.json();
@@ -161,7 +161,7 @@ const loadSubjects = async () => {
 const loadPOs = async () => {
 
   const res = await fetch(
-    "http://localhost:5000/get-pos"
+    "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/get-pos"
   );
 
   const data = await res.json();
@@ -174,7 +174,7 @@ const loadMatrixRows = async () => {
   if (!selectedSubject) return;
 
   const res = await fetch(
-    `http://localhost:5000/get-subject-co/${selectedSubject}`
+    `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/get-subject-co/${selectedSubject}`
   );
 
   const data = await res.json();
@@ -196,11 +196,11 @@ const handleAddCO = async () => {
 
   try {
 
-    let url = "http://localhost:5000/save-course-outcome";
+    let url = "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/save-course-outcome";
     let method = "POST";
 
     if (editId) {
-      url = `http://localhost:5000/update-course-outcome/${editId}`;
+      url = `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/update-course-outcome/${editId}`;
       method = "PUT";
     }
 
@@ -266,7 +266,7 @@ if (matrixFile) {
 }
 
 const response = await fetch(
-  "http://localhost:5000/save-course-matrix",
+  "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/save-course-matrix",
   {
     method: "POST",
     body: formData
@@ -336,7 +336,7 @@ const handleDelete = async (id) => {
   try {
 
     const response = await fetch(
-      `http://localhost:5000/delete-course-outcome/${id}`,
+      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/delete-course-outcome/${id}`,
       {
         method: "DELETE"
       }
@@ -388,7 +388,7 @@ console.log("matrixFile =", matrixFile);
   }
 
   const response = await fetch(
-    "http://localhost:5000/save-course-matrix",
+    "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/save-course-matrix",
     {
       method: "POST",
       body: formData
@@ -408,7 +408,7 @@ alert(data.message);
 const handleDownload = () => {
 
   window.open(
-    "http://localhost:5000/download-course-matrix",
+    "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download-course-matrix",
     "_blank"
   );
 
@@ -422,7 +422,7 @@ const handleMatrixView = () => {
   }
 
   window.open(
-    `http://localhost:5000/uploads/${uploadedMatrixFile}`,
+    `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/uploads/${uploadedMatrixFile}`,
     "_blank"
   );
 
@@ -442,7 +442,7 @@ const handleMatrixPrint = () => {
   if (extension === "pdf") {
 
     const win = window.open(
-      `http://localhost:5000/uploads/${uploadedMatrixFile}`,
+      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/uploads/${uploadedMatrixFile}`,
       "_blank"
     );
 
@@ -455,7 +455,7 @@ const handleMatrixPrint = () => {
   } else {
 
     window.open(
-      `http://localhost:5000/download/${uploadedMatrixFile}`,
+      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${uploadedMatrixFile}`,
       "_blank"
     );
 
@@ -472,7 +472,7 @@ const handleMatrixDownload = () => {
   }
 
   window.open(
-    `http://localhost:5000/download/${uploadedMatrixFile}`,
+    `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${uploadedMatrixFile}`,
     "_blank"
   );
 
@@ -490,7 +490,7 @@ const handleOutcomeView = () => {
   }
 
   window.open(
-    `http://localhost:5000/uploads/${fileName}`,
+    `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/uploads/${fileName}`,
     "_blank"
   );
 
@@ -503,7 +503,7 @@ const handleOutcomeDownload = () => {
   }
 
   window.open(
-    `http://localhost:5000/download/${uploadedOutcomeFile}`,
+    `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${uploadedOutcomeFile}`,
     "_blank"
   );
 
@@ -523,7 +523,7 @@ const handleOutcomePrint = () => {
   if (extension === "pdf") {
 
     const win = window.open(
-      `http://localhost:5000/uploads/${uploadedOutcomeFile}`,
+      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/uploads/${uploadedOutcomeFile}`,
       "_blank"
     );
 
@@ -536,7 +536,7 @@ const handleOutcomePrint = () => {
   } else {
 
     window.open(
-      `http://localhost:5000/download/${uploadedOutcomeFile}`,
+      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${uploadedOutcomeFile}`,
       "_blank"
     );
 

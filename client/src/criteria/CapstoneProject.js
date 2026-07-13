@@ -103,7 +103,7 @@ function CapstoneProject() {
       formData.append("documentName", row.documentName);
 
       const res = await axios.post(
-        "http://localhost:5000/criteria/upload",
+        "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/upload",
         formData,
         {
           headers: {
@@ -137,7 +137,7 @@ function CapstoneProject() {
   try {
 
     await axios.delete(
-      "http://localhost:5000/criteria/deleteAll/2.2"
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/deleteAll/2.2"
     );
 
     setFiles({});
@@ -157,7 +157,7 @@ function CapstoneProject() {
   try {
 
     await axios.post(
-      "http://localhost:5000/criteria/submit",
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/submit",
       {
         criteriaNo: "2.2"
       }

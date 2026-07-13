@@ -1180,6 +1180,6 @@ app.delete("/criteria3/deleteAll/:criteriaNo", async (req, res) => {
   }
 });
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+app.listen(axios.get("https://nba-college-management-system-1.onrender.com/...");, () => {
+  console.log("Server running on port axios.get("https://nba-college-management-system-1.onrender.com/...");");
 });

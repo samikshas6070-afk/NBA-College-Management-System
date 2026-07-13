@@ -111,7 +111,7 @@ function SeminarMiniProject() {
       formData.append("documentName", row.documentName);
 
       const res = await axios.post(
-        "http://localhost:5000/criteria/upload",
+        "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/upload",
         formData,
         {
           headers: {
@@ -147,7 +147,7 @@ const handleDelete = async () => {
   try {
 
     await axios.delete(
-      "http://localhost:5000/criteria/deleteAll/2.4"
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/deleteAll/2.4"
     );
 
     setFiles({});
@@ -168,7 +168,7 @@ const handleDelete = async () => {
   try {
 
     await axios.post(
-      "http://localhost:5000/criteria/submit",
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/submit",
       {
         criteriaNo: "2.4"
       }

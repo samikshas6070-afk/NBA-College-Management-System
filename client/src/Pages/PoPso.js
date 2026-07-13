@@ -29,7 +29,7 @@ if (poPsoFile) {
   formData.append("justificationFile", justificationFile);
 }
     const response = await fetch(
-      "http://localhost:5000/save-popso",
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/save-popso",
       {
         method: "POST",
         body: formData
@@ -61,14 +61,14 @@ const handleView = (fileName) => {
   if (extension === "pdf") {
 
     window.open(
-      `http://localhost:5000/uploads/${fileName}`,
+      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/uploads/${fileName}`,
       "_blank"
     );
 
   } else {
 
     window.open(
-      `http://localhost:5000/download/${fileName}`,
+      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${fileName}`,
       "_blank"
     );
 
@@ -83,7 +83,7 @@ const handleDownload = (fileName) => {
   }
 
   window.open(
-    `http://localhost:5000/download/${fileName}`,
+    `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${fileName}`,
     "_blank"
   );
 
@@ -100,7 +100,7 @@ const handlePrint = (fileName) => {
   if (extension === "pdf") {
 
     const win = window.open(
-      `http://localhost:5000/uploads/${fileName}`,
+      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/uploads/${fileName}`,
       "_blank"
     );
 
@@ -114,7 +114,7 @@ const handlePrint = (fileName) => {
   } else {
 
     window.open(
-      `http://localhost:5000/download/${fileName}`,
+      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${fileName}`,
       "_blank"
     );
 

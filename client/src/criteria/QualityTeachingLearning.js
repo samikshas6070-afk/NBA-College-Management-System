@@ -44,7 +44,7 @@ function QualityTeachingLearning() {
   useEffect(() => {
 
     axios
-      .get("http://localhost:5000/criteria/2.1")
+      .get("http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/2.1")
       .then((res) => {
 
         
@@ -142,7 +142,7 @@ const handleSave = async () => {
 formData.append("description", row.description);
 
       const res = await axios.post(
-        "http://localhost:5000/criteria/upload",
+        "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/upload",
         formData,
         {
           headers: {
@@ -207,7 +207,7 @@ const handleSubmit = async () => {
   try {
 
     const response = await axios.post(
-      "http://localhost:5000/criteria/submit",
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/submit",
       {
         criteriaNo: "2.1"
       }

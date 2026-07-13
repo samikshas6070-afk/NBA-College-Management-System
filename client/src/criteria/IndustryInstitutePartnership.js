@@ -112,7 +112,7 @@ function IndustryInstitutePartnership() {
       formData.append("documentName", row.documentName);
 
       const res = await axios.post(
-        "http://localhost:5000/criteria/upload",
+        "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/upload",
         formData,
         {
           headers: {
@@ -149,7 +149,7 @@ function IndustryInstitutePartnership() {
   try {
 
     await axios.delete(
-      "http://localhost:5000/criteria/deleteAll/2.8"
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/deleteAll/2.8"
     );
 
     setFiles({});
@@ -174,7 +174,7 @@ function IndustryInstitutePartnership() {
   try {
 
     await axios.post(
-      "http://localhost:5000/criteria/submit",
+      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/submit",
       {
         criteriaNo: "2.8"
       }
@@ -203,7 +203,7 @@ const handlePrint = () => {
   recentFiles.forEach((file) => {
 
     const fileUrl =
-      `http://localhost:5000/uploads/${file.file_name}`;
+      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/uploads/${file.file_name}`;
 
     const win = window.open(fileUrl, "_blank");
 

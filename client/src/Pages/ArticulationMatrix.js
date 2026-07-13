@@ -14,7 +14,7 @@ console.log(courses);
   if (!department) return;
 
   const res = await fetch(
-    `http://localhost:5000/get-course-master/${department}`
+    `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/get-course-master/${department}`
   );
 
   const data = await res.json();
@@ -56,7 +56,7 @@ const handleSave = async () => {
     for (const row of courses) {
 
       await fetch(
-        "http://localhost:5000/save-all-courses-matrix",
+        "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/save-all-courses-matrix",
         {
           method: "POST",
 
@@ -113,7 +113,7 @@ for(const row of courses){
 
 await fetch(
 
-`http://localhost:5000/update-all-courses-matrix/${row.id}`,
+`http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/update-all-courses-matrix/${row.id}`,
 
 {
 
@@ -168,7 +168,7 @@ return;
 
 await fetch(
 
-`http://localhost:5000/delete-all-courses-matrix/${id}`,
+`http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/delete-all-courses-matrix/${id}`,
 
 {
 method:"DELETE"

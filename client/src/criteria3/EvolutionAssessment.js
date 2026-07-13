@@ -183,7 +183,7 @@ function EvolutionAssessment() {
         );
 
         const res = await axios.post(
-  "http://localhost:5000/criteria3/upload",
+  "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria3/upload",
   formData,
           {
             headers: {
@@ -225,7 +225,7 @@ function EvolutionAssessment() {
     try {
 
      await axios.delete(
-  "http://localhost:5000/criteria/deleteAll/3.1"
+  "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/deleteAll/3.1"
 );
 
       setFiles({});
@@ -252,7 +252,7 @@ function EvolutionAssessment() {
     try {
 
      await axios.post(
-  "http://localhost:5000/criteria3/submit",
+  "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria3/submit",
         {
           criteriaNo: "3.1",
         }

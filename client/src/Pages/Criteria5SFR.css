@@ -428,6 +428,14 @@ ACTION BUTTONS
     background:#b71c1c;
 }
 
+.btn.clear{
+  background:#ff9800;
+  color:#fff;
+}
+
+.btn.clear:hover{
+  background:#f57c00;
+}
 /* Print */
 
 .btn.print{

@@ -1,913 +1,1125 @@
 /* =====================================================
-   GOOGLE FONT
+3.5 - DOCUMENT / PROJECT PAGE
+FULL CSS
+SUBMIT REMOVED
+CLEAR ADDED
+NO WHITE BOTTOM CONTAINER
+NO GLOBAL CSS
+===================================================== */
+
+
+/* =====================================================
+GOOGLE FONT
 ===================================================== */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-/* =====================================================
-   MAIN CONTAINER (SCOPED)
-===================================================== */
-
-.evolution-container{
-    min-height:100vh;
-    padding:30px;
-    background:#f5f7fb;
-    box-sizing:border-box;
-    font-family:"Poppins",sans-serif;
-}
-
-.evolution-container *,
-.evolution-container *::before,
-.evolution-container *::after{
-    box-sizing:border-box;
-    font-family:"Poppins",sans-serif;
-}
 
 /* =====================================================
-   CONTENT WIDTH
+MAIN CONTAINER
 ===================================================== */
 
-.evolution-container .evolution-content{
-    width:100%;
-    max-width:1200px;
-    margin:auto;
+.evolution-container {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    padding: 22px;
+    background: #f5f7fb;
+    font-family: "Poppins", sans-serif;
 }
+
 
 /* =====================================================
-   HEADER CARD
+CONTENT
 ===================================================== */
 
-.evolution-container .evolution-header{
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    background:#fff;
-
-    padding:20px 25px;
-
-    border-radius:14px;
-
-    margin-bottom:25px;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-
+.evolution-container .evolution-content {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
 }
 
-.evolution-container .evolution-header h2{
-
-    color:#001b5e;
-
-    font-size:24px;
-
-    font-weight:600;
-
-}
 
 /* =====================================================
-   BACK BUTTON
+HEADER CARD
 ===================================================== */
 
-.evolution-container .back-btn{
+.evolution-container .project-header-card {
+    width: 92%;
+    margin: 0 auto 20px auto;
 
-    background:#001b5e;
+    background: #ffffff;
 
-    color:#fff;
+    border-radius: 14px;
 
-    border:none;
+    padding: 17px 21px;
 
-    padding:9px 18px;
-
-    border-radius:6px;
-
-    cursor:pointer;
-
-    font-size:14px;
-
-    transition:.3s;
-
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.07);
 }
 
-.evolution-container .back-btn:hover{
-
-    background:#2563eb;
-
-}
 
 /* =====================================================
-   PROJECT HEADER
+HEADER TITLE
 ===================================================== */
 
-.evolution-container .project-header-card{
-
-    background:#fff;
-
-    padding:24px 28px;
-
-    border-radius:18px;
-
-    margin-bottom:25px;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-
+.evolution-container .project-title {
+    display: flex;
+    align-items: center;
+    gap: 13px;
 }
 
-.evolution-container .project-title{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
-}
-
-.evolution-container .project-number{
-
-    width:52px;
-
-    height:52px;
-
-    border-radius:12px;
-
-    background:#4f46e5;
-
-    color:#fff;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:18px;
-
-    font-weight:600;
-
-}
-
-.evolution-container .project-title-text h2{
-
-    font-size:30px;
-
-    color:#111827;
-
-    font-weight:700;
-
-}
-
-.evolution-container .project-title-text p{
-
-    margin-top:6px;
-
-    font-size:15px;
-
-    color:#6b7280;
-
-}
 
 /* =====================================================
-   SECTION CARD
+NUMBER BADGE
 ===================================================== */
 
-.evolution-container .section-card{
+.evolution-container .project-number {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
 
-    background:#fff;
+    background: #4f46e5;
 
-    padding:25px;
+    color: #ffffff;
 
-    margin-bottom:25px;
+    border-radius: 9px;
 
-    border-radius:12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
-
+    font-size: 14px;
+    font-weight: 600;
 }
 
-.evolution-container .section-title{
-
-    color:#001b5e;
-
-    font-size:18px;
-
-    font-weight:600;
-
-    margin-bottom:15px;
-
-    border-left:5px solid #2563eb;
-
-    padding-left:10px;
-
-}
-/* =====================================================
-   DOCUMENT CARD
-===================================================== */
-
-.evolution-container .document-card{
-
-    background:#fff;
-
-    padding:25px;
-
-    margin-top:25px;
-
-    border-radius:12px;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-
-    overflow-x:auto;
-
-}
 
 /* =====================================================
-   DOCUMENT TABLE
+TITLE TEXT
 ===================================================== */
 
-.evolution-container .document-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-
+.evolution-container .project-title-text {
+    display: flex;
+    flex-direction: column;
 }
 
-.evolution-container .document-table th{
+.evolution-container .project-title-text h2 {
+    margin: 0;
 
-    background:#001b5e;
+    font-size: 24px;
 
-    color:#fff;
+    font-weight: 700;
 
-    padding:14px;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    text-align:center;
-
-    border:1px solid #d9d9d9;
-
+    color: #111827;
 }
 
-.evolution-container .document-table td{
+.evolution-container .project-title-text p {
+    margin: 3px 0 0 0;
 
-    padding:12px;
+    font-size: 13px;
 
-    border:1px solid #d9d9d9;
+    color: #6b7280;
 
-    text-align:center;
-
-    font-size:14px;
-
-    color:#374151;
-
-    vertical-align:middle;
-
+    line-height: 20px;
 }
 
-.evolution-container .document-table tbody tr:nth-child(even){
-
-    background:#fafafa;
-
-}
-
-.evolution-container .document-table tbody tr:hover{
-
-    background:#f5f8ff;
-
-}
 
 /* =====================================================
-   TABLE COLUMN SIZE
+DOCUMENT CARD
 ===================================================== */
 
-.evolution-container .document-table th:first-child{
+.evolution-container .document-card {
+    width: 92%;
 
-    width:70px;
+    margin: 0 auto;
 
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    padding: 12px;
+
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.07);
 }
 
-.evolution-container .document-table th:nth-child(2){
-
-    width:220px;
-
-}
-
-.evolution-container .document-table th:nth-child(3){
-
-    width:250px;
-
-}
-
-.evolution-container .document-table th:last-child{
-
-    width:180px;
-
-}
 
 /* =====================================================
-   SERIAL NUMBER
+TABLE WRAPPER
 ===================================================== */
 
-.evolution-container .project-sr{
+.evolution-container .project-table-wrapper {
+    width: 100%;
 
-    color:#2563eb;
-
-    font-weight:600;
-
+    overflow-x: auto;
+    overflow-y: hidden;
 }
+
 
 /* =====================================================
-   DESCRIPTION TEXTAREA
+DOCUMENT TABLE
 ===================================================== */
 
-.evolution-container .document-table textarea{
+.evolution-container .document-table {
+    width: 100%;
 
-    width:220px;
+    border-collapse: collapse;
 
-    height:70px;
+    table-layout: fixed;
 
-    padding:8px;
-
-    border:1px solid #ccc;
-
-    border-radius:6px;
-
-    resize:none;
-
-    font-size:13px;
-
-    font-family:"Poppins",sans-serif;
-
+    background: #ffffff;
 }
 
-.evolution-container .document-table textarea:focus{
-
-    outline:none;
-
-    border-color:#2563eb;
-
-}
 
 /* =====================================================
-   FILE INPUT
+TABLE HEADER
 ===================================================== */
 
-.evolution-container .document-table input[type="file"]{
-
-    width:220px;
-
-    padding:8px;
-
-    border:1px solid #ccc;
-
-    border-radius:6px;
-
-    background:#fafafa;
-
-    font-size:12px;
-
+.evolution-container .document-table thead {
+    background: #ffffff;
 }
 
-.evolution-container .file-name{
+.evolution-container .document-table th {
+    border: 1px solid #d9d9d9;
 
-    margin-top:8px;
+    padding: 10px 8px;
 
-    background:#eef4ff;
+    vertical-align: middle;
 
-    padding:5px 8px;
+    text-align: center;
 
-    border-radius:5px;
+    background: #ffffff;
 
-    display:inline-block;
+    color: #111827;
 
-    max-width:200px;
+    font-family: "Poppins", sans-serif;
 
-    overflow:hidden;
+    font-size: 13px;
 
-    text-overflow:ellipsis;
+    font-weight: 600;
 
-    white-space:nowrap;
-
-    color:#2563eb;
-
-    font-size:12px;
-
+    line-height: 1.3;
 }
+
 
 /* =====================================================
-   VIEW & DOWNLOAD BUTTONS
+TABLE DATA
 ===================================================== */
 
-.evolution-container .view-btn,
-.evolution-container .download-btn{
+.evolution-container .document-table td {
+    border: 1px solid #d9d9d9;
 
-    border:none;
+    padding: 10px 8px;
 
-    padding:7px 12px;
+    vertical-align: middle;
 
-    margin:3px;
+    text-align: center;
 
-    border-radius:5px;
+    background: #ffffff;
 
-    color:#fff;
+    color: #374151;
 
-    font-size:12px;
+    font-family: "Poppins", sans-serif;
 
-    cursor:pointer;
+    font-size: 13px;
 
-    min-width:70px;
+    font-weight: 400;
 
-    transition:.3s;
-
+    line-height: 1.35;
 }
 
-.evolution-container .view-btn{
-
-    background:#2563eb;
-
-}
-
-.evolution-container .download-btn{
-
-    background:#16a34a;
-
-}
-
-.evolution-container .view-btn:hover{
-
-    background:#1d4ed8;
-
-}
-
-.evolution-container .download-btn:hover{
-
-    background:#15803d;
-
-}
 
 /* =====================================================
-   ICON BUTTON
+TABLE HOVER
 ===================================================== */
 
-.evolution-container .icon-btn{
-
-    width:35px;
-
-    height:35px;
-
-    border-radius:50%;
-
-    border:none;
-
-    display:inline-flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    cursor:pointer;
-
-    color:#fff;
-
-    margin:3px;
-
-}
-/* =====================================================
-   TOP ACTION BUTTONS
-===================================================== */
-
-.evolution-container .top-actions{
-
-    display:flex;
-    justify-content:flex-end;
-    gap:12px;
-    margin-bottom:20px;
-
+.evolution-container .document-table tbody tr:hover td {
+    background: #fafafa;
 }
 
-.evolution-container .top-actions button{
-
-    display:flex;
-    align-items:center;
-    gap:6px;
-
-    border:none;
-    padding:9px 16px;
-
-    border-radius:6px;
-
-    color:#fff;
-
-    font-size:13px;
-
-    cursor:pointer;
-
-    transition:.3s ease;
-
-}
-
-.evolution-container .save-btn{
-
-    background:#2563eb;
-
-}
-
-.evolution-container .delete-btn{
-
-    background:#dc2626;
-
-}
-
-.evolution-container .submit-btn{
-
-    background:#16a34a;
-
-}
-
-.evolution-container .print-btn{
-
-    background:#7c3aed;
-
-}
-
-.evolution-container .top-actions button:hover{
-
-    opacity:.85;
-
-}
 
 /* =====================================================
-   BOTTOM BUTTONS
+TABLE COLUMN WIDTH
+COMPACT
 ===================================================== */
 
-.evolution-container .bottom-buttons{
+.evolution-container .document-table th:nth-child(1),
+.evolution-container .document-table td:nth-child(1) {
+    width: 50px;
+    max-width: 50px;
 
-    display:flex;
-
-    justify-content:center;
-
-    gap:15px;
-
-    margin-top:30px;
-
+    text-align: center;
 }
 
-.evolution-container .bottom-buttons button{
 
-    padding:10px 22px;
+.evolution-container .document-table th:nth-child(2),
+.evolution-container .document-table td:nth-child(2) {
+    width: 190px;
+    max-width: 190px;
 
-    border:none;
+    text-align: center;
 
-    border-radius:6px;
-
-    font-size:14px;
-
-    color:#fff;
-
-    cursor:pointer;
-
-    background:#001b5e;
-
-    transition:.3s ease;
-
+    font-weight: 400 !important;
 }
 
-.evolution-container .bottom-buttons button:hover{
 
-    background:#2563eb;
-
+.evolution-container .document-table th:nth-child(3),
+.evolution-container .document-table td:nth-child(3) {
+    width: 250px;
+    max-width: 250px;
 }
+
+
+.evolution-container .document-table th:nth-child(4),
+.evolution-container .document-table td:nth-child(4) {
+    width: 180px;
+    max-width: 180px;
+
+    text-align: center;
+}
+
 
 /* =====================================================
-   NAVIGATION BUTTONS
+DOCUMENT NAME
+NOT BOLD
 ===================================================== */
 
-.evolution-container .navigation-buttons{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-top:30px;
-
-    padding:20px;
-
-    background:#fff;
-
-    border-radius:12px;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-
+.evolution-container .document-table td:nth-child(2) {
+    font-weight: 400 !important;
 }
 
-.evolution-container .navigation-buttons button{
-
-    padding:10px 25px;
-
-    border:none;
-
-    border-radius:7px;
-
-    color:#fff;
-
-    font-size:14px;
-
-    cursor:pointer;
-
-    transition:.3s ease;
-
-}
-
-.evolution-container .previous-btn{
-
-    background:#64748b;
-
-}
-
-.evolution-container .next-btn{
-
-    background:#2563eb;
-
-}
-
-.evolution-container .navigation-buttons button:hover{
-
-    transform:translateY(-2px);
-
-}
 
 /* =====================================================
-   BUTTON GROUP FIX
+SERIAL NUMBER
 ===================================================== */
 
-.evolution-container .bottom-actions{
+.evolution-container .project-sr {
+    color: #2563eb;
 
-    display:flex;
-
-    gap:12px;
-
-    align-items:center;
-
+    font-weight: 600;
 }
 
-.evolution-container .bottom-actions button{
-
-    padding:10px 20px;
-
-    border:none;
-
-    border-radius:6px;
-
-    color:#fff;
-
-    font-size:14px;
-
-    cursor:pointer;
-
-    transition:.3s ease;
-
-}
 
 /* =====================================================
-   BUTTON COLORS
+DESCRIPTION BOX
 ===================================================== */
 
-.evolution-container .save-btn{
+.evolution-container .description-box {
+    width: 100%;
 
-    background:#2563eb;
+    height: 65px;
 
+    min-height: 65px;
+    max-height: 65px;
+
+    padding: 7px 8px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    resize: none;
+
+    outline: none;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    line-height: 17px;
 }
 
-.evolution-container .delete-btn{
 
-    background:#dc2626;
+.evolution-container .description-box:focus {
+    border-color: #6366f1;
 
+    box-shadow:
+        0 0 0 2px rgba(99, 102, 241, 0.08);
 }
 
-.evolution-container .submit-btn{
 
-    background:#16a34a;
-
-}
-
-.evolution-container .print-btn{
-
-    background:#7c3aed;
-
-}
-
-.evolution-container .previous-btn{
-
-    background:#64748b;
-
-}
-
-.evolution-container .next-btn{
-
-    background:#2563eb;
-
-}
-
-.evolution-container .back-btn{
-
-    background:#475569;
-
-}
-
-.evolution-container .back-btn:hover{
-
-    background:#334155;
-
-}
 /* =====================================================
-   PRINT STYLE
+FILE INPUT
 ===================================================== */
 
-@media print{
+.evolution-container .file-input {
+    display: block;
 
-    .evolution-container{
-        padding:0;
-        background:#fff;
+    width: 175px;
+
+    max-width: 100%;
+
+    margin: 0 auto 7px auto;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+.evolution-container .document-table td input[type="file"] {
+    width: 175px;
+
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+FILE NAME
+===================================================== */
+
+.evolution-container .file-name {
+    display: block;
+
+    width: 175px;
+
+    max-width: 100%;
+
+    margin: 5px auto;
+
+    color: #374151;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    text-align: center;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+ATTACHMENT CELL
+===================================================== */
+
+.evolution-container .attachment-cell {
+    text-align: center;
+
+    vertical-align: middle;
+}
+
+
+/* =====================================================
+ACTION BUTTONS
+===================================================== */
+
+.evolution-container .project-actions {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 6px;
+
+    flex-wrap: nowrap;
+}
+
+
+.evolution-container .project-actions button {
+    border: none;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    transition: 0.2s ease;
+}
+
+
+/* =====================================================
+VIEW BUTTON
+===================================================== */
+
+.evolution-container .view-btn {
+    width: 68px;
+
+    height: 29px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+}
+
+
+.evolution-container .view-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+DOWNLOAD BUTTON
+===================================================== */
+
+.evolution-container .download-btn {
+    width: 82px;
+
+    height: 29px;
+
+    background: #16a34a;
+
+    color: #ffffff;
+}
+
+
+.evolution-container .download-btn:hover {
+    background: #15803d;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+PAGE BUTTONS
+NO WHITE CONTAINER
+===================================================== */
+
+.evolution-container .page-buttons {
+    width: 92%;
+
+    margin: 20px auto 0 auto;
+
+    background: transparent;
+
+    border: none;
+
+    padding: 0;
+
+    box-shadow: none;
+}
+
+
+/* =====================================================
+NAVIGATION BUTTONS
+===================================================== */
+
+.evolution-container .navigation-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+}
+
+
+/* =====================================================
+COMMON BOTTOM BUTTON
+===================================================== */
+
+.evolution-container .navigation-buttons button {
+    width: 90px;
+
+    min-width: 90px;
+
+    max-width: 90px;
+
+    height: 34px;
+
+    min-height: 34px;
+
+    padding: 0 8px;
+
+    flex: 0 0 90px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 5px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    color: #ffffff;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+
+    transition: 0.2s ease;
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =====================================================
+BUTTON ICON
+===================================================== */
+
+.evolution-container .navigation-buttons button svg {
+    font-size: 12px;
+
+    flex-shrink: 0;
+
+    display: inline-block;
+
+    visibility: visible;
+}
+
+
+/* =====================================================
+PREVIOUS
+3.2 STYLE
+===================================================== */
+
+.evolution-container .navigation-buttons .previous-btn {
+    background: #cbd5e1 !important;
+
+    color: #ffffff !important;
+}
+
+
+.evolution-container .navigation-buttons .previous-btn:hover {
+    background: #b8c4d4 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+BACK
+3.2 STYLE
+===================================================== */
+
+.evolution-container .navigation-buttons .back-btn {
+    background: #64748b !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+}
+
+
+.evolution-container .navigation-buttons .back-btn:hover {
+    background: #475569 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+SAVE
+3.2 STYLE
+===================================================== */
+
+.evolution-container .navigation-buttons .save-btn {
+    background: #f59e0b !important;
+
+    color: #ffffff !important;
+}
+
+
+.evolution-container .navigation-buttons .save-btn:hover {
+    background: #d97706 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+DELETE
+3.2 STYLE
+===================================================== */
+
+.evolution-container .navigation-buttons .delete-btn {
+    background: #ef4444 !important;
+
+    color: #ffffff !important;
+}
+
+
+.evolution-container .navigation-buttons .delete-btn:hover {
+    background: #dc2626 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+PRINT
+3.2 STYLE
+===================================================== */
+
+.evolution-container .navigation-buttons .print-btn {
+    background: #7c3aed !important;
+
+    color: #ffffff !important;
+}
+
+
+.evolution-container .navigation-buttons .print-btn:hover {
+    background: #6d28d9 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+CLEAR
+3.2 STYLE
+===================================================== */
+
+.evolution-container .navigation-buttons .clear-btn {
+    width: 90px !important;
+
+    min-width: 90px !important;
+
+    max-width: 90px !important;
+
+    height: 34px !important;
+
+    min-height: 34px !important;
+
+    padding: 0 8px !important;
+
+    background: #f59e0b !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+
+    border-radius: 7px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 5px;
+
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 12px !important;
+
+    font-weight: 600 !important;
+
+    cursor: pointer !important;
+
+    white-space: nowrap !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    box-sizing: border-box !important;
+}
+
+
+.evolution-container .navigation-buttons .clear-btn:hover {
+    background: #d97706 !important;
+
+    color: #ffffff !important;
+
+    transform: translateY(-1px);
+}
+
+
+.evolution-container .navigation-buttons .clear-btn svg {
+    color: #ffffff !important;
+
+    fill: #ffffff !important;
+
+    font-size: 12px !important;
+
+    display: inline-block !important;
+
+    visibility: visible !important;
+}
+
+
+/* =====================================================
+NEXT
+3.2 STYLE
+===================================================== */
+
+.evolution-container .navigation-buttons .next-btn {
+    width: 90px !important;
+
+    min-width: 90px !important;
+
+    max-width: 90px !important;
+
+    height: 34px !important;
+
+    min-height: 34px !important;
+
+    padding: 0 8px !important;
+
+    background: #16a34a !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+
+    border-radius: 7px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 5px;
+
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 12px !important;
+
+    font-weight: 600 !important;
+
+    text-align: center !important;
+
+    line-height: normal !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    cursor: pointer !important;
+
+    white-space: nowrap !important;
+
+    overflow: visible !important;
+
+    box-sizing: border-box !important;
+}
+
+
+.evolution-container .navigation-buttons .next-btn:hover {
+    background: #15803d !important;
+
+    color: #ffffff !important;
+
+    transform: translateY(-1px);
+}
+
+
+.evolution-container .navigation-buttons .next-btn svg {
+    color: #ffffff !important;
+
+    fill: #ffffff !important;
+
+    font-size: 12px !important;
+
+    display: inline-block !important;
+
+    visibility: visible !important;
+}
+
+
+/* =====================================================
+ALL BUTTON HOVER
+===================================================== */
+
+.evolution-container .navigation-buttons button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+TABLE SCROLLBAR
+===================================================== */
+
+.evolution-container .project-table-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+
+.evolution-container .project-table-wrapper::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+
+.evolution-container .project-table-wrapper::-webkit-scrollbar-thumb {
+    background: #c7d2fe;
+
+    border-radius: 20px;
+}
+
+
+/* =====================================================
+DOCUMENT CARD SCROLLBAR
+===================================================== */
+
+.evolution-container .document-card::-webkit-scrollbar {
+    height: 6px;
+}
+
+
+.evolution-container .document-card::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+
+.evolution-container .document-card::-webkit-scrollbar-thumb {
+    background: #c7d2fe;
+
+    border-radius: 20px;
+}
+
+
+/* =====================================================
+NAVIGATION SCROLLBAR
+===================================================== */
+
+.evolution-container .navigation-buttons::-webkit-scrollbar {
+    height: 5px;
+}
+
+
+.evolution-container .navigation-buttons::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.evolution-container .navigation-buttons::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+
+    border-radius: 20px;
+}
+
+
+/* =====================================================
+PRINT
+===================================================== */
+
+@media print {
+
+    .evolution-container {
+        background: #ffffff;
     }
 
-    .evolution-container .top-actions,
-    .evolution-container .back-btn,
-    .evolution-container .navigation-buttons,
-    .evolution-container .bottom-buttons,
-    .evolution-container input[type="file"],
-    .evolution-container .view-btn,
-    .evolution-container .download-btn{
-        display:none !important;
+    .evolution-container .page-buttons,
+    .evolution-container .file-input,
+    .evolution-container .project-actions {
+        display: none !important;
     }
 
     .evolution-container .document-card,
-    .evolution-container .section-card,
-    .evolution-container .project-header-card{
-        box-shadow:none;
-        border:1px solid #ddd;
+    .evolution-container .project-header-card {
+        box-shadow: none;
+
+        border: 1px solid #d1d5db;
     }
 
-    .evolution-container .document-table th{
-    background:#f8fafc;
-    color:#000;
-    padding:16px;
-    font-size:14px;
-    font-weight:700;
-    text-align:center;
-    border:1px solid #d9d9d9;
+    .evolution-container .document-table {
+        width: 100%;
+    }
+
+    .evolution-container .document-table th {
+        background: #ffffff !important;
+
+        color: #000000 !important;
+
+        border: 1px solid #000000;
+    }
+
+    .evolution-container .document-table td {
+        border: 1px solid #000000;
+    }
 }
 
-    .evolution-container .document-table td{
-    padding:18px 14px;
-    height:130px;
-    border:1px solid #d9d9d9;
-    text-align:center;
-    font-size:15px;
-    color:#374151;
-    vertical-align:middle;
-}
-
-}
 
 /* =====================================================
-   SCROLL BAR
+RESPONSIVE - 1000px
 ===================================================== */
 
-.evolution-container .document-card::-webkit-scrollbar{
+@media (max-width: 1000px) {
 
-    height:8px;
+    .evolution-container {
+        padding: 18px;
+    }
 
+    .evolution-container .project-header-card,
+    .evolution-container .document-card,
+    .evolution-container .page-buttons {
+        width: 95%;
+    }
+
+    .evolution-container .document-table {
+        min-width: 760px;
+    }
 }
 
-.evolution-container .document-card::-webkit-scrollbar-track{
-
-    background:#eef2ff;
-
-}
-
-.evolution-container .document-card::-webkit-scrollbar-thumb{
-
-    background:#2563eb;
-
-    border-radius:10px;
-
-}
-
-.evolution-container .document-card::-webkit-scrollbar-thumb:hover{
-
-    background:#1d4ed8;
-
-}
 
 /* =====================================================
-   RESPONSIVE DESIGN
+RESPONSIVE - 768px
 ===================================================== */
 
-@media (max-width:900px){
+@media (max-width: 768px) {
 
-    .evolution-container .evolution-header{
-        flex-direction:column;
-        gap:15px;
-        align-items:flex-start;
+    .evolution-container {
+        margin-left: 0;
+
+        width: 100%;
+
+        padding: 15px;
     }
 
-    .evolution-container .project-title{
-        flex-direction:column;
-        align-items:flex-start;
+    .evolution-container .project-header-card {
+        width: 100%;
+
+        padding: 14px;
     }
 
-   .evolution-container .top-actions{
-    display:flex;
-    justify-content:center;
-    gap:14px;
-    margin-top:25px;
-    margin-bottom:0;
-}
-    .evolution-container .navigation-buttons{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:14px;
-    margin-top:25px;
-    padding:0;
-    background:transparent;
-    box-shadow:none;
-}
+    .evolution-container .project-title {
+        flex-direction: column;
 
-    .evolution-container .document-table textarea{
-    width:275px;
-    height:90px;
-    padding:12px;
-    border:1px solid #cfd6df;
-    border-radius:7px;
-    resize:none;
-    font-size:14px;
-    background:#fff;
-}
-    .evolution-container .document-table input[type="file"]{
-    width:220px;
-    padding:6px;
-    border:1px solid #cfd6df;
-    border-radius:7px;
-    background:#fff;
-    font-size:13px;
-    margin-bottom:10px;
-}
+        text-align: center;
 
-}
-
-@media (max-width:600px){
-
-    .evolution-container{
-        padding:15px;
+        gap: 10px;
     }
 
-    .evolution-container .document-card{
-        padding:15px;
+    .evolution-container .project-title-text h2 {
+        font-size: 20px;
     }
 
-    .evolution-container .document-table{
-        min-width:800px;
+    .evolution-container .project-title-text p {
+        font-size: 12px;
     }
 
-    .evolution-container .document-table th,
-    .evolution-container .document-table td{
-        padding:8px;
-        font-size:12px;
+    .evolution-container .document-card {
+        width: 100%;
+
+        padding: 8px;
     }
 
-    .evolution-container .document-table textarea{
-        width:140px;
+    .evolution-container .document-table {
+        min-width: 760px;
     }
 
-    .evolution-container .project-title-text h2{
-        font-size:22px;
+    .evolution-container .page-buttons {
+        width: 100%;
+
+        margin-top: 18px;
     }
 
-    .evolution-container .evolution-header h2{
-        font-size:20px;
+    .evolution-container .navigation-buttons {
+        justify-content: flex-start;
+
+        gap: 8px;
+
+        overflow-x: auto;
     }
 
-    .evolution-container .bottom-buttons{
-        flex-wrap:wrap;
-    }
+    .evolution-container .navigation-buttons button {
+        width: 90px;
 
-    .evolution-container .bottom-buttons button,
-    .evolution-container .navigation-buttons button,
-    .evolution-container .top-actions button{
-        width:100%;
-    }
+        min-width: 90px;
 
+        height: 34px;
+    }
 }
 
-.evolution-container .previous-btn{ background:#64748b !important; }
-.evolution-container .back-btn{ background:#475569 !important; }
-.evolution-container .save-btn{ background:#2563eb !important; }
-.evolution-container .delete-btn{ background:#ef4444 !important; }
-.evolution-container .submit-btn{ background:#16a34a !important; }
-.evolution-container .print-btn{ background:#7c3aed !important; }
-.evolution-container .next-btn{ background:#2563eb !important; }
+
+/* =====================================================
+RESPONSIVE - 480px
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .evolution-container {
+        padding: 10px;
+    }
+
+    .evolution-container .project-header-card {
+        padding: 12px;
+    }
+
+    .evolution-container .project-number {
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 14px;
+    }
+
+    .evolution-container .project-title-text h2 {
+        font-size: 18px;
+    }
+
+    .evolution-container .project-title-text p {
+        font-size: 11px;
+    }
+
+    .evolution-container .document-card {
+        padding: 6px;
+    }
+
+    .evolution-container .document-table {
+        min-width: 720px;
+    }
+
+    .evolution-container .navigation-buttons {
+        justify-content: flex-start;
+    }
+
+    .evolution-container .navigation-buttons button {
+        width: 90px;
+
+        min-width: 90px;
+    }
+}

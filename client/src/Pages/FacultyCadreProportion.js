@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./FacultyCadreProportion.css";
+import axios from "axios";
 import {
   FaArrowLeft,
   FaSave,
@@ -17,6 +18,7 @@ const FacultyCadreProportion = () => {
     remarks: "",
   });
   const [fileName, setFileName] = useState("No file chosen");
+  const [file, setFile] = useState(null);
 
   // ================= Calculations =================
 
@@ -24,7 +26,7 @@ const FacultyCadreProportion = () => {
   const af1 = Number(formData.af1) || 0;
   const af2 = Number(formData.af2) || 0;
   const af3 = Number(formData.af3) || 0;
-
+const [recordId, setRecordId] = useState(null);
   const rf = students / 20;
   const rf1 = rf / 9;
   const rf2 = (rf * 2) / 9;
@@ -72,13 +74,90 @@ Final Marks : ${finalMarks.toFixed(2)} /25
 const handlePrevious = () => {
   window.history.back();
 };
+const handleSave = async()=>{
 
-const handleSave = () => {
-  localStorage.setItem(
-    "FacultyCadre",
-    JSON.stringify(formData)
-  );
-  alert("Draft Saved Successfully");
+try{
+
+// 1. Save main data
+const response = await axios.post(
+"http://localhost:5000/api/criteria5/cadre",
+{
+af1,
+af2,
+af3,
+students,
+
+rf,
+rf1,
+rf2,
+rf3,
+
+professorRatio,
+associateRatio,
+assistantRatio,
+
+totalScore,
+finalMarks,
+
+remarks: formData.remarks
+}
+);
+
+
+const savedId = response.data.id;
+
+setRecordId(savedId);
+
+
+// 2. Upload document
+if(file){
+
+const uploadData = new FormData();
+
+uploadData.append(
+"document",
+file
+);
+
+uploadData.append(
+"id",
+savedId
+);
+
+
+await axios.post(
+
+"http://localhost:5000/api/criteria5/cadre/upload",
+
+uploadData,
+
+{
+headers:{
+"Content-Type":"multipart/form-data"
+}
+}
+
+);
+
+}
+
+
+alert("Saved Successfully");
+
+
+}
+
+catch(error){
+
+console.log(
+"SAVE ERROR:",
+error.response?.data || error.message
+);
+
+alert("Save Failed");
+
+}
+
 };
 
 const handleSubmit = () => {
@@ -92,6 +171,72 @@ const handleSubmit = () => {
     totalScore,
     finalMarks,
   });
+};
+const handleDelete = async()=>{
+
+
+if(!recordId){
+
+alert("Please save data first");
+
+return;
+
+}
+
+
+try{
+
+
+await axios.delete(
+
+`http://localhost:5000/api/criteria5/cadre/${recordId}`
+
+);
+
+
+alert("Deleted Successfully");
+
+
+setFormData({
+
+af1:0,
+af2:0,
+af3:0,
+students:0,
+remarks:""
+
+});
+
+
+setRecordId(null);
+
+
+}
+
+catch(error){
+
+console.log(error);
+
+alert("Delete Failed");
+
+}
+
+
+};
+const handleClear = () => {
+
+  setFormData({
+    af1: 0,
+    af2: 0,
+    af3: 0,
+    students: 0,
+    remarks: "",
+  });
+
+  setFileName("No file chosen");
+
+  alert("Form Cleared Successfully");
+
 };
 
   return (
@@ -108,7 +253,7 @@ const handleSubmit = () => {
 
         <div className="header-content">
           <h2>Faculty Cadre Proportion</h2>
-          
+          <p>Cadre Proportion Details</p>
         </div>
 
       </div>
@@ -401,16 +546,23 @@ const handleSubmit = () => {
             </div>
 
             <div className="upload-box">
+<input
+type="file"
+id="supportDoc"
+hidden
+onChange={(e)=>{
 
-              <input
-  type="file"
-  id="supportDoc"
-  hidden
-  onChange={(e) => {
-    if (e.target.files.length > 0) {
-      setFileName(e.target.files[0].name);
-    }
-  }}
+if(e.target.files.length > 0){
+
+setFile(e.target.files[0]);
+
+setFileName(
+e.target.files[0].name
+);
+
+}
+
+}}
 />
 
               <label
@@ -462,12 +614,28 @@ const handleSubmit = () => {
   <FaArrowLeft />
   <span>Previous</span>
 </button>
+
         <button
   className="save-btn"
   onClick={handleSave}
 >
   <FaSave />
-  <span>Save Draft</span>
+  <span>Save </span>
+</button>
+
+<button
+className="delete-btn"
+onClick={handleDelete}
+>
+
+Delete
+
+</button>
+<button
+  className="clear-btn"
+  onClick={handleClear}
+>
+  Clear
 </button>
         <button
   className="submit-btn"

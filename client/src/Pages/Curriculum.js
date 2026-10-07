@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./Curriculum.css";
 import {
   FaBell,
@@ -15,7 +14,6 @@ import {
 import { FaDownload, FaPrint, FaEye } from "react-icons/fa";
 
 function Curriculum({ onNext, onPrevious }) {
-  const navigate = useNavigate();
 
 const [syllabusPdf, setSyllabusPdf] = useState(null);
 const [pdfName, setPdfName] = useState("");
@@ -92,7 +90,7 @@ for (const pair of formData.entries()) {
   console.log(pair[0], pair[1]);
 }
     const response = await fetch(
-      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/save-curriculum",
+      "http://localhost:5000/save-curriculum",
       {
         method: "POST",
         body: formData
@@ -123,14 +121,14 @@ const handleView = (file) => {
   if (extension === "pdf") {
 
     window.open(
-      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/uploads/${file.name}`,
+      `http://localhost:5000/uploads/${file.name}`,
       "_blank"
     );
 
   } else {
 
     window.open(
-      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${file.name}`,
+      `http://localhost:5000/download/${file.name}`,
       "_blank"
     );
 
@@ -145,14 +143,10 @@ const handleFileDownload = (file) => {
   }
 
   window.open(
-    `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${file.name}`,
+    `http://localhost:5000/download/${file.name}`,
     "_blank"
   );
 
-};
-
-const handleNext = () => {
-  navigate("/po-pso");
 };
 const handleFilePrint = (file) => {
 
@@ -166,7 +160,7 @@ const handleFilePrint = (file) => {
   if (extension === "pdf") {
 
     const win = window.open(
-      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/uploads/${file.name}`,
+      `http://localhost:5000/uploads/${file.name}`,
       "_blank"
     );
 
@@ -180,7 +174,7 @@ const handleFilePrint = (file) => {
   } else {
 
     window.open(
-      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${file.name}`,
+      `http://localhost:5000/download/${file.name}`,
       "_blank"
     );
 
@@ -720,11 +714,12 @@ const handlePrevious = () => {
   </button>
 
   <button
-  className="next-page-btn"
-  onClick={() => navigate("/po-pso")}
->
-  Next →
-</button>
+    className="next-page-btn"
+    onClick={onNext}
+  >
+    Next →
+  </button>
+
 </div>
 
         </div>

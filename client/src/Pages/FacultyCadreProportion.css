@@ -1,13 +1,19 @@
-/* ================= PAGE SCOPE ================= */
+/* ================= GLOBAL ================= */
 
-.fcp-page,
-.fcp-page *{
+*{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
     font-family:"Segoe UI",sans-serif;
 }
 
+body{
+    background:#eef3fa;
+}
+
+/* ================= PAGE ================= */
+
 .fcp-page{
-    margin:0;
     padding:20px;
     background:#eef3fa;
     min-height:100vh;
@@ -212,6 +218,7 @@
     font-size:18px;
     font-weight:700;
 }
+
 /* ================= REPORT ================= */
 
 .report-card{
@@ -347,4 +354,26 @@
 
 .submit-btn:hover{
     background:#0d47a1;
+}
+.clear-btn{
+
+background:#ffc107;
+color:#000;
+border:none;
+padding:12px 25px;
+border-radius:8px;
+font-size:15px;
+cursor:pointer;
+
+display:flex;
+align-items:center;
+gap:8px;
+
+}
+
+
+.clear-btn:hover{
+
+background:#e0a800;
+
 }

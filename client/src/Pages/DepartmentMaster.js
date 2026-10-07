@@ -65,7 +65,7 @@ if (!validateForm()) {
 
 try {
   const response = await fetch(
-    "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/department",
+    "http://localhost:5000/department",
     {
       method: "POST",
       headers: {

@@ -1,302 +1,727 @@
-/* Container */
-.capstone-container {
-  padding: 25px;
-  background: #f4f7fc;
-  min-height: 100vh;
-  font-family: "Poppins", sans-serif;
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-/* Header */
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.main-container {
+    display: flex;
+    min-height: 100vh;
+    background: #f4f7fc;
+}
+
+.capstone-container {
+    margin-left: 270px;
+    width: calc(100% - 270px);
+    padding: 25px;
+    background: #f4f7fc;
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
 .capstone-header {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  margin-bottom: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+    margin-bottom: 20px;
 }
 
 .capstone-title-section {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .capstone-badge {
-  background: #4f46e5;
-  color: #fff;
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 14px;
+    background: #4f46e5;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
 }
 
 .capstone-title-section h2 {
-  margin: 0;
-  font-size: 20px;
-  color: #1f2937;
+    margin: 0;
+    font-size: 20px;
+    color: #1f2937;
 }
 
 .capstone-title-section p {
-  margin: 3px 0 0;
-  font-size: 13px;
-  color: #6b7280;
+    margin-top: 3px;
+    font-size: 13px;
+    color: #6b7280;
 }
 
-/* Card */
+
+/* =====================================================
+   CARD
+===================================================== */
+
 .capstone-card {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
 }
 
-/* Table */
-/* ================= TABLE ================= */
 
-.capstone-table{
-  width:100%;
-  border-collapse:collapse;
-  background:#fff;
+/* =====================================================
+   TABLE
+===================================================== */
+
+.capstone-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #dcdcdc;
+    background: #fff;
 }
 
-.capstone-table th{
-  background:#ffffff;
-  color:#000;
-  border:1px solid #d9d9d9;
-  padding:16px;
-  text-align:center;
-  font-size:16px;
-  font-weight:600;
+.capstone-table thead {
+    background: #f8fafc;
 }
 
-.capstone-table td{
-  border:1px solid #d9d9d9;
-  padding:16px;
-  font-size:14px;
-  vertical-align:middle;
+.capstone-table th {
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    padding: 9px 8px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: 600;
+    color: #000;
 }
 
-.capstone-table tbody tr:hover{
-  background:#f8f9fc;
+.capstone-table td {
+    border: 1px solid #dcdcdc;
+    padding: 9px 8px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+    line-height: 17px;
 }
 
-/* Upload Input */
 
-/* ================= ATTACHMENT COLUMN ================= */
+/* =====================================================
+   SR. NO. - SMALL
+===================================================== */
 
-.capstone-table td:last-child{
-  width:260px;
-  text-align:center;
-  vertical-align:middle;
+.capstone-table th:first-child,
+.capstone-table td:first-child {
+    width: 45px !important;
+    min-width: 45px !important;
+    max-width: 45px !important;
+    padding: 7px 3px !important;
+    text-align: center;
 }
 
-/* File Input */
 
-.capstone-table input[type="file"]{
-  display:block;
-  width:180px;
-  margin:0 auto 12px;
-  font-size:13px;
+/* =====================================================
+   DOCUMENT NAME - SMALL
+===================================================== */
+
+.capstone-table th:nth-child(2),
+.capstone-table td:nth-child(2) {
+    width: 190px !important;
+    min-width: 190px !important;
+    max-width: 190px !important;
 }
 
-/* Action Buttons */
 
-.action-buttons{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:10px;
-}
+/* =====================================================
+   DESCRIPTION - SMALL
+===================================================== */
 
-.action-buttons button{
-  width:95px;
-  height:34px;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-  font-size:13px;
-  font-weight:500;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
+.capstone-table th:nth-child(3),
+.capstone-table td:nth-child(3) {
+    width: 210px !important;
+    min-width: 210px !important;
+    max-width: 210px !important;
 }
 
-/* View */
 
-.capstone-view-btn{
-  background:#dff3ff !important;
-  color:#0284c7 !important;
-  border:1px solid #bfe4ff;
-}
+/* =====================================================
+   ACTION / FILE UPLOAD COLUMN - SMALL
+===================================================== */
 
-.capstone-view-btn:hover{
-  background:#cfeeff !important;
-}
-
-/* Download */
-
-.capstone-download-btn{
-  background:#16a34a !important;
-  color:#fff !important;
-  border:1px solid #16a34a;
+.capstone-table th:nth-child(4),
+.capstone-table td:nth-child(4) {
+    width: 175px !important;
+    min-width: 175px !important;
+    max-width: 175px !important;
+    padding: 7px 5px !important;
 }
 
-.capstone-download-btn:hover{
-  background:#15803d !important;
-}
-.capstone-table input[type="file"] {
-  font-size: 12px;
-  padding: 5px;
+
+/* =====================================================
+   DESCRIPTION BOX
+   SMALL + NO SCROLLBAR
+===================================================== */
+
+.capstone-table .description-box {
+    width: 100%;
+    height: 50px;
+    min-height: 50px;
+    max-height: 50px;
+
+    padding: 5px 7px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    background: #fff;
+
+    resize: none;
+    overflow: hidden;
+
+    font-size: 11px;
+    line-height: 15px;
+
+    color: #111827;
+
+    font-family: "Poppins", sans-serif;
+
+    box-sizing: border-box;
 }
 
-/* Buttons inside table */
-.capstone-table button {
-  border: none;
-  padding: 6px 10px;
-  margin-right: 5px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 12px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  transition: 0.2s;
+
+/* =====================================================
+   FILE INPUT BOX
+===================================================== */
+
+.capstone-table .attachment-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
-/* View */
-.capstone-view-btn {
-  background: #e0f2fe;
-  color: #0369a1;
-}
-.capstone-view-btn:hover {
-  background: #bae6fd;
-}
-/* Print */
-.capstone-print-btn {
-  background: #fee2e2;
-  color: #991b1b;
-}
-.capstone-print-btn:hover {
-  background: #fecaca;
+
+/* =====================================================
+   FILE INPUT - SMALL
+===================================================== */
+
+.capstone-table .file-input {
+    width: 165px;
+    max-width: 165px;
+
+    margin-bottom: 6px;
+
+    font-size: 11px;
 }
 
-/* Bottom Buttons */
+.capstone-table .file-input::file-selector-button {
+    background: #f3f4f6;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 5px;
+
+    padding: 5px 8px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+
+.capstone-action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+
+
+/* =====================================================
+   VIEW + DOWNLOAD BUTTONS
+===================================================== */
+
+.capstone-action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+
+
+/* =====================================================
+   VIEW BUTTON - BLUE
+===================================================== */
+
+.capstone-action-buttons .view-btn {
+    width: 110px !important;
+    min-width: 110px !important;
+    max-width: 110px !important;
+
+    height: 32px !important;
+
+    padding: 0 10px !important;
+
+    border: none !important;
+    border-radius: 5px !important;
+
+    background: #2563eb !important;
+    color: #ffffff !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    font-size: 12px !important;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   VIEW HOVER
+===================================================== */
+
+.capstone-action-buttons .view-btn:hover {
+    background: #1d4ed8 !important;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   DOWNLOAD BUTTON - GREEN
+===================================================== */
+
+.capstone-action-buttons .download-btn {
+    width: 110px !important;
+    min-width: 110px !important;
+    max-width: 110px !important;
+
+    height: 32px !important;
+
+    padding: 0 10px !important;
+
+    border: none !important;
+    border-radius: 5px !important;
+
+    background: #16a34a !important;
+    color: #ffffff !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    font-size: 12px !important;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   DOWNLOAD HOVER
+===================================================== */
+
+.capstone-action-buttons .download-btn:hover {
+    background: #15803d !important;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   ICON SIZE
+===================================================== */
+
+.capstone-action-buttons .view-btn svg,
+.capstone-action-buttons .download-btn svg {
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   FILE STATUS
+===================================================== */
+
+.capstone-table .file-status {
+    margin-top: 3px;
+
+    font-size: 10px;
+    line-height: 14px;
+}
+
+
+/* =====================================================
+   BOTTOM BUTTONS
+===================================================== */
+
 .capstone-bottom-buttons {
-  margin-top: 20px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+    margin-top: 20px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: nowrap;
 }
 
-/* Common Bottom Button Style */
-.capstone-bottom-buttons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;  /* 👈 center alignment */
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
 
-/* shared button style */
-.capstone-bottom-buttons button {
-  border: none;
-  padding: 10px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: 0.2s;
-  font-weight: 500;
-}
-
-/* Common Button Style */
+/* =====================================================
+   ALL BOTTOM BUTTONS
+   SAME SIZE
+   NO ICONS
+===================================================== */
 
 .capstone-bottom-buttons button {
-  min-width: 140px;
-  height: 48px;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: all 0.3s ease;
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
+
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+
+    padding: 0 !important;
+
+    border: none !important;
+    border-radius: 6px !important;
+
+    color: #ffffff !important;
+
+    font-size: 12px !important;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    transition: 0.2s ease;
 }
+
+
+/* =====================================================
+   REMOVE ALL BUTTON ICONS
+===================================================== */
+
+.capstone-bottom-buttons button svg,
+.capstone-bottom-buttons button i {
+    display: none !important;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
 
 .capstone-bottom-buttons button:hover {
-  transform: translateY(-2px);
+    transform: translateY(-2px);
 }
 
 
-/* Previous */
-.capstone-previous-btn {
-  background: linear-gradient(135deg, #ff7b00, #ff5e00) !important;
-  color: white !important;
+/* =====================================================
+   PREVIOUS
+   ORANGE GRADIENT
+===================================================== */
+
+.capstone-bottom-buttons .capstone-previous-btn {
+    background: linear-gradient(
+        135deg,
+        #ff7b00,
+        #ff5e00
+    ) !important;
+
+    color: #ffffff !important;
 }
 
-/* Back */
 
-.capstone-back-btn {
-  background: linear-gradient(135deg, #1ea7fd, #0284c7);
-  color: white;
+/* =====================================================
+   PREVIOUS HOVER
+===================================================== */
+
+.capstone-bottom-buttons .capstone-previous-btn:hover {
+    background: linear-gradient(
+        135deg,
+        #e86f00,
+        #e05200
+    ) !important;
 }
 
-/* Save */
 
-.capstone-save-btn {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: white;
+/* =====================================================
+   BACK
+   SLATE #64748b
+===================================================== */
+
+.capstone-bottom-buttons .capstone-back-btn {
+    background: #64748b !important;
+    color: #ffffff !important;
 }
 
-/* Delete */
 
-.capstone-delete-btn {
-  background: linear-gradient(135deg, #ef4444, #dc2626);
-  color: white;
+/* =====================================================
+   BACK HOVER
+===================================================== */
+
+.capstone-bottom-buttons .capstone-back-btn:hover {
+    background: #475569 !important;
 }
 
-/* Submit */
 
-.capstone-submit-btn {
-  background: linear-gradient(135deg, #4f7cff, #2563eb);
-  color: white;
+/* =====================================================
+   SAVE
+   GREEN #1a8341
+===================================================== */
+
+.capstone-bottom-buttons .capstone-save-btn {
+    background: #1a8341 !important;
+    color: #ffffff !important;
 }
 
-/* Print */
 
-.capstone-print-btn {
-  background: linear-gradient(135deg, #9b5cff, #7c3aed);
-  color: white;
+/* =====================================================
+   SAVE HOVER
+===================================================== */
+
+.capstone-bottom-buttons .capstone-save-btn:hover {
+    background: #166534 !important;
 }
 
-/* Next */
 
-.capstone-next-btn {
-  background: linear-gradient(135deg, #14b8a6, #0f766e);
-  color: white;
+/* =====================================================
+   DELETE
+   RED #ef4444
+===================================================== */
+
+.capstone-bottom-buttons .capstone-delete-btn {
+    background: #ef4444 !important;
+    color: #ffffff !important;
 }
-.back-btn {
-  background: #6b7280 !important;
-  color: white !important;
+
+
+/* =====================================================
+   DELETE HOVER
+===================================================== */
+
+.capstone-bottom-buttons .capstone-delete-btn:hover {
+    background: #dc2626 !important;
 }
-.description-box{
-    width:100%;
-    height:90px;
-    padding:10px;
-    border:1px solid #d1d5db;
-    border-radius:6px;
-    background:#fff;
-    resize:none;
-    font-size:14px;
-    color:#111827;
-    outline:none;
-    font-family:"Poppins", sans-serif;
+
+
+/* =====================================================
+   PRINT
+   DARK LAVENDER
+===================================================== */
+
+.capstone-bottom-buttons .capstone-print-btn {
+    background: #6d5cae !important;
+    color: #ffffff !important;
+}
+
+
+/* =====================================================
+   PRINT HOVER
+===================================================== */
+
+.capstone-bottom-buttons .capstone-print-btn:hover {
+    background: #594a91 !important;
+}
+
+
+/* =====================================================
+   CLEAR
+   ORANGE #f59e0b
+===================================================== */
+
+.capstone-bottom-buttons .capstone-clear-btn {
+    background: #f59e0b !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
+
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+
+    padding: 0 !important;
+
+    border-radius: 6px !important;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   CLEAR HOVER
+===================================================== */
+
+.capstone-bottom-buttons .capstone-clear-btn:hover {
+    background: #d97706 !important;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   NEXT
+   TEAL #00897b
+===================================================== */
+
+.capstone-bottom-buttons .capstone-next-btn {
+    background: #00897b !important;
+    color: #ffffff !important;
+}
+
+
+/* =====================================================
+   NEXT HOVER
+===================================================== */
+
+.capstone-bottom-buttons .capstone-next-btn:hover {
+    background: #00695c !important;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .capstone-container {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .capstone-table {
+        min-width: 720px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .capstone-container {
+        padding: 15px;
+    }
+
+    .capstone-header {
+        padding: 15px;
+    }
+
+    .capstone-card {
+        padding: 15px;
+    }
+
+    .capstone-title-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .capstone-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .capstone-table .file-input {
+        width: 165px;
+    }
+
+    .capstone-action-buttons {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .capstone-bottom-buttons {
+        flex-direction: column;
+    }
+
+    .capstone-bottom-buttons button {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 320px !important;
+
+        height: 44px !important;
+        min-height: 44px !important;
+        max-height: 44px !important;
+    }
+
+    .main-container {
+        display: block;
+    }
+
+    .capstone-container {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .capstone-container {
+        padding: 10px;
+    }
+
+    .capstone-header {
+        padding: 12px;
+    }
+
+    .capstone-title-section h2 {
+        font-size: 18px;
+    }
+
+    .capstone-table {
+        min-width: 700px;
+    }
+
+    .capstone-table th,
+    .capstone-table td {
+        padding: 7px 6px;
+        font-size: 12px;
+    }
+
+    .capstone-bottom-buttons button {
+        max-width: 280px !important;
+    }
 }

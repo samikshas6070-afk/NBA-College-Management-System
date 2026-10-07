@@ -1,0 +1,126 @@
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 270px;
+  height: 100vh;
+  background: #0b2b6b;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-box {
+  text-align: center;
+  padding: 25px 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.logo-circle {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: #fff;
+  color: #0b2b6b;
+  font-weight: 700;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.logo-box h2 {
+  margin-top: 15px;
+  font-size: 22px;
+}
+
+.logo-box p {
+  margin-top: 5px;
+  font-size: 13px;
+  color: #d6d6d6;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.sidebar ul {
+  list-style: none;
+  padding: 15px 0;
+}
+
+.sidebar ul li {
+  margin: 4px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: #1d4ed8;
+}
+
+.sidebar ul li.active a {
+  background: #2563eb;
+}
+
+/* =========================
+   CRITERIA TITLE
+========================= */
+
+.sidebar h4 {
+  color: #cbd5e1;
+  font-size: 13px;
+  padding: 15px 20px 5px;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   BOTTOM MENU
+========================= */
+
+.bottom-menu {
+  margin-top: auto;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding: 15px 0;
+}
+
+.bottom-menu a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  transition: 0.3s;
+}
+
+.bottom-menu a:hover {
+  background: #1d4ed8;
+}
+
+/* =========================
+   PAGE CONTENT
+========================= */
+
+.main-content {
+  margin-left: 270px;
+  width: calc(100% - 270px);
+  min-height: 100vh;
+  background: #f4f7fc;
+}
+

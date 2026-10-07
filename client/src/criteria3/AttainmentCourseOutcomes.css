@@ -1,695 +1,1064 @@
 /* =====================================================
+   ATTAINMENT OF COURSE OUTCOMES - COMPLETE CSS
+   3.6 STYLE UI
+   PAGE-SPECIFIC ONLY
+   NO GLOBAL CSS
+===================================================== */
+
+
+/* =====================================================
    GOOGLE FONT
 ===================================================== */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-/* =====================================================
-   ATTAINMENT OF COURSE OUTCOMES PAGE
-   (This CSS applies ONLY to this page)
-===================================================== */
-
-.attainment-page{
-    width:100%;
-    min-height:100vh;
-    background:#f4f7fb;
-    padding:25px;
-    font-family:"Poppins",sans-serif;
-}
-
-.attainment-page *{
-    box-sizing:border-box;
-}
 
 /* =====================================================
-   PAGE CONTAINER
+   MAIN LAYOUT
 ===================================================== */
 
-.attainment-page .course-container{
-    width:100%;
+.main-container {
+    display: flex;
+    min-height: 100vh;
+    background: #f4f7fb;
 }
+
+.main-container .course-container {
+    flex: 1;
+    margin-left: 260px;
+    padding: 25px;
+    width: calc(100% - 260px);
+    overflow-x: auto;
+}
+
+
+/* =====================================================
+   ATTAINMENT PAGE
+===================================================== */
+
+.attainment-page {
+    width: 100%;
+    min-height: 100vh;
+    background: #f4f7fb;
+    padding: 25px;
+    font-family: "Poppins", sans-serif;
+}
+
+.attainment-page * {
+    box-sizing: border-box;
+}
+
 
 /* =====================================================
    HEADER CARD
 ===================================================== */
 
-.attainment-page .page-header{
-    background:#fff !important;
-    border-radius:18px;
-    padding:28px 32px;
-    box-shadow:0 6px 18px rgba(0,0,0,.08);
+.attainment-page .page-header {
+    width: 92%;
+    max-width: 1400px;
+    margin: 0 auto 20px auto;
+
+    background: #ffffff !important;
+
+    border-radius: 14px;
+
+    padding: 17px 21px;
+
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.07);
+
+    box-sizing: border-box;
 }
+
 
 /* =====================================================
    HEADER LEFT
 ===================================================== */
 
-.attainment-page .header-left{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
+.attainment-page .header-left {
+    display: flex;
+    align-items: center;
+    gap: 13px;
 }
+
 
 /* =====================================================
-   NUMBER CIRCLE
+   CRITERIA CIRCLE
 ===================================================== */
 
-.attainment-page .criteria-circle{
+.attainment-page .criteria-circle {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
 
-    width:65px;
+    border-radius: 9px;
 
-    height:65px;
+    background: #4f46e5;
 
-    border-radius:50%;
+    color: #ffffff;
 
-    background:linear-gradient(135deg,#4f46e5,#6d5efc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    color:#fff;
+    font-size: 14px;
+    font-weight: 600;
 
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:22px;
-
-    font-weight:700;
-
-    box-shadow:0 5px 12px rgba(79,70,229,.35);
-
+    box-shadow: none;
 }
+
 
 /* =====================================================
    HEADER CONTENT
 ===================================================== */
 
-.attainment-page .header-content h2{
+.attainment-page .header-content h2 {
+    margin: 0;
 
-    font-size:24px;
+    font-size: 24px;
 
-    color:#1f2937;
+    font-weight: 700;
 
-    font-weight:700;
-
-    margin-bottom:5px;
-
+    color: #111827;
 }
 
-.attainment-page .header-content p{
+.attainment-page .header-content p {
+    margin: 3px 0 0 0;
 
-    font-size:14px;
+    color: #6b7280;
 
-    color:#6b7280;
+    font-size: 13px;
 
+    line-height: 20px;
 }
+
 
 /* =====================================================
-   MAIN CARD
+   MAIN COURSE CARD
 ===================================================== */
 
-.attainment-page .course-card{
+.attainment-page .course-card {
+    width: 92%;
+    max-width: 1400px;
 
-    background:#ffffff;
+    margin: 0 auto;
 
-    border-radius:15px;
+    background: #ffffff;
 
-    padding:20px;
+    border-radius: 14px;
 
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    padding: 12px;
 
-    overflow-x:auto;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.07);
 
+    overflow-x: auto;
+
+    box-sizing: border-box;
 }
+
+
 /* =====================================================
    TABLE
 ===================================================== */
 
-.attainment-page .course-table{
-    width:100%;
-    min-width:1000px;
-    border-collapse:collapse;
-}
-.attainment-page .course-table thead{
-    background:#f8fafc;
-}
+.attainment-page .course-table {
+    width: 100%;
 
-.attainment-page .course-table th{
-    color:#111827;
-    font-size:16px;
-    font-weight:700;
-     height:120px;
-    vertical-align:middle;
-}
+    border-collapse: collapse;
 
-.attainment-page .course-table td{
+    table-layout: fixed;
 
-    padding:18px;
-    border:1px solid #e5e7eb;
-    vertical-align:middle;
-    text-align:center;
-
-}
-.attainment-page .course-table tbody tr{
-    background:#ffffff;
-    transition:0.3s ease;
-}
-
-.attainment-page .course-table tbody tr:nth-child(even){
-    background:#ffffff;
+    background: #ffffff;
 }
 
 
-.attainment-page .course-table tbody tr:hover{
+/* =====================================================
+   TABLE HEADER
+===================================================== */
 
-    background:#f3f7ff;
-
+.attainment-page .course-table thead {
+    background: #ffffff;
 }
+
+.attainment-page .course-table th {
+    background: #ffffff;
+
+    color: #111827;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    padding: 10px 8px;
+
+    height: auto;
+
+    border: 1px solid #d9d9d9;
+
+    text-align: center;
+
+    vertical-align: middle;
+
+    white-space: normal;
+}
+
+
+/* =====================================================
+   TABLE DATA
+===================================================== */
+
+.attainment-page .course-table td {
+    background: #ffffff;
+
+    color: #374151;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.35;
+
+    padding: 10px 8px;
+
+    border: 1px solid #d9d9d9;
+
+    text-align: center;
+
+    vertical-align: middle;
+
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   ROW HOVER
+===================================================== */
+
+.attainment-page .course-table tbody tr {
+    background: #ffffff;
+
+    transition: 0.2s ease;
+}
+
+.attainment-page .course-table tbody tr:hover td {
+    background: #fafafa;
+}
+
 
 /* =====================================================
    COLUMN WIDTH
 ===================================================== */
 
 .attainment-page .course-table th:nth-child(1),
-.attainment-page .course-table td:nth-child(1){
+.attainment-page .course-table td:nth-child(1) {
+    width: 8%;
 
-    width:70px;
-    text-align:center;
+    max-width: 8%;
 
+    text-align: center;
 }
 
 .attainment-page .course-table th:nth-child(2),
-.attainment-page .course-table td:nth-child(2){
+.attainment-page .course-table td:nth-child(2) {
+    width: 25%;
 
-    width:260px;
+    max-width: 25%;
 
+    text-align: center;
 }
 
 .attainment-page .course-table th:nth-child(3),
-.attainment-page .course-table td:nth-child(3){
+.attainment-page .course-table td:nth-child(3) {
+    width: 32%;
 
-    width:420px;
+    max-width: 32%;
 
+    text-align: center;
 }
 
 .attainment-page .course-table th:nth-child(4),
-.attainment-page .course-table td:nth-child(4){
+.attainment-page .course-table td:nth-child(4) {
+    width: 35%;
 
-    width:300px;
+    max-width: 35%;
 
+    text-align: center;
 }
+
 
 /* =====================================================
    DESCRIPTION BOX
 ===================================================== */
 
-.attainment-page .description-box{
+.attainment-page .description-box {
+    width: 100%;
 
-    width:100%;
+    height: 65px;
 
-    min-height:90px;
+    min-height: 65px;
 
-    resize:none;
+    max-height: 65px;
 
-    border:1px solid #d1d5db;
+    resize: none;
 
-    border-radius:8px;
+    border: 1px solid #d1d5db;
 
-    padding:10px 12px;
+    border-radius: 6px;
 
-    font-size:14px;
+    padding: 7px 8px;
 
-    color:#374151;
+    background: #ffffff;
 
-    background:#fff;
+    color: #111827;
 
-    outline:none;
+    font-family: "Poppins", sans-serif;
 
+    font-size: 12px;
+
+    line-height: 17px;
+
+    outline: none;
+
+    text-align: left;
+
+    word-break: break-word;
+
+    overflow: hidden;
 }
 
-.attainment-page .description-box:focus{
+.attainment-page .description-box:focus {
+    border-color: #6366f1;
 
-    border-color:#2563eb;
-
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.08);
 }
+
+
+/* =====================================================
+   ATTACHMENT BOX
+===================================================== */
+
+.attainment-page .attachment-box {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+}
+
 
 /* =====================================================
    FILE INPUT
 ===================================================== */
-.attainment-page input[type="file"]{
-    width:240px;
-    font-size:13px;
-    border:1px solid #cbd5e1;
-    border-radius:6px;
-    background:#f3f4f6;
-    color:#374151;
-    padding:5px;
-    outline:none;
-}
-.attainment-page input[type="file"]::file-selector-button{
-    background:#e5e7eb !important;
-    color:#374151 !important;
-    border:1px solid #cbd5e1 !important;
-    border-radius:6px;
-    padding:8px 14px;
-    cursor:pointer;
-    margin-right:10px;
-    appearance:none;
-    -webkit-appearance:none;
-}
 
-.attainment-page .attachment-box input{
-    margin:0 auto;
-}
+.attainment-page input[type="file"] {
+    width: 175px;
 
-.attainment-page .attachment-buttons button{
-    margin:0;
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    color: #374151;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    outline: none;
+
+    cursor: pointer;
 }
 
-
-.attainment-page input[type="file"]::file-selector-button{
-
-    background:#2563eb;
-    color:#fff;
-    border:none;
-    padding:8px 14px;
-    border-radius:5px;
-    cursor:pointer;
-    margin-right:10px;
-
-}
-
-.attainment-page input[type="file"]:hover{
-
-    border-color:#2563eb;
-
-}
-/* =====================================================
-   ACTION SECTION
-===================================================== */
-
-.attainment-page .attachment-buttons{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    flex-wrap:nowrap;
-}
 
 /* =====================================================
-   COMMON BUTTON STYLE
+   FILE SELECTOR BUTTON
 ===================================================== */
 
-.attainment-page .view-btn,
-.attainment-page .download-btn,
-.attainment-page .print-btn,
-.attainment-page .save-btn,
-.attainment-page .delete-btn,
-.attainment-page .submit-btn,
-.attainment-page .back-btn,
-.attainment-page .next-btn{
+.attainment-page input[type="file"]::file-selector-button {
+    background: #e5e7eb !important;
 
-    border:none;
-    outline:none;
+    color: #374151 !important;
 
-    cursor:pointer;
+    border: 1px solid #cbd5e1 !important;
 
-    border-radius:8px;
+    border-radius: 6px;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
+    padding: 6px 10px;
 
-    font-size:14px;
-    font-weight:500;
+    cursor: pointer;
 
-    transition:.3s;
+    margin-right: 6px;
 
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
 }
+
+.attainment-page input[type="file"]::file-selector-button:hover {
+    background: #dbeafe !important;
+
+    border-color: #93c5fd !important;
+}
+
 
 /* =====================================================
-   VIEW
+   ATTACHMENT BUTTONS
 ===================================================== */
-.attainment-page .view-btn{
 
-    width:90px;
-    height:34px;
+.attainment-page .attachment-buttons {
+    display: flex;
 
-    background:#dff3ff;
-    color:#0077cc;
+    justify-content: center;
 
+    align-items: center;
+
+    gap: 6px;
+
+    flex-wrap: nowrap;
 }
 
-.attainment-page .view-btn:hover{
-
-    background:#1d4ed8;
-
-}
 
 /* =====================================================
-   DOWNLOAD
+   VIEW BUTTON
 ===================================================== */
-.attainment-page .download-btn{
 
-    width:110px;
-    height:34px;
+.attainment-page .view-btn {
+    width: 68px;
 
-    background:#16a34a;
-    color:#fff;
+    height: 29px;
 
+    padding: 0;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
 }
 
-.attainment-page .download-btn:hover{
+.attainment-page .view-btn:hover {
+    background: #1d4ed8;
 
-    background:#15803d;
-
+    transform: translateY(-1px);
 }
+
 
 /* =====================================================
-   PRINT
+   DOWNLOAD BUTTON
 ===================================================== */
 
-.attainment-page .print-btn{
+.attainment-page .download-btn {
+    width: 82px;
 
-    background:#f59e0b;
-    color:#fff;
+    height: 29px;
 
-    width:90px;
-    height:38px;
+    padding: 0;
 
+    border: none;
+
+    border-radius: 5px;
+
+    background: #16a34a;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
 }
 
-.attainment-page .print-btn:hover{
+.attainment-page .download-btn:hover {
+    background: #15803d;
 
-    background:#d97706;
-
+    transform: translateY(-1px);
 }
+
 
 /* =====================================================
    BUTTON ICON
 ===================================================== */
 
-.attainment-page button svg{
+.attainment-page button svg {
+    font-size: 12px;
 
-    font-size:15px;
+    flex-shrink: 0;
 
+    display: inline-block;
 }
+
 
 /* =====================================================
-   BOTTOM BUTTON SECTION
+   PRINT BUTTON
 ===================================================== */
-.attainment-page .bottom-buttons{
 
-    margin-top:35px;
+.attainment-page .print-btn {
+    width: 90px;
 
-    display:flex;
+    height: 34px;
 
-    justify-content:space-between;
+    padding: 0;
 
-    align-items:center;
+    background: #7c3aed;
 
-    flex-wrap:nowrap;
+    color: #ffffff;
 
+    border: none;
+
+    border-radius: 7px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
 }
-.attainment-page .right-buttons{
 
-    display:flex;
-    align-items:center;
-    gap:12px;
-    flex-wrap:nowrap;
+.attainment-page .print-btn:hover {
+    background: #6d28d9;
 
+    transform: translateY(-1px);
 }
+
+
 /* =====================================================
-   PREVIOUS
+   COMMON BOTTOM BUTTON
 ===================================================== */
 
-.attainment-page .back-btn{
+.attainment-page .bottom-buttons {
+    width: 92%;
+    max-width: 1400px;
 
-    background:#64748b;
-    color:#fff;
+    margin: 20px auto 0 auto;
 
-    padding:11px 22px;
+    padding: 0;
 
+    background: transparent;
+
+    border: none;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
 }
 
-.attainment-page .back-btn:hover{
 
-    background:#475569;
+/* =====================================================
+   RIGHT BUTTONS
+===================================================== */
 
+.attainment-page .right-buttons {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    flex-wrap: nowrap;
 }
+
+
+/* =====================================================
+   COMMON BOTTOM BUTTON STYLE
+===================================================== */
+
+.attainment-page .bottom-buttons button {
+    width: 90px;
+
+    min-width: 90px;
+
+    max-width: 90px;
+
+    height: 34px;
+
+    min-height: 34px;
+
+    padding: 0 8px;
+
+    flex: 0 0 90px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+
+    transition: 0.2s ease;
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =====================================================
+   BACK
+===================================================== */
+
+.attainment-page .bottom-buttons .back-btn {
+    background: #64748b;
+
+    color: #ffffff !important;
+
+    border: none !important;
+}
+
+.attainment-page .bottom-buttons .back-btn:hover {
+    background: #475569;
+
+    transform: translateY(-1px);
+}
+
 
 /* =====================================================
    SAVE
 ===================================================== */
 
-.attainment-page .save-btn{
+.attainment-page .bottom-buttons .save-btn {
+    background: #f59e0b;
 
-    background:#2563eb;
-    color:#fff;
+    color: #ffffff;
 
-    padding:11px 22px;
-
+    border: none;
 }
 
-.attainment-page .save-btn:hover{
+.attainment-page .bottom-buttons .save-btn:hover {
+    background: #d97706;
 
-    background:#1d4ed8;
-
+    transform: translateY(-1px);
 }
+
 
 /* =====================================================
    DELETE
 ===================================================== */
 
-.attainment-page .delete-btn{
+.attainment-page .bottom-buttons .delete-btn {
+    background: #ef4444;
 
-    background:#ef4444;
-    color:#fff;
+    color: #ffffff;
 
-    padding:11px 22px;
-
+    border: none;
 }
 
-.attainment-page .delete-btn:hover{
+.attainment-page .bottom-buttons .delete-btn:hover {
+    background: #dc2626;
 
-    background:#dc2626;
-
+    transform: translateY(-1px);
 }
+
 
 /* =====================================================
    SUBMIT
 ===================================================== */
 
-.attainment-page .submit-btn{
+.attainment-page .bottom-buttons .submit-btn {
+    background: #16a34a;
 
-    background:#16a34a;
-    color:#fff;
+    color: #ffffff;
 
-    padding:11px 22px;
-
+    border: none;
 }
 
-.attainment-page .submit-btn:hover{
+.attainment-page .bottom-buttons .submit-btn:hover {
+    background: #15803d;
 
-    background:#15803d;
-
+    transform: translateY(-1px);
 }
+
 
 /* =====================================================
    NEXT
 ===================================================== */
 
-.attainment-page .next-btn{
+.attainment-page .bottom-buttons .next-btn {
+    background: #16a34a !important;
 
-    background:#7c3aed;
-    color:#fff;
+    color: #ffffff !important;
 
-    padding:11px 22px;
-
+    border: none !important;
 }
 
-.attainment-page .next-btn:hover{
+.attainment-page .bottom-buttons .next-btn:hover {
+    background: #15803d !important;
 
-    background:#6d28d9;
-
+    transform: translateY(-1px);
 }
+
+
+/* =====================================================
+   BUTTON ICONS
+===================================================== */
+
+.attainment-page .bottom-buttons button svg {
+    font-size: 12px;
+
+    flex-shrink: 0;
+
+    display: inline-block;
+
+    visibility: visible;
+}
+
+
 /* =====================================================
    TABLE SCROLLBAR
 ===================================================== */
 
-.attainment-page .course-card::-webkit-scrollbar{
-    height:8px;
+.attainment-page .course-card::-webkit-scrollbar {
+    height: 6px;
 }
 
-.attainment-page .course-card::-webkit-scrollbar-track{
-    background:#e5e7eb;
-    border-radius:10px;
+.attainment-page .course-card::-webkit-scrollbar-track {
+    background: #f1f5f9;
+
+    border-radius: 20px;
 }
 
-.attainment-page .course-card::-webkit-scrollbar-thumb{
-    background:#2563eb;
-    border-radius:10px;
+.attainment-page .course-card::-webkit-scrollbar-thumb {
+    background: #c7d2fe;
+
+    border-radius: 20px;
 }
 
-.attainment-page .course-card::-webkit-scrollbar-thumb:hover{
-    background:#1d4ed8;
+.attainment-page .course-card::-webkit-scrollbar-thumb:hover {
+    background: #a5b4fc;
 }
+
 
 /* =====================================================
-   ROW HOVER
+   BOTTOM SCROLLBAR
 ===================================================== */
 
-.attainment-page .course-table tbody tr{
-    transition:0.3s ease;
+.attainment-page .bottom-buttons::-webkit-scrollbar {
+    height: 5px;
 }
 
-.attainment-page .course-table tbody tr:hover{
-    background:#eef5ff;
+.attainment-page .bottom-buttons::-webkit-scrollbar-track {
+    background: transparent;
 }
+
+.attainment-page .bottom-buttons::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+
+    border-radius: 20px;
+}
+
 
 /* =====================================================
-   TABLE ALIGNMENT
+   PRINT
 ===================================================== */
 
-.attainment-page .course-table td{
-    vertical-align:middle;
+@media print {
+
+    .attainment-page {
+        width: 100%;
+
+        margin: 0;
+
+        padding: 0;
+
+        background: #ffffff;
+    }
+
+    .main-container .course-container {
+        margin-left: 0;
+
+        padding: 0;
+
+        width: 100%;
+    }
+
+    .attainment-page .bottom-buttons,
+    .attainment-page .attachment-box,
+    .attainment-page .attachment-buttons,
+    .attainment-page input[type="file"] {
+        display: none !important;
+    }
+
+    .attainment-page .page-header,
+    .attainment-page .course-card {
+        width: 100%;
+
+        max-width: 100%;
+
+        box-shadow: none;
+
+        border: 1px solid #d1d5db;
+    }
+
+    .attainment-page .course-table {
+        width: 100%;
+    }
+
+    .attainment-page .course-table th {
+        background: #ffffff !important;
+
+        color: #000000 !important;
+
+        border: 1px solid #000000;
+    }
+
+    .attainment-page .course-table td {
+        border: 1px solid #000000;
+    }
 }
 
-.attainment-page .course-table td:nth-child(2){
-    font-weight:600;
-    color:#1f2937;
-}
-
-.attainment-page .course-table td:nth-child(3){
-    color:#4b5563;
-}
 
 /* =====================================================
-   RESPONSIVE
+   RESPONSIVE - 1000px
 ===================================================== */
 
-@media (max-width:992px){
+@media (max-width: 1000px) {
 
-    .attainment-page{
-        padding:18px;
+    .main-container .course-container {
+        margin-left: 250px;
+
+        padding: 20px;
     }
 
-    .attainment-page .page-header{
-        padding:20px;
+    .attainment-page {
+        padding: 20px;
     }
 
-    .attainment-page .criteria-circle{
-        width:58px;
-        height:58px;
-        font-size:20px;
+    .attainment-page .page-header,
+    .attainment-page .course-card,
+    .attainment-page .bottom-buttons {
+        width: 95%;
     }
-
-    .attainment-page .header-content h2{
-        font-size:22px;
-    }
-
-    .attainment-page .header-content p{
-        font-size:13px;
-    }
-
-}
-
-@media (max-width:768px){
-
-    .attainment-page .page-header{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:18px;
-    }
-
-    .attainment-page .header-left{
-        width:100%;
-    }
-
-    .attainment-page .bottom-buttons{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    .attainment-page .right-buttons{
-        width:100%;
-        justify-content:center;
-    }
-
-    .attainment-page .view-btn,
-    .attainment-page .download-btn,
-    .attainment-page .print-btn,
-    .attainment-page .save-btn,
-    .attainment-page .delete-btn,
-    .attainment-page .submit-btn,
-    .attainment-page .back-btn,
-    .attainment-page .next-btn{
-        width:100%;
-    }
-
-}
-
-@media (max-width:576px){
-
-    .attainment-page{
-        padding:12px;
-    }
-
-    .attainment-page .page-header{
-        padding:15px;
-    }
-
-    .attainment-page .criteria-circle{
-        width:48px;
-        height:48px;
-        font-size:18px;
-    }
-
-    .attainment-page .header-content h2{
-        font-size:18px;
-    }
-
-    .attainment-page .header-content p{
-        font-size:12px;
-    }
-
-    .attainment-page .course-table th,
-    .attainment-page .course-table td{
-        padding:10px;
-        font-size:13px;
-    }
-
-    .attainment-page .description-box{
-        min-height:70px;
-        font-size:13px;
-    }
-
 }
 
 
-/* ===========================
-   ATTACHMENT SECTION
-=========================== */
+/* =====================================================
+   RESPONSIVE - 768px
+===================================================== */
 
-.attainment-page .attachment-box{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
+@media (max-width: 768px) {
+
+    .main-container .course-container {
+        margin-left: 0;
+
+        width: 100%;
+
+        padding: 15px;
+    }
+
+    .attainment-page {
+        width: 100%;
+
+        padding: 15px;
+    }
+
+    .attainment-page .page-header {
+        width: 100%;
+
+        padding: 14px;
+    }
+
+    .attainment-page .header-left {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 10px;
+    }
+
+    .attainment-page .header-content h2 {
+        font-size: 20px;
+    }
+
+    .attainment-page .header-content p {
+        font-size: 12px;
+    }
+
+    .attainment-page .course-card {
+        width: 100%;
+
+        padding: 8px;
+    }
+
+    .attainment-page .course-table {
+        min-width: 760px;
+    }
+
+    .attainment-page .bottom-buttons {
+        width: 100%;
+
+        justify-content: flex-start;
+
+        gap: 8px;
+
+        overflow-x: auto;
+    }
+
+    .attainment-page .right-buttons {
+        gap: 8px;
+
+        flex-wrap: nowrap;
+    }
+
+    .attainment-page .bottom-buttons button {
+        width: 90px;
+
+        min-width: 90px;
+
+        max-width: 90px;
+
+        height: 34px;
+    }
 }
 
-.attainment-page .attachment-buttons{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
+
+/* =====================================================
+   RESPONSIVE - 480px
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .main-container .course-container {
+        padding: 10px;
+    }
+
+    .attainment-page {
+        padding: 10px;
+    }
+
+    .attainment-page .page-header {
+        padding: 12px;
+    }
+
+    .attainment-page .criteria-circle {
+        width: 42px;
+
+        height: 42px;
+
+        min-width: 42px;
+
+        font-size: 14px;
+    }
+
+    .attainment-page .header-content h2 {
+        font-size: 18px;
+    }
+
+    .attainment-page .header-content p {
+        font-size: 11px;
+    }
+
+    .attainment-page .course-card {
+        padding: 6px;
+    }
+
+    .attainment-page .course-table {
+        min-width: 720px;
+    }
+
+    .attainment-page .bottom-buttons {
+        justify-content: flex-start;
+    }
+
+    .attainment-page .bottom-buttons button {
+        width: 90px;
+
+        min-width: 90px;
+
+        max-width: 90px;
+    }
 }
+
 
 /* =====================================================
    END

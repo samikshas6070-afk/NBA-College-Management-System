@@ -1,539 +1,1020 @@
 /* =====================================================
-   GOOGLE FONT
+3.3 - LAB / DOCUMENT PAGE
+FULL CSS
+NO GLOBAL CSS
+SUBMIT REMOVED
+CLEAR ADDED
+===================================================== */
+
+/* =====================================================
+GOOGLE FONT
 ===================================================== */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
+
 /* =====================================================
-   WRAPPER
+MAIN LAYOUT
 ===================================================== */
 
-* {
+.main-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+
+/* =====================================================
+CONTENT AREA
+===================================================== */
+
+.content-container {
+  flex: 1;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  padding: 25px;
+  overflow-x: auto;
+  transition: 0.3s ease;
+}
+
+
+/* =====================================================
+PAGE WRAPPER
+===================================================== */
+
+.lab-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f7fb;
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =====================================================
+HEADER CARD
+===================================================== */
+
+.lab-wrapper .lab-header-card {
+  width: 92%;
+  margin: 0 auto 20px auto;
+
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  padding: 17px 21px;
+
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =====================================================
+HEADER TITLE
+===================================================== */
+
+.lab-wrapper .lab-title {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+
+/* =====================================================
+NUMBER BADGE
+===================================================== */
+
+.lab-wrapper .lab-number {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+
+  background: #4f46e5;
+
+  color: #ffffff;
+
+  border-radius: 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+TITLE TEXT
+===================================================== */
+
+.lab-wrapper .lab-title-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.lab-wrapper .lab-title-text h2 {
   margin: 0;
-  padding: 0;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.lab-wrapper .lab-title-text p {
+  margin: 3px 0 0 0;
+
+  font-size: 13px;
+
+  color: #6b7280;
+
+  line-height: 20px;
+}
+
+
+/* =====================================================
+MAIN CARD
+===================================================== */
+
+.lab-wrapper .lab-card {
+  width: 92%;
+
+  margin: 0 auto;
+
+  background: #ffffff;
+
+  border-radius: 14px;
+
+  padding: 12px;
+
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =====================================================
+TABLE WRAPPER
+===================================================== */
+
+.lab-wrapper .lab-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+
+/* =====================================================
+TABLE
+===================================================== */
+
+.lab-wrapper .lab-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  background: #ffffff;
+}
+
+
+/* =====================================================
+TABLE HEADER
+===================================================== */
+
+.lab-wrapper .lab-table thead tr {
+  background: #ffffff;
+}
+
+.lab-wrapper .lab-table th {
+  border: 1px solid #d9d9d9;
+
+  padding: 10px 8px;
+
+  text-align: center;
+
+  vertical-align: middle;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  line-height: 1.3;
+}
+
+
+/* =====================================================
+TABLE DATA
+===================================================== */
+
+.lab-wrapper .lab-table td {
+  border: 1px solid #d9d9d9;
+
+  padding: 10px 8px;
+
+  text-align: center;
+
+  vertical-align: middle;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.35;
+}
+
+
+/* =====================================================
+TABLE HOVER
+===================================================== */
+
+.lab-wrapper .lab-table tbody tr:hover td {
+  background: #fafafa;
+}
+
+
+/* =====================================================
+COLUMN WIDTH
+COMPACT TABLE
+===================================================== */
+
+.lab-wrapper .lab-table th:nth-child(1),
+.lab-wrapper .lab-table td:nth-child(1) {
+  width: 50px;
+  max-width: 50px;
+}
+
+.lab-wrapper .lab-table th:nth-child(2),
+.lab-wrapper .lab-table td:nth-child(2) {
+  width: 190px;
+  max-width: 190px;
+
+  font-weight: 600;
+}
+
+.lab-wrapper .lab-table th:nth-child(3),
+.lab-wrapper .lab-table td:nth-child(3) {
+  width: 250px;
+  max-width: 250px;
+}
+
+.lab-wrapper .lab-table th:nth-child(4),
+.lab-wrapper .lab-table td:nth-child(4) {
+  width: 180px;
+  max-width: 180px;
+}
+
+
+/* =====================================================
+SERIAL NUMBER
+===================================================== */
+
+.lab-wrapper .lab-sr {
+  color: #2563eb;
+
+  font-weight: 600;
+}
+
+
+/* =====================================================
+DESCRIPTION BOX
+===================================================== */
+
+.lab-wrapper .description-box {
+  width: 100%;
+
+  height: 65px;
+
+  min-height: 65px;
+  max-height: 65px;
+
+  padding: 7px 8px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 17px;
+
+  resize: none;
+
+  overflow: hidden;
+
+  outline: none;
+
   box-sizing: border-box;
 }
 
-.lab-wrapper{
-    padding:30px;
-    background:#f5f7fb;
-    min-height:100vh;
-}
-/* =====================================================
-   CARD
-===================================================== */
-.lab-card{
-    background:#fff;
-    border-radius:16px;
-    padding:20px;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
-}
-/* =====================================================
-   HEADER
-===================================================== */
-.lab-header-card{
-    background:#ffffff;
-    border-radius:18px;
-    padding:24px 28px;
-    margin-bottom:25px;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
+.lab-wrapper .description-box:focus {
+  border-color: #6366f1;
+
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.08);
 }
 
-.lab-title{
-    display:flex;
-    align-items:center;
-    gap:18px;
-}
-
-.lab-number{
-    width:52px;
-    height:52px;
-    border-radius:12px;
-    background:#4f46e5;
-    color:#fff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:18px;
-    font-weight:600;
-}
-
-.lab-title-text h2{
-    margin:0;
-    font-size:30px;
-    color:#111827;
-}
-
-.lab-title-text p{
-    margin-top:6px;
-    color:#6b7280;
-    font-size:15px;
-}
 
 /* =====================================================
-   TABLE
+FILE INPUT
 ===================================================== */
 
-.lab-table{
-    width:100%;
-    border-collapse:collapse;
+.lab-wrapper .file-input {
+  display: block;
+
+  width: 175px;
+
+  max-width: 100%;
+
+  margin: 0 auto 7px auto;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  cursor: pointer;
 }
 
-.lab-table th,
-.lab-table td{
-    border:1px solid #d9d9d9;
-    padding:16px;
-    text-align:center;
-    vertical-align:middle;
+.lab-wrapper .lab-table td input[type="file"] {
+  width: 175px;
+
+  max-width: 100%;
+
+  margin: 0 auto;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  cursor: pointer;
 }
 
-.lab-table thead{
-    background:#ffffff;
-}
 
-.lab-table th{
-    background:#ffffff;
-    color:#111827;
-    border:1px solid #dcdcdc;
-    text-align:center;
-    font-size:15px;
-    font-weight:600;
-}
-.lab-table td{
-    border:1px solid #dcdcdc;
-    padding:18px;
-    text-align:center;
-    vertical-align:middle;
-}
+/* =====================================================
+FILE NAME
+===================================================== */
 
-.lab-sr {
+.lab-wrapper .file-name {
+  display: block;
+
+  width: 175px;
+
+  max-width: 100%;
+
+  margin: 5px auto;
+
+  color: #374151;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
   text-align: center;
-  font-size: 15px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+ATTACHMENT CELL
+===================================================== */
+
+.lab-wrapper .attachment-cell {
+  text-align: center;
+
+  vertical-align: middle;
+}
+
+
+/* =====================================================
+ACTION BUTTONS
+===================================================== */
+
+.lab-wrapper .lab-actions {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 6px;
+
+  flex-wrap: nowrap;
+}
+
+.lab-wrapper .lab-actions button {
+  border: none;
+
+  border-radius: 5px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  cursor: pointer;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
   font-weight: 500;
-  color: #1f6fff;
+
+  transition: 0.2s ease;
 }
 
-.lab-description {
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.lab-actions {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  align-items: center;
-}
-/* =====================================================
-   ACTION BUTTONS
-===================================================== */
-
-.lab-actions button {
-  border: none;
-  border-radius: 8px;
-  padding: 10px 18px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight:500;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.view-btn {
-  background: #0d6efd;
-}
-
-.view-btn:hover {
-  background: #0b5ed7;
-}
-
-.upload-btn {
-  background: #198754;
-}
-
-.upload-btn:hover {
-  background: #157347;
-}
-
-.download-btn {
-  background: #fd7e14;
-}
-
-.download-btn:hover {
-  background: #e46c0a;
-}
 
 /* =====================================================
-   BOTTOM BUTTONS
+VIEW BUTTON
 ===================================================== */
 
-.lab-bottom-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  padding: 25px 30px 35px;
-  border-top: 1px solid #ececec;
+.lab-wrapper .view-btn {
+  width: 68px;
+
+  height: 29px;
+
+  background: #2563eb;
+
+  color: #ffffff;
 }
 
-.lab-bottom-buttons button {
+.lab-wrapper .view-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+DOWNLOAD BUTTON
+===================================================== */
+
+.lab-wrapper .download-btn {
+  width: 82px;
+
+  height: 29px;
+
+  background: #16a34a;
+
+  color: #ffffff;
+}
+
+.lab-wrapper .download-btn:hover {
+  background: #15803d;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+BOTTOM BUTTON PANEL
+NO WHITE CONTAINER
+===================================================== */
+
+.lab-wrapper .lab-bottom-buttons {
+  width: 92%;
+
+  margin: 20px auto 0 auto;
+
+  background: transparent;
+
   border: none;
-  border-radius: 8px;
-  padding: 11px 22px;
+
+  border-radius: 0;
+
+  padding: 0;
+
   display: flex;
+
+  justify-content: center;
+
   align-items: center;
+
   gap: 8px;
+
+  flex-wrap: nowrap;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+}
+
+
+/* =====================================================
+COMMON BOTTOM BUTTON
+===================================================== */
+
+.lab-wrapper .lab-bottom-buttons button {
+  width: 90px;
+
+  min-width: 90px;
+
+  max-width: 90px;
+
+  height: 34px;
+
+  min-height: 34px;
+
+  padding: 0 8px;
+
+  flex: 0 0 90px;
+
+  border: none;
+
+  border-radius: 7px;
+
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+
+  font-size: 12px;
+
   font-weight: 600;
-  color: #fff;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
   cursor: pointer;
-  transition: all 0.3s ease;
+
+  white-space: nowrap;
+
+  box-sizing: border-box;
+
+  transition: 0.2s ease;
 }
 
-.previous-btn {
-  background: #6c757d;
-}
-
-.previous-btn:hover {
-  background: #5c636a;
-}
-
-.back-btn {
-  background: #17a2b8;
-}
-
-.back-btn:hover {
-  background: #138496;
-}
-
-.save-btn {
-  background: #198754;
-}
-
-.save-btn:hover {
-  background: #157347;
-}
-.delete-btn{
-    min-width:120px;
-}
-.delete-btn:hover {
-  background: #bb2d3b;
-}
-
-.submit-btn {
-  background: #fd7e14;
-}
-
-.submit-btn:hover {
-  background: #e46c0a;
-}
-
-.print-btn {
-  background: #6f42c1;
-}
-
-.print-btn:hover {
-  background: #5a32a3;
-}
-
-.next-btn {
-  background: #0d6efd;
-}
-
-.next-btn:hover {
-  background: #0b5ed7;
-}
 
 /* =====================================================
-   RESPONSIVE
+BUTTON ICON
 ===================================================== */
 
-@media (max-width: 992px) {
+.lab-wrapper .lab-bottom-buttons button svg {
+  font-size: 12px;
 
-  .lab-title h2 {
-    font-size: 28px;
-  }
-
-  .lab-number {
-    width: 58px;
-    height: 58px;
-    font-size: 24px;
-  }
-
-  .lab-table th,
-  .lab-table td {
-    font-size: 16px;
-    padding: 16px;
-  }
-
-  .lab-actions {
-    flex-wrap: wrap;
-  }
-
+  flex-shrink: 0;
 }
+
+
+/* =====================================================
+PREVIOUS
+3.2 STYLE
+===================================================== */
+
+.lab-wrapper .lab-bottom-buttons .previous-btn {
+  background: #cbd5e1;
+
+  color: #ffffff;
+}
+
+.lab-wrapper .lab-bottom-buttons .previous-btn:hover {
+  background: #b8c4d4;
+}
+
+
+/* =====================================================
+BACK
+===================================================== */
+
+.lab-wrapper .lab-bottom-buttons .back-btn {
+  background: #64748b;
+
+  color: #ffffff !important;
+
+  border: none !important;
+}
+
+.lab-wrapper .lab-bottom-buttons .back-btn:hover {
+  background: #475569;
+}
+
+
+/* =====================================================
+SAVE
+===================================================== */
+
+.lab-wrapper .lab-bottom-buttons .save-btn {
+  background: #f59e0b;
+
+  color: #ffffff;
+}
+
+.lab-wrapper .lab-bottom-buttons .save-btn:hover {
+  background: #d97706;
+}
+
+
+/* =====================================================
+DELETE
+===================================================== */
+
+.lab-wrapper .lab-bottom-buttons .delete-btn {
+  background: #ef4444;
+
+  color: #ffffff;
+}
+
+.lab-wrapper .lab-bottom-buttons .delete-btn:hover {
+  background: #dc2626;
+}
+
+
+/* =====================================================
+PRINT
+===================================================== */
+
+.lab-wrapper .lab-bottom-buttons .print-btn {
+  background: #7c3aed;
+
+  color: #ffffff;
+}
+
+.lab-wrapper .lab-bottom-buttons .print-btn:hover {
+  background: #6d28d9;
+}
+
+
+/* =====================================================
+CLEAR
+===================================================== */
+
+.lab-wrapper .lab-bottom-buttons .clear-btn {
+  width: 90px !important;
+
+  min-width: 90px !important;
+
+  max-width: 90px !important;
+
+  height: 34px !important;
+
+  min-height: 34px !important;
+
+  background: #f59e0b !important;
+
+  color: #ffffff !important;
+
+  border: none !important;
+
+  border-radius: 7px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  gap: 5px;
+
+  font-family: "Poppins", sans-serif !important;
+
+  font-size: 12px !important;
+
+  font-weight: 600 !important;
+
+  cursor: pointer !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+
+  white-space: nowrap;
+
+  transition: 0.2s ease;
+}
+
+.lab-wrapper .lab-bottom-buttons .clear-btn:hover {
+  background: #d97706 !important;
+
+  transform: translateY(-1px);
+}
+
+.lab-wrapper .lab-bottom-buttons .clear-btn svg {
+  color: #ffffff !important;
+
+  fill: #ffffff !important;
+
+  font-size: 12px !important;
+
+  display: inline-block !important;
+
+  visibility: visible !important;
+}
+
+
+/* =====================================================
+NEXT
+3.2 STYLE
+===================================================== */
+
+.lab-wrapper .lab-bottom-buttons .next-btn {
+  width: 90px !important;
+
+  min-width: 90px !important;
+
+  max-width: 90px !important;
+
+  height: 34px !important;
+
+  min-height: 34px !important;
+
+  background: #16a34a !important;
+
+  color: #ffffff !important;
+
+  border: none !important;
+
+  border-radius: 7px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  gap: 5px;
+
+  font-family: "Poppins", sans-serif !important;
+
+  font-size: 12px !important;
+
+  font-weight: 600 !important;
+
+  text-align: center !important;
+
+  line-height: normal !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+
+  cursor: pointer !important;
+
+  white-space: nowrap;
+
+  overflow: visible !important;
+
+  box-sizing: border-box;
+}
+
+.lab-wrapper .lab-bottom-buttons .next-btn:hover {
+  background: #15803d !important;
+
+  transform: translateY(-1px);
+}
+
+.lab-wrapper .lab-bottom-buttons .next-btn svg {
+  color: #ffffff !important;
+
+  fill: #ffffff !important;
+
+  font-size: 12px !important;
+
+  display: inline-block !important;
+
+  visibility: visible !important;
+}
+
+
+/* =====================================================
+BUTTON HOVER
+===================================================== */
+
+.lab-wrapper .lab-bottom-buttons button:hover {
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+TABLE SCROLLBAR
+===================================================== */
+
+.lab-wrapper .lab-table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.lab-wrapper .lab-table-wrapper::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.lab-wrapper .lab-table-wrapper::-webkit-scrollbar-thumb {
+  background: #c7d2fe;
+
+  border-radius: 20px;
+}
+
+
+/* =====================================================
+BOTTOM BUTTON SCROLLBAR
+===================================================== */
+
+.lab-wrapper .lab-bottom-buttons::-webkit-scrollbar {
+  height: 5px;
+}
+
+.lab-wrapper .lab-bottom-buttons::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.lab-wrapper .lab-bottom-buttons::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 20px;
+}
+
+
+/* =====================================================
+PRINT
+===================================================== */
+
+@media print {
+
+  .lab-wrapper {
+    background: #ffffff;
+  }
+
+  .lab-wrapper .lab-bottom-buttons,
+  .lab-wrapper .file-input,
+  .lab-wrapper .lab-actions {
+    display: none !important;
+  }
+
+  .lab-wrapper .lab-card,
+  .lab-wrapper .lab-header-card {
+    box-shadow: none;
+
+    border: 1px solid #d1d5db;
+  }
+
+  .lab-wrapper .lab-table {
+    width: 100%;
+  }
+
+  .lab-wrapper .lab-table th {
+    background: #ffffff !important;
+
+    color: #000000 !important;
+
+    border: 1px solid #000000;
+  }
+
+  .lab-wrapper .lab-table td {
+    border: 1px solid #000000;
+  }
+}
+
+
+/* =====================================================
+RESPONSIVE - 1000px
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .lab-wrapper .lab-header-card,
+  .lab-wrapper .lab-card,
+  .lab-wrapper .lab-bottom-buttons {
+    width: 95%;
+  }
+}
+
+
+/* =====================================================
+RESPONSIVE - 768px
+===================================================== */
 
 @media (max-width: 768px) {
 
-  .lab-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
+  .content-container {
+    margin-left: 0;
+
+    width: 100%;
+
+    padding: 15px;
   }
 
-  .lab-title {
-    flex-direction: column;
-    align-items: flex-start;
+  .lab-wrapper {
+    padding: 0;
   }
 
-  .lab-table-wrapper {
+  .lab-wrapper .lab-header-card {
+    width: 100%;
+
+    padding: 14px;
+  }
+
+  .lab-wrapper .lab-title {
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 10px;
+  }
+
+  .lab-wrapper .lab-title-text h2 {
+    font-size: 20px;
+  }
+
+  .lab-wrapper .lab-title-text p {
+    font-size: 12px;
+  }
+
+  .lab-wrapper .lab-card {
+    width: 100%;
+
+    padding: 8px;
+  }
+
+  .lab-wrapper .lab-table {
+    min-width: 760px;
+  }
+
+  .lab-wrapper .lab-bottom-buttons {
+    width: 100%;
+
+    justify-content: flex-start;
+
+    gap: 8px;
+
     overflow-x: auto;
   }
 
-  .lab-table {
-    min-width: 750px;
+  .lab-wrapper .lab-bottom-buttons button {
+    width: 90px;
+
+    min-width: 90px;
+
+    height: 34px;
+  }
+}
+
+
+/* =====================================================
+RESPONSIVE - 480px
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .content-container {
+    padding: 10px;
   }
 
-  .lab-bottom-buttons {
-    justify-content: center;
+  .lab-wrapper .lab-header-card {
+    padding: 12px;
   }
 
-}
-/* =====================================================
-   TABLE
-===================================================== */
+  .lab-wrapper .lab-title-text h2 {
+    font-size: 18px;
+  }
 
-.lab-table-wrapper{
-    width:100%;
-    overflow-x:auto;
-}
+  .lab-wrapper .lab-title-text p {
+    font-size: 11px;
+  }
 
-.lab-table{
-    width:100%;
-    border-collapse:collapse;
-    background:#fff;
-}
+  .lab-wrapper .lab-card {
+    padding: 6px;
+  }
 
-.lab-table thead tr{
-    background:#ffffff;
-}
+  .lab-wrapper .lab-table {
+    min-width: 720px;
+  }
 
-.lab-table th{
-    border:1px solid #dcdcdc;
-    padding:14px;
-    text-align:center;
-    font-size:15px;
-    font-weight:600;
-    color:#111827;
-    background:#ffffff;
-}
+  .lab-wrapper .lab-bottom-buttons {
+    justify-content: flex-start;
+  }
 
-.lab-table td{
-    border:1px solid #dcdcdc;
-    padding:16px;
-    text-align:center;
-    vertical-align:middle;
-    font-size:14px;
-    color:#374151;
-}
+  .lab-wrapper .lab-bottom-buttons button {
+    width: 90px;
 
-.lab-table tbody tr:hover{
-    background:#f8fafc;
-}
-
-/* Sr.No */
-
-.lab-sr{
-    width:70px;
-    font-weight:600;
-    text-align:center;
-}
-
-/* Document Name */
-
-.lab-table td:nth-child(2){
-    font-weight:500;
-}
-
-/* Description */
-
-.description-box{
-    width:100%;
-    min-height:70px;
-    padding:10px 12px;
-    border:1px solid #d1d5db;
-    border-radius:8px;
-    background:#ffffff;
-    font-size:14px;
-    font-family:"Poppins",sans-serif;
-    color:#374151;
-
-    resize:none;
-    overflow:hidden;     /* Scrollbar काढण्यासाठी */
-    outline:none;
-}
-
-/* Attachment */
-
-.file-input{
-    display:block;
-    width:220px;
-    margin:0 auto 10px;
-}
-
-/* Action Buttons */
-
-.lab-actions{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    margin-top:8px;
-}
-
-.lab-actions button{
-    border:none;
-    border-radius:6px;
-    padding:8px 14px;
-    display:flex;
-    align-items:center;
-    gap:6px;
-    font-size:13px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.view-btn{
-    background:#dbeafe;
-    color:#2563eb;
-}
-
-.view-btn:hover{
-    background:#bfdbfe;
-}
-
-.download-btn{
-    background:#16a34a;
-    color:#fff;
-}
-
-.download-btn:hover{
-    background:#15803d;
-}
-/* =====================================================
-   BOTTOM BUTTONS
-===================================================== */
-
-.lab-bottom-buttons{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-top:25px;
-}
-
-.lab-bottom-buttons button{
-    min-width:110px;
-    height:42px;
-    border:none;
-    border-radius:8px;
-    font-size:14px;
-    font-weight:500;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:6px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.lab-bottom-buttons button:hover{
-    transform:translateY(-2px);
-}
-
-/* Previous */
-
-.previous-btn{
-    background:linear-gradient(135deg,#ff7b00,#ff5e00);
-}
-
-/* Back */
-
-.back-btn{
-    background:#e5e7eb;
-    color:#374151 !important;
-    border:1px solid #d1d5db;
-}
-
-/* Save */
-
-.save-btn{
-    background:linear-gradient(135deg,#22c55e,#16a34a);
-}
-
-/* Delete */
-
-.delete-btn{
-    background:linear-gradient(135deg,#ef4444,#dc2626);
-}
-
-/* Submit */
-
-.submit-btn{
-    background:linear-gradient(135deg,#3b82f6,#2563eb);
-}
-
-/* Print */
-
-.print-btn{
-    background:linear-gradient(135deg,#8b5cf6,#7c3aed);
-}
-
-/* Next */
-
-.next-btn{
-    background:linear-gradient(135deg,#14b8a6,#0f766e);
-}
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media(max-width:768px){
-
-    .lab-wrapper{
-        padding:15px;
-    }
-
-    .lab-header-card{
-        padding:18px;
-    }
-
-    .lab-title{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .lab-title-text h2{
-        font-size:22px;
-    }
-
-    .lab-table{
-        min-width:900px;
-    }
-
-    .lab-bottom-buttons{
-        flex-direction:column;
-    }
-
-    .lab-bottom-buttons button{
-        width:100%;
-        max-width:300px;
-    }
-
+    min-width: 90px;
+  }
 }

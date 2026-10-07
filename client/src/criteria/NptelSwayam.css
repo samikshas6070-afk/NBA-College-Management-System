@@ -1,189 +1,994 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+/* =====================================================
+   NPTEL & SWAYAM - CRITERIA 2.6
+   COMPACT PROFESSIONAL DESIGN
+   ALL STYLES SCOPED TO NPTEL PAGE
+===================================================== */
+
+
+/* =====================================================
+   NPTEL PAGE LAYOUT
+===================================================== */
 
 .nptel-container {
-  padding: 30px;
-  background: #f5f7fb;
-  min-height: 100vh;
-}
-.nptel-header{
-  background:#fff;
-  border-radius:15px;
-  padding:25px;
-  margin-bottom:25px;
-  box-shadow:0 2px 10px rgba(0,0,0,.08);
-}
+    margin-left: 270px;
+    width: calc(100% - 270px);
 
-.nptel-title-section{
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
+    min-height: 100vh;
 
-.nptel-badge{
-  width:45px;
-  height:45px;
-  border-radius:10px;
-  background:#4f46e5;
-  color:#fff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-weight:600;
-  font-size:16px;
-}
+    padding: 15px;
 
-.nptel-title-section h2{
-  color:#0f172a;
-  margin-bottom:5px;
-  font-size:32px;
-}
+    background: #f5f7fb;
 
-.nptel-title-section p{
-  color:#64748b;
-  font-size:15px;
-}
+    box-sizing: border-box;
 
-.nptel-card{
-  background:#fff;
-  border-radius:15px;
-  padding:20px;
-  box-shadow:0 2px 10px rgba(0,0,0,.08);
-  overflow-x:auto;
-}
-
-.nptel-table{
-  width:100%;
-  border-collapse:collapse;
-}
-
-.nptel-table thead{
-  background:#fff;
-}
-
-.nptel-table th,
-.nptel-table td{
-  border:1px solid #d9d9d9;
-  padding:16px;
-  text-align:center;
-  vertical-align:middle;
-}
-
-.nptel-table th{
-  color:#000;
-  font-weight:600;
-}
-
-.nptel-table td {
-  padding: 18px;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.nptel-table tbody tr:hover {
-  background: #f8fafc;
-}
-.file-input{
-    width:210px;
-    display:block;
-    margin:0 auto;
+    overflow-x: hidden;
 }
 
 
-.action-buttons{
-  
-    justify-content:center;
-    align-items:center;
-    gap:8px;
-    margin-top:8px;
+/* =====================================================
+   HEADER
+===================================================== */
+
+.nptel-container .nptel-header {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    padding: 18px 22px;
+
+    margin-bottom: 18px;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    box-sizing: border-box;
 }
 
-.view-btn{
-    width:70px;
-    height:30px;
-    background:#dff2ff;
-    color:#0284c7;
-    border:none;
-    border-radius:5px;
-    font-size:12px;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:4px;
+
+/* =====================================================
+   TITLE SECTION
+===================================================== */
+
+.nptel-container .nptel-title-section {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
 }
 
-.download-btn{
-    width:95px;
-    height:30px;
-    background:#16a34a;
-    color:#fff;
-    border:none;
-    border-radius:5px;
-    font-size:12px;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:4px;
-}
-.bottom-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.nptel-container .nptel-badge {
+    width: 45px;
+
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #4f46e5;
+
+    color: #ffffff;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 15px;
+
+    font-weight: 600;
 }
 
-.bottom-buttons button {
-  border: none;
-  padding: 12px 22px;
-  border-radius: 10px;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.previous-btn {
-  background: linear-gradient(135deg, #ff7b00, #ff5e00);
-  color: white;
-}
-.back-btn {
-  background: #64748b;
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.nptel-container .nptel-title-section h2 {
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
 }
 
-.save-btn {
-  background: #16a34a;
+
+/* =====================================================
+   SUB TITLE
+===================================================== */
+
+.nptel-container .nptel-title-section p {
+    margin: 4px 0 0 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.4;
 }
 
-.delete-btn {
-  background: #dc2626;
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.nptel-container .nptel-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
 }
 
-.submit-btn {
-  background: #2563eb;
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.nptel-container .nptel-table {
+    width: 100%;
+
+    table-layout: fixed;
+
+    border-collapse: collapse;
+
+    min-width: 0;
 }
 
-.print-btn {
-  background: #7c3aed;
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.nptel-container .nptel-table thead {
+    background: #f8fafc;
 }
 
-.next-btn {
-  background: #f97316;
+
+.nptel-container .nptel-table th {
+    border: 1px solid #d9d9d9;
+
+    padding: 11px 8px;
+
+    height: 38px;
+
+    text-align: center;
+
+    vertical-align: middle;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #111827;
+
+    background: #f8fafc;
 }
-.description-box{
-    width:100%;
-    height:90px;
-    padding:10px;
-    border:1px solid #d1d5db;
-    border-radius:6px;
-    background:#fff;
-    resize:none;
-    font-size:14px;
-    color:#111827;
-    outline:none;
-    font-family:"Poppins", sans-serif;
+
+
+/* =====================================================
+   TABLE DATA
+===================================================== */
+
+.nptel-container .nptel-table td {
+    border: 1px solid #d9d9d9;
+
+    padding: 10px;
+
+    text-align: center;
+
+    vertical-align: middle;
+
+    font-size: 13px;
+
+    color: #111827;
+}
+
+
+/* =====================================================
+   COLUMN WIDTHS
+
+   1 = Sr No
+   2 = Document Name
+   3 = Description
+   4 = Attachment
+===================================================== */
+
+.nptel-container .nptel-table th:first-child,
+.nptel-container .nptel-table td:first-child {
+    width: 8%;
+}
+
+
+/* =====================================================
+   DOCUMENT NAME
+===================================================== */
+
+.nptel-container .nptel-table th:nth-child(2),
+.nptel-container .nptel-table td:nth-child(2) {
+    width: 31%;
+
+    text-align: left;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.nptel-container .nptel-table th:nth-child(3),
+.nptel-container .nptel-table td:nth-child(3) {
+    width: 31%;
+}
+
+
+/* =====================================================
+   ATTACHMENT
+===================================================== */
+
+.nptel-container .nptel-table th:nth-child(4),
+.nptel-container .nptel-table td:nth-child(4) {
+    width: 30%;
+}
+
+
+/* =====================================================
+   DOCUMENT NAME TEXT
+===================================================== */
+
+.nptel-container .nptel-table td:nth-child(2) {
+    font-size: 13px;
+
+    font-weight: 500;
+
+    line-height: 18px;
+
+    word-break: normal;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =====================================================
+   DESCRIPTION BOX
+===================================================== */
+
+.nptel-container .description-box {
+    width: 100%;
+
+    max-width: 250px;
+
+    height: 84px;
+
+    padding: 9px 11px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #1f2937;
+
+    font-size: 12px;
+
+    font-family: "Poppins", sans-serif;
+
+    resize: none;
+
+    outline: none;
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   DESCRIPTION FOCUS
+===================================================== */
+
+.nptel-container .description-box:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =====================================================
+   ATTACHMENT AREA
+===================================================== */
+
+.nptel-container .attachment-box {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   FILE INPUT
+===================================================== */
+
+.nptel-container .file-input {
+    width: 165px;
+
+    height: 31px;
+
+    margin: 0;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   CHOOSE FILE BUTTON
+===================================================== */
+
+.nptel-container .file-input::file-selector-button {
+    background: #f8fafc;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 5px;
+
+    padding: 5px 9px;
+
+    margin-right: 4px;
+
+    font-size: 11px;
+
+    color: #111827;
+
+    cursor: pointer;
+}
+
+
+.nptel-container .file-input::file-selector-button:hover {
+    background: #e5e7eb;
+}
+
+
+/* =====================================================
+   ACTION BUTTON CONTAINER
+===================================================== */
+
+.nptel-container .nptel-action-buttons {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 6px;
+
+    flex-wrap: nowrap;
+}
+
+
+/* =====================================================
+   VIEW BUTTON
+===================================================== */
+
+.nptel-container .view-btn {
+    width: 110px;
+
+    min-width: 110px;
+
+    height: 32px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #2563eb !important;
+
+    background-color: #2563eb !important;
+
+    color: #ffffff !important;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+
+.nptel-container .view-btn:hover {
+    background: #1d4ed8 !important;
+
+    background-color: #1d4ed8 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   DOWNLOAD BUTTON
+===================================================== */
+
+.nptel-container .download-btn {
+    width: 110px;
+
+    min-width: 110px;
+
+    height: 32px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #16a34a !important;
+
+    background-color: #16a34a !important;
+
+    color: #ffffff !important;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+
+.nptel-container .download-btn:hover {
+    background: #15803d !important;
+
+    background-color: #15803d !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   UPLOAD BUTTON
+===================================================== */
+
+.nptel-container .upload-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f3f4f6;
+
+    color: #333333;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 5px;
+
+    padding: 5px 10px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+}
+
+
+.nptel-container .upload-btn:hover {
+    background: #e5e7eb;
+}
+
+
+/* =====================================================
+   BOTTOM BUTTON CONTAINER
+===================================================== */
+
+.nptel-container .bottom-buttons {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: nowrap;
+}
+
+
+/* =====================================================
+   ALL BOTTOM BUTTONS - COMMON
+===================================================== */
+
+.nptel-container .bottom-buttons button {
+    width: 90px;
+
+    min-width: 90px;
+
+    height: 34px;
+
+    padding: 0 8px;
+
+    border: none !important;
+
+    border-radius: 6px;
+
+    color: #ffffff !important;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PREVIOUS
+   INTERNSHIP 2.3 COLOR
+===================================================== */
+
+.nptel-container .bottom-buttons .previous-btn {
+    background: #ff6b00 !important;
+
+    background-color: #ff6b00 !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+}
+
+
+/* =====================================================
+   BACK
+   INTERNSHIP 2.3 COLOR
+===================================================== */
+
+.nptel-container .bottom-buttons .back-btn {
+    background: #64748b !important;
+
+    background-color: #64748b !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+}
+
+
+/* =====================================================
+   SAVE
+   INTERNSHIP 2.3 COLOR
+===================================================== */
+
+.nptel-container .bottom-buttons .save-btn {
+    background: #198754 !important;
+
+    background-color: #198754 !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+}
+
+
+/* =====================================================
+   DELETE
+   INTERNSHIP 2.3 COLOR
+===================================================== */
+
+.nptel-container .bottom-buttons .delete-btn {
+    background: #ef4444 !important;
+
+    background-color: #ef4444 !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+.nptel-container .bottom-buttons .submit-btn {
+    background: #2563eb !important;
+
+    background-color: #2563eb !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+}
+
+
+/* =====================================================
+   PRINT
+   INTERNSHIP 2.3 COLOR
+===================================================== */
+
+.nptel-container .bottom-buttons .print-btn {
+    background: #7c3aed !important;
+
+    background-color: #7c3aed !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+}
+
+
+/* =====================================================
+   CLEAR
+   INTERNSHIP 2.3 COLOR
+===================================================== */
+
+.nptel-container .bottom-buttons .clear-btn,
+.nptel-container .bottom-buttons .nptel-clear-btn {
+    background: #f59e0b !important;
+
+    background-color: #f59e0b !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+}
+
+
+/* =====================================================
+   NEXT
+   INTERNSHIP 2.3 COLOR
+===================================================== */
+
+.nptel-container .bottom-buttons .next-btn {
+    background: #008f83 !important;
+
+    background-color: #008f83 !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+}
+
+
+/* =====================================================
+   HOVER COLORS
+===================================================== */
+
+/* Previous */
+
+.nptel-container .bottom-buttons .previous-btn:hover {
+    background: #e85f00 !important;
+
+    background-color: #e85f00 !important;
+
+    color: #ffffff !important;
+
+    opacity: 1;
+
+    transform: translateY(-2px);
+}
+
+
+/* Back */
+
+.nptel-container .bottom-buttons .back-btn:hover {
+    background: #475569 !important;
+
+    background-color: #475569 !important;
+
+    color: #ffffff !important;
+
+    opacity: 1;
+
+    transform: translateY(-2px);
+}
+
+
+/* Save */
+
+.nptel-container .bottom-buttons .save-btn:hover {
+    background: #157347 !important;
+
+    background-color: #157347 !important;
+
+    color: #ffffff !important;
+
+    opacity: 1;
+
+    transform: translateY(-2px);
+}
+
+
+/* Delete */
+
+.nptel-container .bottom-buttons .delete-btn:hover {
+    background: #dc2626 !important;
+
+    background-color: #dc2626 !important;
+
+    color: #ffffff !important;
+
+    opacity: 1;
+
+    transform: translateY(-2px);
+}
+
+
+/* Submit */
+
+.nptel-container .bottom-buttons .submit-btn:hover {
+    background: #1d4ed8 !important;
+
+    background-color: #1d4ed8 !important;
+
+    color: #ffffff !important;
+
+    opacity: 1;
+
+    transform: translateY(-2px);
+}
+
+
+/* Print */
+
+.nptel-container .bottom-buttons .print-btn:hover {
+    background: #6d28d9 !important;
+
+    background-color: #6d28d9 !important;
+
+    color: #ffffff !important;
+
+    opacity: 1;
+
+    transform: translateY(-2px);
+}
+
+
+/* Clear */
+
+.nptel-container .bottom-buttons .clear-btn:hover,
+.nptel-container .bottom-buttons .nptel-clear-btn:hover {
+    background: #d97706 !important;
+
+    background-color: #d97706 !important;
+
+    color: #ffffff !important;
+
+    opacity: 1;
+
+    transform: translateY(-2px);
+}
+
+
+/* Next */
+
+.nptel-container .bottom-buttons .next-btn:hover {
+    background: #00766d !important;
+
+    background-color: #00766d !important;
+
+    color: #ffffff !important;
+
+    opacity: 1;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   TABLE HOVER
+===================================================== */
+
+.nptel-container .nptel-table tbody tr {
+    transition: 0.2s ease;
+}
+
+
+.nptel-container .nptel-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+
+/* =====================================================
+   RESPONSIVE - 992px
+===================================================== */
+
+@media (max-width: 992px) {
+
+    .nptel-container {
+        margin-left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+    }
+
+    .nptel-container .nptel-card {
+        overflow-x: auto;
+    }
+
+    .nptel-container .nptel-table {
+        min-width: 850px;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - 768px
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .nptel-container {
+        padding: 15px;
+    }
+
+    .nptel-container .nptel-header {
+        padding: 15px;
+    }
+
+    .nptel-container .nptel-title-section {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .nptel-container .nptel-title-section h2 {
+        font-size: 18px;
+    }
+
+    .nptel-container .nptel-title-section p {
+        font-size: 12px;
+    }
+
+    .nptel-container .nptel-card {
+        padding: 15px;
+
+        overflow-x: auto;
+    }
+
+    .nptel-container .nptel-table {
+        min-width: 850px;
+    }
+
+    .nptel-container .file-input {
+        width: 165px;
+    }
+
+    .nptel-container .nptel-action-buttons {
+        flex-direction: row;
+
+        gap: 5px;
+    }
+
+    .nptel-container .view-btn,
+    .nptel-container .download-btn {
+        width: 100px;
+
+        min-width: 100px;
+
+        height: 30px;
+    }
+
+    .nptel-container .bottom-buttons {
+        flex-wrap: wrap;
+
+        gap: 8px;
+    }
+
+    .nptel-container .bottom-buttons button {
+        width: 90px;
+
+        min-width: 90px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .nptel-container {
+        padding: 10px;
+    }
+
+    .nptel-container .nptel-table {
+        min-width: 800px;
+    }
+
+    .nptel-container .bottom-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .nptel-container .bottom-buttons button {
+        width: 100%;
+
+        max-width: 280px;
+    }
 }

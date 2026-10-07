@@ -1,393 +1,914 @@
-/* =====================================================
-   RESET
-===================================================== */
+/* =========================================================
+   CRITERIA 2.1
+   QUALITY OF TEACHING & LEARNING
+   PAGE-SPECIFIC CSS ONLY
+   NO GLOBAL CSS
+   ========================================================= */
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:"Poppins",sans-serif;
+
+/* =========================================================
+   MAIN PAGE
+   ========================================================= */
+
+.quality-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f7fb;
+  box-sizing: border-box;
 }
 
-/* =====================================================
-   CONTAINER
-===================================================== */
 
-.industry-container{
-  padding:25px;
-  background:#f4f7fc;
-  min-height:100vh;
-  font-family:"Poppins",sans-serif;
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.quality-container {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  padding: 14px 18px 28px;
+  box-sizing: border-box;
 }
 
-/* =====================================================
+
+/* =========================================================
    HEADER
-===================================================== */
+   SAME WIDTH AS TABLE
+   ========================================================= */
 
-.industry-header{
-  background:#ffffff;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 2px 10px rgba(0,0,0,.08);
-  margin-bottom:20px;
+.quality-header {
+  width: 94%;
+  margin-left: auto;
+  margin-right: auto;
+
+  min-height: 84px;
+
+  display: flex;
+  align-items: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e7ef;
+  border-radius: 10px;
+
+  padding: 16px 20px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 2px 7px rgba(15, 23, 42, 0.07);
+
+  margin-bottom: 14px;
 }
 
-.industry-title-section{
-  display:flex;
-  align-items:center;
-  gap:15px;
+
+/* =========================================================
+   TITLE SECTION
+   ========================================================= */
+
+.quality-title-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.industry-badge{
-  background:#4f46e5;
-  color:#fff;
-  padding:10px 14px;
-  border-radius:8px;
-  font-weight:600;
-  font-size:14px;
+
+/* =========================================================
+   2.1 BADGE
+   SAME AS CAPSTONE PROJECT
+========================================================= */
+
+.quality-badge {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #4f46e5;
+  color: #ffffff;
+
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  box-sizing: border-box;
 }
 
-.industry-title-section h2{
-  margin:0;
-  font-size:20px;
-  color:#1f2937;
+
+/* =========================================================
+   HEADER TITLE
+   SAME COLOR AS CAPSTONE PROJECT
+========================================================= */
+
+.quality-title-section h2 {
+  margin: 0;
+
+  font-size: 20px;
+
+  color: #1f2937;
+
+  font-weight: 700;
+
+  line-height: 1.2;
 }
 
-.industry-title-section p{
-  margin:3px 0 0;
-  font-size:13px;
-  color:#6b7280;
+
+/* =========================================================
+   HEADER DESCRIPTION
+   SAME AS CAPSTONE PROJECT
+========================================================= */
+
+.quality-title-section p {
+  margin-top: 3px;
+
+  font-size: 13px;
+
+  color: #6b7280;
+
+  line-height: 1.4;
 }
 
-.upload-count{
-  margin-top:5px;
-  font-size:13px;
-  font-weight:600;
-  color:#2563eb;
+
+/* =========================================================
+   ACADEMIC INFORMATION
+   SAME WIDTH AS TABLE
+   ========================================================= */
+
+.quality-academic-information {
+  width: 95%;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  /* Academic Year / Department / Program मधील space कमी */
+  gap: 5px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e7ef;
+
+  border-radius: 10px;
+
+  padding: 16px 18px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 2px 7px rgba(15, 23, 42, 0.06);
+
+  margin-bottom: 16px;
 }
 
-/* =====================================================
-   CARD
-===================================================== */
 
-.industry-card{
-  background:#ffffff;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 2px 10px rgba(0,0,0,.06);
+/* =========================================================
+   ACADEMIC FIELD
+   ========================================================= */
+
+.quality-academic-info-field {
+  width: 100%;
+  min-width: 0;
 }
-/* =====================================================
+
+
+/* =========================================================
+   ACADEMIC LABEL
+   ========================================================= */
+
+.quality-academic-info-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #172b4d;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ACADEMIC SELECT
+   ========================================================= */
+
+.quality-academic-info-field select {
+  width: 85%;
+  height: 36px;
+
+  padding: 0 12px;
+
+  border: 1px solid #c9d4e3;
+  border-radius: 5px;
+
+  background: #ffffff;
+
+  color: #243b63;
+
+  font-size: 14px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+}
+
+
+.quality-academic-info-field select:focus {
+  border-color: #14579e;
+
+  box-shadow:
+    0 0 0 2px rgba(20, 87, 158, 0.10);
+}
+
+
+/* =========================================================
+   TABLE CARD
+   SAME WIDTH AS HEADER
+   ========================================================= */
+
+.quality-card {
+  width: 94%;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e7ef;
+
+  border-radius: 8px;
+
+  padding: 12px 18px 16px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 2px 7px rgba(15, 23, 42, 0.05);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
    TABLE
-===================================================== */
-.industry-table{
-    width:100%;
-    border-collapse:collapse;
-    border:1px solid #dcdcdc;
-}
-.industry-table thead{
-    background:#f8fafc;
-    color:#111827;
-}
-.industry-table th{
-  background:#ffffff;
-  color:#000;
-  border:1px solid #d9d9d9;
-  padding:16px;
-  text-align:center;
-  font-size:16px;
-  font-weight:600;
-  vertical-align:middle;
-}
+   ========================================================= */
 
-.industry-table td{
-    border:1px solid #dcdcdc;
-    padding:18px;
-    text-align:center;
+.quality-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  background: #ffffff;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 }
 
 
-.industry-table tbody tr{
-  transition:.2s;
+/* =========================================================
+   COLUMN WIDTHS
+   ========================================================= */
+
+.quality-table th:nth-child(1),
+.quality-table td:nth-child(1) {
+  width: 7%;
 }
 
-.industry-table tbody tr:hover{
-  background:#f9fafb;
+
+.quality-table th:nth-child(2),
+.quality-table td:nth-child(2) {
+  width: 31%;
 }
 
-/* =====================================================
+
+.quality-table th:nth-child(3),
+.quality-table td:nth-child(3) {
+  width: 34%;
+}
+
+
+.quality-table th:nth-child(4),
+.quality-table td:nth-child(4) {
+  width: 28%;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+   WHITE - NO BLUE
+   ========================================================= */
+
+.quality-table thead th {
+  background: #ffffff;
+
+  color: #111111;
+
+  border: 1px solid #d6d6d6;
+
+  padding: 9px 7px;
+
+  text-align: center;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  height: 36px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLE BODY
+   ========================================================= */
+
+.quality-table tbody td {
+  border: 1px solid #d6d6d6;
+
+  padding: 8px;
+
+  vertical-align: middle;
+
+  font-size: 13px;
+
+  color: #102a43;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ALTERNATE ROW
+   ========================================================= */
+
+.quality-table tbody tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   SR NO
+   ========================================================= */
+
+.quality-table tbody td:first-child {
+  text-align: center;
+
+  font-weight: 500;
+
+  color: #111111;
+}
+
+
+/* =========================================================
+   DOCUMENT NAME
+   NOT BOLD
+   ========================================================= */
+
+.quality-document-name {
+  width: 100%;
+
+  color: #111111;
+
+  font-size: 13.5px;
+
+  font-weight: 400;
+
+  line-height: 1.35;
+
+  text-align: left;
+
+  word-break: normal;
+
+  overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   DESCRIPTION BOX
+   ========================================================= */
+
+.quality-description-box {
+  width: 100%;
+
+  min-height: 50px;
+  height: 50px;
+
+  resize: none;
+
+  padding: 7px 9px;
+
+  border: 1px solid #ccd6e2;
+
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #17365d;
+
+  font-size: 12px;
+
+  line-height: 1.35;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  outline: none;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   ACTION CELL
+   ========================================================= */
+
+.quality-attachment-box {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
    FILE INPUT
-===================================================== */
+   SMALL
+   ========================================================= */
 
-.industry-table input[type="file"]{
-  width:180px;
-  margin:auto;
-  display:block;
-  font-size:12px;
-  padding:5px;
-}
+.quality-attachment-box .file-input {
+  width: 165px;
 
-.attachment-cell{
-  text-align:center;
-}
+  max-width: 100%;
 
-.pdf-text{
-  display:block;
-  margin-top:5px;
-  font-size:12px;
-  color:#6b7280;
-}
-/* =====================================================
-   ACTION BUTTONS
-===================================================== */
+  height: 31px;
 
-.action-buttons{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:8px;
-  margin-top:10px;
-}
+  padding: 2px 4px;
 
-/* Common Button */
+  border: 1px solid #c8d4e2;
 
-.action-buttons button{
-  border:none;
-  width:95px;
-  height:34px;
-  border-radius:6px;
-  cursor:pointer;
-  font-size:12px;
-  font-weight:500;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:5px;
-  transition:.2s;
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  color: #243b63;
+
+  font-size: 11px;
+
+  box-sizing: border-box;
+
+  cursor: pointer;
 }
 
 
+/* =========================================================
+   CHOOSE FILE BUTTON
+   SMALL
+   ========================================================= */
 
-.view-btn:hover{
-    background:#cfecff;
+.quality-attachment-box
+.file-input::file-selector-button {
+  height: 24px;
+
+  padding: 0 7px;
+
+  margin-right: 5px;
+
+  border: 1px solid #b8c4d1;
+
+  border-radius: 4px;
+
+  background: #f5f7fa;
+
+  color: #1f2937;
+
+  font-size: 11px;
+
+  cursor: pointer;
 }
 
-.download-btn:hover{
-    background:#15803d;
+
+/* =========================================================
+   FILE NAME
+   ========================================================= */
+
+.quality-uploaded-file-name {
+  width: 100%;
+
+  padding: 1px 4px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  overflow: hidden;
 }
 
 
-/* =====================================================
+.quality-uploaded-file-name .file-name-text {
+  display: block;
+
+  color: #16a34a;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   VIEW + DOWNLOAD
+   ALWAYS VISIBLE
+   ========================================================= */
+
+.quality-action-buttons {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 7px;
+
+  min-height: 32px;
+}
+
+
+/* =========================================================
+   VIEW / DOWNLOAD COMMON
+   ========================================================= */
+
+.quality-action-buttons button {
+  width: 110px;
+
+  min-width: 110px;
+
+  height: 32px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 0 8px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   VIEW
+   ========================================================= */
+
+.quality-view-btn {
+  background: #2563eb !important;
+  background-color: #2563eb !important;
+
+  color: #ffffff !important;
+}
+
+
+.quality-view-btn:hover {
+  background: #1d4ed8 !important;
+  background-color: #1d4ed8 !important;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 3px 8px rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================================================
+   DOWNLOAD
+   ========================================================= */
+
+.quality-download-btn {
+  background: #16a34a !important;
+  background-color: #16a34a !important;
+
+  color: #ffffff !important;
+}
+
+
+.quality-download-btn:hover {
+  background: #7c7e7d !important;
+  background-color: #15803d !important;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 3px 8px rgba(22, 163, 74, 0.25);
+}
+
+
+/* =========================================================
+   VIEW / DOWNLOAD DISABLED LOOK
+   NEVER FADE
+   ========================================================= */
+
+.quality-action-buttons button:disabled {
+  opacity: 1;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  filter: none;
+}
+
+
+/* =========================================================
    BOTTOM BUTTONS
-===================================================== */
+   ========================================================= */
 
-.bottom-buttons{
-  margin-top:20px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
+.quality-bottom-buttons {
+  width: 94%;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 0 4px;
+
+  box-sizing: border-box;
 }
 
-.bottom-buttons button{
-  min-width:140px;
-  height:48px;
-  border:none;
-  border-radius:10px;
-  color:#ffffff;
-  font-size:15px;
-  font-weight:500;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  transition:all .3s ease;
+
+/* =========================================================
+   COMMON BOTTOM BUTTON
+   ========================================================= */
+
+.quality-bottom-buttons button {
+  width: 90px;
+
+  height: 34px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  color: #ffffff;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+
+  box-sizing: border-box;
 }
 
-.bottom-buttons button:hover{
-  transform:translateY(-2px);
+
+/* =========================================================
+   SAVE
+   ========================================================= */
+
+.quality-save-btn {
+  background: #198754;
 }
 
-/* Previous */
 
-.previous-btn{
-  background:linear-gradient(135deg,#ff7b00,#ff5e00);
+.quality-save-btn:hover {
+  background: #157347;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 3px 8px rgba(25, 135, 84, 0.25);
 }
 
-/* Back */
 
-.back-btn{
-  background:linear-gradient(135deg,#1ea7fd,#0284c7);
+/* =========================================================
+   DELETE
+   ========================================================= */
+
+.quality-delete-btn {
+  background: #ef4444;
 }
 
-/* Save */
 
-.save-btn{
-  background:linear-gradient(135deg,#22c55e,#16a34a);
+.quality-delete-btn:hover {
+  background: #dc2626;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 3px 8px rgba(239, 68, 68, 0.25);
 }
 
-/* Delete */
 
-.delete-btn{
-  background:linear-gradient(135deg,#ef4444,#dc2626);
+/* =========================================================
+   CLEAR
+   ========================================================= */
+
+.quality-clear-btn {
+  background: #f59e0b;
 }
 
-/* Submit */
 
-.submit-btn{
-  background:linear-gradient(135deg,#4f7cff,#2563eb);
+.quality-clear-btn:hover {
+  background: #d97706;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 3px 8px rgba(245, 158, 11, 0.25);
 }
 
-/* Print */
 
-.print-btn{
-  background:linear-gradient(135deg,#9b5cff,#7c3aed);
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+.quality-print-btn {
+  background: #6f59b5;
 }
 
-/* Next */
 
-.next-btn{
-  background:linear-gradient(135deg,#14b8a6,#0f766e);
+.quality-print-btn:hover {
+  background: #5b47a0;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 3px 8px rgba(111, 89, 181, 0.25);
 }
-/* =====================================================
+
+
+/* =========================================================
+   NEXT
+   ========================================================= */
+
+.quality-next-btn {
+  background: #008f83;
+}
+
+
+.quality-next-btn:hover {
+  background: #00776d;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 3px 8px rgba(0, 143, 131, 0.25);
+}
+
+
+/* =========================================================
+   BOTTOM BUTTONS NEVER LOOK DISABLED
+   ========================================================= */
+
+.quality-bottom-buttons button:disabled {
+  opacity: 1;
+
+  cursor: pointer;
+
+  filter: none;
+}
+
+
+/* =========================================================
    RESPONSIVE
-===================================================== */
+   ========================================================= */
 
-@media (max-width:768px){
+@media (max-width: 1100px) {
 
-  .industry-container{
-    padding:15px;
+  .quality-container {
+    margin-left: 240px;
+
+    width: calc(100% - 240px);
+
+    padding: 12px;
   }
 
-  .industry-header{
-    padding:15px;
+  .quality-header {
+    width: 94%;
   }
 
-  .industry-card{
-    padding:15px;
+  .quality-card {
+    width: 94%;
+
+    overflow-x: auto;
   }
 
-  .industry-title-section{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:12px;
+  .quality-table {
+    min-width: 850px;
   }
 
-  .industry-title-section h2{
-    font-size:18px;
+  .quality-bottom-buttons {
+    width: 94%;
   }
-
-  .industry-title-section p{
-    font-size:12px;
-  }
-
-  .upload-count{
-    font-size:12px;
-  }
-
-  .industry-table{
-    display:block;
-    overflow-x:auto;
-    white-space:nowrap;
-  }
-
-  .industry-table th{
-    padding:12px;
-    font-size:14px;
-  }
-
-  .industry-table td{
-    padding:12px;
-    font-size:13px;
-  }
-
-  .industry-table input[type="file"]{
-    width:160px;
-  }
-
-  .action-buttons{
-    display:flex;
-    justify-content:center;
-    gap:8px;
-}
-  .action-buttons button{
-    width:90px;
-    height:32px;
-    font-size:11px;
-  }
-
-  .bottom-buttons{
-    flex-direction:column;
-    align-items:center;
-  }
-
-  .bottom-buttons button{
-    width:100%;
-    max-width:320px;
-    height:45px;
-    font-size:14px;
-  }
-
-}
-.industry-table th:first-child,
-.industry-table td:first-child{
-    text-align:center !important;
-    width:80px;
-}
-.file-input{
-    width:220px;
-    font-size:12px;
-    margin-bottom:8px;
-}
-.description-box{
-    width:100%;
-    height:90px;
-    padding:8px;
-    border:1px solid #d1d5db;
-    border-radius:6px;
-    resize:none;
-    background:#fff;
-    font-size:14px;
-    color:#111827;
-}
-.attachment-box{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    width:100%;
 }
 
-.file-input{
-    width:220px;
-    margin-bottom:15px;   /* Choose File आणि buttons मध्ये gap */
-}
 
-.attachment-buttons{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    width:100%;
-     margin-top:12px !important;
-}
+/* =========================================================
+   SMALL SCREEN
+   ========================================================= */
 
-.view-btn{
-    width:60px;
-    height:30px;
-    font-size:12px;
-    border:none;
-    border-radius:5px;
-    background:#dff2ff;
-    color:#0284c7;
-}
+@media (max-width: 800px) {
 
-.download-btn{
-    width:90px;
-    height:30px;
-    font-size:12px;
-    border:none;
-    border-radius:5px;
-    background:#16a34a;
-    color:#fff;
+  .quality-container {
+    margin-left: 0;
+
+    width: 100%;
+
+    padding: 10px;
+  }
+
+  .quality-header {
+    width: 100%;
+  }
+
+  .quality-academic-information {
+    grid-template-columns: 1fr;
+  }
+
+  .quality-card {
+    width: 100%;
+  }
+
+  .quality-bottom-buttons {
+    width: 100%;
+
+    flex-wrap: wrap;
+  }
+
+  .quality-table {
+    min-width: 820px;
+  }
 }

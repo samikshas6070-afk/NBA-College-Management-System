@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./PoPso.css";
 import {
   FaFileAlt,
@@ -9,7 +8,6 @@ import {
 } from "react-icons/fa";
 
 function PoPso({ onNext, onPrevious }) {
-  const navigate = useNavigate();
 const [poPsoFile, setPoPsoFile] = useState(null);
 const [mappingFile, setMappingFile] = useState(null);
 const [justificationFile, setJustificationFile] = useState(null);
@@ -29,7 +27,7 @@ if (poPsoFile) {
   formData.append("justificationFile", justificationFile);
 }
     const response = await fetch(
-      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/save-popso",
+      "http://localhost:5000/save-popso",
       {
         method: "POST",
         body: formData
@@ -61,14 +59,14 @@ const handleView = (fileName) => {
   if (extension === "pdf") {
 
     window.open(
-      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/uploads/${fileName}`,
+      `http://localhost:5000/uploads/${fileName}`,
       "_blank"
     );
 
   } else {
 
     window.open(
-      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${fileName}`,
+      `http://localhost:5000/download/${fileName}`,
       "_blank"
     );
 
@@ -83,7 +81,7 @@ const handleDownload = (fileName) => {
   }
 
   window.open(
-    `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${fileName}`,
+    `http://localhost:5000/download/${fileName}`,
     "_blank"
   );
 
@@ -100,7 +98,7 @@ const handlePrint = (fileName) => {
   if (extension === "pdf") {
 
     const win = window.open(
-      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/uploads/${fileName}`,
+      `http://localhost:5000/uploads/${fileName}`,
       "_blank"
     );
 
@@ -114,7 +112,7 @@ const handlePrint = (fileName) => {
   } else {
 
     window.open(
-      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${fileName}`,
+      `http://localhost:5000/download/${fileName}`,
       "_blank"
     );
 
@@ -224,14 +222,6 @@ const handlePrint = (fileName) => {
 </p>
 <div className="popso-body">
 
-  <div className="popso-file-box">
-
-    <p className="file-name">
-      {mappingFile?.name}
-    </p>
-
-  </div>
-
   <div className="popso-actions">
 
     <button
@@ -295,14 +285,7 @@ const handlePrint = (fileName) => {
 </p>
 <div className="popso-body">
 
-  <div className="popso-file-box">
-
-
-    <p className="file-name">
-      {justificationFile?.name}
-    </p>
-
-  </div>
+  
 
   <div className="popso-actions">
 
@@ -337,7 +320,7 @@ const handlePrint = (fileName) => {
         <div className="btn-row">
 <button
   className="previous-btn"
-  onClick={() => navigate("/curriculum")}
+  onClick={onPrevious}
 >
   ← Previous
 </button>
@@ -362,9 +345,9 @@ const handlePrint = (fileName) => {
            <FaTrash /> Delete
          </button>
        
-      <button
+         <button
   className="next-page-btn"
-  onClick={() => navigate("/CourseMatrix")}
+  onClick={onNext}
 >
   Next →
 </button>

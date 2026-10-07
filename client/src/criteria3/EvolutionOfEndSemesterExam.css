@@ -1,294 +1,1099 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+/* ==========================================================
+   3.2 - EVALUATION OF SEMESTER END EXAMINATION
+   COMPLETE PAGE CSS
+   PAGE-SPECIFIC ONLY
+   NO GLOBAL CSS
+   ========================================================== */
+
+
+/* ==========================================================
+   GOOGLE FONT
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* ==========================================================
+   MAIN LAYOUT
+   ========================================================== */
+
+.course-container {
+    flex: 1;
+    margin-left: 250px;
+    padding: 22px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #eef3f9;
+    font-family: 'Poppins', sans-serif;
 }
 
-.ese-container {
-  padding: 30px;
-  background: #f5f7fb;
-  min-height: 100vh;
+
+/* ==========================================================
+   ESE CONTAINER
+   ========================================================== */
+
+.course-container .ese-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Header */
 
-.ese-title-section{
-    display:flex;
-    align-items:center;
-    gap:15px;
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.course-container .ese-header {
+    width: 92%;
+    margin: 0 auto 18px auto;
+    background: #ffffff;
+    padding: 17px 21px;
+    border-radius: 14px;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.07);
+    box-sizing: border-box;
 }
 
-.ese-badge{
-    width:45px;
-    height:45px;
-    background:#4f46e5;
-    color:#fff;
-    border-radius:10px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:16px;
-    font-weight:600;
+
+/* ==========================================================
+   HEADER TITLE SECTION
+   ========================================================== */
+
+.course-container .ese-title-section {
+    display: flex;
+    align-items: center;
+    gap: 13px;
 }
 
-.ese-title-text h2{
-    margin:0;
-    font-size:28px;
-    color:#111827;
-    font-weight:700;
+
+/* ==========================================================
+   BADGE
+   ========================================================== */
+
+.course-container .ese-badge {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+
+    background: #4f46e5;
+    color: #ffffff;
+
+    border-radius: 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-sizing: border-box;
 }
 
-.ese-title-text p{
-    margin-top:4px;
-    color:#6b7280;
-    font-size:14px;
+
+/* ==========================================================
+   TITLE TEXT
+   ========================================================== */
+
+.course-container .ese-title-text {
+    min-width: 0;
 }
 
-.ese-header{
-    background:#fff;
-    padding:20px 25px;
-    border-radius:16px;
-    margin-bottom:20px;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
-}
-/* Card */
+.course-container .ese-title-text h2 {
+    margin: 0;
 
-.ese-card {
-  background: #fff;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
-  overflow-x: auto;
+    font-size: 23px;
+    color: #111827;
+    font-weight: 700;
+
+    line-height: 1.3;
 }
 
-/* Table */
 
-.ese-table {
-  width: 100%;
-  border-collapse: collapse;
+/* ==========================================================
+   SUBTITLE
+   ========================================================== */
+
+.course-container .ese-title-text p {
+    margin: 4px 0 0 0;
+
+    color: #6b7280;
+    font-size: 13px;
+
+    line-height: 1.5;
 }
 
-.ese-table thead {
-  background: #fff;
+
+/* ==========================================================
+   TABLE CARD
+   ========================================================== */
+
+.course-container .ese-card {
+    width: 92%;
+
+    margin: 0 auto 20px auto;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    padding: 12px;
+
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.07);
+
+    overflow-x: auto;
+    box-sizing: border-box;
 }
 
-.ese-table th,
-.ese-table td {
-  border: 1px solid #d9d9d9;
-  padding: 16px;
-  text-align: center;
-  vertical-align: middle;
+
+/* ==========================================================
+   TABLE WRAPPER
+   ========================================================== */
+
+.course-container .ese-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
 }
 
-.ese-table th {
-  color: #000;
-  font-weight: 600;
+
+/* ==========================================================
+   TABLE
+   ========================================================== */
+
+.course-container .ese-table {
+    width: 100%;
+
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    background: #ffffff;
 }
 
-.ese-table td {
-  padding: 18px;
-  text-align: left;
-  border-bottom: 1px solid #e5e7eb;
+
+/* ==========================================================
+   TABLE HEADER
+   ========================================================== */
+
+.course-container .ese-table thead {
+    background: #ffffff;
 }
 
-.ese-table tbody tr:hover {
-  background: #f8fafc;
+.course-container .ese-table th {
+    border: 1px solid #d9d9d9;
+
+    padding: 10px 7px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    background: #f8fafc;
+
+    color: #111827;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    box-sizing: border-box;
 }
 
-.file-input {
-  display: block;
-  width: 220px;
-  margin: 0 auto 8px auto;
-}
-/* =========================
-   Action Buttons
-========================= */
 
-.action-buttons{
-    display:flex;
-    justify-content:center;
-    gap:8px;
-    margin-top:8px;
-}
+/* ==========================================================
+   TABLE DATA
+   ========================================================== */
 
-.action-buttons button{
-    border:none;
-    border-radius:6px;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:5px;
-    font-size:12px;
-    font-weight:500;
-    transition:.3s;
+.course-container .ese-table td {
+    border: 1px solid #d9d9d9;
+
+    padding: 10px 7px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    background: #ffffff;
+
+    color: #374151;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    box-sizing: border-box;
 }
 
-.view-btn{
-    width:75px;
-    height:32px;
-    background:#dff2ff;
-    color:#0284c7;
+
+/* ==========================================================
+   TABLE HOVER
+   ========================================================== */
+
+.course-container .ese-table tbody tr {
+    transition: 0.2s ease;
 }
 
-.view-btn:hover{
-    background:#bae6fd;
+.course-container .ese-table tbody tr:hover td {
+    background: #fafafa;
 }
 
-.download-btn{
-    width:95px;
-    height:32px;
-    background:#16a34a;
-    color:#fff;
+
+/* ==========================================================
+   COLUMN WIDTH
+   ========================================================== */
+
+/* Serial Number */
+
+.course-container .ese-table th:nth-child(1),
+.course-container .ese-table td:nth-child(1) {
+    width: 7%;
+
+    min-width: 45px;
+    max-width: 55px;
+
+    text-align: center;
 }
 
-.download-btn:hover{
-    background:#15803d;
+
+/* Document Name */
+
+.course-container .ese-table th:nth-child(2),
+.course-container .ese-table td:nth-child(2) {
+    width: 29%;
+
+    text-align: center;
 }
 
-/* =========================
-   Description Box
-========================= */
 
-.description-box{
-    width:100%;
-    height:90px;
-    padding:10px;
-    border:1px solid #d1d5db;
-    border-radius:6px;
-    background:#fff;
-    resize:none;
-    font-size:14px;
-    color:#111827;
-    outline:none;
-    font-family:"Poppins",sans-serif;
+/* Description */
+
+.course-container .ese-table th:nth-child(3),
+.course-container .ese-table td:nth-child(3) {
+    width: 34%;
+
+    text-align: center;
 }
 
-/* =========================
-   Alignment
-========================= */
 
-.ese-table th:first-child,
-.ese-table td:first-child{
-    width:70px;
-    text-align:center;
-    vertical-align:middle;
+/* Attachment / Action */
+
+.course-container .ese-table th:nth-child(4),
+.course-container .ese-table td:nth-child(4) {
+    width: 30%;
+
+    text-align: center;
 }
 
-.ese-table th:nth-child(2),
-.ese-table td:nth-child(2){
-    text-align:center;
+
+/* ==========================================================
+   SERIAL NUMBER
+   ========================================================== */
+
+.course-container .ese-table .sr-no {
+    font-weight: 600;
+    color: #374151;
 }
 
-.ese-table th:nth-child(3){
-    text-align:center;
+
+/* ==========================================================
+   DOCUMENT NAME
+   ========================================================== */
+
+.course-container .ese-table td:nth-child(2) {
+    font-weight: 500;
+    color: #1f2937;
+
+    word-break: break-word;
 }
 
-.ese-table th:nth-child(4){
-    text-align:center;
+
+/* ==========================================================
+   ATTACHMENT CELL
+   ========================================================== */
+
+.course-container .attachment-cell {
+    text-align: center;
+    vertical-align: middle;
 }
 
-.attachment-cell{
-    text-align:center;
-    vertical-align:middle;
+
+/* ==========================================================
+   FILE INPUT
+   ========================================================== */
+
+.course-container .file-input {
+    display: block;
+
+    width: 190px;
+    max-width: 100%;
+
+    margin: 0 auto 8px auto;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
 }
 
-/* =========================
-   Bottom Buttons
-========================= */
 
-.ese-bottom-buttons{
-    margin-top:30px;
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
+/* ==========================================================
+   FILE INPUT DIRECT
+   ========================================================== */
+
+.course-container .ese-table td input[type="file"] {
+    width: 190px;
+    max-width: 100%;
+
+    margin: 0 auto 8px auto;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 11px;
+
+    cursor: pointer;
 }
 
-.ese-bottom-buttons button{
-    min-width:140px;
-    height:48px;
-    border:none;
-    border-radius:10px;
-    color:#fff;
-    font-size:15px;
-    font-weight:500;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    transition:.3s;
+
+/* ==========================================================
+   FILE NAME
+   ========================================================== */
+
+.course-container .file-name {
+    display: block;
+
+    width: 190px;
+    max-width: 100%;
+
+    margin: 5px auto;
+
+    color: #374151;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    text-align: center;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.ese-bottom-buttons button:hover{
-    transform:translateY(-2px);
+
+/* ==========================================================
+   DESCRIPTION BOX
+   ========================================================== */
+
+.course-container .description-box {
+    width: 100%;
+
+    height: 64px;
+    min-height: 64px;
+    max-height: 64px;
+
+    padding: 8px 9px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    resize: none;
+
+    font-size: 11px;
+
+    line-height: 16px;
+
+    color: #111827;
+
+    outline: none;
+
+    font-family: 'Poppins', sans-serif;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
 }
 
-.previous-btn{
-    background:linear-gradient(135deg,#ff7b00,#ff5e00);
+
+/* ==========================================================
+   DESCRIPTION FOCUS
+   ========================================================== */
+
+.course-container .description-box:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 2px rgba(99, 102, 241, 0.08);
 }
 
-.back-btn{
-    background:#e5e7eb;
-    color:#374151 !important;
-    border:1px solid #d1d5db;
+
+/* ==========================================================
+   ACTION BUTTONS
+   ========================================================== */
+
+.course-container .action-buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 5px;
+
+    flex-wrap: nowrap;
 }
 
-.save-btn{
-    background:linear-gradient(135deg,#22c55e,#16a34a);
+
+/* ==========================================================
+   ACTION BUTTON COMMON
+   ========================================================== */
+
+.course-container .action-buttons button {
+    border: none;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    cursor: pointer;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    transition: 0.2s ease;
+
+    white-space: nowrap;
 }
 
-.delete-btn{
-    background:linear-gradient(135deg,#ef4444,#dc2626);
+
+/* ==========================================================
+   VIEW BUTTON
+   ========================================================== */
+
+.course-container .view-btn {
+    width: 68px;
+    height: 29px;
+
+    background: #2563eb;
+    color: #ffffff;
 }
 
-.submit-btn{
-    background:linear-gradient(135deg,#3b82f6,#2563eb);
+.course-container .view-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
 }
 
-.print-btn{
-    background:linear-gradient(135deg,#8b5cf6,#7c3aed);
+
+/* ==========================================================
+   DOWNLOAD BUTTON
+   ========================================================== */
+
+.course-container .download-btn {
+    width: 82px;
+    height: 29px;
+
+    background: #16a34a;
+    color: #ffffff;
 }
 
-.next-btn{
-    background:linear-gradient(135deg,#14b8a6,#0f766e);
+.course-container .download-btn:hover {
+    background: #15803d;
+
+    transform: translateY(-1px);
 }
 
-/* =========================
-   Responsive
-========================= */
 
-@media(max-width:768px){
+/* ==========================================================
+   ACTION BUTTON ICON
+   ========================================================== */
 
-    .ese-container{
-        padding:15px;
+.course-container .action-buttons button svg {
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+
+/* ==========================================================
+   BOTTOM BUTTONS
+   NO WHITE CONTAINER
+   ========================================================== */
+
+.course-container .ese-bottom-buttons {
+    width: 92%;
+
+    margin: 20px auto 0 auto;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   COMMON BOTTOM BUTTON
+   ALL SAME SIZE
+   ========================================================== */
+
+.course-container .ese-bottom-buttons button {
+    width: 90px;
+    min-width: 90px;
+    max-width: 90px;
+
+    height: 34px;
+    min-height: 34px;
+    max-height: 34px;
+
+    padding: 0 8px;
+
+    flex: 0 0 90px;
+
+    border: none;
+    border-radius: 7px;
+
+    color: #ffffff;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+
+    transition: 0.2s ease;
+}
+
+
+/* ==========================================================
+   BUTTON ICON
+   ========================================================== */
+
+.course-container .ese-bottom-buttons button svg {
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+
+/* ==========================================================
+   PREVIOUS
+   ========================================================== */
+
+.course-container .ese-bottom-buttons .previous-btn {
+    background: #cbd5e1 !important;
+    color: #ffffff !important;
+}
+
+.course-container .ese-bottom-buttons .previous-btn:hover {
+    background: #b8c4d4 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   BACK
+   ========================================================== */
+
+.course-container .ese-bottom-buttons .back-btn {
+    background: #64748b !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+}
+
+.course-container .ese-bottom-buttons .back-btn:hover {
+    background: #475569 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   SAVE
+   ========================================================== */
+
+.course-container .ese-bottom-buttons .save-btn {
+    background: #f59e0b !important;
+
+    color: #ffffff !important;
+}
+
+.course-container .ese-bottom-buttons .save-btn:hover {
+    background: #d97706 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   DELETE
+   ========================================================== */
+
+.course-container .ese-bottom-buttons .delete-btn {
+    background: #ef4444 !important;
+
+    color: #ffffff !important;
+}
+
+.course-container .ese-bottom-buttons .delete-btn:hover {
+    background: #dc2626 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   PRINT
+   ========================================================== */
+
+.course-container .ese-bottom-buttons .print-btn {
+    background: #7c3aed !important;
+
+    color: #ffffff !important;
+}
+
+.course-container .ese-bottom-buttons .print-btn:hover {
+    background: #6d28d9 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   CLEAR
+   ========================================================== */
+
+.course-container .ese-bottom-buttons .clear-btn {
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
+
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+
+    background: #f59e0b !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+    border-radius: 7px !important;
+
+    padding: 0 8px !important;
+
+    font-family: 'Poppins', sans-serif !important;
+
+    font-size: 12px !important;
+    font-weight: 600 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 5px !important;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition: 0.2s ease;
+}
+
+.course-container .ese-bottom-buttons .clear-btn:hover {
+    background: #d97706 !important;
+
+    transform: translateY(-1px);
+}
+
+.course-container .ese-bottom-buttons .clear-btn svg {
+    font-size: 12px !important;
+}
+
+
+/* ==========================================================
+   NEXT
+   ========================================================== */
+
+.course-container .ese-bottom-buttons .next-btn {
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
+
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+
+    background: #16a34a !important;
+
+    color: #ffffff !important;
+
+    -webkit-text-fill-color: #ffffff !important;
+
+    border: none !important;
+
+    border-radius: 7px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 5px;
+
+    font-family: 'Poppins', sans-serif !important;
+
+    font-size: 12px !important;
+    font-weight: 600 !important;
+
+    text-align: center !important;
+
+    line-height: normal !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    overflow: visible !important;
+
+    box-sizing: border-box;
+
+    transition: 0.2s ease;
+}
+
+
+/* ==========================================================
+   NEXT TEXT
+   ========================================================== */
+
+.course-container .ese-bottom-buttons .next-btn span {
+    color: #ffffff !important;
+
+    -webkit-text-fill-color: #ffffff !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+}
+
+
+/* ==========================================================
+   NEXT ICON
+   ========================================================== */
+
+.course-container .ese-bottom-buttons .next-btn svg {
+    color: #ffffff !important;
+
+    fill: #ffffff !important;
+
+    font-size: 12px !important;
+
+    display: inline-block !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    flex-shrink: 0;
+}
+
+
+/* ==========================================================
+   NEXT HOVER
+   ========================================================== */
+
+.course-container .ese-bottom-buttons .next-btn:hover {
+    background: #15803d !important;
+
+    color: #ffffff !important;
+
+    -webkit-text-fill-color: #ffffff !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   BOTTOM BUTTON SCROLLBAR
+   ========================================================== */
+
+.course-container .ese-bottom-buttons::-webkit-scrollbar {
+    height: 4px;
+}
+
+.course-container .ese-bottom-buttons::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.course-container .ese-bottom-buttons::-webkit-scrollbar-thumb {
+    background: #c7d2fe;
+
+    border-radius: 20px;
+}
+
+
+/* ==========================================================
+   TABLE SCROLLBAR
+   ========================================================== */
+
+.course-container .ese-card::-webkit-scrollbar {
+    height: 5px;
+}
+
+.course-container .ese-card::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.course-container .ese-card::-webkit-scrollbar-thumb {
+    background: #c7d2fe;
+
+    border-radius: 20px;
+}
+
+
+/* ==========================================================
+   RESPONSIVE - 1100px
+   ========================================================== */
+
+@media (max-width: 1100px) {
+
+    .course-container .ese-header,
+    .course-container .ese-card,
+    .course-container .ese-bottom-buttons {
+        width: 95%;
     }
 
-    .ese-title-section{
-        flex-direction:column;
-        text-align:center;
+    .course-container .ese-table th:nth-child(2),
+    .course-container .ese-table td:nth-child(2) {
+        width: 28%;
     }
 
-    .ese-table{
-        display:block;
-        overflow-x:auto;
+    .course-container .ese-table th:nth-child(3),
+    .course-container .ese-table td:nth-child(3) {
+        width: 34%;
     }
-.ese-bottom-buttons{
-    margin-top:20px;
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
+
+    .course-container .ese-table th:nth-child(4),
+    .course-container .ese-table td:nth-child(4) {
+        width: 31%;
+    }
 }
 
-    .ese-bottom-buttons button{
-    min-width:110px;
-    height:40px;
-    padding:0 15px;
-    font-size:13px;
-    font-weight:500;
-    border-radius:8px;
+
+/* ==========================================================
+   RESPONSIVE - 900px
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+    .course-container {
+        margin-left: 250px;
+        padding: 15px;
+    }
+
+    .course-container .ese-title-text h2 {
+        font-size: 21px;
+    }
+
+    .course-container .ese-table {
+        min-width: 800px;
+    }
+
+    .course-container .ese-bottom-buttons {
+        justify-content: flex-start;
+    }
 }
+
+
+/* ==========================================================
+   RESPONSIVE - 768px
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .course-container {
+        margin-left: 0;
+
+        width: 100%;
+
+        padding: 12px;
+    }
+
+    .course-container .ese-container {
+        width: 100%;
+    }
+
+    .course-container .ese-header {
+        width: 100%;
+
+        padding: 14px;
+    }
+
+    .course-container .ese-title-section {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 9px;
+    }
+
+    .course-container .ese-title-text h2 {
+        font-size: 20px;
+    }
+
+    .course-container .ese-title-text p {
+        font-size: 12px;
+    }
+
+    .course-container .ese-card {
+        width: 100%;
+
+        padding: 8px;
+    }
+
+    .course-container .ese-table {
+        min-width: 800px;
+    }
+
+    .course-container .ese-bottom-buttons {
+        width: 100%;
+
+        justify-content: flex-start;
+
+        gap: 8px;
+
+        background: transparent;
+
+        border: none;
+
+        box-shadow: none;
+
+        overflow-x: auto;
+    }
+
+    .course-container .ese-bottom-buttons button {
+        width: 90px;
+
+        min-width: 90px;
+
+        max-width: 90px;
+
+        height: 34px;
+    }
+}
+
+
+/* ==========================================================
+   RESPONSIVE - 480px
+   ========================================================== */
+
+@media (max-width: 480px) {
+
+    .course-container {
+        padding: 8px;
+    }
+
+    .course-container .ese-header {
+        padding: 12px;
+    }
+
+    .course-container .ese-badge {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+
+        font-size: 13px;
+    }
+
+    .course-container .ese-title-text h2 {
+        font-size: 18px;
+    }
+
+    .course-container .ese-title-text p {
+        font-size: 11px;
+    }
+
+    .course-container .ese-card {
+        padding: 6px;
+    }
+
+    .course-container .ese-table {
+        min-width: 800px;
+    }
+
+    .course-container .ese-bottom-buttons {
+        width: 100%;
+
+        padding: 0;
+
+        justify-content: flex-start;
+
+        background: transparent;
+
+        border: none;
+
+        box-shadow: none;
+    }
+
+    .course-container .ese-bottom-buttons button {
+        width: 90px;
+
+        min-width: 90px;
+
+        max-width: 90px;
+
+        height: 34px;
+
+        min-height: 34px;
+    }
 }

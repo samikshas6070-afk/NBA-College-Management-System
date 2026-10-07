@@ -1,845 +1,1046 @@
-import React, { useState, useEffect } from "react";
-import "./CourseMaster.css";
-import axios from "axios";
+import React,
+{
+  useState,
+  useEffect
+}
+from "react";
+import "./CourseMatrix.css";
+import {
+  FaPlus,
+  FaEdit,
+  FaTrash,
+  FaUpload,
+  FaDownload
+} from "react-icons/fa";
+import { FaPrint } from "react-icons/fa";
 
-function CourseMaster() {
-const [course, setCourse] = useState(() => {
-  const savedData = localStorage.getItem("courseData");
+function CourseMatrix({ onNext, onPrevious }) {
+  const [coFile, setCoFile] = useState(null);
+const [matrixFile, setMatrixFile] = useState(null);
+const [summaryFile, setSummaryFile] = useState("");
 
-  return savedData
-    ? JSON.parse(savedData)
-    : {
-        courseCode: "",
-        courseName: "",
-        courseType: "",
-        department: "",
-        courseLevel: "",
-        duration: "",
-        totalSemesters: "",
-        intakeCapacity: "",
-        courseStatus: "",
-        approvalStatus: "",
-        startDate: "",
-        endDate: "",
-        coordinator: "",
-        contactNumber: "",
-        courseDescription: "",
-        courseObjective: "",
-        eligibilityCriteria: "",
-        courseOutcome: "",
-        tuitionFees: "",
-        developmentFees: "",
-        otherFees: "",
-        totalFees: ""
-      };
+const [academicYear, setAcademicYear] = useState("");
+const [department, setDepartment] = useState("");
+const [program, setProgram] = useState("");
+const [uploadedOutcomeFile, setUploadedOutcomeFile] = useState("");
+const [uploadedMatrixFile, setUploadedMatrixFile] = useState("");
+const [mappedPO, setMappedPO] = useState("");
+
+const [po1, setPo1] = useState("");
+const [po2, setPo2] = useState("");
+const [po3, setPo3] = useState("");
+const [po4, setPo4] = useState("");
+const [po5, setPo5] = useState("");
+const [matrixData, setMatrixData] = useState({
+  CO1: { po1: "", po2: "", po3: "", po4: "", po5: "" },
+  CO2: { po1: "", po2: "", po3: "", po4: "", po5: "" },
+  CO3: { po1: "", po2: "", po3: "", po4: "", po5: "" }
 });
+const [editId, setEditId] = useState(null);
+const [subjects, setSubjects] = useState([]);
+const [pos, setPos] = useState([]);
+const [selectedSubject, setSelectedSubject] = useState("");
+const [matrixRows, setMatrixRows] = useState([]);
+const [courseMatrix,setCourseMatrix]=useState([]);
+const [coSubject, setCoSubject] = useState("");
+const [matrixSubject, setMatrixSubject] = useState("");
+const loadCourseMatrix = async () => {
 
-const [errors, setErrors] = useState({});
+  try {
 
-useEffect(() => {
-  localStorage.setItem(
-    "courseData",
-    JSON.stringify(course)
-  );
-}, [course]);
+    const res = await fetch(
+      "http://localhost:5000/get-course-matrix"
+    );
 
-const validateForm = () => {
+    const data = await res.json();
 
+    if (Array.isArray(data)) {
 
-let newErrors = {};
+      setCourseMatrix(data);
 
-if (!course.courseCode.trim())
-  newErrors.courseCode = "Course Code is required";
+      // Latest Matrix File
+      if (data.length > 0) {
+        setUploadedMatrixFile(data[0].matrix_file || "");
+      }
 
-if (!course.courseName.trim())
-  newErrors.courseName = "Course Name is required";
+    } else {
 
-if (!course.courseType)
-  newErrors.courseType = "Course Type is required";
+      setCourseMatrix([]);
 
-if (!course.department)
-  newErrors.department = "Department is required";
+    }
 
-if (!course.courseLevel)
-  newErrors.courseLevel = "Course Level is required";
+  } catch (error) {
 
-if (!course.duration)
-  newErrors.duration = "Duration is required";
+    console.log(error);
 
-if (!course.totalSemesters)
-  newErrors.totalSemesters = "Total Semesters is required";
+    setCourseMatrix([]);
 
-if (!course.intakeCapacity)
-  newErrors.intakeCapacity = "Intake Capacity is required";
-
-if (!course.courseStatus)
-  newErrors.courseStatus = "Course Status is required";
-
-if (!course.tuitionFees)
-  newErrors.tuitionFees = "Tuition Fees is required";
-
-if (!course.approvalStatus)
-  newErrors.approvalStatus = "Approval Status is required";
-if (
-  course.startDate &&
-  course.endDate &&
-  new Date(course.endDate) <= new Date(course.startDate)
-) {
-  newErrors.endDate =
-    "End Date must be greater than Start Date";
-}
-
-if (
-  course.coordinator &&
-  !/^[A-Za-z ]+$/.test(course.coordinator)
-) {
-  newErrors.coordinator =
-    "Only alphabets allowed";
-}
-
-if (!course.contactNumber.trim()) {
-  newErrors.contactNumber = "Contact Number is required";
-}
-else if (!/^\d{10}$/.test(course.contactNumber)) {
-  newErrors.contactNumber = "Contact Number must be 10 digits";
-}
-
-if (!course.courseDescription.trim())
-  newErrors.courseDescription = "Course Description is required";
-
-if (!course.courseObjective.trim())
-  newErrors.courseObjective = "Course Objective is required";
-
-if (!course.eligibilityCriteria.trim())
-  newErrors.eligibilityCriteria = "Eligibility Criteria is required";
-
-if (!course.courseOutcome.trim())
-  newErrors.courseOutcome = "Course Outcome is required";
-
-if (!course.developmentFees)
-  newErrors.developmentFees = "Development Fees is required";
-
-if (!course.otherFees)
-  newErrors.otherFees = "Other Fees is required";
-
-if (!course.totalFees)
-  newErrors.totalFees = "Total Fees is required";
-setErrors(newErrors);
-
-return Object.keys(newErrors).length === 0;
-
+  }
 
 };
-  const handleSave = () => {
 
-  if (!validateForm()) {
-    alert("Please fill all required fields");
+const [courseOutcome, setCourseOutcome] = useState("");
+const loadCourseOutcomes = async () => {
+
+  const res = await fetch(
+    "http://localhost:5000/get-course-outcomes"
+  );
+
+  const data = await res.json();
+
+  console.log("Course Outcomes =", data);
+
+  if (Array.isArray(data)) {
+
+    setCourseOutcomes(data);
+
+    // Latest Outcome file load
+    if (data.length > 0) {
+      setUploadedOutcomeFile(data[0].outcome_file || "");
+    }
+
+  } else {
+
+    setCourseOutcomes([]);
+
+  }
+
+};
+const [courseSummary,setCourseSummary]=useState([]);
+
+
+const [courseOutcomes, setCourseOutcomes] = useState([]);
+useEffect(() => {
+
+  loadCourseOutcomes();
+
+  loadCourseMatrix();
+
+  //loadCourseSummary();
+  loadPOs();
+
+}, []);
+
+useEffect(() => {
+
+  loadSubjects();
+
+}, [department]);
+useEffect(() => {
+
+  loadMatrixRows();
+
+}, [selectedSubject]);
+
+const loadCourseSummary = async()=>{
+
+const res=await fetch(
+"http://localhost:5000/get-course-summary"
+);
+
+const data=await res.json();
+
+setCourseSummary(data);
+
+}
+
+
+const loadSubjects = async () => {
+
+  if (!department) return;
+
+  const res = await fetch(
+    `http://localhost:5000/get-subjects/${department}`
+  );
+
+  const data = await res.json();
+
+  setSubjects(data);
+
+};
+const loadPOs = async () => {
+
+  const res = await fetch(
+    "http://localhost:5000/get-pos"
+  );
+
+  const data = await res.json();
+
+  setPos(data);
+
+};
+const loadMatrixRows = async () => {
+
+  if (!selectedSubject) return;
+
+  const res = await fetch(
+    `http://localhost:5000/get-subject-co/${selectedSubject}`
+  );
+
+  const data = await res.json();
+
+  setMatrixRows(data);
+
+};
+const handleAddCO = async () => {
+
+  if (!selectedSubject) {
+    alert("Please select Subject.");
     return;
   }
 
-  localStorage.setItem(
-    "courseData",
-    JSON.stringify(course)
+  if (!courseOutcome) {
+    alert("Please enter Course Outcome.");
+    return;
+  }
+
+  try {
+
+    let url = "http://localhost:5000/save-course-outcome";
+    let method = "POST";
+
+    if (editId) {
+      url = `http://localhost:5000/update-course-outcome/${editId}`;
+      method = "PUT";
+    }
+
+    const formData = new FormData();
+
+    formData.append("academicYear", academicYear);
+    formData.append("department", department);
+    formData.append("subjectCode", selectedSubject);
+    formData.append("courseOutcome", courseOutcome);
+    formData.append("mappedPO", mappedPO);
+
+    if (!coFile) {
+  alert("Please select Outcome File");
+  return;
+}
+
+formData.append("outcomeFile", coFile);
+
+console.log("coFile =", coFile);
+
+for (let pair of formData.entries()) {
+  console.log(pair[0], pair[1]);
+}
+
+    const response = await fetch(url, {
+      method,
+      body: formData
+    });
+
+    const data = await response.json();
+
+console.log("Backend Response =", data);
+
+setUploadedOutcomeFile(data.fileName);
+
+console.log("State File =", data.fileName);
+
+alert(data.message);
+    await loadCourseOutcomes();
+
+  } catch (error) {
+
+    console.log(error);
+    alert("Save Error");
+
+  }
+  setCoFile(null);
+document.getElementById("outcomeFile").value = "";
+};
+const handleSave = async () => {
+
+  try {const formData = new FormData();
+
+formData.append("academicYear", academicYear);
+formData.append("department", department);
+formData.append("program", program);
+formData.append("courseOutcome", courseOutcome);
+formData.append("mappedPO", mappedPO);
+formData.append("subjectCode", selectedSubject);
+
+if (matrixFile) {
+  formData.append("matrixFile", matrixFile);
+}
+
+const response = await fetch(
+  "http://localhost:5000/save-course-matrix",
+  {
+    method: "POST",
+    body: formData
+  }
+);
+
+
+    const data = await response.json();
+    console.log("Uploaded File =", data.fileName);
+
+    alert(data.message);
+
+    await loadCourseOutcomes();
+    await loadCourseMatrix();
+    //await loadCourseSummary();
+
+  } catch (error) {
+
+    console.log(error);
+    alert("Save Error");
+
+  }
+
+};
+const courses = {
+
+  "MCA": [
+    { code: "MCA101", name: "Programming in C" },
+    { code: "MCA102", name: "Data Structures" }
+  ],
+
+  "BCA": [
+    { code: "BCA101", name: "Computer Fundamentals" },
+    { code: "BCA102", name: "Web Technology" }
+  ],
+
+  "BBA": [
+    { code: "BBA101", name: "Principles of Management" },
+    { code: "BBA102", name: "Business Communication" }
+  ],
+
+  "Computer Science & Engineering": [
+    { code: "CS201", name: "Data Structures" },
+    { code: "CS202", name: "DBMS" }
+  ]
+
+};
+  
+
+const handleSubmit = () => {
+  alert("Submitted Successfully");
+};
+
+const handleEdit = (row) => {
+
+  setEditId(row.id);
+
+  setCourseOutcome(row.course_outcome);
+
+  setMappedPO(row.mapped_po);
+
+};
+const handleDelete = async (id) => {
+
+  if (!window.confirm("Delete this record?")) return;
+
+  try {
+
+    const response = await fetch(
+      `http://localhost:5000/delete-course-outcome/${id}`,
+      {
+        method: "DELETE"
+      }
+    );
+
+    const data = await response.json();
+
+    alert(data.message);
+
+    await loadCourseOutcomes();
+
+  } catch (error) {
+
+    console.log(error);
+
+    alert("Delete Error");
+
+  }
+
+};
+const handleMatrixSave = async (coId) => {
+
+  const row = document.getElementById(coId);
+  const inputs = row.querySelectorAll("input");
+
+  const formData = new FormData();
+
+  formData.append("academicYear", academicYear);
+  formData.append("department", department);
+  formData.append("subjectCode", selectedSubject);
+  formData.append("coId", coId);
+
+  formData.append("po1", inputs[0].value);
+  formData.append("po2", inputs[1].value);
+  formData.append("po3", inputs[2].value);
+  formData.append("po4", inputs[3].value);
+  formData.append("po5", inputs[4].value);
+console.log("matrixFile =", matrixFile);
+  // File compulsory
+  if (!matrixFile) {
+    alert("Please select Matrix File");
+    return;
+  }
+
+  formData.append("matrixFile", matrixFile);
+
+  for (let pair of formData.entries()) {
+    console.log(pair[0], pair[1]);
+  }
+
+  const response = await fetch(
+    "http://localhost:5000/save-course-matrix",
+    {
+      method: "POST",
+      body: formData
+    }
   );
 
-  alert("Course Saved Successfully");
+  const data = await response.json();
+
+console.log("Backend Response =", data);
+
+setUploadedMatrixFile(data.fileName);
+
+console.log("Matrix File =", data.fileName);
+
+alert(data.message);
+};
+const handleDownload = () => {
+
+  window.open(
+    "http://localhost:5000/download-course-matrix",
+    "_blank"
+  );
+
 };
 
-  const handleUpdate = () => {
+const handleMatrixView = () => {
 
-    if (!validateForm()) {
-      alert("Please fill all required fields");
-      return;
+  if (!uploadedMatrixFile) {
+    alert("Please upload Matrix file first.");
+    return;
+  }
+
+  window.open(
+    `http://localhost:5000/uploads/${uploadedMatrixFile}`,
+    "_blank"
+  );
+
+};
+const handleMatrixPrint = () => {
+
+  if (!uploadedMatrixFile) {
+    alert("Please upload Matrix file first.");
+    return;
+  }
+
+  const extension = uploadedMatrixFile
+    .split(".")
+    .pop()
+    .toLowerCase();
+
+  if (extension === "pdf") {
+
+    const win = window.open(
+      `http://localhost:5000/uploads/${uploadedMatrixFile}`,
+      "_blank"
+    );
+
+    if (win) {
+      win.onload = () => {
+        win.print();
+      };
     }
 
-    alert("Course Updated Successfully");
-  };
-const handleDelete = () => {
+  } else {
 
-  localStorage.removeItem("courseData");
+    window.open(
+      `http://localhost:5000/download/${uploadedMatrixFile}`,
+      "_blank"
+    );
 
-  setCourse({
-    courseCode: "",
-    courseName: "",
-    courseType: "",
-    department: "",
-    courseLevel: "",
-    duration: "",
-    totalSemesters: "",
-    intakeCapacity: "",
-    courseStatus: "",
-    approvalStatus: "",
-    startDate: "",
-    endDate: "",
-    coordinator: "",
-    contactNumber: "",
-    courseDescription: "",
-    courseObjective: "",
-    eligibilityCriteria: "",
-    courseOutcome: "",
-    tuitionFees: "",
-    developmentFees: "",
-    otherFees: "",
-    totalFees: ""
-  });
+    alert("Open the downloaded file in Word/Excel and press Ctrl + P.");
 
-  setErrors({});
+  }
 
-  alert("Course Deleted Successfully");
-};const handleClear = () => {
+};
+const handleMatrixDownload = () => {
 
-  localStorage.removeItem("courseData");
+  if (!uploadedMatrixFile) {
+    alert("Please upload Matrix file first.");
+    return;
+  }
 
-  setCourse({
-    courseCode: "",
-    courseName: "",
-    courseType: "",
-    department: "",
-    courseLevel: "",
-    duration: "",
-    totalSemesters: "",
-    intakeCapacity: "",
-    courseStatus: "",
-    approvalStatus: "",
-    startDate: "",
-    endDate: "",
-    coordinator: "",
-    contactNumber: "",
-    courseDescription: "",
-    courseObjective: "",
-    eligibilityCriteria: "",
-    courseOutcome: "",
-    tuitionFees: "",
-    developmentFees: "",
-    otherFees: "",
-    totalFees: ""
-  });
+  window.open(
+    `http://localhost:5000/download/${uploadedMatrixFile}`,
+    "_blank"
+  );
 
-  setErrors({});
+};
+const handleOutcomeView = () => {
+
+  console.log("uploadedOutcomeFile =", uploadedOutcomeFile);
+  console.log("coFile =", coFile);
+
+  const fileName = uploadedOutcomeFile;
+
+  if (!fileName) {
+    alert("No Outcome file found.");
+    return;
+  }
+
+  window.open(
+    `http://localhost:5000/uploads/${fileName}`,
+    "_blank"
+  );
+
+};
+const handleOutcomeDownload = () => {
+
+  if (!uploadedOutcomeFile) {
+    alert("Please upload file first.");
+    return;
+  }
+
+  window.open(
+    `http://localhost:5000/download/${uploadedOutcomeFile}`,
+    "_blank"
+  );
+
+};
+const handleOutcomePrint = () => {
+
+  if (!uploadedOutcomeFile) {
+    alert("Please upload Outcome file first.");
+    return;
+  }
+
+  const extension = uploadedOutcomeFile
+    .split(".")
+    .pop()
+    .toLowerCase();
+
+  if (extension === "pdf") {
+
+    const win = window.open(
+      `http://localhost:5000/uploads/${uploadedOutcomeFile}`,
+      "_blank"
+    );
+
+    if (win) {
+      win.onload = () => {
+        win.print();
+      };
+    }
+
+  } else {
+
+    window.open(
+      `http://localhost:5000/download/${uploadedOutcomeFile}`,
+      "_blank"
+    );
+
+    alert("Open the downloaded file in Word/Excel and press Ctrl + P.");
+
+  }
+
 };
 
+
+const handlePrevious = () => {
+  onPrevious();
+};
   return (
-    <div className="course-container">
+    <div className="course-matrix-page">
 
-  <div className="course-card">
+      {/* Header */}
 
-    {/* Header */}
-
-    <div className="page-header">
-      <div className="header-icon">🎓</div>
-
-      <div>
-        <h1>Course Master</h1>
-        <p>Add, Update and Manage Course Information</p>
-      </div>
-    </div>
-
-    {/* Course Information */}
-
-    <div className="section">
-
-      <div className="section-title">
-        <span className="section-icon">📖</span>
-        <h2>Course Information</h2>
+      <div className="page-title">
+        <h1>
+          Criteria 1.4 : Course Outcomes & Matrix
+        </h1>
       </div>
 
-      <div className="grid-4">
+      {/* Filters */}
 
-        <div>
-          <label>Course Code *</label>
+      <div className="filter-card">
 
-          <input
-            type="text"
-            placeholder="Enter Course Code"
-            className={errors.courseCode ? "error-field" : ""}
-            value={course.courseCode}
-            onChange={(e) =>
-              setCourse({
-                ...course,
-                courseCode: e.target.value
-              })
-            }
-          />
+        <div className="filter-box">
+          <label>Academic Year</label>
+         <select
+  value={academicYear}
+  onChange={(e) => setAcademicYear(e.target.value)}
+>
+  <option value="">Select Academic Year</option>
 
-          {errors.courseCode && (
-            <span className="error-message">
-              {errors.courseCode}
-            </span>
-          )}
+  <option value="2011-12">2011-12</option>
+  <option value="2012-13">2012-13</option>
+  <option value="2013-14">2013-14</option>
+  <option value="2014-15">2014-15</option>
+  <option value="2015-16">2015-16</option>
+  <option value="2016-17">2016-17</option>
+  <option value="2017-18">2017-18</option>
+  <option value="2018-19">2018-19</option>
+  <option value="2019-20">2019-20</option>
+  <option value="2020-21">2020-21</option>
+  <option value="2021-22">2021-22</option>
+  <option value="2022-23">2022-23</option>
+  <option value="2023-24">2023-24</option>
+  <option value="2024-25">2024-25</option>
+  <option value="2025-26">2025-26</option>
+  <option value="2026-27">2026-27</option>
+</select>
         </div>
 
-        <div>
-          <label>Course Name *</label>
+        <div className="filter-box">
+  <label>Department</label>
+<select
+  value={department}
+  onChange={(e) => setDepartment(e.target.value)}
+>
+  <option value="">Select Department Type</option>
 
-          <input
-            type="text"
-            placeholder="Enter Course Name"
-            className={errors.courseName ? "error-field" : ""}
-            value={course.courseName}
-            onChange={(e) =>
-              setCourse({
-                ...course,
-                courseName: e.target.value
-              })
-            }
-          />
+  <option value="Computer Science & Engineering">
+    Computer Science & Engineering
+  </option>
 
-          {errors.courseName && (
-            <span className="error-message">
-              {errors.courseName}
-            </span>
-          )}
+  <option value="Information Technology">
+    Information Technology
+  </option>
+
+  <option value="Artificial Intelligence & Data Science">
+    Artificial Intelligence & Data Science
+  </option>
+
+  <option value="Electronics & Telecommunication">
+    Electronics & Telecommunication
+  </option>
+
+  <option value="Electrical Engineering">
+    Electrical Engineering
+  </option>
+
+  <option value="Mechanical Engineering">
+    Mechanical Engineering
+  </option>
+
+  <option value="Civil Engineering">
+    Civil Engineering
+  </option>
+
+  <option value="MBA">
+    MBA
+  </option>
+
+  <option value="MCA">
+    MCA
+  </option>
+
+  <option value="BCA">
+    BCA
+  </option>
+
+  <option value="BBA">
+    BBA
+  </option>
+  
+  <option value="Science">
+  Science
+  </option>
+  <option value="Commerce">
+Commerce
+  </option>
+  <option value="Arts">
+Arts
+  </option>
+
+
+</select>
         </div>
 
-        <div>
-          <label>Course Type *</label>
+   <button
+  className="download-btn"
+  onClick={handleDownload}
+>
+  <FaDownload />
+  Download Report
+</button>     
 
-          <select
-            className={errors.courseType ? "error-field" : ""}
-            value={course.courseType}
-            onChange={(e) =>
-              setCourse({
-                ...course,
-                courseType: e.target.value
-              })
-            }
-          >
-            <option value="">Select Course Type</option>
-            <option>Degree</option>
-            <option>Diploma</option>
-            <option>Certificate</option>
-            <option>PG Course</option>
-          </select>
 
-          {errors.courseType && (
-            <span className="error-message">
-              {errors.courseType}
-            </span>
-          )}
+      </div>
+
+      {/* 1.4.1 */}
+
+      <div className="section-card">
+
+        <div className="section-header">
+          1.4.1 Course Outcomes
         </div>
 
-        <div>
-          <label>Department *</label>
+        <div className="section-content">
 
-          <select
-            className={errors.department ? "error-field" : ""}
-            value={course.department}
-            onChange={(e) =>
-              setCourse({
-                ...course,
-                department: e.target.value
-              })
-            }
-          >
-            <option value="">Select Department</option>
-            <option>Computer Engineering</option>
-            <option>Information Technology</option>
-            <option>Mechanical Engineering</option>
-            <option>Civil Engineering</option>
-            <option>Electronics Engineering</option>
-            <option>MBA</option>
-            <option>MCA</option>
-          </select>
+          <div className="left-content">
 
-          {errors.department && (
-            <span className="error-message">
-              {errors.department}
-            </span>
-          )}
-        </div>
+            <div className="top-row">
 
-        <div>
-          <label>Course Level *</label>
+              
 
-          <select
-            className={errors.courseLevel ? "error-field" : ""}
-            value={course.courseLevel}
-            onChange={(e) =>
-              setCourse({
-                ...course,
-                courseLevel: e.target.value
-              })
-            }
-          >
-            <option value="">Select Course Level</option>
-            <option>UG</option>
-            <option>PG</option>
-            <option>Doctorate</option>
-          </select>
+<select
+  value={mappedPO}
+  onChange={(e) => setMappedPO(e.target.value)}
+>
+  <option value="">Select PO</option>
+  <option value="PO1">PO1</option>
+  <option value="PO2">PO2</option>
+  <option value="PO3">PO3</option>
+  <option value="PO4">PO4</option>
+  <option value="PO5">PO5</option>
+</select>
+<div className="filter-box">
 
-          {errors.courseLevel && (
-            <span className="error-message">
-              {errors.courseLevel}
-            </span>
-          )}
-        </div>
+<label>Subject</label>
 
-        <div>
-          <label>Duration *</label>
+<select
+  value={selectedSubject}
+  onChange={(e) => setSelectedSubject(e.target.value)}
+>
 
-          <select
-            className={errors.duration ? "error-field" : ""}
-            value={course.duration}
-            onChange={(e) =>
-              setCourse({
-                ...course,
-                duration: e.target.value
-              })
-            }
-          >
-            <option value="">Select Duration</option>
-            <option>1 Year</option>
-            <option>2 Years</option>
-            <option>3 Years</option>
-            <option>4 Years</option>
-          </select>
+  <option value="">Select Subject</option>
 
-          {errors.duration && (
-            <span className="error-message">
-              {errors.duration}
-            </span>
-          )}
-        </div>
-                <div>
-          <label>Total Semesters *</label>
+  {subjects.map((subject) => (
 
-          <select
-            className={errors.totalSemesters ? "error-field" : ""}
-            value={course.totalSemesters}
-            onChange={(e) =>
-              setCourse({
-                ...course,
-                totalSemesters: e.target.value
-              })
-            }
-          >
-            <option value="">Select Semesters</option>
-            <option>2</option>
-            <option>4</option>
-            <option>6</option>
-            <option>8</option>
-          </select>
+    <option
+      key={subject.course_code}
+      value={subject.course_code}
+    >
+      {subject.course_name} ({subject.course_code})
+    </option>
 
-          {errors.totalSemesters && (
-            <span className="error-message">
-              {errors.totalSemesters}
-            </span>
-          )}
-        </div>
+  ))}
 
-        <div>
-          <label>Intake Capacity *</label>
+</select>
 
-          <input
-            type="number"
-            placeholder="Enter Intake Capacity"
-            className={errors.intakeCapacity ? "error-field" : ""}
-            value={course.intakeCapacity}
-            onChange={(e) =>
-              setCourse({
-                ...course,
-                intakeCapacity: e.target.value
-              })
-            }
-          />
+</div>
 
-          {errors.intakeCapacity && (
-            <span className="error-message">
-              {errors.intakeCapacity}
-            </span>
-          )}
-        </div>
+<textarea
+  placeholder="Enter Course Outcome"
+  value={courseOutcome}
+  onChange={(e) => setCourseOutcome(e.target.value)}
+  className="co-textarea"
+/>
 
-        <div>
-          <label>Course Status *</label>
+<button
+  className="add-btn"
+  onClick={handleAddCO}
+>
+  <FaPlus />
+{editId ? "Update Course Outcome" : "Add Course Outcome"}
+</button>
+            </div>
 
-          <select
-            className={errors.courseStatus ? "error-field" : ""}
-            value={course.courseStatus}
-            onChange={(e) =>
-              setCourse({
-                ...course,
-                courseStatus: e.target.value
-              })
-            }
-          >
-            <option value="">Select Status</option>
-            <option>Active</option>
-            <option>Inactive</option>
-          </select>
+            <table>
 
-          {errors.courseStatus && (
-            <span className="error-message">
-              {errors.courseStatus}
-            </span>
-          )}
-        </div>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Course Outcomes</th>
+                  <th>Mapped PO</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+               <tbody>
 
-        <div>
-  <label>Approval Status *</label>
+{courseOutcomes.map((row, index) => (
 
-  <select
-    className={errors.approvalStatus ? "error-field" : ""}
-    value={course.approvalStatus}
-    onChange={(e) =>
-      setCourse({
-        ...course,
-        approvalStatus: e.target.value
-      })
-    }
+<tr key={row.id}>
+
+<td>{index + 1}</td>
+
+<td>{row.course_outcome}</td>
+
+<td>{row.mapped_po}</td>
+
+<td>
+<button onClick={() => handleEdit(row)}>
+<FaEdit/>
+</button>
+
+<button onClick={() => handleDelete(row.id)}>
+<FaTrash/>
+</button>
+</td>
+
+</tr>
+
+))}
+
+</tbody>
+            </table>
+
+          </div>
+
+          <label htmlFor="outcomeFile" className="upload-panel">
+
+  <FaUpload className="upload-icon" />
+
+  <h4>Upload Supporting Document</h4>
+
+  <p>(Max. size 10MB)</p>
+<div
+  className="pdf-name"
+  title={uploadedOutcomeFile || (coFile && coFile.name)}
+>
+  {uploadedOutcomeFile || (coFile && coFile.name)}
+</div>
+<div className="document-actions">
+
+  <button
+    type="button"
+    className="view-btn"
+    onClick={handleOutcomeView}
   >
-    <option value="">Select Approval Status</option>
-    <option>Approved</option>
-    <option>Pending</option>
-    <option>Rejected</option>
-  </select>
+    👁 View
+  </button>
 
-  {errors.approvalStatus && (
-    <span className="error-message">
-      {errors.approvalStatus}
-    </span>
-  )}
+  <button
+    type="button"
+    className="download-btn-upload"
+    onClick={handleOutcomeDownload}
+  >
+    <FaDownload />
+    Download
+  </button>
+
+  <button
+    type="button"
+    className="print-btn-upload"
+    onClick={handleOutcomePrint}
+  >
+    <FaPrint />
+    Print
+  </button>
+
 </div>
-        <div>
-  <label>Start Date *</label>
-
   <input
-    type="date"
-    className={errors.startDate ? "error-field" : ""}
-    value={course.startDate}
-    onChange={(e) =>
-      setCourse({
-        ...course,
-        startDate: e.target.value
-      })
-    }
-  />
+  id="outcomeFile"
+  type="file"
+  hidden
+  accept=".pdf,.doc,.docx,.xls,.xlsx"
+  onChange={(e) => setCoFile(e.target.files[0])}
+/>
+</label>
 
-  {errors.startDate && (
-    <span className="error-message">
-      {errors.startDate}
-    </span>
-  )}
-</div>
 
-       <div>
-  <label>End Date *</label>
-
-  <input
-    type="date"
-    className={errors.endDate ? "error-field" : ""}
-    value={course.endDate}
-    onChange={(e) =>
-      setCourse({
-        ...course,
-        endDate: e.target.value
-      })
-    }
-  />
-
-  {errors.endDate && (
-    <span className="error-message">
-      {errors.endDate}
-    </span>
-  )}
-</div>
-
-        <div>
-  <label>Course Coordinator *</label>
-
-  <input
-    type="text"
-    placeholder="Enter Coordinator Name"
-    className={errors.coordinator ? "error-field" : ""}
-    value={course.coordinator}
-    onChange={(e) =>
-      setCourse({
-        ...course,
-        coordinator: e.target.value
-      })
-    }
-  />
-
-  {errors.coordinator && (
-    <span className="error-message">
-      {errors.coordinator}
-    </span>
-  )}
-</div>
-      <div>
-  <label>Contact Number *</label>
-
-  <input
-    type="text"
-    placeholder="Enter Contact Number"
-    className={errors.contactNumber ? "error-field" : ""}
-    value={course.contactNumber}
-    onChange={(e) =>
-      setCourse({
-        ...course,
-        contactNumber: e.target.value
-      })
-    }
-  />
-
-  {errors.contactNumber && (
-    <span className="error-message">
-      {errors.contactNumber}
-    </span>
-  )}
-</div>
+        </div>
+        
 
       </div>
 
-    </div>
-        {/* Course Details */}
+      {/* 1.4.2 */}
 
-    <div className="section">
+      <div className="section-card">
 
-      <div className="section-title">
-        <span className="section-icon">ℹ️</span>
-        <h2>Course Details</h2>
-      </div>
-
-      <div className="grid-2">
-
-        <div>
-  <label>Course Description *</label>
-
-  <textarea
-    placeholder="Enter course description..."
-    className={errors.courseDescription ? "error-field" : ""}
-    value={course.courseDescription}
-    onChange={(e) =>
-      setCourse({
-        ...course,
-        courseDescription: e.target.value
-      })
-    }
-  ></textarea>
-
-  {errors.courseDescription && (
-    <span className="error-message">
-      {errors.courseDescription}
-    </span>
-  )}
-</div>
-
-        <div>
-  <label>Course Objective *</label>
-
-  <textarea
-    placeholder="Enter course objective..."
-    className={errors.courseObjective ? "error-field" : ""}
-    value={course.courseObjective}
-    onChange={(e) =>
-      setCourse({
-        ...course,
-        courseObjective: e.target.value
-      })
-    }
-  ></textarea>
-
-  {errors.courseObjective && (
-    <span className="error-message">
-      {errors.courseObjective}
-    </span>
-  )}
-</div>
-
-       <div>
-  <label>Eligibility Criteria *</label>
-
-  <textarea
-    placeholder="Enter eligibility criteria..."
-    className={errors.eligibilityCriteria ? "error-field" : ""}
-    value={course.eligibilityCriteria}
-    onChange={(e) =>
-      setCourse({
-        ...course,
-        eligibilityCriteria: e.target.value
-      })
-    }
-  ></textarea>
-
-  {errors.eligibilityCriteria && (
-    <span className="error-message">
-      {errors.eligibilityCriteria}
-    </span>
-  )}
-</div>
-
-       <div>
-  <label>Course Outcome *</label>
-
-  <textarea
-    placeholder="Enter course outcome..."
-    className={errors.courseOutcome ? "error-field" : ""}
-    value={course.courseOutcome}
-    onChange={(e) =>
-      setCourse({
-        ...course,
-        courseOutcome: e.target.value
-      })
-    }
-  ></textarea>
-
-  {errors.courseOutcome && (
-    <span className="error-message">
-      {errors.courseOutcome}
-    </span>
-  )}
-</div>
-
-      </div>
-
-    </div>
-
-    {/* Fees Information */}
-
-    <div className="section">
-
-      <div className="section-title">
-        <span className="section-icon">₹</span>
-        <h2>Fees Information</h2>
-      </div>
-
-      <div className="grid-4">
-
-        <div>
-          <label>Tuition Fees (₹) *</label>
-
-          <input
-            type="number"
-            placeholder="Enter Tuition Fees"
-            className={errors.tuitionFees ? "error-field" : ""}
-            value={course.tuitionFees}
-            onChange={(e) =>
-              setCourse({
-                ...course,
-                tuitionFees: e.target.value
-              })
-            }
-          />
-
-          {errors.tuitionFees && (
-            <span className="error-message">
-              {errors.tuitionFees}
-            </span>
-          )}
+        <div className="section-header">
+          1.4.2 Course Articulation Matrix
         </div>
 
-        <div>
-  <label>Development Fees (₹) *</label>
+        <div className="section-content">
 
+          <div className="left-content">
+
+            <div className="top-row">
+<select
+  value={selectedSubject}
+  onChange={(e) => setSelectedSubject(e.target.value)}
+>
+
+  <option value="">Select Subject</option>
+
+  {subjects.map((subject) => (
+
+    <option
+      key={subject.course_code}
+      value={subject.course_code}
+    >
+      {subject.course_name} ({subject.course_code})
+    </option>
+
+  ))}
+
+</select>
+
+
+            </div>
+
+            <table>
+
+             <thead>
+<tr>
+  <th>CO/PO</th>
+  <th>PO1</th>
+  <th>PO2</th>
+  <th>PO3</th>
+  <th>PO4</th>
+  <th>PO5</th>
+  <th>Action</th>
+</tr>
+</thead>
+
+           <tbody>
+<tr id="CO1">
+<td>CO1</td>
+
+<td><input type="number" min="0" max="100" /></td>
+<td><input type="number" min="0" max="100" /></td>
+<td><input type="number" min="0" max="100" /></td>
+<td><input type="number" min="0" max="100" /></td>
+<td><input type="number" min="0" max="100" /></td>
+
+<td>
+<button
+  className="matrix-save-btn"
+  onClick={() => handleMatrixSave("CO1")}
+>
+  Save
+</button>
+</td>
+
+</tr>
+<tr id="CO2">
+
+<td>CO2</td>
+
+<td><input type="number" min="0" max="100" /></td>
+<td><input type="number" min="0" max="100" /></td>
+<td><input type="number" min="0" max="100" /></td>
+<td><input type="number" min="0" max="100" /></td>
+<td><input type="number" min="0" max="100" /></td>
+
+<td>
+<button
+  className="matrix-save-btn"
+  onClick={() => handleMatrixSave("CO2")}
+>
+  Save
+</button>
+</td>
+
+</tr>
+
+<tr id="CO3">
+
+<td>CO3</td>
+
+<td><input type="number" min="0" max="100" /></td>
+<td><input type="number" min="0" max="100" /></td>
+<td><input type="number" min="0" max="100" /></td>
+<td><input type="number" min="0" max="100" /></td>
+<td><input type="number" min="0" max="100" /></td>
+
+<td>
+<button
+  className="matrix-save-btn"
+  onClick={() => handleMatrixSave("CO3")}
+>
+  Save
+</button>
+</td>
+
+</tr>
+
+</tbody>
+            </table>
+
+          </div>
+<label htmlFor="matrixFile" className="upload-panel">
+
+  <FaUpload className="upload-icon" />
+
+  <h4>Upload Supporting Document</h4>
+
+  <p>(Max. size 10MB)</p>
+
+  <div
+  className="pdf-name"
+  title={uploadedMatrixFile || (matrixFile && matrixFile.name)}
+>
+  {uploadedMatrixFile || (matrixFile && matrixFile.name)}
+</div>
+ <div className="document-actions">
+
+  <button
+    type="button"
+    className="view-btn"
+    onClick={handleMatrixView}
+  >
+    👁 View
+  </button>
+
+  <button
+    type="button"
+    className="download-btn-upload"
+    onClick={handleMatrixDownload}
+  >
+    <FaDownload />
+    Download
+  </button>
+
+  <button
+    type="button"
+    className="print-btn-upload"
+    onClick={handleMatrixPrint}
+  >
+    <FaPrint />
+    Print
+  </button>
+
+</div>
   <input
-    type="number"
-    placeholder="Enter Development Fees"
-    className={errors.developmentFees ? "error-field" : ""}
-    value={course.developmentFees}
-    onChange={(e) =>
-      setCourse({
-        ...course,
-        developmentFees: e.target.value
-      })
-    }
+    id="matrixFile"
+    type="file"
+    hidden
+    accept=".pdf,.doc,.docx,.xls,.xlsx"
+    onChange={(e) => {
+      console.log("Selected Matrix File =", e.target.files[0]);
+      setMatrixFile(e.target.files[0]);
+    }}
   />
 
-  {errors.developmentFees && (
-    <span className="error-message">
-      {errors.developmentFees}
-    </span>
-  )}
-</div>
-
-       <div>
-  <label>Other Fees (₹) *</label>
-
-  <input
-    type="number"
-    placeholder="Enter Other Fees"
-    className={errors.otherFees ? "error-field" : ""}
-    value={course.otherFees}
-    onChange={(e) =>
-      setCourse({
-        ...course,
-        otherFees: e.target.value
-      })
-    }
-  />
-
-  {errors.otherFees && (
-    <span className="error-message">
-      {errors.otherFees}
-    </span>
-  )}
-</div>
-
-        <div>
-  <label>Total Fees (₹) *</label>
-
-  <input
-    type="number"
-    placeholder="Enter Total Fees"
-    className={errors.totalFees ? "error-field" : ""}
-    value={course.totalFees}
-    onChange={(e) =>
-      setCourse({
-        ...course,
-        totalFees: e.target.value
-      })
-    }
-  />
-
-  {errors.totalFees && (
-    <span className="error-message">
-      {errors.totalFees}
-    </span>
-  )}
-</div>
+</label>
+        </div>
 
       </div>
 
-    </div>
 
-    {/* Action Buttons */}
+           
 
-    <div className="button-group">
+          
+    <div className="footer-buttons">
 
-      <button
-        className="save-btn"
-        onClick={handleSave}
-      >
-        Save
-      </button>
+<button
+className="previous-btn"
+onClick={handlePrevious}
+>
+Previous
+</button>
 
-      <button
-        className="update-btn"
-        onClick={handleUpdate}
-      >
-        Update
-      </button>
+<button
+className="submit-btn"
+onClick={handleSubmit}
+>
+Submit
+</button>
 
-      <button
-        className="delete-btn"
-        onClick={handleDelete}
-      >
-        Delete
-      </button>
-
-      <button
-        className="clear-btn"
-        onClick={handleClear}
-      >
-        Clear
-      </button>
-
-    </div>
-
-  </div>
+<button
+className="next-page-btn"
+onClick={onNext}
+>
+Next →
+</button>
 
 </div>
+      </div>
   );
 }
 
-export default CourseMaster;
+export default CourseMatrix;

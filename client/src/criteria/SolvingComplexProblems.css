@@ -1,278 +1,774 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+/* =====================================================
+   2.7 COMPLEX ENGINEERING PROBLEMS
+   SCOPED CSS - ONLY FOR THIS PAGE
+===================================================== */
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
 
 .complex-container {
-  padding: 30px;
-  background: #f5f7fb;
-  min-height: 100vh;
+    margin-left: 270px;
+    width: calc(100% - 270px);
+    min-height: 100vh;
+    padding: 15px;
+    background: #f5f7fb;
+    box-sizing: border-box;
 }
 
-/* Header */
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 .complex-header {
-  margin-bottom: 25px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 18px 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
 }
 
 .complex-title-section {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background: #fff;
-  padding: 25px;
-  border-radius: 18px;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-}
-.complex-badge{
-  width:45px;
-  height:45px;
-  border-radius:10px;
-  background:#4f46e5;
-  color:#fff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-weight:600;
-  font-size:16px;
-}
-.complex-title-section{
-  display:flex;
-  align-items:center;
-  gap:15px;
-}
-
-.complex-title-section p{
-  color:#64748b;
-  font-size:15px;
-}
-
-/* Card */
-.complex-card{
-  background:#fff;
-  border-radius:15px;
-  padding:20px;
-  box-shadow:0 2px 10px rgba(0,0,0,.08);
-  overflow-x:auto;
-}
-
-/* Table */
-
-.complex-table{
-  width:100%;
-  border-collapse:collapse;
-}
-
-.complex-table thead{
-  background:#fff;
-}
-
-.complex-table th,
-.complex-table td{
-  border:1px solid #d9d9d9;
-  padding:16px;
-  text-align:center;
-  vertical-align:middle;
-}
-
-.complex-table th{
-  color:#000;
-  font-weight:600;
-}
-.complex-table td {
-  padding: 18px;
-  text-align: left;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.complex-table tbody tr:hover {
-  background: #f8fafc;
-}
-.file-input{
-    display:block;
-    width:220px;
-    margin:0 auto 8px auto;
-}
-
-/* Action Buttons */
-
-.action-buttons{
-    display:flex;
-    justify-content:center;
-    gap:8px;
-    margin-top:8px;
-}
-
-.view-btn{
-    width:60px;
-    height:30px;
-    background:#dff2ff;
-    color:#0284c7;
-    border:none;
-    border-radius:5px;
-    font-size:12px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:4px;
-}
-
-.download-btn{
-    width:90px;
-    height:30px;
-    background:#16a34a;
-    color:#fff;
-    border:none;
-    border-radius:5px;
-    font-size:12px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:4px;
-}
-.action-buttons button {
-  border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-}
-
-/* View */
-
-
-.view-btn:hover {
-  background: #bae6fd;
-}
-
-/* Download */
-
-
-.download-btn:hover {
-  background: #e9d5ff;
-}
-
-/* Bottom Buttons */
-
-.bottom-buttons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.bottom-buttons button {
-  min-width: 140px;
-  height: 48px;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: all 0.3s ease;
-}
-
-.bottom-buttons button:hover {
-  transform: translateY(-2px);
-}
-
-/* Previous */
-
-.previous-btn {
-  background: linear-gradient(135deg, #ff7b00, #ff5e00);
-}
-
-/* Back */
-
-.back-btn {
-  background: #e5e7eb;
-  color: #374151 !important;
-  border: 1px solid #d1d5db;
-}
-
-/* Save */
-
-.save-btn {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-}
-
-/* Delete */
-
-.delete-btn {
-  background: linear-gradient(135deg, #ef4444, #dc2626);
-}
-
-/* Submit */
-
-.submit-btn {
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-}
-
-/* Print */
-
-.print-btn {
-  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-}
-
-/* Next */
-
-.next-btn {
-  background: linear-gradient(135deg, #14b8a6, #0f766e);
-}
-
-/* Responsive */
-
-@media (max-width: 768px) {
-  .complex-container {
-    padding: 15px;
-  }
-
-  .complex-title-section {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .complex-table {
-    display: block;
-    overflow-x: auto;
-  }
-
-  .bottom-buttons {
-    flex-direction: column;
+    display: flex;
     align-items: center;
-  }
+    gap: 15px;
+}
 
-  .bottom-buttons button {
+.complex-badge {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    border-radius: 10px;
+    background: #4f46e5;
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.complex-title-section h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.complex-title-section p {
+    margin: 4px 0 0 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.complex-card {
     width: 100%;
-    max-width: 320px;
-  }
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    box-sizing: border-box;
+    overflow-x: auto;
 }
-.description-box{
-    width:100%;
-    height:90px;
-    padding:10px;
-    border:1px solid #d1d5db;
-    border-radius:6px;
-    background:#fff;
-    resize:none;
-    font-size:14px;
-    color:#111827;
-    outline:none;
-    font-family:"Poppins",sans-serif;
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.complex-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
 }
-.complex-table th:first-child,
-.complex-table td:first-child{
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.complex-table thead {
+    background: #f8fafc;
+}
+
+.complex-table th {
+    border: 1px solid #d9d9d9;
+
+    padding: 10px 8px;
+
     text-align: center;
     vertical-align: middle;
+
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+
+    background: #f8fafc;
+}
+
+
+/* =====================================================
+   TABLE DATA
+===================================================== */
+
+.complex-table td {
+    border: 1px solid #d9d9d9;
+
+    padding: 10px 8px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    font-size: 13px;
+    color: #111827;
+
+    background: #ffffff;
+}
+
+
+/* =====================================================
+   TABLE HOVER
+===================================================== */
+
+.complex-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.complex-table tbody tr:hover td {
+    background: #f8fafc;
+}
+
+
+/* =====================================================
+   COLUMN WIDTHS
+===================================================== */
+
+.complex-table th:first-child,
+.complex-table td:first-child {
+    width: 7%;
+}
+
+.complex-table th:nth-child(2),
+.complex-table td:nth-child(2) {
+    width: 28%;
+    text-align: left;
+}
+
+.complex-table th:nth-child(3),
+.complex-table td:nth-child(3) {
+    width: 32%;
+}
+
+.complex-table th:nth-child(4),
+.complex-table td:nth-child(4) {
+    width: 33%;
+}
+
+
+/* =====================================================
+   DOCUMENT NAME
+===================================================== */
+
+.complex-table td:nth-child(2) {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   DESCRIPTION BOX
+===================================================== */
+
+.complex-container .description-box {
+    width: 90%;
+    max-width: 300px;
+
+    height: 58px;
+
+    padding: 8px 10px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: #111827;
+
+    resize: none;
+    outline: none;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+
+    box-sizing: border-box;
+
+    display: block;
+    margin: 0 auto;
+
+    overflow: hidden;
+}
+
+.complex-container .description-box:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 2px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =====================================================
+   ATTACHMENT BOX
+===================================================== */
+
+.complex-container .attachment-box {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0;
+}
+
+
+/* =====================================================
+   FILE INPUT
+===================================================== */
+
+.complex-container .file-input {
+    width: 160px;
+    max-width: 100%;
+
+    margin: 0 auto 8px auto;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   FILE CHOOSER BUTTON
+===================================================== */
+
+.complex-container .file-input::file-selector-button {
+    background: #f3f4f6;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 5px;
+
+    padding: 5px 9px;
+
+    margin-right: 4px;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+.complex-container .file-input::file-selector-button:hover {
+    background: #e5e7eb;
+}
+
+
+/* =====================================================
+   ACTION BUTTON CONTAINER
+===================================================== */
+
+.complex-container .complex-action-buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+
+    margin-top: 5px;
+
+    flex-wrap: nowrap;
+}
+
+
+/* =====================================================
+   VIEW BUTTON
+===================================================== */
+
+.complex-container .complex-action-buttons .view-btn {
+    width: 75px;
+    height: 30px;
+
+    background: #2563eb !important;
+    background-color: #2563eb !important;
+
+    color: #ffffff !important;
+
+    border: none;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.complex-container .complex-action-buttons .view-btn:hover {
+    background: #1d4ed8 !important;
+    background-color: #1d4ed8 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   DOWNLOAD BUTTON
+===================================================== */
+
+.complex-container .complex-action-buttons .download-btn {
+    width: 90px;
+    height: 30px;
+
+    background: #16a34a !important;
+    background-color: #16a34a !important;
+
+    color: #ffffff !important;
+
+    border: none;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.complex-container .complex-action-buttons .download-btn:hover {
+    background: #15803d !important;
+    background-color: #15803d !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   BOTTOM BUTTON CONTAINER
+===================================================== */
+
+.complex-container .bottom-buttons {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 0;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: nowrap;
+}
+
+
+/* =====================================================
+   ALL BOTTOM BUTTONS - COMMON
+===================================================== */
+
+.complex-container .bottom-buttons > button {
+    width: 90px !important;
+    min-width: 90px !important;
+
+    height: 35px !important;
+
+    padding: 0 8px !important;
+
+    border: none !important;
+    border-radius: 6px !important;
+
+    color: #ffffff !important;
+
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 12px !important;
+    font-weight: 600 !important;
+
+    cursor: pointer !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 5px !important;
+
+    box-sizing: border-box !important;
+
+    opacity: 1 !important;
+
+    box-shadow: none !important;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease !important;
+}
+
+
+/* =====================================================
+   PREVIOUS
+   COLOR: #cbd5e1
+===================================================== */
+
+.complex-container .bottom-buttons > button.previous-btn {
+    background: #cbd5e1 !important;
+    background-color: #cbd5e1 !important;
+    color: #ffffff !important;
+}
+
+
+/* =====================================================
+   BACK
+   COLOR: #64748b
+===================================================== */
+
+.complex-container .bottom-buttons > button.back-btn {
+    background: #64748b !important;
+    background-color: #64748b !important;
+    color: #ffffff !important;
+}
+
+
+/* =====================================================
+   SAVE
+   COLOR: #f59e0b
+===================================================== */
+
+.complex-container .bottom-buttons > button.save-btn {
+    background: #f59e0b !important;
+    background-color: #f59e0b !important;
+    color: #ffffff !important;
+}
+
+
+/* =====================================================
+   DELETE
+   COLOR: #ef4444
+===================================================== */
+
+.complex-container .bottom-buttons > button.delete-btn {
+    background: #ef4444 !important;
+    background-color: #ef4444 !important;
+    color: #ffffff !important;
+}
+
+
+/* =====================================================
+   PRINT
+   COLOR: #7c3aed
+===================================================== */
+
+.complex-container .bottom-buttons > button.print-btn {
+    background: #7c3aed !important;
+    background-color: #7c3aed !important;
+    color: #ffffff !important;
+}
+
+
+/* =====================================================
+   CLEAR
+   COLOR: #f59e0b
+
+   JSX:
+   className="clear-btn"
+   ===================================================== */
+
+.complex-container .bottom-buttons > button.clear-btn {
+    background: #f59e0b !important;
+    background-color: #f59e0b !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+
+/* =====================================================
+   NEXT
+   COLOR: #16a34a
+===================================================== */
+
+.complex-container .bottom-buttons > button.next-btn {
+    background: #16a34a !important;
+    background-color: #16a34a !important;
+    color: #ffffff !important;
+}
+
+
+/* =====================================================
+   HOVER COLORS
+===================================================== */
+
+.complex-container .bottom-buttons > button.previous-btn:hover {
+    background: #b8c4d4 !important;
+    background-color: #b8c4d4 !important;
+    transform: translateY(-2px);
+}
+
+.complex-container .bottom-buttons > button.back-btn:hover {
+    background: #475569 !important;
+    background-color: #475569 !important;
+    transform: translateY(-2px);
+}
+
+.complex-container .bottom-buttons > button.save-btn:hover {
+    background: #d97706 !important;
+    background-color: #d97706 !important;
+    transform: translateY(-2px);
+}
+
+.complex-container .bottom-buttons > button.delete-btn:hover {
+    background: #dc2626 !important;
+    background-color: #dc2626 !important;
+    transform: translateY(-2px);
+}
+
+.complex-container .bottom-buttons > button.print-btn:hover {
+    background: #6d28d9 !important;
+    background-color: #6d28d9 !important;
+    transform: translateY(-2px);
+}
+
+.complex-container .bottom-buttons > button.clear-btn:hover {
+    background: #d97706 !important;
+    background-color: #d97706 !important;
+    transform: translateY(-2px);
+}
+
+.complex-container .bottom-buttons > button.next-btn:hover {
+    background: #15803d !important;
+    background-color: #15803d !important;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   SAVE DISABLED
+===================================================== */
+
+.complex-container .bottom-buttons > button.save-btn:disabled {
+    background: #f59e0b !important;
+    background-color: #f59e0b !important;
+
+    color: #ffffff !important;
+
+    opacity: 0.55 !important;
+
+    cursor: not-allowed !important;
+}
+
+
+/* =====================================================
+   TABLE SCROLLBAR
+===================================================== */
+
+.complex-container .complex-card::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.complex-container .complex-card::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.complex-container .complex-card::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 20px;
+}
+
+
+/* =====================================================
+   RESPONSIVE - 992px
+===================================================== */
+
+@media (max-width: 992px) {
+
+    .complex-container {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .complex-card {
+        overflow-x: auto;
+    }
+
+    .complex-table {
+        min-width: 850px;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - 768px
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .complex-container {
+        padding: 15px;
+    }
+
+    .complex-header {
+        padding: 16px;
+    }
+
+    .complex-title-section {
+        gap: 12px;
+    }
+
+    .complex-badge {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+    }
+
+    .complex-title-section h2 {
+        font-size: 19px;
+    }
+
+    .complex-title-section p {
+        font-size: 12px;
+    }
+
+    .complex-card {
+        padding: 12px;
+        overflow-x: auto;
+    }
+
+    .complex-table {
+        min-width: 850px;
+    }
+
+    .complex-table th {
+        padding: 9px 7px;
+        font-size: 13px;
+    }
+
+    .complex-table td {
+        padding: 9px 7px;
+        font-size: 12px;
+    }
+
+    .complex-container .description-box {
+        width: 250px;
+        height: 58px;
+    }
+
+    .complex-container .file-input {
+        width: 155px;
+    }
+
+    .complex-container .complex-action-buttons {
+        gap: 4px;
+    }
+
+    .complex-container .view-btn {
+        width: 70px;
+    }
+
+    .complex-container .download-btn {
+        width: 85px;
+    }
+
+    .complex-container .bottom-buttons {
+        flex-wrap: wrap;
+        gap: 7px;
+    }
+
+    .complex-container .bottom-buttons > button {
+        width: 90px !important;
+        min-width: 90px !important;
+        height: 35px !important;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - 480px
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .complex-container {
+        padding: 10px;
+    }
+
+    .complex-header {
+        padding: 14px;
+    }
+
+    .complex-title-section {
+        gap: 10px;
+    }
+
+    .complex-badge {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 13px;
+    }
+
+    .complex-title-section h2 {
+        font-size: 17px;
+    }
+
+    .complex-title-section p {
+        font-size: 11px;
+    }
+
+    .complex-card {
+        padding: 10px;
+    }
+
+    .complex-table {
+        min-width: 820px;
+    }
+
+    .complex-container .bottom-buttons {
+        gap: 6px;
+    }
+
+    .complex-container .bottom-buttons > button {
+        width: 85px !important;
+        min-width: 85px !important;
+        height: 34px !important;
+        font-size: 11px !important;
+    }
 }

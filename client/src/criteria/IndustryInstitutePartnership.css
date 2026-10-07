@@ -1,181 +1,1157 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+/* =====================================================
+   CRITERIA 2.8 - INDUSTRY INSTITUTE PARTNERSHIP
+   PAGE-SPECIFIC CSS ONLY
+   NO GLOBAL CSS
+===================================================== */
+
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.main-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background: #f4f7fb;
+    box-sizing: border-box;
 }
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
 
 .industry-container {
-  padding: 30px;
-  background: #f5f7fb;
-  min-height: 100vh;
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+
+    padding: 14px 18px 28px;
+
+    background: #f4f7fb;
+
+    box-sizing: border-box;
 }
+
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 .industry-header {
-  margin-bottom: 25px;
+    width: 94%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 14px;
+
+    min-height: 84px;
+
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e7ef;
+    border-radius: 10px;
+
+    padding: 16px 20px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 2px 7px rgba(15, 23, 42, 0.07);
 }
+
+
+/* =====================================================
+   TITLE SECTION
+===================================================== */
 
 .industry-title-section {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
 }
+
+
+/* =====================================================
+   2.8 BADGE
+   SAME STYLE AS 2.2 CAPSTONE
+===================================================== */
 
 .industry-badge {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  background: #4f46e5;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 46px;
+    height: 46px;
+
+    min-width: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #4f46e5;
+
+    color: #ffffff;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-weight: 700;
 }
+
+
+/* =====================================================
+   HEADER TITLE
+   BLACK COLOR
+===================================================== */
 
 .industry-title-section h2 {
-  color: #1e293b;
-  font-size: 26px;
-  margin-bottom: 5px;
+    margin: 0 0 5px;
+
+    color: #000000 !important;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
 }
+
+
+/* =====================================================
+   HEADER DESCRIPTION
+===================================================== */
 
 .industry-title-section p {
-  color: #64748b;
-  font-size: 14px;
+    margin: 0;
+
+    color: #5d7190;
+
+    font-size: 14px;
+
+    line-height: 1.4;
 }
+
+
+/* =====================================================
+   TABLE CARD
+===================================================== */
 
 .industry-card {
-  background: #fff;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  margin-bottom: 30px;
+    width: 94%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 18px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e7ef;
+
+    border-radius: 8px;
+
+    padding: 12px 18px 16px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 2px 7px rgba(15, 23, 42, 0.05);
+
+    overflow: hidden;
 }
+
+
+/* =====================================================
+   TABLE
+===================================================== */
 
 .industry-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.industry-table thead {
-  background: linear-gradient(90deg, #5b4efc, #4f46e5);
-  color: #fff;
-}
-
-.industry-table th,
-.industry-table td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.industry-table tbody tr:hover {
-  background: #f8fafc;
-}
-
-.file-input {
-  width: 240px;
-  padding: 8px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-}
-
-.action-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.view-btn {
-  background: #e0f2fe;
-  color: #0284c7;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.download-btn {
-  background: #fef2f2;
-  color: #dc2626;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.bottom-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.bottom-buttons button {
-  border: none;
-  padding: 12px 22px;
-  border-radius: 10px;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.previous-btn {
-  background: linear-gradient(135deg, #ff7b00, #ff5e00);
-  color: white;
-}
-.back-btn {
-  background: #64748b;
-}
-
-.save-btn {
-  background: #16a34a;
-}
-
-.delete-btn {
-  background: #dc2626;
-}
-
-.submit-btn {
-  background: #2563eb;
-}
-
-.print-btn {
-  background: #7c3aed;
-}
-
-.next-btn {
-  background: #f97316;
-}
-
-@media (max-width: 768px) {
-  .industry-container {
-    padding: 15px;
-  }
-
-  .industry-title-section {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .industry-table {
-    display: block;
-    overflow-x: auto;
-  }
-
-  .bottom-buttons {
-    flex-direction: column;
-  }
-
-  .bottom-buttons button {
     width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    background: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* =====================================================
+   COLUMN WIDTHS
+===================================================== */
+
+.industry-table th:nth-child(1),
+.industry-table td:nth-child(1) {
+    width: 7%;
+}
+
+
+.industry-table th:nth-child(2),
+.industry-table td:nth-child(2) {
+    width: 30%;
+}
+
+
+.industry-table th:nth-child(3),
+.industry-table td:nth-child(3) {
+    width: 35%;
+}
+
+
+.industry-table th:nth-child(4),
+.industry-table td:nth-child(4) {
+    width: 28%;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.industry-table thead th {
+    background: #ffffff;
+
+    color: #111111;
+
+    border: 1px solid #d6d6d6;
+
+    padding: 9px 7px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    height: 36px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
+.industry-table tbody td {
+    border: 1px solid #d6d6d6;
+
+    padding: 8px;
+
+    vertical-align: middle;
+
+    font-size: 13px;
+
+    color: #102a43;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   ALTERNATE ROW
+===================================================== */
+
+.industry-table tbody tr:nth-child(even) td {
+    background: #f8fafc;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.industry-table tbody tr:hover td {
+    background: #f8fafc;
+}
+
+
+/* =====================================================
+   SR NO
+===================================================== */
+
+.industry-table tbody td:first-child {
+    text-align: center;
+
+    font-weight: 500;
+
+    color: #111111;
+}
+
+
+/* =====================================================
+   DOCUMENT NAME
+===================================================== */
+
+.industry-table td:nth-child(2) {
+    text-align: left;
+
+    color: #111111;
+
+    font-size: 13.5px;
+
+    font-weight: 400;
+
+    line-height: 1.35;
+
+    word-break: break-word;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =====================================================
+   DESCRIPTION BOX
+===================================================== */
+
+.industry-container .description-box {
+    width: 100%;
+
+    min-height: 50px;
+    height: 50px;
+
+    resize: none;
+
+    padding: 7px 9px;
+
+    border: 1px solid #ccd6e2;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #17365d;
+
+    font-size: 12px;
+
+    line-height: 1.35;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   DESCRIPTION FOCUS
+===================================================== */
+
+.industry-container .description-box:focus {
+    border-color: #14579e;
+
+    box-shadow:
+        0 0 0 2px rgba(20, 87, 158, 0.10);
+}
+
+
+/* =====================================================
+   ATTACHMENT BOX
+===================================================== */
+
+.industry-container .attachment-box {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
     justify-content: center;
-  }
+
+    gap: 5px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   FILE INPUT
+===================================================== */
+
+.industry-container .file-input {
+    width: 165px;
+
+    max-width: 100%;
+
+    height: 31px;
+
+    padding: 2px 4px;
+
+    border: 1px solid #c8d4e2;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #243b63;
+
+    font-size: 11px;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   CHOOSE FILE BUTTON
+===================================================== */
+
+.industry-container
+.file-input::file-selector-button {
+
+    height: 24px;
+
+    padding: 0 7px;
+
+    margin-right: 5px;
+
+    border: 1px solid #b8c4d1;
+
+    border-radius: 4px;
+
+    background: #f5f7fa;
+
+    color: #1f2937;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+.industry-container
+.file-input::file-selector-button:hover {
+
+    background: #e9eef5;
+}
+
+
+/* =====================================================
+   FILE NAME
+===================================================== */
+
+.industry-container .file-name {
+    width: 100%;
+
+    padding: 1px 4px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    color: #16a34a;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   ACTION BUTTONS
+   VIEW + DOWNLOAD
+===================================================== */
+
+.industry-container .industry-action-buttons {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 7px;
+
+    min-height: 32px;
+
+    flex-wrap: nowrap;
+}
+
+
+/* =====================================================
+   ACTION BUTTON COMMON
+===================================================== */
+
+.industry-container
+.industry-action-buttons button {
+
+    width: 85px;
+
+    min-width: 85px;
+
+    height: 30px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0 7px;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+
+/* =====================================================
+   VIEW
+===================================================== */
+
+.industry-container
+.industry-action-buttons
+.view-btn {
+
+    background: #2563eb !important;
+
+    background-color: #2563eb !important;
+
+    color: #ffffff !important;
+}
+
+
+.industry-container
+.industry-action-buttons
+.view-btn:hover {
+
+    background: #1d4ed8 !important;
+
+    background-color: #1d4ed8 !important;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 3px 8px rgba(37, 99, 235, 0.25);
+}
+
+
+/* =====================================================
+   DOWNLOAD
+===================================================== */
+
+.industry-container
+.industry-action-buttons
+.download-btn {
+
+    width: 100px;
+
+    min-width: 100px;
+
+    background: #16a34a !important;
+
+    background-color: #16a34a !important;
+
+    color: #ffffff !important;
+}
+
+
+.industry-container
+.industry-action-buttons
+.download-btn:hover {
+
+    background: #15803d !important;
+
+    background-color: #15803d !important;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 3px 8px rgba(22, 163, 74, 0.25);
+}
+
+
+/* =====================================================
+   BOTTOM BUTTON CONTAINER
+===================================================== */
+
+.industry-container .industry-bottom-buttons {
+
+    width: 94%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 0 4px;
+
+    box-sizing: border-box;
+
+    flex-wrap: nowrap;
+}
+
+
+/* =====================================================
+   BOTTOM BUTTON COMMON
+===================================================== */
+
+.industry-container
+.industry-bottom-buttons
+.industry-btn {
+
+    width: 90px !important;
+
+    min-width: 90px !important;
+
+    height: 34px !important;
+
+    padding: 0 8px !important;
+
+    border: none !important;
+
+    border-radius: 5px !important;
+
+    color: #ffffff !important;
+
+    display: inline-flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif !important;
+
+    font-size: 13px !important;
+
+    font-weight: 700 !important;
+
+    cursor: pointer !important;
+
+    box-sizing: border-box !important;
+
+    opacity: 1 !important;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease !important;
+}
+
+
+/* =====================================================
+   PREVIOUS
+   2.1 STYLE
+===================================================== */
+
+.industry-container
+.industry-bottom-buttons
+.industry-previous-btn {
+
+    background: #cbd5e1 !important;
+
+    background-color: #cbd5e1 !important;
+
+    color: #ffffff !important;
+}
+
+
+.industry-container
+.industry-bottom-buttons
+.industry-previous-btn:hover {
+
+    background: #b8c4d4 !important;
+
+    background-color: #b8c4d4 !important;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 3px 8px rgba(203, 213, 225, 0.35);
+}
+
+
+/* =====================================================
+   BACK
+   2.1 STYLE
+===================================================== */
+
+.industry-container
+.industry-bottom-buttons
+.industry-back-btn {
+
+    background: #64748b !important;
+
+    background-color: #64748b !important;
+
+    color: #ffffff !important;
+}
+
+
+.industry-container
+.industry-bottom-buttons
+.industry-back-btn:hover {
+
+    background: #475569 !important;
+
+    background-color: #475569 !important;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 3px 8px rgba(100, 116, 139, 0.25);
+}
+
+
+/* =====================================================
+   SAVE
+   2.1 STYLE
+===================================================== */
+
+.industry-container
+.industry-bottom-buttons
+.industry-save-btn {
+
+    background: #198754 !important;
+
+    background-color: #198754 !important;
+
+    color: #ffffff !important;
+}
+
+
+.industry-container
+.industry-bottom-buttons
+.industry-save-btn:hover {
+
+    background: #157347 !important;
+
+    background-color: #157347 !important;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 3px 8px rgba(25, 135, 84, 0.25);
+}
+
+
+/* =====================================================
+   DELETE
+   2.1 STYLE
+===================================================== */
+
+.industry-container
+.industry-bottom-buttons
+.industry-delete-btn {
+
+    background: #ef4444 !important;
+
+    background-color: #ef4444 !important;
+
+    color: #ffffff !important;
+}
+
+
+.industry-container
+.industry-bottom-buttons
+.industry-delete-btn:hover {
+
+    background: #dc2626 !important;
+
+    background-color: #dc2626 !important;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 3px 8px rgba(239, 68, 68, 0.25);
+}
+
+
+/* =====================================================
+   CLEAR
+   2.1 STYLE
+===================================================== */
+
+.industry-container
+.industry-bottom-buttons
+.industry-clear-btn {
+
+    background: #f59e0b !important;
+
+    background-color: #f59e0b !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+}
+
+
+.industry-container
+.industry-bottom-buttons
+.industry-clear-btn:hover {
+
+    background: #d97706 !important;
+
+    background-color: #d97706 !important;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 3px 8px rgba(245, 158, 11, 0.25);
+}
+
+
+/* =====================================================
+   GENERATE REPORT
+   PURPLE - SAME AS 2.1 PRINT STYLE
+===================================================== */
+
+.industry-container
+.industry-bottom-buttons
+.industry-report-btn {
+
+    background: #6f59b5 !important;
+
+    background-color: #6f59b5 !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+}
+
+
+.industry-container
+.industry-bottom-buttons
+.industry-report-btn:hover {
+
+    background: #5b47a0 !important;
+
+    background-color: #5b47a0 !important;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 3px 8px rgba(111, 89, 181, 0.25);
+}
+
+
+/* =====================================================
+   NEXT
+   2.1 STYLE
+===================================================== */
+
+.industry-container
+.industry-bottom-buttons
+.industry-next-btn {
+
+    background: #008f83 !important;
+
+    background-color: #008f83 !important;
+
+    color: #ffffff !important;
+}
+
+
+.industry-container
+.industry-bottom-buttons
+.industry-next-btn:hover {
+
+    background: #00776d !important;
+
+    background-color: #00776d !important;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 3px 8px rgba(0, 143, 131, 0.25);
+}
+
+
+/* =====================================================
+   DISABLED BUTTONS
+   COLORS SHOULD NOT DISAPPEAR
+===================================================== */
+
+.industry-container
+.industry-bottom-buttons
+.industry-btn:disabled {
+
+    opacity: 1 !important;
+
+    color: #ffffff !important;
+
+    filter: none !important;
+
+    cursor: not-allowed !important;
+}
+
+
+/* =====================================================
+   SAVE DISABLED
+===================================================== */
+
+.industry-container
+.industry-bottom-buttons
+.industry-save-btn:disabled {
+
+    background: #198754 !important;
+
+    background-color: #198754 !important;
+
+    color: #ffffff !important;
+
+    opacity: 0.55 !important;
+}
+
+
+/* =====================================================
+   REMOVE OLD PRINT BUTTON IF IT EXISTS
+===================================================== */
+
+.industry-container
+.industry-bottom-buttons
+.industry-print-btn {
+
+    display: none !important;
+}
+
+
+/* =====================================================
+   TABLE SCROLLBAR
+===================================================== */
+
+.industry-container
+.industry-card::-webkit-scrollbar {
+
+    width: 6px;
+
+    height: 6px;
+}
+
+
+.industry-container
+.industry-card::-webkit-scrollbar-track {
+
+    background: #f1f5f9;
+}
+
+
+.industry-container
+.industry-card::-webkit-scrollbar-thumb {
+
+    background: #cbd5e1;
+
+    border-radius: 20px;
+}
+
+
+/* =====================================================
+   RESPONSIVE - 1100px
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .industry-container {
+
+        margin-left: 240px;
+
+        width: calc(100% - 240px);
+
+        padding: 12px;
+    }
+
+    .industry-header {
+
+        width: 94%;
+    }
+
+    .industry-card {
+
+        width: 94%;
+
+        overflow-x: auto;
+    }
+
+    .industry-table {
+
+        min-width: 850px;
+    }
+
+    .industry-bottom-buttons {
+
+        width: 94%;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - 800px
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .industry-container {
+
+        margin-left: 0;
+
+        width: 100%;
+
+        padding: 10px;
+    }
+
+    .industry-header {
+
+        width: 100%;
+    }
+
+    .industry-card {
+
+        width: 100%;
+
+        overflow-x: auto;
+    }
+
+    .industry-table {
+
+        min-width: 820px;
+    }
+
+    .industry-bottom-buttons {
+
+        width: 100% !important;
+
+        flex-wrap: wrap !important;
+    }
+
+    .industry-container
+    .industry-bottom-buttons
+    .industry-btn {
+
+        width: 90px !important;
+
+        min-width: 90px !important;
+
+        height: 34px !important;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - 480px
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .industry-container {
+
+        padding: 8px;
+    }
+
+    .industry-header {
+
+        padding: 14px;
+    }
+
+    .industry-title-section {
+
+        gap: 10px;
+    }
+
+    .industry-badge {
+
+        width: 40px;
+
+        height: 40px;
+
+        min-width: 40px;
+
+        font-size: 13px;
+    }
+
+    .industry-title-section h2 {
+
+        font-size: 17px;
+
+        line-height: 22px;
+
+        color: #000000 !important;
+    }
+
+    .industry-title-section p {
+
+        font-size: 11px;
+    }
+
+    .industry-card {
+
+        padding: 10px;
+    }
+
+    .industry-table {
+
+        min-width: 820px;
+    }
+
+    .industry-bottom-buttons {
+
+        gap: 6px !important;
+    }
+
+    .industry-container
+    .industry-bottom-buttons
+    .industry-btn {
+
+        width: 85px !important;
+
+        min-width: 85px !important;
+
+        height: 34px !important;
+
+        font-size: 11px !important;
+    }
 }

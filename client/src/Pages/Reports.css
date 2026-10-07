@@ -1,0 +1,499 @@
+/* =========================================
+   REPORT PAGE
+========================================= */
+
+.report-page{
+    display:flex;
+    min-height:100vh;
+    background:#f4f7fc;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.report-content{
+    flex:1;
+    padding:30px;
+    margin-left:270px;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.report-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.report-header h2{
+    color:#0b2b6b;
+    font-size:30px;
+    font-weight:700;
+}
+
+/* =========================================
+   REFRESH BUTTON
+========================================= */
+
+.refresh-btn{
+    background:#0b2b6b;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    transition:.3s;
+}
+
+.refresh-btn:hover{
+    background:#1747a6;
+}
+
+/* =========================================
+   SUMMARY CARDS
+========================================= */
+
+.report-summary{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-bottom:35px;
+}
+
+.summary-card{
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.summary-card h3{
+    font-size:36px;
+    color:#0b2b6b;
+    margin-bottom:10px;
+}
+
+.summary-card p{
+    font-size:15px;
+    color:#666;
+    font-weight:600;
+}
+
+/* =========================================
+   TABLE
+========================================= */
+
+.report-table{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.report-table table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.report-table thead{
+    background:#0b2b6b;
+    color:white;
+}
+
+.report-table th{
+    padding:16px;
+    font-size:15px;
+    text-align:center;
+}
+
+.report-table td{
+    padding:15px;
+    border-bottom:1px solid #ececec;
+    text-align:center;
+    font-size:14px;
+}
+
+.report-table tbody tr:hover{
+    background:#f5f8ff;
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.pending{
+    color:#d35400;
+    font-weight:bold;
+}
+
+.generated-btn{
+    background:#198754;
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:6px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    margin:auto;
+    transition:.3s;
+}
+
+.generated-btn:hover{
+    background:#146c43;
+}
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.view-btn{
+    background:#0d6efd;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    margin-right:8px;
+    transition:.3s;
+}
+
+.view-btn:hover{
+    background:#0a58ca;
+}
+
+.delete-btn{
+    background:#dc3545;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.delete-btn:hover{
+    background:#bb2d3b;
+}
+
+/* =========================================
+   LOADING / EMPTY
+========================================= */
+
+.report-table td[colspan]{
+    padding:40px;
+    font-size:16px;
+    color:#777;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:992px){
+
+.report-content{
+    margin-left:0;
+    padding:20px;
+}
+
+.report-summary{
+    grid-template-columns:1fr;
+}
+
+.report-table{
+    overflow-x:auto;
+}
+
+.report-table table{
+    min-width:1100px;
+}
+
+}
+
+/* =====================================
+   FILTER BAR
+========================================= */
+.filter-bar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.search-input{
+    width: 260px;      /* हवा असल्यास 220px किंवा 250px कर */
+    min-width: 260px;
+    max-width: 260px;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    flex: none;        /* हे खूप महत्त्वाचं आहे */
+}
+
+.search-input:focus{
+    border-color:#0b2b6b;
+    box-shadow:0 0 8px rgba(11,43,107,.15);
+}
+.filter-select{
+
+    width:180px;
+
+    height:45px;
+
+    border:1px solid #dcdcdc;
+
+    border-radius:8px;
+
+    padding:0 10px;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+}
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.action-buttons{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.view-btn,
+.delete-btn,
+.generated-btn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+
+    min-width:95px;
+
+    padding:8px 12px;
+
+    border:none;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.view-btn{
+
+    background:#0d6efd;
+    color:white;
+
+}
+
+.view-btn:hover{
+
+    background:#0b5ed7;
+
+}
+
+.delete-btn{
+
+    background:#dc3545;
+    color:white;
+
+}
+
+.delete-btn:hover{
+
+    background:#bb2d3b;
+
+}
+
+.generated-btn{
+
+    background:#198754;
+    color:white;
+
+}
+
+.generated-btn:hover{
+
+    background:#157347;
+
+}
+
+.pending{
+
+    color:#ff9800;
+    font-weight:bold;
+
+}
+
+/* =========================================
+   TABLE
+========================================= */
+
+.report-table{
+
+    overflow-x:auto;
+
+}
+
+.report-table table{
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+.report-table th{
+
+    background:#0b2b6b;
+    color:white;
+    padding:14px;
+
+}
+
+.report-table td{
+
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid #ececec;
+
+}
+
+.report-table tr:hover{
+
+    background:#f7f9fd;
+
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:768px){
+
+.filter-bar{
+
+    flex-direction:column;
+    align-items:stretch;
+
+}
+
+.search-input{
+
+    width:100%;
+
+}
+
+.filter-select{
+
+    width:100%;
+
+}
+
+.action-buttons{
+
+    flex-direction:column;
+
+}
+
+.summary-card h2{
+
+    font-size:28px;
+
+}
+
+}
+
+.criteria-summary{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(180px,1fr));
+
+gap:20px;
+
+margin-top:25px;
+
+margin-bottom:30px;
+
+}
+
+.criteria-card{
+
+background:#fff;
+
+border-radius:12px;
+
+padding:20px;
+
+text-align:center;
+
+box-shadow:0 4px 12px rgba(0,0,0,.1);
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.criteria-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+.criteria-card h3{
+
+color:#0b2b6b;
+
+margin-bottom:10px;
+
+}
+
+.criteria-card h2{
+
+font-size:34px;
+
+color:#2563eb;
+
+margin:0;
+
+}
+
+.criteria-card p{
+
+margin-top:10px;
+
+color:#666;
+
+font-weight:600;
+
+}

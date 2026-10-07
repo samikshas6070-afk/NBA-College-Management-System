@@ -1,210 +1,1017 @@
-* {
-  margin: 0;
-  padding: 0;
+/* =====================================================
+   SEMINAR & MINI PROJECT - CRITERIA 2.4
+   COMPACT TABLE DESIGN
+   ALL STYLES SCOPED ONLY TO SEMINAR PAGE
+   ===================================================== */
+
+
+/* =====================================================
+   RESET - ONLY THIS PAGE
+   ===================================================== */
+
+.seminar-container,
+.seminar-container * {
   box-sizing: border-box;
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+   ===================================================== */
+
+.seminar-container {
+  margin-left: 270px;
+
+  width: calc(100% - 270px);
+
+  padding: 20px 30px;
+
+  background: #f5f7fb;
+
+  min-height: 100vh;
+
   font-family: "Poppins", sans-serif;
 }
 
-.seminar-container {
-  padding: 30px;
-  background: #f5f7fb;
-  min-height: 100vh;
-}
 
-.seminar-header {
-  background: #fff;
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.seminar-container .seminar-header {
+  background: #ffffff;
+
   border-radius: 15px;
-  padding: 25px;
-  margin-bottom: 25px;
+
+  padding: 22px 25px;
+
+  margin-bottom: 20px;
+
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+
+  align-items: center;
 }
 
-.seminar-title-section {
+
+/* =====================================================
+   TITLE SECTION
+   ===================================================== */
+
+.seminar-container .seminar-title-section {
   display: flex;
+
   align-items: center;
+
   gap: 15px;
 }
 
-.seminar-badge {
+
+/* =====================================================
+   BADGE
+   ===================================================== */
+
+.seminar-container .seminar-badge {
   width: 45px;
+
   height: 45px;
+
   border-radius: 10px;
+
   background: #4f46e5;
-  color: #fff;
+
+  color: #ffffff;
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   font-weight: 600;
+
+  font-size: 14px;
+
+  flex-shrink: 0;
 }
 
-.seminar-title-section h2 {
+
+/* =====================================================
+   TITLE
+   ===================================================== */
+
+.seminar-container .seminar-title-section h2 {
+  margin: 0 0 4px 0;
+
+  font-size: 22px;
+
+  font-weight: 700;
+
   color: #0f172a;
-  margin-bottom: 5px;
 }
 
-.seminar-title-section p {
+
+/* =====================================================
+   SUB TITLE
+   ===================================================== */
+
+.seminar-container .seminar-title-section p {
+  margin: 0;
+
+  font-size: 14px;
+
   color: #64748b;
 }
 
-.seminar-card {
-  background: #fff;
+
+/* =====================================================
+   TABLE CARD
+   ===================================================== */
+
+.seminar-container .seminar-card {
+  width: 100%;
+
+  background: #ffffff;
+
   border-radius: 15px;
+
   padding: 20px;
+
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
   overflow-x: auto;
 }
-.seminar-table{
-    width:100%;
-    border-collapse:collapse;
-    border:1px solid #dcdcdc;
-}
 
-.seminar-table thead{
-    background:#f8fafc;
-    color:#111827;
-}
 
-.seminar-table th{
-    border:1px solid #dcdcdc;
-    padding:14px;
-    text-align:center;
-    font-size:15px;
-    font-weight:600;
-}
+/* =====================================================
+   TABLE
+   ===================================================== */
 
-.seminar-table td{
-    border:1px solid #dcdcdc;
-    padding:18px;
-    text-align:center;
-    vertical-align:middle;
-}
-
-.file-input {
+.seminar-container .seminar-table {
   width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  border: 1px solid #dcdcdc;
 }
 
-.action-buttons {
+
+/* =====================================================
+   TABLE HEADER
+   ===================================================== */
+
+.seminar-container .seminar-table thead {
+  background: #f8fafc;
+}
+
+
+.seminar-container .seminar-table th {
+  height: 45px;
+
+  padding: 10px 8px;
+
+  border: 1px solid #dcdcdc;
+
+  text-align: center;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #111827;
+
+  background: #f8fafc;
+}
+
+
+/* =====================================================
+   TABLE BODY
+   ===================================================== */
+
+.seminar-container .seminar-table td {
+  border: 1px solid #dcdcdc;
+
+  padding: 10px 8px;
+
+  text-align: center;
+
+  vertical-align: middle;
+
+  font-size: 13px;
+
+  color: #111827;
+
+  height: 80px;
+}
+
+
+/* =====================================================
+   COLUMN WIDTHS - COMPACT
+   ===================================================== */
+
+
+/* Sr. No. */
+
+.seminar-container .seminar-table th:first-child,
+.seminar-container .seminar-table td:first-child {
+  width: 55px;
+
+  min-width: 55px;
+
+  max-width: 55px;
+
+  padding: 8px 5px;
+}
+
+
+/* Document Name */
+
+.seminar-container .seminar-table th:nth-child(2),
+.seminar-container .seminar-table td:nth-child(2) {
+  width: 200px;
+
+  min-width: 250px;
+
+  padding: 10px 10px;
+
+  text-align: left;
+}
+
+
+/* Description */
+
+.seminar-container .seminar-table th:nth-child(3),
+.seminar-container .seminar-table td:nth-child(3) {
+  width: 200px;
+
+  min-width: 250px;
+
+  padding: 10px 10px;
+}
+
+
+/* Action */
+
+.seminar-container .seminar-table th:nth-child(4),
+.seminar-container .seminar-table td:nth-child(4) {
+  width: 230px;
+
+  min-width: 230px;
+
+  padding: 8px;
+}
+
+
+/* =====================================================
+   DOCUMENT NAME
+   ===================================================== */
+
+.seminar-container .seminar-table td:nth-child(2) {
+  font-size: 13px;
+
+  font-weight: 500;
+
+  line-height: 18px;
+
+  word-break: normal;
+
+  overflow-wrap: break-word;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+   NO SCROLLBAR
+   ===================================================== */
+
+.seminar-container .description-box {
+  width: 200px;
+
+  max-width: 220px;
+
+  height: 50px;
+
+  min-height: 50px;
+
+  max-height: 50px;
+
+  padding: 8px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  line-height: 15px;
+
+  resize: none;
+
+  overflow: hidden;
+
+  outline: none;
+
+  display: block;
+
+  margin: 0 auto;
+}
+
+
+/* =====================================================
+   ACTION / ATTACHMENT BOX
+   ===================================================== */
+
+.seminar-container .attachment-box {
+  width: 100%;
+
   display: flex;
-  gap: 10px;
-}
 
-.view-btn,
-.download-btn{
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:4px;
-    font-size:11px;
-    padding:4px 8px;
-}
+  flex-direction: column;
 
-.view-btn{
-    width:65px;
-    background:#dbeafe;
-    color:#2563eb;
-}
-
-.download-btn{
-    width:90px;
-    background:#16a34a;
-    color:white;
-}
-.view-btn:hover{
-    background:#bfdbfe;
-}
-
-.download-btn:hover{
-    background:#15803d;
-}
-
-.bottom-buttons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.bottom-buttons button {
-  border: none;
-  padding: 12px 24px;
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
   align-items: center;
-  gap: 8px;
+
+  justify-content: center;
+
+  gap: 0;
 }
 
-.previous-btn {
-  background: linear-gradient(135deg, #ff7b00, #ff5e00);
-  color: white;
+
+/* =====================================================
+   FILE INPUT
+   ===================================================== */
+
+.seminar-container .file-input {
+  width: 165px;
+
+  max-width: 165px;
+
+  height: 31px;
+
+  margin: 0 0 12px 0;
+
+  padding: 2px;
+
+  font-size: 11px;
+
+  color: #111827;
+
+  background: #ffffff;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 7px;
+
+  cursor: pointer;
 }
 
-.back-btn {
+
+/* =====================================================
+   CHOOSE FILE BUTTON
+   ===================================================== */
+
+.seminar-container .file-input::file-selector-button {
+  height: 25px;
+
+  padding: 3px 9px;
+
+  margin-right: 4px;
+
+  background: #f3f4f6;
+
+  color: #111827;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 5px;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+
+.seminar-container .file-input::file-selector-button:hover {
   background: #e5e7eb;
 }
 
-.save-btn {
-  background: #dbeafe;
-  color: #2563eb;
+
+/* =====================================================
+   ATTACHMENT BUTTONS
+   ===================================================== */
+
+.seminar-container .attachment-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 5px;
+
+  width: 100%;
 }
 
-.delete-btn {
-  background: #fee2e2;
-  color: #dc2626;
+
+/* =====================================================
+   VIEW BUTTON
+   ===================================================== */
+
+.seminar-container .view-btn {
+  width: 110px;
+
+  min-width: 110px;
+
+  height: 32px;
+
+  padding: 0 8px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  transition: 0.2s;
 }
 
-.submit-btn {
-  background: #dcfce7;
-  color: #16a34a;
+
+.seminar-container .view-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
 }
 
-.print-btn {
-  background: #ede9fe;
-  color: #7c3aed;
+
+.seminar-container .view-btn:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
 }
 
-.next-btn {
-  background: #4f46e5;
-  color: white;
+
+/* =====================================================
+   DOWNLOAD BUTTON
+   ===================================================== */
+
+.seminar-container .download-btn {
+  width: 110px;
+
+  min-width: 110px;
+
+  height: 32px;
+
+  padding: 0 8px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background: #16a34a;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  transition: 0.2s;
 }
 
-@media (max-width: 768px) {
-  .seminar-table {
-    display: block;
+
+.seminar-container .download-btn:hover {
+  background: #15803d;
+
+  transform: translateY(-1px);
+}
+
+
+.seminar-container .download-btn:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =====================================================
+   FILE NAME
+   ===================================================== */
+
+.seminar-container .selected-file {
+  width: 100%;
+
+  max-width: 200px;
+
+  margin-top: 6px;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  color: #334155;
+
+  word-break: break-word;
+
+  line-height: 15px;
+
+  text-align: center;
+}
+
+
+.seminar-container .no-file {
+  color: #94a3b8;
+
+  font-style: italic;
+}
+
+
+/* =====================================================
+   BOTTOM BUTTONS
+   ===================================================== */
+
+.seminar-container .bottom-buttons {
+  width: 100%;
+
+  margin-top: 20px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 8px;
+
+  flex-wrap: nowrap;
+
+  background: transparent;
+
+  box-shadow: none;
+
+  border: none;
+}
+
+
+/* =====================================================
+   ALL BOTTOM BUTTONS SAME SIZE
+   ===================================================== */
+
+.seminar-container .bottom-buttons button {
+  width: 90px;
+
+  min-width: 90px;
+
+  height: 34px;
+
+  padding: 0 8px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 4px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.seminar-container .bottom-buttons button:hover {
+  opacity: 0.9;
+
+  transform: translateY(-2px);
+}
+
+
+.seminar-container .bottom-buttons button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =====================================================
+   BOTTOM BUTTON COLORS
+   SAME AS CRITERIA 2.3 INTERNSHIP
+   ===================================================== */
+
+
+/* =====================================================
+   PREVIOUS
+   ===================================================== */
+
+.seminar-container .bottom-buttons .previous-btn {
+  background: #ff6b00 !important;
+
+  color: #ffffff !important;
+}
+
+
+/* =====================================================
+   BACK
+   ===================================================== */
+
+.seminar-container .bottom-buttons .back-btn {
+  background: #64748b !important;
+
+  color: #ffffff !important;
+}
+
+
+/* =====================================================
+   SAVE
+   ===================================================== */
+
+.seminar-container .bottom-buttons .save-btn {
+  background: #198754 !important;
+
+  color: #ffffff !important;
+}
+
+
+/* =====================================================
+   DELETE
+   ===================================================== */
+
+.seminar-container .bottom-buttons .delete-btn {
+  background: #ef4444 !important;
+
+  color: #ffffff !important;
+}
+
+
+/* =====================================================
+   SUBMIT
+   ===================================================== */
+
+.seminar-container .bottom-buttons .submit-btn {
+  background: #2563eb !important;
+
+  color: #ffffff !important;
+}
+
+
+/* =====================================================
+   PRINT
+   ===================================================== */
+
+.seminar-container .bottom-buttons .print-btn {
+  background: #7c3aed !important;
+
+  color: #ffffff !important;
+}
+
+
+/* =====================================================
+   CLEAR
+   ===================================================== */
+
+.seminar-container .bottom-buttons .clear-btn,
+.seminar-container .bottom-buttons .capstone-clear-btn {
+  background: #f59e0b !important;
+
+  background-color: #f59e0b !important;
+
+  color: #ffffff !important;
+
+  border: none !important;
+}
+
+
+.seminar-container .bottom-buttons .clear-btn:hover,
+.seminar-container .bottom-buttons .capstone-clear-btn:hover {
+  background: #d97706 !important;
+
+  background-color: #d97706 !important;
+
+  color: #ffffff !important;
+}
+
+
+.seminar-container .bottom-buttons .clear-btn:disabled,
+.seminar-container .bottom-buttons .capstone-clear-btn:disabled {
+  background: #f59e0b !important;
+
+  background-color: #f59e0b !important;
+
+  color: #ffffff !important;
+
+  opacity: 1 !important;
+
+  cursor: pointer !important;
+}
+
+
+/* =====================================================
+   NEXT
+   ===================================================== */
+
+.seminar-container .bottom-buttons .next-btn {
+  background: #008f83 !important;
+
+  color: #ffffff !important;
+}
+
+
+/* =====================================================
+   TABLE HOVER
+   ===================================================== */
+
+.seminar-container .seminar-table tbody tr {
+  transition: 0.2s ease;
+}
+
+
+.seminar-container .seminar-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+
+/* =====================================================
+   SCROLLBAR
+   ONLY SEMINAR CARD
+   ===================================================== */
+
+.seminar-container .seminar-card::-webkit-scrollbar {
+  height: 7px;
+}
+
+
+.seminar-container .seminar-card::-webkit-scrollbar-track {
+  background: #eef2f7;
+}
+
+
+.seminar-container .seminar-card::-webkit-scrollbar-thumb {
+  background: #b8c4d4;
+
+  border-radius: 20px;
+}
+
+
+.seminar-container .seminar-card::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+/* =====================================================
+   RESPONSIVE - 1200
+   ===================================================== */
+
+@media (max-width: 1200px) {
+
+  .seminar-container {
+    margin-left: 260px;
+
+    width: calc(100% - 260px);
+
+    padding: 20px;
+  }
+
+
+  .seminar-container .seminar-table {
+    min-width: 785px;
+  }
+
+
+  .seminar-container .seminar-card {
     overflow-x: auto;
   }
 
-  .action-buttons {
-    flex-direction: column;
-  }
-}
-.description-box{
-    width:100%;
-    height:110px;
-    padding:12px;
-    border:1px solid #d1d5db;
-    border-radius:6px;
-    resize:none;
-    background:#fff;
-    font-size:14px;
-}
-.attachment-box{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
 }
 
-.file-input{
-    width:140px;
-    margin-bottom:15px;
-    font-size:11px;
+
+/* =====================================================
+   RESPONSIVE - 992
+   ===================================================== */
+
+@media (max-width: 992px) {
+
+  .seminar-container {
+    margin-left: 0;
+
+    width: 100%;
+
+    padding: 18px;
+  }
+
+
+  .seminar-container .seminar-table {
+    min-width: 785px;
+  }
+
+
+  .seminar-container .seminar-title-section h2 {
+    font-size: 20px;
+  }
+
 }
-.attachment-buttons{
-    display:flex;
-    justify-content:center;
-    gap:8px;
+
+
+/* =====================================================
+   RESPONSIVE - 768
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  .seminar-container {
+    margin-left: 0;
+
+    width: 100%;
+
+    padding: 15px;
+  }
+
+
+  .seminar-container .seminar-header {
+    padding: 18px;
+
+    border-radius: 12px;
+  }
+
+
+  .seminar-container .seminar-title-section {
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 10px;
+  }
+
+
+  .seminar-container .seminar-badge {
+    width: 42px;
+
+    height: 42px;
+  }
+
+
+  .seminar-container .seminar-title-section h2 {
+    font-size: 18px;
+  }
+
+
+  .seminar-container .seminar-title-section p {
+    font-size: 12px;
+  }
+
+
+  .seminar-container .seminar-card {
+    padding: 12px;
+
+    overflow-x: auto;
+  }
+
+
+  .seminar-container .seminar-table {
+    min-width: 785px;
+  }
+
+
+  .seminar-container .seminar-table th {
+    font-size: 13px;
+
+    padding: 9px;
+  }
+
+
+  .seminar-container .seminar-table td {
+    padding: 8px;
+
+    font-size: 12px;
+  }
+
+
+  .seminar-container .description-box {
+    width: 200px;
+
+    max-width: 200px;
+  }
+
+
+  .seminar-container .file-input {
+    width: 155px;
+
+    max-width: 155px;
+  }
+
+
+  .seminar-container .attachment-buttons {
+    gap: 4px;
+  }
+
+
+  .seminar-container .view-btn,
+  .seminar-container .download-btn {
+    width: 100px;
+
+    min-width: 100px;
+
+    height: 31px;
+
+    font-size: 11px;
+  }
+
+
+  .seminar-container .bottom-buttons {
+    flex-wrap: wrap;
+
+    gap: 7px;
+  }
+
+
+  .seminar-container .bottom-buttons button {
+    width: 90px;
+
+    min-width: 90px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE - 480
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+  .seminar-container {
+    padding: 10px;
+  }
+
+
+  .seminar-container .seminar-header {
+    padding: 15px;
+  }
+
+
+  .seminar-container .seminar-card {
+    padding: 8px;
+  }
+
+
+  .seminar-container .seminar-table {
+    min-width: 785px;
+  }
+
+
+  .seminar-container .bottom-buttons {
+    flex-direction: row;
+
+    flex-wrap: wrap;
+  }
+
 }

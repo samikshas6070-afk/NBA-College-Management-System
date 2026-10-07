@@ -1,0 +1,962 @@
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.courses-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  font-family: "Poppins", Arial, sans-serif;
+  color: #243b53;
+}
+
+/* =========================================================
+   NBA HEADER
+========================================================= */
+
+.nba-header {
+  height: 82px;
+  background: #0d477d;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+  gap: 20px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-menu {
+  font-size: 34px;
+  line-height: 1;
+  cursor: pointer;
+  width: 42px;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 600;
+  flex: 1;
+}
+
+.header-bell {
+  font-size: 28px;
+}
+
+.profile-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: #168be3;
+}
+
+/* =========================================================
+   COURSES HEADING
+========================================================= */
+
+.courses-heading {
+  padding: 28px 32px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.courses-heading h1 {
+  margin: 0;
+  font-size: 38px;
+  color: #1f3b56;
+}
+
+.add-course-button {
+  border: none;
+  background: #1689e8;
+  color: white;
+  padding: 16px 28px;
+  border-radius: 8px;
+  font-size: 21px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.add-course-button:hover {
+  background: #0877d1;
+}
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.course-table-card {
+  background: white;
+  margin: 0 32px 35px;
+  border-radius: 18px;
+  border: 1px solid #d9e2ec;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.course-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.course-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+.course-table th {
+  background: #f0f5fa;
+  color: #5b7184;
+  text-align: left;
+  padding: 18px;
+  font-size: 17px;
+  border: 1px solid #dce5ed;
+}
+
+.course-table td {
+  padding: 20px 18px;
+  font-size: 17px;
+  border: 1px solid #dce5ed;
+  color: #34495e;
+}
+
+.course-table tbody tr:hover {
+  background: #f8fbff;
+}
+
+.course-code {
+  font-weight: 600;
+  color: #34495e;
+}
+
+.course-name-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #1769aa;
+  font-size: 17px;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 600;
+}
+
+.course-name-link:hover {
+  text-decoration: underline;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.open-button,
+.delete-button {
+  border: none;
+  padding: 8px 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.open-button {
+  background: #1689e8;
+  color: white;
+}
+
+.delete-button {
+  background: #ef4444;
+  color: white;
+}
+
+.empty-course {
+  padding: 40px;
+  text-align: center;
+  color: #718096;
+  font-size: 18px;
+}
+
+/* =========================================================
+   ADD COURSE MODAL
+========================================================= */
+
+.form-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 2000;
+}
+
+.add-course-modal {
+  width: 100%;
+  max-width: 750px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  padding: 24px 28px;
+  background: #f4f8fc;
+  border-bottom: 1px solid #dce5ed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #193b5a;
+  font-size: 27px;
+}
+
+.modal-header p {
+  margin: 5px 0 0;
+  color: #718096;
+}
+
+.close-modal {
+  border: none;
+  background: transparent;
+  font-size: 35px;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.add-course-modal form {
+  padding: 28px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #34495e;
+  font-size: 15px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #1689e8;
+  box-shadow: 0 0 0 3px rgba(22, 137, 232, 0.1);
+}
+
+.form-buttons {
+  margin-top: 28px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.cancel-button,
+.save-course-button {
+  border: none;
+  padding: 13px 24px;
+  border-radius: 7px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background: #cbd5e1;
+  color: #334155;
+}
+
+.save-course-button {
+  background: #198754;
+  color: white;
+}
+
+/* =========================================================
+   SPECIALIZED MODULE PAGE
+========================================================= */
+
+.specialized-header {
+  padding: 25px 32px 10px;
+}
+
+.specialized-header h1 {
+  margin: 15px 0 5px;
+  font-size: 32px;
+  color: #1f3b56;
+}
+
+.specialized-header p {
+  margin: 0;
+  color: #718096;
+  font-size: 16px;
+}
+
+.back-button {
+  border: none;
+  background: #64748b;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.back-button:hover {
+  background: #475569;
+}
+
+/* =========================================================
+   SELECTED COURSE INFORMATION
+========================================================= */
+
+.selected-course-info {
+  margin: 20px 32px;
+  background: white;
+  border: 1px solid #dbe4ec;
+  border-radius: 15px;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.selected-info-box {
+  background: #f5f9fd;
+  border-radius: 10px;
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+}
+
+.selected-info-box span {
+  display: block;
+  color: #718096;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.selected-info-box strong {
+  color: #1f3b56;
+  font-size: 16px;
+}
+
+/* =========================================================
+   MODULE CONTAINER
+========================================================= */
+
+.modules-container {
+  margin: 0 32px 40px;
+  background: white;
+  border-radius: 18px;
+  border: 1px solid #d9e2ec;
+  padding: 25px;
+}
+
+.modules-title {
+  margin-bottom: 20px;
+}
+
+.modules-title h2 {
+  margin: 0;
+  font-size: 27px;
+  color: #1f3b56;
+}
+
+.modules-title p {
+  color: #718096;
+  margin: 5px 0 0;
+}
+
+/* =========================================================
+   MODULE GRID
+========================================================= */
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.module-card {
+  min-height: 155px;
+  border-radius: 15px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid rgba(100, 116, 139, 0.16);
+  transition: all 0.2s ease;
+}
+
+.module-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.module-icon {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.module-content {
+  flex: 1;
+}
+
+.module-content h3 {
+  margin: 3px 0 13px;
+  font-size: 20px;
+  line-height: 1.45;
+  color: #253b53;
+}
+
+.module-content p {
+  color: #18a579;
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.module-description {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.module-arrow {
+  position: absolute;
+  right: 17px;
+  bottom: 15px;
+  color: #64748b;
+  font-size: 20px;
+}
+
+/* =========================================================
+   MODULE COLORS
+========================================================= */
+
+.module-blue {
+  background: #edf6ff;
+}
+
+.module-blue .module-icon {
+  background: #1689e8;
+}
+
+.module-green {
+  background: #effaf6;
+}
+
+.module-green .module-icon {
+  background: #13a77f;
+}
+
+.module-purple {
+  background: #f5f0ff;
+}
+
+.module-purple .module-icon {
+  background: #7645db;
+}
+
+.module-orange {
+  background: #fff8ed;
+}
+
+.module-orange .module-icon {
+  background: #f5a619;
+}
+
+.module-yellow {
+  background: #fff9eb;
+}
+
+.module-yellow .module-icon {
+  background: #f4a719;
+}
+
+.module-cyan {
+  background: #edfafa;
+}
+
+.module-cyan .module-icon {
+  background: #10a6b3;
+}
+
+/* =========================================================
+   REPORT CARD
+========================================================= */
+
+.report-card {
+  margin-top: 20px;
+  background: #edf6ff;
+  border: 1px solid #cfe0f0;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+}
+
+.report-icon {
+  font-size: 28px;
+  color: #24445e;
+}
+
+.report-card h2 {
+  margin: 8px 0;
+  color: #203b56;
+  font-size: 27px;
+}
+
+.report-card p {
+  color: #50677b;
+  font-size: 17px;
+}
+
+.generate-report-button {
+  margin-top: 10px;
+  background: #1689e8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* =========================================================
+   DETAIL PAGE
+========================================================= */
+
+.detail-container {
+  padding: 28px 32px 45px;
+}
+
+.course-detail-heading {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.course-detail-heading h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #1f3b56;
+}
+
+.course-detail-heading p {
+  margin: 7px 0 0;
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* =========================================================
+   COURSE INFO STRIP
+========================================================= */
+
+.course-info-strip {
+  background: white;
+  border: 1px solid #dbe4ec;
+  border-radius: 15px;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.course-info-strip > div {
+  background: #f5f9fd;
+  border-radius: 9px;
+  padding: 13px;
+}
+
+.course-info-strip span {
+  display: block;
+  color: #718096;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.course-info-strip strong {
+  color: #203b56;
+}
+
+/* =========================================================
+   INFORMATION CARD
+========================================================= */
+
+.information-card {
+  background: white;
+  border: 1px solid #d9e2ec;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.information-card-header {
+  background: #f0f6fb;
+  padding: 17px 20px;
+  border-bottom: 1px solid #d9e2ec;
+}
+
+.information-card-header h2 {
+  margin: 0;
+  color: #1f3b56;
+  font-size: 21px;
+}
+
+.information-list {
+  width: 100%;
+}
+
+.information-row {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  border-bottom: 1px solid #e5eaf0;
+}
+
+.information-row:last-child {
+  border-bottom: none;
+}
+
+.information-label {
+  padding: 15px 18px;
+  background: #fafcff;
+  font-weight: 600;
+  color: #536b7d;
+}
+
+.information-value {
+  padding: 15px 18px;
+  color: #34495e;
+}
+
+/* =========================================================
+   DETAIL ACTIONS
+========================================================= */
+
+.detail-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.print-button,
+.back-module-button {
+  border: none;
+  padding: 12px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.print-button {
+  background: #e8ddff;
+  color: #5534a2;
+}
+
+.back-module-button {
+  background: #64748b;
+  color: white;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .nba-header {
+    height: 68px;
+    padding: 0 18px;
+    gap: 12px;
+  }
+
+  .header-menu {
+    font-size: 30px;
+    width: 30px;
+  }
+
+  .header-title {
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  .header-bell {
+    font-size: 21px;
+  }
+
+  .profile-circle {
+    width: 39px;
+    height: 39px;
+    min-width: 39px;
+    font-size: 18px;
+  }
+
+  .courses-heading {
+    padding: 22px 20px 18px;
+  }
+
+  .courses-heading h1 {
+    font-size: 28px;
+  }
+
+  .add-course-button {
+    padding: 13px 18px;
+    font-size: 16px;
+  }
+
+  .course-table-card {
+    margin: 0 20px 25px;
+    border-radius: 15px;
+  }
+
+  .course-table {
+    min-width: 800px;
+  }
+
+  .course-table th,
+  .course-table td {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .specialized-header {
+    padding: 20px;
+  }
+
+  .specialized-header h1 {
+    font-size: 24px;
+  }
+
+  .selected-course-info {
+    margin: 15px 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .modules-container {
+    margin: 0 20px 30px;
+    padding: 16px;
+  }
+
+  .modules-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .module-card {
+    min-height: 185px;
+    padding: 18px;
+    display: block;
+  }
+
+  .module-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    font-size: 22px;
+    margin-bottom: 13px;
+  }
+
+  .module-content h3 {
+    font-size: 17px;
+    margin-bottom: 9px;
+  }
+
+  .module-content p {
+    font-size: 14px;
+  }
+
+  .module-description {
+    font-size: 12px;
+  }
+
+  .module-arrow {
+    right: 14px;
+    bottom: 12px;
+  }
+
+  .report-card {
+    padding: 24px 15px;
+  }
+
+  .report-card h2 {
+    font-size: 22px;
+  }
+
+  .report-card p {
+    font-size: 14px;
+  }
+
+  .detail-container {
+    padding: 20px;
+  }
+
+  .course-detail-heading h1 {
+    font-size: 24px;
+  }
+
+  .course-info-strip {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .information-row {
+    grid-template-columns: 1fr;
+  }
+
+  .information-label {
+    padding-bottom: 7px;
+    background: #f8fafc;
+  }
+
+  .information-value {
+    padding-top: 7px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .add-course-modal {
+    max-height: 94vh;
+  }
+
+  .modal-header {
+    padding: 20px;
+  }
+
+  .add-course-modal form {
+    padding: 20px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .header-title {
+    font-size: 15px;
+  }
+
+  .courses-heading {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .courses-heading h1 {
+    font-size: 27px;
+  }
+
+  .add-course-button {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  .selected-course-info {
+    grid-template-columns: 1fr;
+  }
+
+  .modules-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .module-card {
+    min-height: 180px;
+  }
+
+  .module-content h3 {
+    font-size: 16px;
+  }
+
+  .module-content p {
+    font-size: 13px;
+  }
+
+  .course-info-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-actions {
+    flex-direction: column;
+  }
+
+  .print-button,
+  .back-module-button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+  .nba-header,
+  .back-button,
+  .detail-actions {
+    display: none !important;
+  }
+
+  .courses-page {
+    background: white;
+  }
+
+  .detail-container {
+    padding: 0;
+  }
+
+  .information-card {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}

@@ -1,332 +1,1518 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import * as XLSX from "xlsx";
+import mammoth from "mammoth";
+import NBASidebar from "../Pages/NBASidebar";
+
 import {
   FaEye,
   FaDownload,
   FaPrint,
   FaArrowLeft,
+  FaArrowRight,
   FaSave,
   FaTrash,
   FaPaperPlane,
-  FaArrowRight,
 } from "react-icons/fa";
 
 import "./CaseStudy.css";
 
 function CaseStudy() {
+
   const navigate = useNavigate();
-  const [files, setFiles] = useState({});
+
+  // ==========================================
+  // SESSION ID
+  // ==========================================
+
+  const [sessionId] = useState(() => {
+
+    let id =
+      localStorage.getItem(
+        "criteria2_session_id"
+      );
+
+    if (!id) {
+
+      id =
+        Date.now().toString();
+
+      localStorage.setItem(
+        "criteria2_session_id",
+        id
+      );
+
+    }
+
+    return id;
+
+  });
+
+  // ==========================================
+  // Rows
+  // ==========================================
 
   const rows = [
     {
       id: 1,
-      documentName: "PO, PO's Describe",
-      description: "Case Study based on PO and PO's",
+      documentName:
+        "Case Study Mapping",
+      description:
+        "Case studies, real-life examples and PO & PSO Mapping.",
     },
-    {
-      id: 2,
-      documentName: "Description",
-      description: "Real Life Example Document",
-    },
-   
   ];
 
+  // ==========================================
+  // States
+  // ==========================================
+
+  const [files, setFiles] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  // ==========================================
+  // Load Saved Files
+  // ==========================================
+
+  useEffect(() => {
+
+    loadFiles();
+
+  }, [sessionId]);
+
+  const loadFiles = async () => {
+
+    try {
+
+      if (!sessionId) {
+        return;
+      }
+
+      const res = await axios.get(
+        "http://localhost:5000/criteria/files/2.5",
+        {
+          params: {
+            session_id: sessionId
+          }
+        }
+      );
+
+      const serverFiles =
+        Array.isArray(res.data?.files)
+          ? res.data.files
+          : Array.isArray(res.data)
+          ? res.data
+          : [];
+
+      const loadedFiles = {};
+
+      serverFiles.forEach((item) => {
+
+        const row = rows.find(
+          (r) =>
+            r.documentName.trim() ===
+            (item.document_name || "").trim()
+        );
+
+        if (row) {
+
+          loadedFiles[row.id] = {
+
+            file: null,
+
+            saved: true,
+
+            file_name:
+              item.file_name || null,
+
+            original_name:
+              item.original_file_name ||
+              item.file_name ||
+              "",
+
+            name:
+              item.original_file_name ||
+              item.file_name ||
+              "",
+
+            session_id:
+              sessionId
+
+          };
+
+        }
+
+      });
+
+      setFiles(loadedFiles);
+
+    }
+    catch (err) {
+
+      console.log(
+        "Load Files Error:",
+        err
+      );
+
+    }
+
+  };
+
+  // ==========================================
   // Upload
+  // ==========================================
+
   const handleUpload = (e, item) => {
+
     const file = e.target.files[0];
 
     if (!file) return;
 
-    setFiles((prev) => ({
+    let currentSessionId =
+      localStorage.getItem(
+        "criteria2_session_id"
+      );
+
+    if (!currentSessionId) {
+
+      currentSessionId =
+        Date.now().toString();
+
+      localStorage.setItem(
+        "criteria2_session_id",
+        currentSessionId
+      );
+
+    }
+
+    setFiles(prev => ({
+
       ...prev,
-      [item.id]: file,
+
+      [item.id]: {
+
+        file: file,
+
+        name: file.name,
+
+        original_name: file.name,
+
+        saved: false,
+
+        session_id: currentSessionId
+
+      }
+
     }));
 
-    alert(`${file.name} uploaded successfully`);
-  };
 
-  // View
-  const handleView = (item) => {
-    const file = files[item.id];
+    // =========================================================
+    // SAVE CURRENT 2.5 FILE FOR CRITERIA 2 REPORT GENERATION
+    // =========================================================
 
-    if (!file) {
-      alert("Please upload file first");
-      return;
-    }
+    const reader = new FileReader();
 
-    const fileURL = URL.createObjectURL(file);
-    window.open(fileURL, "_blank");
-  };
+    reader.onload = () => {
 
-  // Download
-  const handleDownload = (item) => {
-    const file = files[item.id];
+      try {
 
-    if (!file) {
-      alert("Please upload file first");
-      return;
-    }
+        const existingFiles =
+          JSON.parse(
+            sessionStorage.getItem(
+              "criteria2_current_files"
+            ) || "[]"
+          );
 
-    const fileURL = URL.createObjectURL(file);
+        // -------------------------------------------------------
+        // REMOVE OLD FILE OF SAME 2.5 DOCUMENT
+        // -------------------------------------------------------
 
-    const link = document.createElement("a");
-    link.href = fileURL;
-    link.download = file.name;
-    link.click();
-  };
+        const filteredFiles =
+          existingFiles.filter(
+            (existingFile) =>
+              !(
+                String(existingFile.criteriaNo) === "2.5" &&
+                existingFile.documentName ===
+                  item.documentName
+              )
+          );
 
-  // Save
- const handleSave = async () => {
-  try {
-    const uploadedDocs = Object.keys(files);
+        // -------------------------------------------------------
+        // ADD CURRENT 2.5 FILE
+        // -------------------------------------------------------
 
-    if (uploadedDocs.length === 0) {
-      alert("Please upload file first");
-      return;
-    }
+        filteredFiles.push({
 
-    // Recently uploaded files
-    let recentFiles =
-      JSON.parse(localStorage.getItem("recentUploadedFiles")) || [];
+          criteriaNo: "2.5",
 
-    for (const key of uploadedDocs) {
+          documentName:
+            item.documentName,
 
-      const file = files[key];
+          description:
+            item.description,
 
-      const row = rows.find(
-        (r) => r.id === parseInt(key)
-      );
+          fileName:
+            file.name,
 
-      const formData = new FormData();
+          fileType:
+            file.type,
 
-      formData.append("file", file);
-      formData.append("criteriaNo", "2.5");
-      formData.append("documentName", row.documentName);
+          fileData:
+            reader.result,
 
-      const res = await axios.post(
-        "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/upload",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+        });
 
-      // Save uploaded file name for Print
-      recentFiles.push({
-        criteriaNo: "2.5",
-        file_name: res.data.data.file_name,
-      });
-    }
+        // -------------------------------------------------------
+        // SAVE BACK TO SESSION STORAGE
+        // -------------------------------------------------------
 
-    localStorage.setItem(
-      "recentUploadedFiles",
-      JSON.stringify(recentFiles)
+        sessionStorage.setItem(
+          "criteria2_current_files",
+          JSON.stringify(
+            filteredFiles
+          )
+        );
+
+        console.log(
+          "CURRENT 2.5 FILE ADDED:",
+          file.name
+        );
+
+        console.log(
+          "CURRENT CRITERIA 2 FILES:",
+          filteredFiles
+        );
+
+      }
+      catch (error) {
+
+        console.error(
+          "CURRENT 2.5 FILE STORAGE ERROR:",
+          error
+        );
+
+      }
+
+    };
+
+    reader.readAsDataURL(file);
+
+
+    alert(
+      `${file.name} Selected Successfully`
     );
 
-    alert("Files Saved Successfully");
+  };
 
-  } catch (err) {
-    console.log(err);
-    alert("Error while saving");
-  }
-};
-  // Delete
+  // ==========================================
+  // Save
+  // ==========================================
+
+  const handleSave = async () => {
+
+    const uploadedDocs =
+      Object.keys(files);
+
+    if (
+      uploadedDocs.length === 0
+    ) {
+
+      alert(
+        "Please select file first."
+      );
+
+      return;
+
+    }
+
+    try {
+
+      setLoading(true);
+
+      let savedCount = 0;
+
+      for (
+        const key of uploadedDocs
+      ) {
+
+        const fileData =
+          files[key];
+
+        // Already saved
+        if (fileData.saved) {
+          continue;
+        }
+
+        if (!fileData.file) {
+          continue;
+        }
+
+        const row =
+          rows.find(
+            (doc) =>
+              doc.id ===
+              Number(key)
+          );
+
+        if (!row) {
+          continue;
+        }
+
+        const formData =
+          new FormData();
+
+        formData.append(
+          "criteriaNo",
+          "2.5"
+        );
+
+        formData.append(
+          "documentName",
+          row.documentName
+        );
+
+        formData.append(
+          "description",
+          row.description
+        );
+
+        formData.append(
+          "session_id",
+          sessionId
+        );
+
+        formData.append(
+          "file",
+          fileData.file
+        );
+
+        const response =
+          await axios.post(
+            "http://localhost:5000/criteria/upload",
+            formData,
+            {
+              headers: {
+                "Content-Type":
+                  "multipart/form-data",
+              },
+            }
+          );
+
+        if (
+          response.data?.success
+        ) {
+
+          const savedFileName =
+            response.data.data
+              ?.file_name ||
+            "";
+
+          const originalFileName =
+            response.data.data
+              ?.original_file_name ||
+            fileData.original_name ||
+            fileData.name ||
+            fileData.file.name;
+
+          // -------------------------------------------------------
+          // UPDATE FILE STATE
+          // -------------------------------------------------------
+
+          setFiles((previous) => ({
+
+            ...previous,
+
+            [key]: {
+
+              ...previous[key],
+
+              file:
+                fileData.file,
+
+              saved:
+                true,
+
+              file_name:
+                savedFileName,
+
+              original_name:
+                originalFileName,
+
+              name:
+                originalFileName,
+
+              session_id:
+                sessionId,
+
+            },
+
+          }));
+
+          savedCount++;
+
+        }
+
+      }
+
+      // -------------------------------------------------------
+      // SUCCESS MESSAGE
+      // -------------------------------------------------------
+
+      if (
+        savedCount > 0
+      ) {
+
+        alert(
+          `${savedCount} file(s) saved successfully.`
+        );
+
+      }
+      else {
+
+        alert(
+          "All selected files are already saved."
+        );
+
+      }
+
+    }
+    catch (error) {
+
+      console.error(
+        "SAVE 2.5 ERROR:",
+        error
+      );
+
+      alert(
+        error.response?.data?.message ||
+        error.response?.data?.error ||
+        error.message ||
+        "Save Failed."
+      );
+
+    }
+    finally {
+
+      setLoading(false);
+
+    }
+
+  };
+
+
+  // ==========================================
+  // View
+  // ==========================================
+
+  const handleView = (item) => {
+
+    const fileData =
+      files[item.id];
+
+    if (!fileData) {
+
+      alert(
+        "Please upload file first"
+      );
+
+      return;
+
+    }
+
+    let url = "";
+
+    if (fileData.saved) {
+
+      url =
+        `http://localhost:5000/uploads/${encodeURIComponent(
+          fileData.file_name
+        )}`;
+
+    }
+    else {
+
+      url =
+        URL.createObjectURL(
+          fileData.file
+        );
+
+    }
+
+    window.open(
+      url,
+      "_blank"
+    );
+
+  };
+
+  // ==========================================
+  // Download
+  // ==========================================
+
+  const handleDownload = (item) => {
+
+    const fileData =
+      files[item.id];
+
+    if (!fileData) {
+
+      alert(
+        "Please upload file first"
+      );
+
+      return;
+
+    }
+
+    let url = "";
+
+    let name = "";
+
+    if (fileData.saved) {
+
+      url =
+        `http://localhost:5000/uploads/${encodeURIComponent(
+          fileData.file_name
+        )}`;
+
+      name =
+        fileData.original_name ||
+        fileData.file_name;
+
+    }
+    else {
+
+      url =
+        URL.createObjectURL(
+          fileData.file
+        );
+
+      name =
+        fileData.name;
+
+    }
+
+    const link =
+      document.createElement("a");
+
+    link.href = url;
+
+    link.download = name;
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+  };
+
+  // ==========================================
+  // Delete From Database
+  // ==========================================
+
   const handleDelete = async () => {
 
-  try {
+    try {
 
-    await axios.delete(
-      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/deleteAll/2.5"
-    );
+      const confirm =
+        window.confirm(
+          "Are you sure you want to delete?"
+        );
 
+      if (!confirm) return;
+
+      const currentSessionId =
+        localStorage.getItem(
+          "criteria2_session_id"
+        );
+
+      await axios.delete(
+
+        "http://localhost:5000/criteria/deleteAll/2.5",
+
+        {
+          params: {
+            session_id:
+              currentSessionId
+          }
+        }
+
+      );
+
+      setFiles({});
+
+      document
+        .querySelectorAll(".file-input")
+        .forEach(input => {
+
+          input.value = "";
+
+        });
+
+
+      // =========================================================
+      // REMOVE ONLY 2.5 FILES FROM CRITERIA 2 REPORT
+      // =========================================================
+
+      const currentFiles =
+        JSON.parse(
+          sessionStorage.getItem(
+            "criteria2_current_files"
+          ) || "[]"
+        );
+
+      const updatedFiles =
+        currentFiles.filter(
+          (item) =>
+            String(item.criteriaNo) !==
+            "2.5"
+        );
+
+      sessionStorage.setItem(
+        "criteria2_current_files",
+        JSON.stringify(
+          updatedFiles
+        )
+      );
+
+
+      let recentFiles =
+        JSON.parse(
+          localStorage.getItem(
+            "recentUploadedFiles"
+          )
+        ) || [];
+
+      recentFiles =
+        recentFiles.filter(
+          item =>
+            item.criteriaNo !==
+            "2.5"
+        );
+
+      localStorage.setItem(
+
+        "recentUploadedFiles",
+
+        JSON.stringify(
+          recentFiles
+        )
+
+      );
+
+      alert(
+        "Deleted Successfully"
+      );
+
+    }
+    catch (err) {
+
+      console.log(err);
+
+      alert(
+        "Delete Failed"
+      );
+
+    }
+
+  };
+
+  // =========================================================
+  // CLEAR
+  // =========================================================
+
+  const handleClear = () => {
+
+    const confirmClear =
+      window.confirm(
+        "Are you sure you want to clear selected files?"
+      );
+
+    if (!confirmClear) return;
+
+    // Clear React State
     setFiles({});
 
-    document.querySelectorAll(".file-input")
+    // Clear File Input Fields
+    document
+      .querySelectorAll(".file-input")
       .forEach((input) => {
         input.value = "";
       });
 
-    alert("Deleted Successfully");
+    // =========================================================
+    // REMOVE ONLY 2.5 FILES FROM CRITERIA 2 REPORT
+    // =========================================================
 
-  } catch (err) {
+    const currentFiles =
+      JSON.parse(
+        sessionStorage.getItem(
+          "criteria2_current_files"
+        ) || "[]"
+      );
 
-    console.log(err);
-    alert("Delete Failed");
-  }
-};
+    const updatedFiles =
+      currentFiles.filter(
+        (item) =>
+          String(item.criteriaNo) !==
+          "2.5"
+      );
 
-  // Submit
- const handleSubmit = async () => {
-
-  try {
-
-    await axios.post(
-      "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/criteria/submit",
-      {
-        criteriaNo: "2.5"
-      }
+    sessionStorage.setItem(
+      "criteria2_current_files",
+      JSON.stringify(updatedFiles)
     );
 
-    alert("Submitted Successfully");
+    alert(
+      "Files Cleared Successfully"
+    );
 
-  } catch (err) {
+  };
 
-    console.log(err);
-    alert("Submission Failed");
-  }
-};
-  // Print
-  const handlePrint = () => {
-    const uploadedFiles = Object.values(files);
+  // ==========================================
+  // Print Uploaded Files
+  // ==========================================
+
+  const handlePrint = async () => {
+
+    const uploadedFiles =
+      Object.values(files);
 
     if (uploadedFiles.length === 0) {
-      alert("Please upload file first");
+
+      alert(
+        "No uploaded files found."
+      );
+
       return;
+
     }
 
-    uploadedFiles.forEach((file) => {
-      const fileURL = URL.createObjectURL(file);
+    const printWindow =
+      window.open(
+        "",
+        "_blank"
+      );
 
-      const printWindow = window.open(fileURL, "_blank");
+    if (!printWindow) {
 
-      printWindow.onload = () => {
-        printWindow.focus();
-        printWindow.print();
-      };
-    });
+      alert(
+        "Please allow popup for printing."
+      );
+
+      return;
+
+    }
+
+    printWindow.document.write(`
+
+    <html>
+
+    <head>
+
+    <title>
+    Criteria 2.5 Report
+    </title>
+
+    <style>
+
+    body{
+
+      font-family:Arial;
+      padding:30px;
+
+    }
+
+    h3{
+
+      margin-top:30px;
+
+      color:#1f2937;
+
+    }
+
+    embed{
+
+      width:100%;
+
+      height:600px;
+
+    }
+
+    img{
+
+      max-width:90%;
+
+      max-height:600px;
+
+    }
+
+    table{
+
+      border-collapse:collapse;
+
+      width:100%;
+
+    }
+
+    td,th{
+
+      border:1px solid #999;
+
+      padding:8px;
+
+    }
+
+    hr{
+
+      margin:30px 0;
+
+    }
+
+    </style>
+
+    </head>
+
+    <body>
+
+    <h2>
+    Criteria 2.5 Case Study & Real Life Example
+    </h2>
+
+    `);
+
+    for (const key of Object.keys(files)) {
+
+      const row =
+        rows.find(
+          (d) =>
+            d.id === Number(key)
+        );
+
+      const file =
+        files[key];
+
+      if (!row || !file)
+        continue;
+
+      const fileName =
+        file.original_name ||
+        file.name ||
+        file.file_name;
+
+      const fileURL =
+        file.saved
+
+          ?
+
+        `http://localhost:5000/uploads/${encodeURIComponent(
+          file.file_name
+        )}`
+
+          :
+
+        URL.createObjectURL(
+          file.file
+        );
+
+      const ext =
+        fileName
+          .split(".")
+          .pop()
+          .toLowerCase();
+
+      let previewHTML = "";
+
+      // ==========================
+      // PDF
+      // ==========================
+
+      if (ext === "pdf") {
+
+        previewHTML = `
+
+        <embed
+
+        src="${fileURL}"
+
+        type="application/pdf"
+
+        />
+
+        `;
+
+      }
+
+      // ==========================
+      // IMAGE
+      // ==========================
+
+      else if (
+        [
+          "jpg",
+          "jpeg",
+          "png"
+        ].includes(ext)
+      ) {
+
+        previewHTML = `
+
+        <img
+
+        src="${fileURL}"
+
+        />
+
+        `;
+
+      }
+
+      // ==========================
+      // WORD
+      // ==========================
+
+      else if (ext === "docx") {
+
+        previewHTML =
+          await readFileContentHTML(
+            file,
+            ext
+          );
+
+      }
+
+      // ==========================
+      // EXCEL
+      // ==========================
+
+      else if (
+        ext === "xls" ||
+        ext === "xlsx"
+      ) {
+
+        previewHTML =
+          await readFileContentHTML(
+            file,
+            ext
+          );
+
+      }
+
+      else {
+
+        previewHTML = `
+
+        <div>
+
+        <h4>
+        ${fileName}
+        </h4>
+
+        <p>
+        Preview not available
+        </p>
+
+        </div>
+
+        `;
+
+      }
+
+      printWindow.document.write(`
+
+      <hr>
+
+      <h3>
+
+      ${row.id}.
+      ${row.documentName}
+
+      </h3>
+
+      <p>
+
+      <b>Description :</b>
+
+      ${row.description}
+
+      </p>
+
+      <p>
+
+      <b>File Name :</b>
+
+      ${fileName}
+
+      </p>
+
+      ${previewHTML}
+
+      `);
+
+    }
+
+    printWindow.document.write(`
+
+    </body>
+
+    </html>
+
+    `);
+
+    printWindow.document.close();
+
+    setTimeout(() => {
+
+      printWindow.focus();
+
+      printWindow.print();
+
+    }, 1500);
+
+  };
+
+  // ==========================================
+  // Read Word / Excel Content
+  // ==========================================
+
+  const readFileContentHTML = async (
+    file,
+    ext
+  ) => {
+
+    let blob =
+      file.file;
+
+    // Saved file fetch
+
+    if (
+      !blob &&
+      file.file_name
+    ) {
+
+      try {
+
+        const response =
+          await fetch(
+
+            `http://localhost:5000/uploads/${encodeURIComponent(
+              file.file_name
+            )}`
+
+          );
+
+        blob =
+          await response.blob();
+
+      }
+
+      catch (err) {
+
+        console.log(
+          "FETCH ERROR",
+          err
+        );
+
+        return `
+
+        <p>
+
+        Unable to load preview
+
+        </p>
+
+        `;
+
+      }
+
+    }
+
+    if (!blob) {
+
+      return "";
+
+    }
+
+    // ======================
+    // DOCX
+    // ======================
+
+    if (ext === "docx") {
+
+      try {
+
+        const buffer =
+          await blob.arrayBuffer();
+
+        const result =
+          await mammoth.convertToHtml({
+
+            arrayBuffer:
+              buffer
+
+          });
+
+        return `
+
+        <div>
+
+        ${result.value}
+
+        </div>
+
+        `;
+
+      }
+
+      catch (err) {
+
+        console.log(err);
+
+        return `
+
+        <p>
+
+        Word Preview Failed
+
+        </p>
+
+        `;
+
+      }
+
+    }
+
+    // ======================
+    // EXCEL
+    // ======================
+
+    if (
+      ext === "xls" ||
+      ext === "xlsx"
+    ) {
+
+      try {
+
+        const buffer =
+          await blob.arrayBuffer();
+
+        const workbook =
+          XLSX.read(
+            buffer,
+            {
+              type: "array"
+            }
+          );
+
+        const sheet =
+          workbook.Sheets[
+            workbook.SheetNames[0]
+          ];
+
+        const html =
+          XLSX.utils.sheet_to_html(
+            sheet
+          );
+
+        return html;
+
+      }
+
+      catch (err) {
+
+        console.log(err);
+
+        return `
+
+        <p>
+
+        Excel Preview Failed
+
+        </p>
+
+        `;
+
+      }
+
+    }
+
+    return "";
+
   };
 
   return (
-    <div className="case-container">
 
-      {/* Header */}
-      <div className="case-header">
-        <div className="case-title-section">
-          <span className="case-badge">2.5</span>
+    <div className="main-container">
 
-          <div>
-            <h2>Case Study & Real Life Example</h2>
-            <p>Upload and manage Case Study documents.</p>
+      <NBASidebar />
+
+      <div className="case-container">
+
+        {/* Header */}
+
+        <div className="case-header">
+
+          <div className="case-title-section">
+
+            <span className="case-badge">
+              2.5
+            </span>
+
+            <div>
+
+              <h2>
+                Case Study & Real Life Example
+              </h2>
+
+              <p>
+                Upload and manage Case Study documents.
+              </p>
+
+            </div>
+
           </div>
+
         </div>
-      </div>
 
-      {/* Table */}
-      <div className="case-card">
-        <table className="case-table">
+        {/* Table */}
 
-        <thead>
-            <tr>
-              <th>Sr.No.</th>
-              <th>Document Name</th>
-              <th>Description</th>
-              <th>Attachment</th>
-              
-            </tr>
-          </thead>
+        <div className="case-card">
 
-          <tbody>
-            {rows.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
+          <table className="case-table">
 
-                <td>{item.documentName}</td>
+            <thead>
 
-              <td>
-  <textarea
-    className="description-box"
-    value={item.description}
-    readOnly
-  />
-</td>
+              <tr>
 
-                <td>
-  <input
-    type="file"
-    className="file-input"
-    accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx,.mp4,.mp3,.wav,.zip"
-    onChange={(e) => handleUpload(e, item)}
-  />
+                <th>
+                  Sr. No.
+                </th>
 
-  <div className="action-buttons">
+                <th>
+                  Document Name
+                </th>
 
-    <button className="view-btn" onClick={() => handleView(item)}>
-      <FaEye /> View
-    </button>
+                <th>
+                  Description
+                </th>
 
-    <button className="download-btn" onClick={() => handleDownload(item)}>
-      <FaDownload /> Download
-    </button>
-
-  </div>
-</td>
+                <th>
+                  Action
+                </th>
 
               </tr>
-            ))}
-          </tbody>
 
-        </table>
-      </div>
+            </thead>
 
-      {/* Bottom Buttons */}
-      <div className="bottom-buttons">
-<button
-  className="previous-btn"
-  onClick={() => navigate("/seminar-mini-project")}
->
-  <FaArrowLeft /> Previous
-</button>
+            <tbody>
 
-<button
-  className="back-btn"
-  onClick={() =>
-    navigate("/criteria/2.1-quality-teaching-learning")
-  }
->
-  <FaArrowLeft /> Back
-</button>
-        <button
-          className="save-btn"
-          onClick={handleSave}
-        >
-          <FaSave /> Save
-        </button>
+              {rows.map((item) => (
 
-        <button
-          className="delete-btn"
-          onClick={handleDelete}
-        >
-          <FaTrash /> Delete
-        </button>
+                <tr key={item.id}>
 
-        <button
-          className="submit-btn"
-          onClick={handleSubmit}
-        >
-          <FaPaperPlane /> Submit
-        </button>
+                  <td>
+                    {item.id}
+                  </td>
 
-        <button
-          className="print-btn"
-          onClick={handlePrint}
-        >
-          <FaPrint /> Print
-        </button>
+                  <td>
+                    {item.documentName}
+                  </td>
 
-        <button
-          className="next-btn"
-          onClick={() => navigate("/nptel")}
-        >
-          Next <FaArrowRight />
-        </button>
+                  <td>
+
+                    <textarea
+                      className="description-box"
+                      value={
+                        item.description
+                      }
+                      readOnly
+                    />
+
+                  </td>
+
+                  <td>
+
+                    <div className="attachment-box">
+
+                      <input
+                        type="file"
+                        className="file-input"
+                        accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.jpg,.jpeg,.png"
+                        onChange={(e) =>
+                          handleUpload(
+                            e,
+                            item
+                          )
+                        }
+                      />
+
+                      {files[item.id] && (
+
+                        <div
+                          style={{
+                            marginTop: "8px",
+                            color: "green",
+                            fontWeight: "600",
+                            fontSize: "13px",
+                            wordBreak:
+                              "break-word",
+                          }}
+                        >
+
+                          📄{" "}
+
+                          {files[item.id].saved
+                            ? files[item.id]
+                                .original_name
+                            : files[item.id]
+                                .name}
+
+                        </div>
+
+                      )}
+
+                      <div className="attachment-buttons">
+
+                        <button
+                          className="view-btn"
+                          onClick={() =>
+                            handleView(
+                              item
+                            )
+                          }
+                        >
+
+                          <FaEye />
+                          View
+
+                        </button>
+
+                        <button
+                          className="download-btn"
+                          onClick={() =>
+                            handleDownload(
+                              item
+                            )
+                          }
+                        >
+
+                          <FaDownload />
+                          Download
+
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </td>
+
+                </tr>
+
+              ))}
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        {/* Bottom Buttons */}
+
+        <div className="bottom-buttons">
+
+          <button
+            className="previous-btn"
+            onClick={() =>
+              navigate(
+                "/seminar-mini-project"
+              )
+            }
+          >
+
+            <FaArrowLeft />
+            Previous
+
+          </button>
+
+          <button
+            className="back-btn"
+            onClick={() =>
+              navigate(
+                "/criteria/2.1-quality-teaching-learning"
+              )
+            }
+          >
+
+            <FaArrowLeft />
+            Back
+
+          </button>
+
+          <button
+            className="save-btn"
+            onClick={handleSave}
+            disabled={loading}
+          >
+
+            <FaSave />
+
+            {loading
+              ? " Saving..."
+              : " Save"}
+
+          </button>
+
+          <button
+            className="delete-btn"
+            onClick={handleDelete}
+          >
+
+            <FaTrash />
+            Delete
+
+          </button>
+
+          <button
+            className="print-btn"
+            onClick={handlePrint}
+          >
+
+            <FaPrint />
+            Print
+
+          </button>
+
+          <button
+            className="clear-btn"
+            onClick={handleClear}
+          >
+
+            Clear
+
+          </button>
+
+          <button
+            className="next-btn"
+            onClick={() =>
+              navigate("/nptel")
+            }
+          >
+
+            Next
+            <FaArrowRight />
+
+          </button>
+
+        </div>
 
       </div>
 
     </div>
+
   );
+
 }
 
 export default CaseStudy;

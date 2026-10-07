@@ -1,280 +1,1048 @@
-* {
-  margin: 0;
-  padding: 0;
+/* =====================================================
+   INTERNSHIP - CRITERIA 2.3
+   COMPACT DESIGN
+   ALL STYLES SCOPED TO INTERNSHIP PAGE
+   ===================================================== */
+
+
+/* =====================================================
+   LAYOUT
+   ===================================================== */
+
+.internship-container {
+  margin-left: 270px;
+  width: calc(100% - 270px);
+
+  padding: 20px 30px;
+
+  background: #f5f7fb;
+
+  min-height: 100vh;
+
   box-sizing: border-box;
+
   font-family: "Poppins", sans-serif;
 }
 
-.internship-container {
-  padding: 30px;
-  background: #f5f7fb;
-  min-height: 100vh;
-}
 
-/* Header */
+/* =====================================================
+   HEADER
+   ===================================================== */
 
-.internship-header {
-  background: #fff;
+.internship-container .internship-header {
+  width: 100%;
+
+  background: #ffffff;
+
   border-radius: 15px;
-  padding: 25px;
-  margin-bottom: 25px;
+
+  padding: 22px 25px;
+
+  margin-bottom: 20px;
+
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+  box-sizing: border-box;
 }
 
-.internship-title-section {
+
+/* =====================================================
+   TITLE SECTION
+   ===================================================== */
+
+.internship-container .internship-title-section {
   display: flex;
+
   align-items: center;
+
   gap: 15px;
 }
 
-.internship-badge {
+
+/* =====================================================
+   BADGE
+   ===================================================== */
+
+.internship-container .internship-badge {
   width: 45px;
+
   height: 45px;
+
+  min-width: 45px;
+
   border-radius: 10px;
+
   background: #4f46e5;
-  color: #fff;
+
+  color: #ffffff;
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
+  font-weight: 600;
+
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   TITLE
+   ===================================================== */
+
+.internship-container .internship-title-section h2 {
+  margin: 0 0 4px 0;
+
+  color: #0f172a;
+
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   SUB TITLE
+   ===================================================== */
+
+.internship-container .internship-title-section p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   TABLE CARD
+   ===================================================== */
+
+.internship-container .internship-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-radius: 15px;
+
+  padding: 20px;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+  overflow-x: auto;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   TABLE
+   ===================================================== */
+
+.internship-container .internship-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  border: 1px solid #dcdcdc;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+   ===================================================== */
+
+.internship-container .internship-table thead {
+  background: #f8fafc;
+}
+
+
+.internship-container .internship-table th {
+  height: 45px;
+
+  padding: 10px 8px;
+
+  border: 1px solid #dcdcdc;
+
+  background: #f8fafc;
+
+  color: #111827;
+
+  text-align: center;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  vertical-align: middle;
+}
+
+
+/* =====================================================
+   TABLE DATA
+   ===================================================== */
+
+.internship-container .internship-table td {
+  height: 80px;
+
+  padding: 10px 8px;
+
+  border: 1px solid #dcdcdc;
+
+  text-align: center;
+
+  vertical-align: middle;
+
+  font-size: 13px;
+
+  color: #111827;
+}
+
+
+/* =====================================================
+   SR. NO. COLUMN
+   SMALL
+   ===================================================== */
+
+.internship-container .internship-table th:first-child,
+.internship-container .internship-table td:first-child {
+  width: 70px;
+
+  min-width: 70px;
+
+  max-width: 70px;
+
+  padding: 8px 5px;
+
+  text-align: center;
+
   font-weight: 600;
 }
 
-.internship-title-section h2 {
-  color: #0f172a;
-  margin-bottom: 5px;
+
+/* =====================================================
+   DOCUMENT NAME COLUMN
+   COMPACT
+   ===================================================== */
+
+.internship-container .internship-table th:nth-child(2),
+.internship-container .internship-table td:nth-child(2) {
+  width: 300px;
+
+  min-width: 300px;
+
+  padding: 10px 12px;
+
+  text-align: left;
+
+  line-height: 18px;
+
+  word-break: normal;
+
+  overflow-wrap: break-word;
 }
 
-.internship-title-section p {
-  color: #64748b;
+
+/* =====================================================
+   DESCRIPTION COLUMN
+   COMPACT
+   ===================================================== */
+
+.internship-container .internship-table th:nth-child(3),
+.internship-container .internship-table td:nth-child(3) {
+  width: 300px;
+
+  min-width: 300px;
+
+  padding: 10px 12px;
+
+  text-align: center;
 }
 
-/* Card */
 
-.internship-card {
-  background: #fff;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+/* =====================================================
+   ACTION COLUMN
+   SMALL
+   ===================================================== */
+
+.internship-container .internship-table th:nth-child(4),
+.internship-container .internship-table td:nth-child(4) {
+  width: 280px;
+
+  min-width: 280px;
+
+  padding: 8px;
+
+  text-align: center;
 }
 
-/* Table */
-.internship-table{
-  width:100%;
-  border-collapse:collapse;
-  border:1px solid #dcdcdc;
+
+/* =====================================================
+   DESCRIPTION BOX
+   NO SCROLLBAR
+   ===================================================== */
+
+.internship-container .description-box {
+  width: 220px;
+
+  max-width: 220px;
+
+  height: 50px;
+
+  min-height: 50px;
+
+  max-height: 50px;
+
+  padding: 8px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  line-height: 15px;
+
+  resize: none;
+
+  overflow: hidden;
+
+  outline: none;
+
+  display: block;
+
+  margin: 0 auto;
 }
 
-.internship-table thead {
-  background: #f8fafc;
+
+/* =====================================================
+   DESCRIPTION FOCUS
+   ===================================================== */
+
+.internship-container .description-box:focus {
+  border-color: #94a3b8;
+
+  outline: none;
+
+  box-shadow: none;
+}
+
+
+/* =====================================================
+   ATTACHMENT BOX
+   ===================================================== */
+
+.internship-container .attachment-box {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   FILE INPUT
+   SMALL
+   ===================================================== */
+
+.internship-container .file-input {
+  width: 165px;
+
+  max-width: 165px;
+
+  height: 31px;
+
+  margin: 0 0 12px 0;
+
+  padding: 2px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
   color: #111827;
-}
-.internship-table th{
-    border:1px solid #dcdcdc;
-    padding:14px;
-    text-align:center;
-    font-size:15px;
-    font-weight:600;
-}
 
-.internship-table td{
-    border:1px solid #dcdcdc;
-    padding:18px;
-    text-align:center;
-    vertical-align:middle;
-     height: 130px;
-}
-.file-input {
-  width: 100px;
-  padding: 4px;
-  font-size: 12px;
-}
-.file-input::file-selector-button {
-    background: #f3f4f6 !important;
-    color: #333 !important;
-    border: 1px solid #d1d5db !important;
-    border-radius: 5px;
-    padding: 6px 12px;
-    cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-}
+  background: #ffffff;
 
-.file-input::file-selector-button:hover {
-  background: #e5e7eb;
-}
+  border: 1px solid #cbd5e1;
 
-/* Action Buttons */
+  border-radius: 7px;
 
-.action-buttons {
-  display: flex;
-  gap: 10px;
-}
-.view-btn {
-  background: #dbeafe;
-  color: #2563eb;
-  border: none;
-  padding: 4px 8px;
-  font-size: 11px;
-  border-radius: 5px;
-  min-width: 60px;
-  height: 28px;
-}
-.download-btn {
-  background: #16a34a;
-  color: white;
-  border: none;
-  width: 85px;      /* Button width kami */
-  height: 28px;     /* Button height kami */
-  padding: 2px 6px;
-  font-size: 11px;
-  border-radius: 5px;
   cursor: pointer;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
-.view-btn:hover {
-  background: #c7e4ff;
+  box-sizing: border-box;
 }
 
-.download-btn:hover {
-  background: #15803d;
-}
-.view-btn {
-  background: #dbeefe;
-  color: #0b73c4;
-}
-.download-btn {
-  background: #16a34a;
-  color: white;
-}
 
-.upload-btn {
-  display: inline-block;
+/* =====================================================
+   CHOOSE FILE BUTTON
+   ===================================================== */
+
+.internship-container .file-input::file-selector-button {
+  height: 25px;
+
+  padding: 3px 9px;
+
+  margin-right: 4px;
+
   background: #f3f4f6;
-  color: #333;
-  border: 1px solid #d1d5db;
+
+  color: #111827;
+
+  border: 1px solid #cbd5e1;
+
   border-radius: 5px;
-  padding: 6px 12px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
   cursor: pointer;
-  font-size: 12px;
 }
 
-.upload-btn:hover {
+
+.internship-container .file-input::file-selector-button:hover {
   background: #e5e7eb;
 }
 
-/* Bottom Buttons */
 
-.bottom-buttons {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
+/* =====================================================
+   UPLOAD BUTTON
+   ===================================================== */
 
-.bottom-buttons button {
-  border: none;
-  padding: 12px 24px;
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
+.internship-container .upload-btn {
+  display: inline-flex;
+
   align-items: center;
-  gap: 8px;
-  font-size: 15px;
-}
-.previous-btn {
-  background: linear-gradient(135deg, #ff7b00, #ff5e00);
-  color: white;
+
+  justify-content: center;
+
+  background: #f3f4f6;
+
+  color: #333333;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 5px;
+
+  padding: 5px 10px;
+
+  cursor: pointer;
+
+  font-size: 11px;
 }
 
-.back-btn {
+
+.internship-container .upload-btn:hover {
   background: #e5e7eb;
-  color: #374151;
 }
 
-.save-btn {
-  background: #dbeafe;
-  color: #2563eb;
+
+/* =====================================================
+   ACTION BUTTON WRAPPER
+   ===================================================== */
+
+.internship-container .internship-action-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 0;
+
+  flex-wrap: nowrap;
+
+  width: 100%;
 }
 
-.delete-btn {
-  background: #fee2e2;
-  color: #dc2626;
+
+/* =====================================================
+   ACTION BUTTON COMMON
+   ===================================================== */
+
+.internship-container .internship-action-buttons button {
+  border: none;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 5px;
+
+  height: 32px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  padding: 0 8px;
+
+  transition: 0.2s;
+
+  box-sizing: border-box;
 }
 
-.submit-btn {
-  background: #dcfce7;
+
+/* =====================================================
+   VIEW BUTTON
+   2.4 STYLE
+   ===================================================== */
+
+.internship-container .internship-action-buttons .view-btn {
+  width: 110px;
+
+  min-width: 110px;
+
+  height: 32px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+
+.internship-container .internship-action-buttons .view-btn:hover {
+  background: #1d4ed8;
+
+  opacity: 0.95;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   DOWNLOAD BUTTON
+   2.4 STYLE
+   ===================================================== */
+
+.internship-container .internship-action-buttons .download-btn {
+  width: 110px;
+
+  min-width: 110px;
+
+  height: 32px;
+
+  background: #16a34a;
+
+  color: #ffffff;
+}
+
+
+.internship-container .internship-action-buttons .download-btn:hover {
+  background: #15803d;
+
+  opacity: 0.95;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   DISABLED BUTTON
+   ===================================================== */
+
+.internship-container .internship-action-buttons button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =====================================================
+   UPLOADED FILE NAME
+   ===================================================== */
+
+.internship-container .uploaded-file-name {
+  width: 100%;
+
+  max-width: 210px;
+
+  margin: 5px auto 8px auto;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 5px;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  color: #334155;
+
+  line-height: 15px;
+
+  word-break: break-word;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   FILE STATUS
+   ===================================================== */
+
+.internship-container .file-status {
+  font-size: 10px;
+
+  margin-bottom: 7px;
+
+  text-align: center;
+}
+
+
+.internship-container .file-status.saved {
   color: #16a34a;
+
+  font-weight: 600;
 }
 
-.print-btn {
-  background: #ede9fe;
-  color: #7c3aed;
+
+.internship-container .file-status.selected {
+  color: #f59e0b;
+
+  font-weight: 600;
 }
 
-.next-btn {
-  background: #4f46e5;
-  color: white;
+
+/* =====================================================
+   BOTTOM BUTTONS
+   2.4 STYLE
+   ===================================================== */
+
+.internship-container .internship-bottom-buttons {
+  margin-top: 20px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 8px;
+
+  flex-wrap: nowrap;
+
+  width: 100%;
 }
 
-.bottom-buttons button:hover,
-.view-btn:hover,
-.download-btn:hover {
+
+/* =====================================================
+   BOTTOM BUTTON COMMON
+   ===================================================== */
+
+.internship-container .internship-bottom-buttons button {
+  width: 90px;
+
+  min-width: 90px;
+
+  height: 34px;
+
+  padding: 0 8px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  color: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  transition: 0.2s;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   PREVIOUS
+   IMAGE COLOR
+   ===================================================== */
+
+.internship-container .internship-bottom-buttons .previous-btn {
+  background: #ff6b00;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   BACK
+   IMAGE COLOR
+   ===================================================== */
+
+.internship-container .internship-bottom-buttons .back-btn {
+  background: #64748b;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   SAVE
+   IMAGE COLOR
+   ===================================================== */
+
+.internship-container .internship-bottom-buttons .save-btn {
+  background: #198754;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   DELETE
+   IMAGE COLOR
+   ===================================================== */
+
+.internship-container .internship-bottom-buttons .delete-btn {
+  background: #ef4444;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   SUBMIT
+   ===================================================== */
+
+.internship-container .internship-bottom-buttons .submit-btn {
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   PRINT
+   IMAGE COLOR
+   ===================================================== */
+
+.internship-container .internship-bottom-buttons .print-btn {
+  background: #7c3aed;
+
+  color: #ffffff;
+}
+
+/* =====================================================
+   CLEAR BUTTON - INTERNSHIP ONLY
+   ===================================================== */
+
+.internship-container .internship-bottom-buttons .capstone-clear-btn {
+  background: #f59e0b !important;
+  background-color: #f59e0b !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.internship-container .internship-bottom-buttons .capstone-clear-btn:hover {
+  background: #d97706 !important;
+  background-color: #d97706 !important;
+  color: #ffffff !important;
+}
+
+.internship-container .internship-bottom-buttons .capstone-clear-btn:disabled {
+  background: #f59e0b !important;
+  background-color: #f59e0b !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  cursor: pointer !important;
+}
+
+/* =====================================================
+   NEXT
+   IMAGE COLOR
+   ===================================================== */
+
+.internship-container .internship-bottom-buttons .next-btn {
+  background: #008f83;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   BOTTOM BUTTON HOVER
+   ===================================================== */
+
+.internship-container .internship-bottom-buttons button:hover {
   opacity: 0.9;
+
+  transform: translateY(-2px);
 }
 
-/* Responsive */
 
-@media (max-width: 768px) {
-  .internship-table {
-    display: block;
-    overflow-x: auto;
+/* =====================================================
+   DISABLED BOTTOM BUTTON
+   ===================================================== */
+
+.internship-container .internship-bottom-buttons button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =====================================================
+   TABLE HOVER
+   ===================================================== */
+
+.internship-container .internship-table tbody tr {
+  transition: 0.2s ease;
+}
+
+
+.internship-container .internship-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+
+/* =====================================================
+   CARD SCROLLBAR
+   ONLY INTERNSHIP CARD
+   ===================================================== */
+
+.internship-container .internship-card::-webkit-scrollbar {
+  height: 7px;
+}
+
+
+.internship-container .internship-card::-webkit-scrollbar-track {
+  background: #eef2f7;
+}
+
+
+.internship-container .internship-card::-webkit-scrollbar-thumb {
+  background: #b8c4d4;
+
+  border-radius: 20px;
+}
+
+
+.internship-container .internship-card::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+/* =====================================================
+   RESPONSIVE - 1200
+   ===================================================== */
+
+@media (max-width: 1200px) {
+
+  .internship-container {
+    margin-left: 260px;
+
+    width: calc(100% - 260px);
+
+    padding: 20px;
+  }
+
+  .internship-container .internship-table {
+    min-width: 900px;
   }
 
 }
-.description-box{
-    width:100%;
-    height:90px;
-    padding:12px;
-    border:1px solid #d1d5db;
-    border-radius:6px;
-    resize:none;
-    font-size:15px;
-    background:#fff;
-}
-.attachment-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+
+/* =====================================================
+   RESPONSIVE - 992
+   ===================================================== */
+
+@media (max-width: 992px) {
+
+  .internship-container {
+    margin-left: 0;
+
+    width: 100%;
+
+    padding: 18px;
+  }
+
+  .internship-container .internship-table {
+    min-width: 900px;
+  }
+
 }
 
-.file-input {
-    margin-bottom: 15px;   /* Choose File khali space */
+
+/* =====================================================
+   RESPONSIVE - 768
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  .internship-container {
+    margin-left: 0;
+
+    width: 100%;
+
+    padding: 15px;
+  }
+
+
+  .internship-container .internship-header {
+    padding: 18px;
+  }
+
+
+  .internship-container .internship-title-section {
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 10px;
+  }
+
+
+  .internship-container .internship-title-section h2 {
+    font-size: 19px;
+  }
+
+
+  .internship-container .internship-title-section p {
+    font-size: 12px;
+  }
+
+
+  .internship-container .internship-card {
+    padding: 12px;
+
+    overflow-x: auto;
+  }
+
+
+  .internship-container .internship-table {
+    min-width: 900px;
+  }
+
+
+  .internship-container .description-box {
+    width: 200px;
+
+    max-width: 200px;
+  }
+
+
+  .internship-container .file-input {
+    width: 155px;
+
+    max-width: 155px;
+  }
+
+
+  .internship-container .internship-action-buttons {
+    gap: 4px;
+  }
+
+
+  .internship-container .internship-action-buttons .view-btn,
+  .internship-container .internship-action-buttons .download-btn {
+    width: 100px;
+
+    min-width: 100px;
+
+    height: 31px;
+
+    font-size: 11px;
+  }
+
+
+  .internship-container .internship-bottom-buttons {
+    flex-wrap: wrap;
+
+    gap: 7px;
+  }
+
+
+  .internship-container .internship-bottom-buttons button {
+    width: 90px;
+
+    min-width: 90px;
+  }
+
 }
 
-.attachment-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;              /* View ani Download madhla space */
-}
-.internship-table th:nth-child(1),
-.internship-table td:nth-child(1) {
-  width: 8%;
-}
-.internship-table th:nth-child(2),
-.internship-table td:nth-child(2) {
-  width: 20%;
-}
-.internship-table th:nth-child(3),
-.internship-table td:nth-child(3) {
-  width: 40%;
-}
-.internship-table th:nth-child(4),
-.internship-table td:nth-child(4) {
-  width: 32%;
+
+/* =====================================================
+   RESPONSIVE - 480
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+  .internship-container {
+    padding: 10px;
+  }
+
+
+  .internship-container .internship-header {
+    padding: 15px;
+  }
+
+
+  .internship-container .internship-card {
+    padding: 8px;
+  }
+
+
+  .internship-container .internship-table {
+    min-width: 850px;
+  }
+
+
+  .internship-container .internship-bottom-buttons {
+    flex-direction: row;
+
+    flex-wrap: wrap;
+  }
+
 }

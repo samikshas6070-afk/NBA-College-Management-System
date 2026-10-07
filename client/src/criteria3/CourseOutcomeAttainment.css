@@ -1,0 +1,2141 @@
+/* =========================================================
+   3.7.2 - COURSE OUTCOME ATTAINMENT
+   FINAL PAGE-SPECIFIC CSS
+   ========================================================= */
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.co-page {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  min-height: 100vh;
+  padding: 22px 28px 40px;
+  box-sizing: border-box;
+  background: #f4f6f9;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   PAGE-SPECIFIC BOX SIZING
+========================================================= */
+
+.co-page *,
+.co-page *::before,
+.co-page *::after {
+  box-sizing: border-box;
+}
+
+.co-page .card,
+.co-page table,
+.co-page .top-grid,
+.co-page .middle-grid,
+.co-page .methodology-grid,
+.co-page .decision-grid,
+.co-page .benchmark-info,
+.co-page .summary-section,
+.co-page .formula-grid,
+.co-page .footer-buttons {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.co-page .co-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 18px;
+  padding: 18px 22px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.07);
+  min-width: 0;
+  max-width: 100%;
+}
+
+.co-page .co-header .circle {
+  width: 62px;
+  height: 62px;
+  min-width: 62px;
+  border-radius: 50%;
+  background: #0d4e96;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(13, 78, 150, 0.25);
+}
+
+.co-page .co-header h1 {
+  margin: 0 0 5px;
+  color: #0d4e96;
+  font-size: 25px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.co-page .co-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   SAVE STATUS
+========================================================= */
+
+.co-page .save-status-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  background: #ecfdf5;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.co-page .card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+  padding: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.055);
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.co-page .card h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   TOP GRID
+========================================================= */
+
+/*
+  IMPORTANT:
+
+  First card = Course Information
+  Second card = Overall Summary
+  Third card = Set CO Attainment Levels
+
+  Third card is intentionally given TWO grid columns
+  so it is actually wider.
+*/
+
+.co-page .top-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 18px;
+  margin-bottom: 18px;
+  width: 100%;
+  min-width: 0;
+  align-items: stretch;
+}
+
+.co-page .top-grid .card {
+  margin-bottom: 0;
+  min-width: 0;
+}
+
+
+/* =========================================================
+   SET CO ATTAINMENT LEVELS - ACTUALLY WIDER
+========================================================= */
+
+/*
+  THIS IS THE MAIN CHANGE.
+
+  Set CO Attainment Levels occupies
+  the 2nd + 3rd grid columns.
+
+  Therefore its actual box width becomes
+  approximately double the normal card width.
+
+  Overall Summary remains only ONE column.
+*/
+
+.co-page .top-grid > .card:has(.benchmark-table) {
+  grid-column: 2 / 4 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+
+/* =========================================================
+   SET CO CARD TITLE
+========================================================= */
+
+.co-page .top-grid > .card:has(.benchmark-table) .card-title {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.co-page .top-grid > .card:has(.benchmark-table) .card-title h3 {
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   SET CO BENCHMARK TABLE
+========================================================= */
+
+.co-page .top-grid > .card:has(.benchmark-table) .benchmark-table {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.co-page .top-grid > .card:has(.benchmark-table) .benchmark-table th,
+.co-page .top-grid > .card:has(.benchmark-table) .benchmark-table td {
+  padding: 9px 8px;
+}
+
+
+/* CO column */
+
+.co-page .top-grid > .card:has(.benchmark-table)
+.benchmark-table th:nth-child(1),
+.co-page .top-grid > .card:has(.benchmark-table)
+.benchmark-table td:nth-child(1) {
+  width: 14%;
+}
+
+
+/* Set Level column */
+
+.co-page .top-grid > .card:has(.benchmark-table)
+.benchmark-table th:nth-child(2),
+.co-page .top-grid > .card:has(.benchmark-table)
+.benchmark-table td:nth-child(2) {
+  width: 34%;
+}
+
+
+/* Benchmark % column */
+
+.co-page .top-grid > .card:has(.benchmark-table)
+.benchmark-table th:nth-child(3),
+.co-page .top-grid > .card:has(.benchmark-table)
+.benchmark-table td:nth-child(3) {
+  width: 24%;
+}
+
+
+/* Marks Threshold % column */
+
+.co-page .top-grid > .card:has(.benchmark-table)
+.benchmark-table th:nth-child(4),
+.co-page .top-grid > .card:has(.benchmark-table)
+.benchmark-table td:nth-child(4) {
+  width: 28%;
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.co-page .card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.co-page .card-title h3 {
+  color: #0d4e96;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   TITLES
+========================================================= */
+
+.co-page .blue-title {
+  color: #0d4e96 !important;
+}
+
+.co-page .green-title {
+  color: #15803d !important;
+}
+
+.co-page .purple-title {
+  color: #7c3aed !important;
+}
+
+.co-page .orange-title {
+  color: #ea580c !important;
+}
+
+.co-page .red-title {
+  color: #dc2626 !important;
+}
+
+.co-page .dark-title {
+  color: #334155 !important;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.co-page .edit-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  min-width: 78px !important;
+  height: 34px !important;
+  padding: 0 12px !important;
+  border: none !important;
+  border-radius: 6px !important;
+  background: #2563eb !important;
+  color: #ffffff !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: 0.2s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.co-page .edit-btn:hover {
+  background: #1d4ed8 !important;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   INFO TABLE
+========================================================= */
+
+.co-page .info-table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.co-page .info-table td {
+  padding: 8px 7px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.co-page .info-table td:first-child {
+  width: 40%;
+  font-weight: 600;
+  color: #475569;
+}
+
+.co-page .info-table td:last-child {
+  width: 60%;
+}
+
+.co-page .info-table input,
+.co-page .info-table select {
+  width: 100%;
+  max-width: 100%;
+  height: 34px;
+  padding: 5px 9px;
+  box-sizing: border-box;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #111827 !important;
+  font-size: 12px;
+  outline: none;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+.co-page .info-table input:focus,
+.co-page .info-table select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.co-page .info-table input:disabled,
+.co-page .info-table select:disabled {
+  background: #f8fafc;
+  color: #64748b !important;
+  -webkit-text-fill-color: #64748b !important;
+  cursor: not-allowed;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   BENCHMARK TABLE
+========================================================= */
+
+.co-page .benchmark-table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  table-layout: fixed;
+}
+
+.co-page .benchmark-table th {
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 12px;
+  padding: 9px;
+  border: 1px solid #bbf7d0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.co-page .benchmark-table td {
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.co-page .benchmark-table input {
+  width: 65px;
+  max-width: 100%;
+  height: 30px;
+  text-align: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  outline: none;
+  color: #111827 !important;
+  background: #ffffff !important;
+  -webkit-text-fill-color: #111827 !important;
+  opacity: 1 !important;
+  caret-color: #111827 !important;
+}
+
+.co-page .benchmark-table input:focus {
+  border-color: #16a34a;
+  color: #111827 !important;
+  background: #ffffff !important;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.co-page .summary-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 15px;
+  margin-top: 15px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.co-page .circle-summary {
+  width: 125px;
+  height: 125px;
+  min-width: 125px;
+  border-radius: 50%;
+  background: #f5f3ff;
+  border: 7px solid #8b5cf6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.co-page .circle-summary h2 {
+  margin: 0;
+  color: #6d28d9;
+  font-size: 22px;
+}
+
+.co-page .circle-summary p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 10px;
+  text-align: center;
+}
+
+.co-page .summary-data {
+  flex: 1;
+  min-width: 0;
+}
+
+.co-page .summary-data p {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 8px 0;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.co-page .summary-data b {
+  color: #1e293b;
+}
+
+
+/* =========================================================
+   MIDDLE GRID
+========================================================= */
+
+.co-page .middle-grid {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* =========================================================
+   CALCULATION CARD
+========================================================= */
+
+.co-page .calculation-card {
+  overflow: hidden;
+  min-width: 0;
+}
+
+.co-page .calculation-method-note {
+  margin: 13px 0;
+  padding: 11px 14px;
+  background: #eff6ff;
+  border-left: 4px solid #2563eb;
+  border-radius: 5px;
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   TABLE RESPONSIVE
+========================================================= */
+
+.co-page .table-responsive {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.co-page .table-responsive table {
+  max-width: none;
+}
+
+
+/* =========================================================
+   CALCULATION TABLE
+========================================================= */
+
+.co-page .calculation-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.co-page .calculation-table th {
+  padding: 9px 7px;
+  background: #0d4e96;
+  color: #ffffff;
+  border: 1px solid #0b4380;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.co-page .calculation-table td {
+  padding: 8px 6px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  font-size: 11px;
+  color: #334155;
+}
+
+.co-page .calculation-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.co-page .calculation-table tbody tr:hover {
+  background: #eff6ff;
+}
+
+.co-page .calculation-table input {
+  width: 58px;
+  height: 28px;
+  padding: 3px 5px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  outline: none;
+  font-size: 11px;
+  color: #111827 !important;
+  background: #ffffff !important;
+  -webkit-text-fill-color: #111827 !important;
+  opacity: 1 !important;
+  caret-color: #111827 !important;
+}
+
+.co-page .calculation-table input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================================================
+   ALL NUMBER INPUTS
+========================================================= */
+
+.co-page input[type="number"] {
+  color: #111827 !important;
+  background-color: #ffffff !important;
+  -webkit-text-fill-color: #111827 !important;
+  opacity: 1 !important;
+  caret-color: #111827 !important;
+}
+
+.co-page input[type="number"]:focus {
+  color: #111827 !important;
+  background-color: #ffffff !important;
+  -webkit-text-fill-color: #111827 !important;
+  opacity: 1 !important;
+}
+
+.co-page input[type="number"]:disabled {
+  color: #64748b !important;
+  background-color: #f8fafc !important;
+  -webkit-text-fill-color: #64748b !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   TEXT INPUT VISIBILITY
+========================================================= */
+
+.co-page input[type="text"],
+.co-page textarea,
+.co-page select {
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  opacity: 1 !important;
+}
+
+.co-page input::placeholder,
+.co-page textarea::placeholder {
+  color: #94a3b8 !important;
+  -webkit-text-fill-color: #94a3b8 !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.co-page .status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.co-page .status.success {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.co-page .status.danger {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+
+/* =========================================================
+   INDIRECT ASSESSMENT
+========================================================= */
+
+.co-page .indirect-input-section {
+  margin-top: 20px;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.co-page .indirect-input-section h4 {
+  margin: 0 0 5px;
+  color: #7c3aed;
+  font-size: 15px;
+}
+
+.co-page .section-note {
+  margin: 0 0 10px;
+  color: #64748b;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   METHODOLOGY
+========================================================= */
+
+.co-page .methodology-card {
+  margin-top: 20px !important;
+  background: #fafafa !important;
+  border: 1px solid #e5e7eb !important;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.co-page .method-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  min-width: 0;
+}
+
+.co-page .method-header h3 {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.co-page .method-badge {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.co-page .methodology-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 15px;
+  min-width: 0;
+}
+
+.co-page .method-box {
+  border-radius: 8px;
+  padding: 13px;
+  border: 1px solid #e2e8f0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.co-page .direct-box {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.co-page .indirect-box {
+  background: #f5f3ff;
+  border-color: #ddd6fe;
+}
+
+.co-page .method-box h4 {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.co-page .direct-box h4 {
+  color: #1d4ed8;
+}
+
+.co-page .indirect-box h4 {
+  color: #7c3aed;
+}
+
+.co-page .method-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.co-page .method-table td {
+  padding: 7px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.co-page .method-table td:last-child {
+  text-align: right;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   FORMULA CARD
+========================================================= */
+
+.co-page .formula-card {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.co-page .formula-card h4 {
+  margin: 0 0 12px;
+  color: #c2410c;
+  font-size: 14px;
+}
+
+.co-page .formula-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.co-page .formula-grid > div {
+  background: #ffffff;
+  padding: 11px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.co-page .formula-grid strong {
+  color: #334155;
+  font-size: 11px;
+}
+
+.co-page .formula-grid p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   BENCHMARK INFO
+========================================================= */
+
+.co-page .benchmark-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.co-page .benchmark-box {
+  padding: 13px;
+  border-radius: 8px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  min-width: 0;
+}
+
+.co-page .benchmark-box h4 {
+  margin: 0;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.co-page .benchmark-box h2 {
+  margin: 7px 0;
+  color: #0d4e96;
+  font-size: 18px;
+}
+
+.co-page .benchmark-box p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   CONSOLIDATED HEADERS
+========================================================= */
+
+.co-page .benchmark-header,
+.co-page .verification-header,
+.co-page .analysis-header,
+.co-page .decision-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  min-width: 0;
+}
+
+.co-page .benchmark-header h3,
+.co-page .verification-header h3,
+.co-page .analysis-header h3,
+.co-page .decision-header h3 {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.co-page .benchmark-badge,
+.co-page .verification-badge,
+.co-page .analysis-badge,
+.co-page .decision-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.co-page .benchmark-badge {
+  background: #ecfdf5;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.co-page .verification-badge {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.co-page .analysis-badge {
+  background: #f5f3ff;
+  color: #7c3aed;
+  border: 1px solid #ddd6fe;
+}
+
+.co-page .decision-badge {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+
+/* =========================================================
+   EMPTY RECORD
+========================================================= */
+
+.co-page .empty-course-record {
+  padding: 28px 15px;
+  text-align: center;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.co-page .empty-course-record p {
+  margin: 0 0 5px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.co-page .empty-course-record small {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   COURSE SUMMARY INFO
+========================================================= */
+
+.co-page .course-summary-info {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.co-page .course-summary-info > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.co-page .course-summary-info strong {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.co-page .course-summary-info span {
+  color: #0d4e96;
+  font-weight: 700;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   CONSOLIDATED TABLES
+========================================================= */
+
+.co-page .consolidated-table,
+.co-page .comparison-table,
+.co-page .verification-attainment-table,
+.co-page .analysis-table,
+.co-page .document-table,
+.co-page .verification-table,
+.co-page .action-table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+}
+
+.co-page .consolidated-table th,
+.co-page .comparison-table th,
+.co-page .verification-attainment-table th,
+.co-page .analysis-table th,
+.co-page .document-table th,
+.co-page .verification-table th {
+  padding: 9px 7px;
+  background: #0d4e96;
+  color: #ffffff;
+  border: 1px solid #0b4380;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.co-page .consolidated-table td,
+.co-page .comparison-table td,
+.co-page .verification-attainment-table td,
+.co-page .analysis-table td,
+.co-page .document-table td,
+.co-page .verification-table td {
+  padding: 8px 7px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  font-size: 11px;
+  color: #334155;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.co-page .consolidated-table tbody tr:nth-child(even),
+.co-page .comparison-table tbody tr:nth-child(even),
+.co-page .verification-attainment-table tbody tr:nth-child(even),
+.co-page .analysis-table tbody tr:nth-child(even),
+.co-page .document-table tbody tr:nth-child(even),
+.co-page .verification-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.co-page .consolidated-table tbody tr:hover,
+.co-page .comparison-table tbody tr:hover,
+.co-page .verification-attainment-table tbody tr:hover,
+.co-page .analysis-table tbody tr:hover,
+.co-page .document-table tbody tr:hover,
+.co-page .verification-table tbody tr:hover {
+  background: #eff6ff;
+}
+
+
+/* =========================================================
+   TABLE INPUTS
+========================================================= */
+
+.co-page .consolidated-table input,
+.co-page .comparison-table input,
+.co-page .verification-attainment-table input,
+.co-page .analysis-table input,
+.co-page .document-table input,
+.co-page .verification-table input,
+.co-page .action-table input,
+.co-page .consolidated-table select,
+.co-page .comparison-table select,
+.co-page .verification-attainment-table select,
+.co-page .analysis-table select,
+.co-page .document-table select,
+.co-page .verification-table select,
+.co-page .action-table select {
+  color: #111827 !important;
+  background: #ffffff !important;
+  -webkit-text-fill-color: #111827 !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   DELETE RECORD BUTTON
+========================================================= */
+
+.co-page .delete-record-btn {
+  width: 30px !important;
+  height: 30px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  border-radius: 5px !important;
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  font-size: 12px !important;
+  flex-shrink: 0 !important;
+}
+
+.co-page .delete-record-btn:hover {
+  background: #dc2626 !important;
+}
+
+
+/* =========================================================
+   COMPARISON
+========================================================= */
+
+.co-page .positive {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.co-page .negative {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.co-page .status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.co-page .status-badge.achieved {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.co-page .status-badge.not-achieved {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+
+/* =========================================================
+   VERIFICATION ATTAINMENT
+========================================================= */
+
+.co-page .verification-description {
+  margin: 0 0 13px;
+  color: #64748b;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.co-page .verify-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.co-page .verify-status.verified {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.co-page .verify-status.progress {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.co-page .verification-note {
+  margin-top: 15px;
+}
+
+.co-page .verification-note h4,
+.co-page .overall-analysis h4,
+.co-page .decision-remark h4 {
+  margin: 0 0 7px;
+  color: #475569;
+  font-size: 13px;
+}
+
+.co-page .verification-note textarea,
+.co-page .overall-analysis textarea,
+.co-page .decision-remark textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  resize: vertical;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #111827 !important;
+  background: #ffffff !important;
+  -webkit-text-fill-color: #111827 !important;
+  opacity: 1 !important;
+}
+
+.co-page .verification-note textarea:focus,
+.co-page .overall-analysis textarea:focus,
+.co-page .decision-remark textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================================================
+   ANALYSIS
+========================================================= */
+
+.co-page .analysis-status {
+  display: inline-flex;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.co-page .analysis-status.success {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.co-page .analysis-status.danger {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.co-page .overall-analysis {
+  margin-top: 16px;
+}
+
+
+/* =========================================================
+   DECISION CARD
+========================================================= */
+
+.co-page .decision-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  min-width: 0;
+}
+
+.co-page .decision-box {
+  padding: 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.co-page .decision-box h4 {
+  margin: 0 0 12px;
+  color: #334155;
+  font-size: 14px;
+}
+
+.co-page .decision-box label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: #475569;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.co-page .decision-box input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: #2563eb;
+  flex-shrink: 0;
+}
+
+.co-page .action-table td {
+  padding: 9px 7px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 11px;
+}
+
+.co-page .action-table td:first-child {
+  color: #475569;
+  font-weight: 600;
+}
+
+.co-page .action-table select {
+  width: 125px;
+  max-width: 100%;
+  height: 30px;
+  padding: 4px 7px;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  font-size: 11px;
+  outline: none;
+}
+
+.co-page .decision-remark {
+  margin-top: 17px;
+}
+
+.co-page .hod-section {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr)
+    180px;
+  gap: 12px;
+  margin-top: 17px;
+  min-width: 0;
+}
+
+.co-page .hod-section label {
+  display: block;
+  margin-bottom: 5px;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.co-page .hod-section input {
+  width: 100%;
+  height: 34px;
+  padding: 5px 9px;
+  box-sizing: border-box;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  outline: none;
+  font-size: 12px;
+  color: #111827 !important;
+  background: #ffffff !important;
+  -webkit-text-fill-color: #111827 !important;
+  opacity: 1 !important;
+}
+
+.co-page .hod-section input:focus {
+  border-color: #2563eb;
+}
+
+
+/* =========================================================
+   VERIFICATION TABLE
+========================================================= */
+
+.co-page .verification-table input,
+.co-page .verification-table select {
+  width: 100%;
+  height: 31px;
+  box-sizing: border-box;
+  padding: 4px 7px;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  outline: none;
+  font-size: 11px;
+  background: #ffffff !important;
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  opacity: 1 !important;
+}
+
+.co-page .verification-table input:focus,
+.co-page .verification-table select:focus {
+  border-color: #2563eb;
+}
+
+
+/* =========================================================
+   SUMMARY SECTION
+========================================================= */
+
+.co-page .summary-section {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.co-page .summary-card {
+  padding: 17px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
+  text-align: center;
+  min-width: 0;
+}
+
+.co-page .summary-card h4 {
+  margin: 0 0 7px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.co-page .summary-card h2 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.co-page .summary-card.blue {
+  border-top: 4px solid #2563eb;
+}
+
+.co-page .summary-card.blue h4,
+.co-page .summary-card.blue h2 {
+  color: #2563eb;
+}
+
+.co-page .summary-card.green {
+  border-top: 4px solid #16a34a;
+}
+
+.co-page .summary-card.green h4,
+.co-page .summary-card.green h2 {
+  color: #16a34a;
+}
+
+.co-page .summary-card.red {
+  border-top: 4px solid #ef4444;
+}
+
+.co-page .summary-card.red h4,
+.co-page .summary-card.red h2 {
+  color: #ef4444;
+}
+
+.co-page .summary-card.purple {
+  border-top: 4px solid #7c3aed;
+}
+
+.co-page .summary-card.purple h4,
+.co-page .summary-card.purple h2 {
+  color: #7c3aed;
+}
+
+
+/* =========================================================
+   CO PERFORMANCE
+========================================================= */
+
+.co-page .progress-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+  min-width: 0;
+}
+
+.co-page .progress-label {
+  width: 45px;
+  min-width: 45px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.co-page .progress {
+  flex: 1;
+  height: 23px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.co-page .progress-fill {
+  height: 100%;
+  min-width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 7px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.co-page .progress-fill.success {
+  background: #16a34a;
+}
+
+.co-page .progress-fill.danger {
+  background: #ef4444;
+}
+
+
+/* =========================================================
+   DOCUMENT TABLE
+========================================================= */
+
+.co-page .document-upload-btn {
+  width: 32px !important;
+  height: 30px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 5px !important;
+  background: #2563eb !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  font-size: 12px !important;
+  transition: 0.2s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.co-page .document-upload-btn:hover {
+  background: #1d4ed8 !important;
+}
+
+.co-page .document-upload-btn input[type="file"] {
+  display: none !important;
+}
+
+.co-page .selected-file-name {
+  color: #16a34a !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  overflow-wrap: anywhere;
+}
+
+.co-page .no-file {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.co-page .file-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.co-page .file-status.selected {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+.co-page .file-status.pending {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+
+/* =========================================================
+   REMOVE FILE BUTTON
+========================================================= */
+
+.co-page .remove-file-btn {
+  width: 29px !important;
+  height: 29px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+  border-radius: 5px !important;
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  font-size: 11px !important;
+  flex-shrink: 0 !important;
+}
+
+.co-page .remove-file-btn:hover {
+  background: #dc2626 !important;
+}
+
+
+/* =========================================================
+   FOOTER BUTTON AREA
+========================================================= */
+
+.co-page .footer-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
+  min-width: 0;
+  max-width: 100%;
+}
+
+.co-page .right-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   FOOTER BUTTON COMMON
+========================================================= */
+
+.co-page .footer-buttons button {
+  height: 36px !important;
+  min-width: 92px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  padding: 0 13px !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+}
+
+
+/* =========================================================
+   NAV BUTTON
+========================================================= */
+
+.co-page .footer-buttons .nav-btn {
+  background: #64748b !important;
+  color: #ffffff !important;
+}
+
+.co-page .footer-buttons .nav-btn:hover {
+  background: #475569 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SAVE
+========================================================= */
+
+.co-page .footer-buttons .save-btn {
+  background: #f59e0b !important;
+  color: #ffffff !important;
+}
+
+.co-page .footer-buttons .save-btn:hover {
+  background: #d97706 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   DELETE
+========================================================= */
+
+.co-page .footer-buttons .delete-btn {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+}
+
+.co-page .footer-buttons .delete-btn:hover {
+  background: #dc2626 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CLEAR
+========================================================= */
+
+.co-page .footer-buttons .clear-btn {
+  background: #f59e0b !important;
+  color: #ffffff !important;
+}
+
+.co-page .footer-buttons .clear-btn:hover {
+  background: #d97706 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+.co-page .footer-buttons .print-btn {
+  background: #7c3aed !important;
+  color: #ffffff !important;
+}
+
+.co-page .footer-buttons .print-btn:hover {
+  background: #6d28d9 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESET PAGE DATA
+========================================================= */
+
+.co-page .reset-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.co-page .reset-all-btn {
+  height: 32px !important;
+  padding: 0 15px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 6px !important;
+  background: #f1f5f9 !important;
+  color: #64748b !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: 0.2s ease !important;
+}
+
+.co-page .reset-all-btn:hover {
+  background: #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+
+/* =========================================================
+   BUTTON ICONS
+========================================================= */
+
+.co-page .footer-buttons button svg,
+.co-page .edit-btn svg,
+.co-page .delete-record-btn svg,
+.co-page .remove-file-btn svg,
+.co-page .document-upload-btn svg {
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   NUMBER INPUT ARROWS
+========================================================= */
+
+.co-page input[type="number"]::-webkit-inner-spin-button,
+.co-page input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   TABLE SCROLLBAR
+========================================================= */
+
+.co-page .table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+
+.co-page .table-responsive::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.co-page .table-responsive::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 10px;
+}
+
+.co-page .table-responsive::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1200
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .co-page {
+    margin-left: 230px;
+    width: calc(100% - 230px);
+    padding: 18px;
+  }
+
+  .co-page .top-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+  }
+
+  /*
+    At 1200px:
+    Course Information = full row
+    Overall Summary = one column
+    Set CO = one column
+  */
+
+  .co-page .top-grid .card:first-child {
+    grid-column: span 2;
+  }
+
+  .co-page .top-grid > .card:has(.benchmark-table) {
+    grid-column: span 1 !important;
+    width: 100% !important;
+  }
+
+  .co-page .formula-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .co-page .summary-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 900
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .co-page {
+    margin-left: 0;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .co-page .top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .co-page .top-grid .card:first-child {
+    grid-column: span 1;
+  }
+
+  .co-page .top-grid > .card:has(.benchmark-table) {
+    width: 100% !important;
+    grid-column: span 1 !important;
+  }
+
+  .co-page .methodology-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .co-page .benchmark-info {
+    grid-template-columns: 1fr;
+  }
+
+  .co-page .decision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .co-page .hod-section {
+    grid-template-columns: 1fr;
+  }
+
+  .co-page .footer-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .co-page .right-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .co-page .footer-buttons .nav-btn {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 600
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .co-page {
+    padding: 10px;
+  }
+
+  .co-page .co-header {
+    padding: 14px;
+  }
+
+  .co-page .co-header .circle {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    font-size: 11px;
+  }
+
+  .co-page .co-header h1 {
+    font-size: 19px;
+  }
+
+  .co-page .co-header p {
+    font-size: 11px;
+  }
+
+  .co-page .formula-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .co-page .summary-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .co-page .summary-box {
+    flex-direction: column;
+  }
+
+  .co-page .circle-summary {
+    width: 105px;
+    height: 105px;
+    min-width: 105px;
+  }
+
+  .co-page .right-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .co-page .footer-buttons button {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .co-page .footer-buttons > .nav-btn {
+    width: 100% !important;
+  }
+
+  .co-page .course-summary-info {
+    flex-direction: column;
+  }
+
+  .co-page .course-summary-info > div {
+    width: 100%;
+  }
+
+
+  /* =====================================================
+     SET CO ATTAINMENT LEVELS - MOBILE
+  ===================================================== */
+
+  .co-page .top-grid > .card:has(.benchmark-table) {
+    width: 100% !important;
+    grid-column: span 1 !important;
+  }
+
+  .co-page .top-grid > .card:has(.benchmark-table)
+  .benchmark-table {
+    table-layout: fixed;
+  }
+
+  .co-page .top-grid > .card:has(.benchmark-table)
+  .benchmark-table th,
+  .co-page .top-grid > .card:has(.benchmark-table)
+  .benchmark-table td {
+    padding: 7px 4px;
+    font-size: 10px;
+  }
+
+  .co-page .top-grid > .card:has(.benchmark-table)
+  .benchmark-table input {
+    width: 55px;
+    height: 29px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREEN
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .co-page .summary-section {
+    grid-template-columns: 1fr;
+  }
+
+  .co-page .right-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .co-page .co-header {
+    align-items: flex-start;
+  }
+
+  .co-page .co-header .circle {
+    flex-shrink: 0;
+  }
+
+  .co-page .card-title {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .co-page .method-header,
+  .co-page .benchmark-header,
+  .co-page .verification-header,
+  .co-page .analysis-header,
+  .co-page .decision-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .co-page .top-grid > .card:has(.benchmark-table)
+  .benchmark-table th,
+  .co-page .top-grid > .card:has(.benchmark-table)
+  .benchmark-table td {
+    padding: 6px 3px;
+    font-size: 9px;
+  }
+
+  .co-page .top-grid > .card:has(.benchmark-table)
+  .benchmark-table input {
+    width: 48px;
+  }
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+
+  .co-page {
+    margin-left: 0 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    padding: 10px !important;
+    overflow: visible !important;
+  }
+
+  .co-page .footer-buttons,
+  .co-page .reset-section,
+  .co-page .edit-btn,
+  .co-page .delete-record-btn,
+  .co-page .remove-file-btn,
+  .co-page .document-upload-btn {
+    display: none !important;
+  }
+
+  .co-page .card {
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+
+  .co-page .co-header {
+    box-shadow: none !important;
+  }
+
+  .co-page .top-grid > .card:has(.benchmark-table) {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+  }
+}

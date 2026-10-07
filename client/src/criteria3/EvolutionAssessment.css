@@ -1,865 +1,1751 @@
-/* =====================================================
+/* ==========================================================
+   3.1 - EVALUATION OF CONTINUOUS ASSESSMENT
+   COMPLETE PAGE CSS
+   PAGE-SPECIFIC ONLY
+   NO GLOBAL CSS
+   ========================================================== */
+
+
+/* ==========================================================
    GOOGLE FONT
-===================================================== */
+   ========================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* =====================================================
+
+/* ==========================================================
    MAIN CONTAINER
-===================================================== */
+   ========================================================== */
 
-.assessment-container{
-    width:96%;
-    margin:25px auto;
-    padding:20px;
-    background:#f4f7fc;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+.assessment-container {
+    flex: 1;
+    margin-left: 260px;
+    padding: 22px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: #eef3f9;
 }
 
-.assessment-container *,
-.assessment-container *::before,
-.assessment-container *::after{
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.assessment-container .assessment-header {
+    width: 92%;
+    margin: 0 auto 18px auto;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 17px 21px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.07);
 }
 
-/* =====================================================
+
+/* ==========================================================
+   TITLE SECTION
+   ========================================================== */
+
+.assessment-container .assessment-title-section {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+
+/* ==========================================================
+   BADGE
+   ========================================================== */
+
+.assessment-container .assessment-badge {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    background: #4f46e5;
+    color: #ffffff;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* ==========================================================
+   TITLE
+   ========================================================== */
+
+.assessment-container .assessment-title-section h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.3;
+}
+
+
+/* ==========================================================
+   SUBTITLE
+   ========================================================== */
+
+.assessment-container .assessment-title-section p {
+    margin: 3px 0 0 0;
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+
+/* ==========================================================
    TOP FILTER BAR
-===================================================== */
+   ========================================================== */
 
-.assessment-container .top-bar{
-
-    background:#ffffff;
-
-    border-radius:14px;
-
-    padding:22px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:flex-end;
-
-    gap:18px;
-
-    box-shadow:0 5px 18px rgba(0,0,0,.06);
-
+.assessment-container .top-bar {
+    width: 92%;
+    margin: 0 auto 20px auto;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 17px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 16px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.07);
 }
 
-.assessment-container .filter-box{
 
-    flex:1;
+/* ==========================================================
+   FILTER BOX
+   ========================================================== */
 
+.assessment-container .filter-box {
+    width: 230px;
+    flex: 0 0 230px;
 }
 
-.assessment-container .filter-box label{
 
-    display:block;
+/* ==========================================================
+   FILTER LABEL
+   ========================================================== */
 
-    margin-bottom:8px;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    color:#4b5563;
-
+.assessment-container .filter-box label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b5563;
 }
 
-.assessment-container .select-box{
 
-    height:48px;
+/* ==========================================================
+   SELECT BOX
+   ========================================================== */
 
-    border:1px solid #d9dde7;
-
-    border-radius:8px;
-
-    display:flex;
-
-    align-items:center;
-
-    padding:0 10px;
-
-    transition:.3s;
-
-    background:#fff;
-
+.assessment-container .select-box {
+    width: 230px;
+    height: 42px;
+    background: #ffffff;
+    border: 1px solid #d9dde7;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 11px;
+    box-sizing: border-box;
+    transition: 0.2s ease;
 }
 
-.assessment-container .select-box:hover{
-
-    border-color:#6c63ff;
-
+.assessment-container .select-box:hover {
+    border-color: #6366f1;
 }
 
-.assessment-container .select-box .icon{
 
-    color:#6c63ff;
+/* ==========================================================
+   SELECT ICON
+   ========================================================== */
 
-    font-size:18px;
-
-    margin-right:12px;
-
+.assessment-container .select-box .icon {
+    flex-shrink: 0;
+    font-size: 16px;
+    color: #4f46e5;
+    margin-right: 7px;
 }
 
-.assessment-container .select-box select{
 
-    width:100%;
+/* ==========================================================
+   SELECT
+   ========================================================== */
 
-    border:none;
-
-    outline:none;
-
-    background:transparent;
-
-    font-size:14px;
-
-    color:#374151;
-
-    cursor:pointer;
-
+.assessment-container .select-box select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #374151;
+    cursor: pointer;
 }
 
-/* =====================================================
-   TOP BUTTONS
-===================================================== */
 
-.assessment-container .top-buttons{
+/* ==========================================================
+   TABLE CARD
+   ========================================================== */
 
-    display:flex;
-
-    gap:12px;
-
+.assessment-container .assessment-card {
+    width: 92%;
+    margin: 0 auto 22px auto;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 12px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.07);
 }
 
-.assessment-container .report-btn{
 
-    display:flex;
+/* ==========================================================
+   TABLE WRAPPER
+   ========================================================== */
 
-    align-items:center;
-
-    gap:8px;
-
-    height:46px;
-
-    padding:0 20px;
-
-    background:#ffffff;
-
-    border:1px solid #d7dce5;
-
-    border-radius:8px;
-
-    color:#5b5df7;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+.assessment-container .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
-.assessment-container .report-btn:hover{
 
-    background:#eef1ff;
+/* ==========================================================
+   DOCUMENT TABLE
+   ========================================================== */
 
+.assessment-container .assessment-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: #ffffff;
 }
 
-.assessment-container .draft-btn{
 
-    display:flex;
+/* ==========================================================
+   DOCUMENT TABLE COLUMN WIDTHS
+   ========================================================== */
 
-    align-items:center;
-
-    gap:8px;
-
-    height:46px;
-
-    padding:0 22px;
-
-    background:#5b5df7;
-
-    border:none;
-
-    border-radius:8px;
-
-    color:#fff;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+.assessment-container .assessment-table th:nth-child(1),
+.assessment-container .assessment-table td:nth-child(1) {
+    width: 55px;
 }
 
-.assessment-container .draft-btn:hover{
+/* ==========================================================
+   ASSESSMENT COLUMN - TEXT VISIBILITY FIX
+   ========================================================== */
 
-    background:#4338ca;
-
+.assessment-container .assessment-table th:nth-child(2),
+.assessment-container .assessment-table td:nth-child(2) {
+    width: 250px !important;
+    min-width: 250px !important;
+    max-width: 250px !important;
+    box-sizing: border-box;
+    text-align: left !important;
+    vertical-align: middle;
 }
 
-/* =====================================================
-   CARD
-===================================================== */
-
-.assessment-container .assessment-card{
-
-    background:#fff;
-
-    border-radius:15px;
-
-    padding:20px;
-
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
-
-    overflow-x:auto;
-
+.assessment-container .assessment-table td:nth-child(2) {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+    color: #374151 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
-.assessment-container .assessment-card:hover{
-
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
-
+.assessment-container .assessment-table td:nth-child(2) * {
+    max-width: 100%;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+    color: #374151 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
-/* =====================================================
-   CARD HEADER
-===================================================== */
-
-.assessment-container .assessment-header{
-
-    background:#fff;
-
-    border-radius:15px;
-
-    padding:25px;
-
-    margin-bottom:25px;
-
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
-
+.assessment-container .assessment-table th:nth-child(3),
+.assessment-container .assessment-table td:nth-child(3) {
+    width: auto;
 }
 
-.assessment-container .assessment-title-section{
 
-    display:flex;
+/* ==========================================================
+   ACTION COLUMN
+   ========================================================== */
 
-    align-items:center;
-
-    gap:15px;
-
+.assessment-container .assessment-table th:nth-child(4),
+.assessment-container .assessment-table td:nth-child(4) {
+    width: 230px;
+    min-width: 230px;
+    max-width: 230px;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-.assessment-container .assessment-badge{
 
-    width:45px;
+/* ==========================================================
+   ACTION CELL
+   ========================================================== */
 
-    height:45px;
-
-    border-radius:10px;
-
-    background:#4f46e5;
-
-    color:#fff;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:16px;
-
-    font-weight:600;
-
+.assessment-container .assessment-table td:nth-child(4) {
+    padding: 9px 6px !important;
+    white-space: normal !important;
+    overflow: hidden;
+    vertical-align: middle;
+    box-sizing: border-box;
 }
 
-.assessment-container .assessment-title-section h2{
 
-    font-size:32px;
+/* ==========================================================
+   ACTION CELL - DIRECT CONTENT
+   ========================================================== */
 
-    color:#0f172a;
-
+.assessment-container .assessment-table td:nth-child(4) > * {
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
-.assessment-container .assessment-title-section p{
 
-    color:#64748b;
+/* ==========================================================
+   TABLE HEADER
+   ========================================================== */
 
-}
-/* =====================================================
-   TABLE
-===================================================== */
-
-.assessment-container .table-wrapper{
-
-    width:100%;
-
-    overflow-x:auto;
-
-}
-
-.assessment-container .assessment-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-
-    background:#fff;
-
+.assessment-container .assessment-table th {
+    border: 1px solid #d9d9d9;
+    padding: 10px 8px;
+    text-align: center;
+    vertical-align: middle;
+    background: #f8fafc;
+    color: #111827;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    box-sizing: border-box;
 }
 
-.assessment-container .assessment-table thead{
 
-    background:#fff;
+/* ==========================================================
+   TABLE DATA
+   ========================================================== */
 
+.assessment-container .assessment-table td {
+    border: 1px solid #d9d9d9;
+    padding: 10px 8px;
+    text-align: center;
+    vertical-align: middle;
+    background: #ffffff;
+    color: #374151;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    line-height: 1.35;
+    box-sizing: border-box;
 }
 
-.assessment-container .assessment-table thead th{
 
-    background:#fff;
+/* ==========================================================
+   TABLE HOVER
+   ========================================================== */
 
-    color:#000 !important;
-
-    border:1px solid #d9d9d9;
-
-    padding:16px;
-
-    text-align:center;
-
-    font-weight:600;
-
+.assessment-container .assessment-table tbody tr:hover td {
+    background: #fafafa;
 }
 
-.assessment-container .assessment-table tbody td{
 
-    padding:10px 12px;
+/* ==========================================================
+   SERIAL NUMBER
+   ========================================================== */
 
-    border:1px solid #d9d9d9;
-
-    font-size:14px;
-
-    color:#374151;
-
-    vertical-align:middle;
-
-    text-align:center;
-
+.assessment-container .sr-column {
+    width: 55px;
+    text-align: center;
 }
 
-.assessment-container .assessment-table tbody tr{
 
-    transition:.3s;
+/* ==========================================================
+   ATTACHMENT CELL
+   ========================================================== */
 
-    height:32px;
-
+.assessment-container .attachment-cell {
+    text-align: center;
+    vertical-align: middle;
+    padding: 9px 7px !important;
 }
 
-.assessment-container .assessment-table tbody tr:hover{
 
-    background:#f8f9ff;
-
-}
-
-.assessment-container .sr-column{
-
-    width:90px;
-
-    text-align:center;
-
-}
-
-.assessment-container .action-column{
-
-    width:240px;
-
-    text-align:center;
-
-}
-
-/* =====================================================
+/* ==========================================================
    FILE INPUT
-===================================================== */
+   ========================================================== */
 
-.assessment-container .file-input{
-
-    display:block;
-
-    width:220px;
-
-    margin:0 auto 10px;
-
+.assessment-container .file-input {
+    display: block;
+    width: 185px;
+    max-width: 100%;
+    margin: 0 auto 7px auto;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
-.assessment-container .file-input:hover{
-
-    border-color:#5b5df7;
-
+.assessment-container .assessment-table td input[type="file"] {
+    width: 185px;
+    max-width: 100%;
+    margin: 0 auto 7px auto;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
-.assessment-container .assessment-table td input[type="file"]{
 
-    height:26px !important;
+/* ==========================================================
+   FILE NAME
+   ========================================================== */
 
-    padding:0 !important;
-
-    font-size:12px;
-
+.assessment-container .file-name {
+    display: block;
+    width: 185px;
+    max-width: 100%;
+    margin: 5px auto;
+    color: #16a34a;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
 }
 
-/* =====================================================
+
+/* ==========================================================
    DESCRIPTION BOX
-===================================================== */
+   ========================================================== */
 
-.assessment-container .description-box{
-
-    width:100%;
-
-    height:90px;
-
-    padding:10px;
-
-    border:1px solid #d1d5db;
-
-    border-radius:6px;
-
-    resize:none;
-
-    background:#fff;
-
-    font-size:14px;
-
+.assessment-container .description-box {
+    width: 100%;
+    height: 65px;
+    padding: 7px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #ffffff;
+    resize: none;
+    outline: none;
+    box-sizing: border-box;
+    color: #111827;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
 }
 
-/* =====================================================
+.assessment-container .description-box:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.08);
+}
+
+
+/* ==========================================================
    ACTION BUTTONS
-===================================================== */
+   IMPORTANT:
+   CHOOSE FILE
+        ↓
+   SELECTED FILE
+        ↓
+   VIEW + DOWNLOAD
+   ========================================================== */
 
-.assessment-container .action-buttons{
+.assessment-container .action-buttons {
+    width: 185px !important;
+    max-width: 185px !important;
+    min-width: 185px !important;
 
-    display:flex;
+    margin: 0 auto !important;
+    padding: 0 !important;
 
-    justify-content:center;
+    display: flex !important;
+    flex-direction: column !important;
 
-    gap:8px;
+    align-items: center !important;
+    justify-content: flex-start !important;
 
-    margin-top:6px;
+    gap: 7px !important;
 
+    box-sizing: border-box !important;
+
+    overflow: hidden !important;
 }
 
-.assessment-container .view-btn{
 
-    width:58px;
+/* ==========================================================
+   CHOOSE FILE
+   ========================================================== */
 
-    height:30px;
+.assessment-container .action-buttons > input[type="file"],
+.assessment-container .action-buttons > .file-input,
+.assessment-container .action-buttons input[type="file"] {
+    order: 1 !important;
 
-    background:#dff2ff;
+    display: block !important;
 
-    color:#0284c7;
+    width: 185px !important;
+    max-width: 185px !important;
+    min-width: 185px !important;
 
-    border:none;
+    height: auto !important;
 
-    border-radius:5px;
+    margin: 0 auto !important;
 
-    font-size:12px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+    box-sizing: border-box !important;
 }
 
-.assessment-container .view-btn:hover{
 
-    background:#059669;
+/* ==========================================================
+   SELECTED FILE NAME
+   ========================================================== */
 
-    color:#fff;
+.assessment-container .action-buttons .selected-file-name {
+    order: 2 !important;
 
-    transform:translateY(-2px);
+    width: 185px !important;
+    max-width: 185px !important;
+    min-width: 185px !important;
 
+    min-height: 28px;
+
+    margin: 0 auto;
+
+    padding: 5px 7px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 5px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #bbf7d0;
+
+    border-radius: 5px;
+
+    background: #f0fdf4;
+
+    color: #166534;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    text-align: left;
+
+    white-space: normal;
+
+    overflow: hidden;
+
+    overflow-wrap: anywhere;
+
+    word-break: break-word;
 }
 
-.assessment-container .download-btn{
 
-    width:90px;
-
-    height:30px;
-
-    background:#16a34a;
-
-    color:#fff;
-
-    border:none;
-
-    border-radius:5px;
-
-    font-size:12px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+.assessment-container .action-buttons .selected-file-name svg {
+    flex-shrink: 0;
+    font-size: 12px;
 }
 
-.assessment-container .download-btn:hover{
 
-    background:#2563eb;
+/* ==========================================================
+   VIEW + DOWNLOAD WRAPPER
+   ALWAYS AFTER CHOOSE FILE
+   ========================================================== */
 
-    transform:translateY(-2px);
+.assessment-container .action-buttons .file-action-buttons {
+    order: 3 !important;
 
+    width: 185px !important;
+    max-width: 185px !important;
+    min-width: 185px !important;
+
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 6px !important;
+
+    margin: 0 auto !important;
+
+    padding: 0 !important;
+
+    box-sizing: border-box !important;
+
+    overflow: hidden !important;
 }
 
-.assessment-container .assessment-table td button{
 
-    height:26px !important;
+/* ==========================================================
+   VIEW + DOWNLOAD BUTTONS
+   ========================================================== */
 
-    padding:2px 8px !important;
+.assessment-container .action-buttons .file-action-buttons button {
+    flex: 1 1 0 !important;
 
-    margin:0;
+    width: calc((100% - 6px) / 2) !important;
 
+    min-width: 0 !important;
+
+    max-width: calc((100% - 6px) / 2) !important;
+
+    height: 29px !important;
+
+    min-height: 29px !important;
+    max-height: 29px !important;
+
+    padding: 0 5px !important;
+
+    margin: 0 !important;
+
+    border: none !important;
+
+    border-radius: 5px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 4px !important;
+
+    box-sizing: border-box !important;
+
+    overflow: hidden !important;
+
+    white-space: nowrap !important;
+
+    font-family: 'Poppins', sans-serif !important;
+
+    font-size: 11px !important;
+
+    font-weight: 500 !important;
+
+    cursor: pointer !important;
 }
-/* =====================================================
+
+
+/* ==========================================================
+   IMPORTANT FALLBACK
+   IF VIEW/DOWNLOAD ARE NOT INSIDE
+   .file-action-buttons
+   ========================================================== */
+
+.assessment-container .action-buttons > .view-btn {
+    order: 3 !important;
+
+    width: 89px !important;
+    max-width: 89px !important;
+    min-width: 89px !important;
+
+    height: 29px !important;
+    min-height: 29px !important;
+
+    margin: 0 !important;
+
+    flex: 0 0 89px !important;
+}
+
+
+.assessment-container .action-buttons > .download-btn {
+    order: 4 !important;
+
+    width: 89px !important;
+    max-width: 89px !important;
+    min-width: 89px !important;
+
+    height: 29px !important;
+    min-height: 29px !important;
+
+    margin: 0 !important;
+
+    flex: 0 0 89px !important;
+}
+
+
+/* ==========================================================
+   VIEW BUTTON
+   ========================================================== */
+
+.assessment-container .view-btn {
+    background: #2563eb !important;
+    color: #ffffff !important;
+}
+
+.assessment-container .view-btn:hover {
+    background: #1d4ed8 !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   DOWNLOAD BUTTON
+   ========================================================== */
+
+.assessment-container .download-btn {
+    background: #16a34a !important;
+    color: #ffffff !important;
+}
+
+.assessment-container .download-btn:hover {
+    background: #15803d !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   CALCULATION CARD
+   ========================================================== */
+
+.assessment-container .assessment-calculation-card {
+    width: 92%;
+    margin: 0 auto 22px auto;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 18px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.07);
+}
+
+
+/* ==========================================================
+   CALCULATION HEADER
+   ========================================================== */
+
+.assessment-container .calculation-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.assessment-container .calculation-header h3 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.assessment-container .calculation-header p {
+    margin: 4px 0 0 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
+
+/* ==========================================================
+   CALCULATION TABLE WRAPPER
+   ========================================================== */
+
+.assessment-container .calculation-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: 8px;
+}
+
+
+/* ==========================================================
+   CALCULATION TABLE
+   ========================================================== */
+
+.assessment-container .calculation-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: #ffffff;
+}
+
+
+/* ==========================================================
+   CALCULATION TABLE COLUMN WIDTHS
+   ========================================================== */
+
+.assessment-container .calculation-table th:nth-child(1),
+.assessment-container .calculation-table td:nth-child(1) {
+    width: 150px;
+}
+
+.assessment-container .calculation-table th:nth-child(2),
+.assessment-container .calculation-table td:nth-child(2) {
+    width: 105px;
+}
+
+.assessment-container .calculation-table th:nth-child(3),
+.assessment-container .calculation-table td:nth-child(3) {
+    width: 120px;
+}
+
+.assessment-container .calculation-table th:nth-child(n+4),
+.assessment-container .calculation-table td:nth-child(n+4) {
+    width: 90px;
+}
+
+
+/* ==========================================================
+   CALCULATION TABLE HEADER
+   ========================================================== */
+
+.assessment-container .calculation-table th {
+    border: 1px solid #d9d9d9;
+    padding: 10px 7px;
+    text-align: center;
+    vertical-align: middle;
+    background: #f8fafc;
+    color: #111827;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+
+/* ==========================================================
+   CALCULATION TABLE DATA
+   ========================================================== */
+
+.assessment-container .calculation-table td {
+    border: 1px solid #d9d9d9;
+    padding: 9px 7px;
+    text-align: center;
+    vertical-align: middle;
+    background: #ffffff;
+    color: #374151;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+}
+
+
+/* ==========================================================
+   CALCULATION TABLE HOVER
+   ========================================================== */
+
+.assessment-container .calculation-table tbody tr:hover td {
+    background: #fafafa;
+}
+
+
+/* ==========================================================
+   ASSESSMENT NAME
+   ========================================================== */
+
+.assessment-container .calculation-table .assessment-name {
+    font-weight: 600;
+    color: #374151;
+    text-align: left;
+    padding-left: 12px;
+}
+
+
+/* ==========================================================
+   CALCULATION INPUT
+   ========================================================== */
+
+.assessment-container .calculation-table input[type="number"] {
+    width: 75px;
+    height: 34px;
+    padding: 5px 7px;
+    box-sizing: border-box;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #ffffff;
+    outline: none;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #374151;
+    transition: 0.2s ease;
+}
+
+.assessment-container .calculation-table input[type="number"]:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.08);
+}
+
+.assessment-container .calculation-table input[type="number"]:hover {
+    border-color: #a5b4fc;
+}
+
+
+/* ==========================================================
+   NUMBER INPUT SPINNER
+   ========================================================== */
+
+.assessment-container .calculation-table input[type="number"]::-webkit-inner-spin-button,
+.assessment-container .calculation-table input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+
+/* ==========================================================
+   CALCULATION RESULT
+   ========================================================== */
+
+.assessment-container .calculation-result {
+    width: 100%;
+    margin-top: 17px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(140px, 180px));
+    justify-content: center;
+    gap: 12px;
+}
+
+
+/* ==========================================================
+   RESULT BOX
+   ========================================================== */
+
+.assessment-container .result-box {
+    min-height: 78px;
+    width: 100%;
+    padding: 13px 15px;
+    box-sizing: border-box;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* ==========================================================
+   RESULT LABEL
+   ========================================================== */
+
+.assessment-container .result-box span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: #64748b;
+    margin-bottom: 5px;
+}
+
+
+/* ==========================================================
+   RESULT VALUE
+   ========================================================== */
+
+.assessment-container .result-box strong {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #4f46e5;
+}
+
+
+/* ==========================================================
+   CO COVERAGE SECTION
+   ========================================================== */
+
+.assessment-container .co-coverage-section {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e7eb;
+}
+
+
+/* ==========================================================
+   CO COVERAGE HEADING
+   ========================================================== */
+
+.assessment-container .co-coverage-section h4 {
+    margin: 0 0 11px 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+}
+
+
+/* ==========================================================
+   CO COVERAGE GRID
+   ========================================================== */
+
+.assessment-container .co-coverage-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+
+/* ==========================================================
+   CO BOX
+   ========================================================== */
+
+.assessment-container .co-box {
+    min-height: 70px;
+    background: #ffffff;
+    border: 1px solid #dbe2ea;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.assessment-container .co-box:hover {
+    border-color: #a5b4fc;
+    background: #f8faff;
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   CO LABEL
+   ========================================================== */
+
+.assessment-container .co-box span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+
+/* ==========================================================
+   CO VALUE
+   ========================================================== */
+
+.assessment-container .co-box strong {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #4f46e5;
+}
+
+
+/* ==========================================================
+   SAVE ASSESSMENT AREA
+   ========================================================== */
+
+.assessment-container .calculation-save-area {
+    width: 100%;
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+/* ==========================================================
+   SAVE ASSESSMENT BUTTON
+   ========================================================== */
+
+.assessment-container .assessment-save-btn {
+    min-width: 170px;
+    height: 36px;
+    padding: 0 14px;
+    border: none;
+    border-radius: 7px;
+    background: #4f46e5;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.assessment-container .assessment-save-btn:hover {
+    background: #4338ca;
+    transform: translateY(-1px);
+}
+
+.assessment-container .assessment-save-btn svg {
+    font-size: 12px;
+}
+
+
+/* ==========================================================
    BOTTOM BUTTONS
-===================================================== */
+   ========================================================== */
 
-.assessment-container .bottom-buttons{
-
-    margin-top:25px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    flex-wrap:wrap;
-
-    gap:15px;
-
+.assessment-container .bottom-buttons {
+    width: 92%;
+    margin: 20px auto 0 auto;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    box-shadow: none;
 }
 
-.assessment-container .bottom-buttons button{
 
-    display:flex;
+/* ==========================================================
+   COMMON BOTTOM BUTTON
+   ========================================================== */
 
-    align-items:center;
-
-    justify-content:center;
-
-    gap:8px;
-
-    min-width:130px;
-
-    height:45px;
-
-    border:none;
-
-    border-radius:8px;
-
-    font-size:14px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:all .3s ease;
-
-    color:#fff;
-
+.assessment-container .bottom-buttons button {
+    width: 90px;
+    min-width: 90px;
+    max-width: 90px;
+    height: 34px;
+    min-height: 34px;
+    padding: 0 8px;
+    flex: 0 0 90px;
+    border: none;
+    border-radius: 7px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    box-sizing: border-box;
+    transition: 0.2s ease;
 }
 
-/* Previous */
 
-.assessment-container .previous-btn{
+/* ==========================================================
+   BUTTON ICON
+   ========================================================== */
 
-    background:#6366f1;
-
+.assessment-container .bottom-buttons button svg {
+    font-size: 12px;
+    flex-shrink: 0;
 }
 
-.assessment-container .previous-btn:hover{
 
-    background:#4f46e5;
+/* ==========================================================
+   SAVE
+   ========================================================== */
 
-    transform:translateY(-2px);
-
+.assessment-container .bottom-buttons .save-btn {
+    background: #f59e0b !important;
+    color: #ffffff !important;
 }
 
-/* Back */
-
-.assessment-container .back-btn{
-
-    background:#6b7280;
-
+.assessment-container .bottom-buttons .save-btn:hover {
+    background: #d97706 !important;
 }
 
-.assessment-container .back-btn:hover{
 
-    background:#4b5563;
+/* ==========================================================
+   DELETE
+   ========================================================== */
 
-    transform:translateY(-2px);
-
+.assessment-container .bottom-buttons .delete-btn {
+    background: #ef4444 !important;
+    color: #ffffff !important;
+    
+    
+    
 }
 
-/* Save */
-
-.assessment-container .save-btn{
-
-    background:#10b981;
-
+.assessment-container .bottom-buttons .delete-btn:hover {
+    background: #dc2626 !important;
 }
 
-.assessment-container .save-btn:hover{
 
-    background:#059669;
+/* ==========================================================
+   PRINT
+   ========================================================== */
 
-    transform:translateY(-2px);
-
+.assessment-container .bottom-buttons .print-btn {
+    background: #7c3aed !important;
+    color: #ffffff !important;
 }
 
-/* Delete */
-
-.assessment-container .delete-btn{
-
-    background:#ef4444;
-
+.assessment-container .bottom-buttons .print-btn:hover {
+    background: #6d28d9 !important;
 }
 
-.assessment-container .delete-btn:hover{
 
-    background:#dc2626;
+/* ==========================================================
+   CLEAR
+   ========================================================== */
 
-    transform:translateY(-2px);
-
+.assessment-container .bottom-buttons .clear-btn {
+    background: #f59e0b !important;
+    color: #ffffff !important;
 }
 
-/* Submit */
-
-.assessment-container .submit-btn{
-
-    background:#3b82f6;
-
+.assessment-container .bottom-buttons .clear-btn:hover {
+    background: #d97706 !important;
 }
 
-.assessment-container .submit-btn:hover{
 
-    background:#2563eb;
+/* ==========================================================
+   NEXT
+   ========================================================== */
 
-    transform:translateY(-2px);
+.assessment-container .bottom-buttons .next-btn {
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
 
+    height: 34px !important;
+    min-height: 34px !important;
+
+    background: #16a34a !important;
+    color: #ffffff !important;
+
+    -webkit-text-fill-color: #ffffff !important;
+
+    border: none !important;
+    border-radius: 7px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 5px;
+
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+
+    text-align: center !important;
+    line-height: normal !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+    overflow: visible !important;
+
+    box-sizing: border-box;
+
+    transition: 0.2s ease;
 }
 
-/* Print */
-
-.assessment-container .print-btn{
-
-    background:#8b5cf6;
-
+.assessment-container .bottom-buttons .next-btn:hover {
+    background: #15803d !important;
+    transform: translateY(-1px);
 }
 
-.assessment-container .print-btn:hover{
+.assessment-container .bottom-buttons .next-btn svg {
+    color: #ffffff !important;
+    fill: #ffffff !important;
 
-    background:#7c3aed;
+    font-size: 12px !important;
 
-    transform:translateY(-2px);
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 
+    flex-shrink: 0;
 }
 
-/* Next */
 
-.assessment-container .next-btn{
+/* ==========================================================
+   GENERAL BUTTON HOVER
+   ========================================================== */
 
-    background:#f59e0b;
-
+.assessment-container .bottom-buttons button:hover {
+    transform: translateY(-1px);
 }
 
-.assessment-container .next-btn:hover{
 
-    background:#d97706;
+/* ==========================================================
+   TABLE SCROLLBAR
+   ========================================================== */
 
-    transform:translateY(-2px);
-
+.assessment-container .table-wrapper::-webkit-scrollbar {
+    height: 6px;
 }
 
-/* =====================================================
-   SCROLLBAR
-===================================================== */
-
-.assessment-container .table-wrapper::-webkit-scrollbar{
-
-    height:8px;
-
+.assessment-container .table-wrapper::-webkit-scrollbar-track {
+    background: #f1f5f9;
 }
 
-.assessment-container .table-wrapper::-webkit-scrollbar-track{
-
-    background:#eef2ff;
-
+.assessment-container .table-wrapper::-webkit-scrollbar-thumb {
+    background: #c7d2fe;
+    border-radius: 20px;
 }
 
-.assessment-container .table-wrapper::-webkit-scrollbar-thumb{
 
-    background:#6366f1;
+/* ==========================================================
+   CALCULATION TABLE SCROLLBAR
+   ========================================================== */
 
-    border-radius:20px;
-
+.assessment-container .calculation-table-wrapper::-webkit-scrollbar {
+    height: 6px;
 }
 
-.assessment-container .table-wrapper::-webkit-scrollbar-thumb:hover{
-
-    background:#4338ca;
-
+.assessment-container .calculation-table-wrapper::-webkit-scrollbar-track {
+    background: #f1f5f9;
 }
-/* =====================================================
-   RESPONSIVE DESIGN
-===================================================== */
 
-@media (max-width:1200px){
+.assessment-container .calculation-table-wrapper::-webkit-scrollbar-thumb {
+    background: #c7d2fe;
+    border-radius: 20px;
+}
 
-    .assessment-container .top-bar{
-        flex-wrap:wrap;
+
+/* ==========================================================
+   BOTTOM BUTTON SCROLLBAR
+   ========================================================== */
+
+.assessment-container .bottom-buttons::-webkit-scrollbar {
+    height: 5px;
+}
+
+.assessment-container .bottom-buttons::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.assessment-container .bottom-buttons::-webkit-scrollbar-thumb {
+    background: #c7d2fe;
+    border-radius: 20px;
+}
+
+
+/* ==========================================================
+   RESPONSIVE - 1000px
+   ========================================================== */
+
+@media (max-width: 1000px) {
+
+    .assessment-container .top-bar,
+    .assessment-container .assessment-header,
+    .assessment-container .assessment-card,
+    .assessment-container .assessment-calculation-card,
+    .assessment-container .bottom-buttons {
+        width: 95%;
     }
 
-    .assessment-container .filter-box{
-        width:48%;
-        flex:none;
+    .assessment-container .top-bar {
+        flex-wrap: wrap;
     }
 
+    .assessment-container .calculation-result {
+        grid-template-columns: repeat(3, minmax(140px, 180px));
+        justify-content: center;
+    }
+
+    .assessment-container .co-coverage-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
 
-@media (max-width:992px){
 
-    .assessment-container .top-bar{
-        flex-direction:column;
-        align-items:stretch;
+/* ==========================================================
+   RESPONSIVE - 768px
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .assessment-container {
+        margin-left: 0;
+        padding: 12px;
     }
 
-    .assessment-container .filter-box{
-        width:100%;
+
+    /* TOP BAR */
+
+    .assessment-container .top-bar {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 14px;
     }
 
-    .assessment-container .top-buttons{
-        width:100%;
+    .assessment-container .filter-box {
+        width: 100%;
+        max-width: 100%;
+        flex: 1;
     }
 
-    .assessment-container .report-btn,
-    .assessment-container .draft-btn{
-        flex:1;
-        justify-content:center;
+    .assessment-container .select-box {
+        width: 100%;
     }
 
+
+    /* HEADER */
+
+    .assessment-container .assessment-header {
+        width: 100%;
+        padding: 14px;
+    }
+
+    .assessment-container .assessment-title-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .assessment-container .assessment-title-section h2 {
+        font-size: 20px;
+    }
+
+
+    /* DOCUMENT TABLE */
+
+    .assessment-container .assessment-card {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .assessment-container .assessment-table {
+        min-width: 900px;
+    }
+
+
+    /* CALCULATION */
+
+    .assessment-container .assessment-calculation-card {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .assessment-container .calculation-header {
+        align-items: flex-start;
+    }
+
+    .assessment-container .calculation-header h3 {
+        font-size: 16px;
+    }
+
+    .assessment-container .calculation-header p {
+        font-size: 11px;
+    }
+
+    .assessment-container .calculation-table {
+        min-width: 900px;
+    }
+
+
+    /* RESULT */
+
+    .assessment-container .calculation-result {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .assessment-container .result-box {
+        min-height: 65px;
+    }
+
+
+    /* CO */
+
+    .assessment-container .co-coverage-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+
+    /* SAVE ASSESSMENT */
+
+    .assessment-container .calculation-save-area {
+        justify-content: center;
+    }
+
+    .assessment-container .assessment-save-btn {
+        width: 100%;
+    }
+
+
+    /* BOTTOM */
+
+    .assessment-container .bottom-buttons {
+        width: 100%;
+
+        justify-content: flex-start;
+
+        gap: 8px;
+
+        background: transparent;
+
+        border: none;
+
+        box-shadow: none;
+    }
+
+
+    /* ACTION BUTTONS - MOBILE */
+
+    .assessment-container .action-buttons {
+        width: 185px !important;
+        min-width: 185px !important;
+        max-width: 185px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .assessment-container .action-buttons .file-action-buttons {
+        width: 185px !important;
+        min-width: 185px !important;
+        max-width: 185px !important;
+    }
+
+    .assessment-container .action-buttons .file-action-buttons button {
+        height: 29px !important;
+        min-height: 29px !important;
+        max-height: 29px !important;
+    }
 }
 
-@media (max-width:768px){
 
-    .assessment-container{
-        width:98%;
-        padding:15px;
+/* ==========================================================
+   RESPONSIVE - 480px
+   ========================================================== */
+
+@media (max-width: 480px) {
+
+    .assessment-container {
+        padding: 8px;
     }
 
-    .assessment-container .assessment-header{
-        padding:18px;
+
+    /* HEADER */
+
+    .assessment-container .assessment-title-section h2 {
+        font-size: 18px;
     }
 
-    .assessment-container .assessment-title-section{
-        gap:12px;
+
+    /* DOCUMENT TABLE */
+
+    .assessment-container .assessment-card {
+        padding: 6px;
     }
 
-    .assessment-container .assessment-badge{
-        width:38px;
-        height:38px;
-        font-size:14px;
+    .assessment-container .assessment-table {
+        min-width: 900px;
     }
 
-    .assessment-container .assessment-title-section h2{
-        font-size:24px;
+
+    /* CALCULATION */
+
+    .assessment-container .assessment-calculation-card {
+        padding: 10px;
+        border-radius: 10px;
     }
 
-    .assessment-container .assessment-title-section p{
-        font-size:13px;
+    .assessment-container .calculation-header h3 {
+        font-size: 15px;
     }
 
-    .assessment-container .assessment-table{
-        min-width:900px;
+    .assessment-container .calculation-header p {
+        font-size: 10px;
     }
 
-    .assessment-container .bottom-buttons{
-        justify-content:center;
+    .assessment-container .calculation-table {
+        min-width: 900px;
     }
 
-    .assessment-container .bottom-buttons button{
-        width:48%;
-        min-width:auto;
+    .assessment-container .calculation-table th {
+        font-size: 11px;
+        padding: 8px 5px;
     }
 
+    .assessment-container .calculation-table td {
+        font-size: 11px;
+        padding: 7px 5px;
+    }
+
+    .assessment-container .calculation-table input[type="number"] {
+        width: 65px;
+        height: 31px;
+        font-size: 11px;
+    }
+
+
+    /* RESULT */
+
+    .assessment-container .result-box {
+        min-height: 62px;
+        padding: 10px;
+    }
+
+    .assessment-container .result-box span {
+        font-size: 10px;
+    }
+
+    .assessment-container .result-box strong {
+        font-size: 18px;
+    }
+
+
+    /* CO */
+
+    .assessment-container .co-coverage-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 7px;
+    }
+
+    .assessment-container .co-box {
+        min-height: 60px;
+    }
+
+    .assessment-container .co-box span {
+        font-size: 10px;
+    }
+
+    .assessment-container .co-box strong {
+        font-size: 16px;
+    }
+
+
+    /* SAVE ASSESSMENT */
+
+    .assessment-container .assessment-save-btn {
+        width: 100%;
+        min-width: 100%;
+        height: 35px;
+        font-size: 11px;
+    }
+
+
+    /* ACTION BUTTONS - SMALL SCREEN */
+
+    .assessment-container .action-buttons {
+        width: 185px !important;
+        min-width: 185px !important;
+        max-width: 185px !important;
+    }
+
+    .assessment-container .action-buttons > input[type="file"],
+    .assessment-container .action-buttons > .file-input,
+    .assessment-container .action-buttons input[type="file"] {
+        width: 185px !important;
+        min-width: 185px !important;
+        max-width: 185px !important;
+    }
+
+    .assessment-container .action-buttons .selected-file-name {
+        width: 185px !important;
+        min-width: 185px !important;
+        max-width: 185px !important;
+    }
+
+    .assessment-container .action-buttons .file-action-buttons {
+        width: 185px !important;
+        min-width: 185px !important;
+        max-width: 185px !important;
+    }
+}
+/* ==========================================================
+   CALCULATION TABLE COLUMN WIDTHS
+   ========================================================== */
+
+.assessment-container .calculation-table th:nth-child(1),
+.assessment-container .calculation-table td:nth-child(1) {
+    width: 150px !important;
+    min-width: 150px !important;
 }
 
-@media (max-width:480px){
-
-    .assessment-container{
-        width:100%;
-        padding:10px;
-    }
-
-    .assessment-container .assessment-header{
-        padding:15px;
-    }
-
-    .assessment-container .assessment-title-section{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .assessment-container .assessment-title-section h2{
-        font-size:20px;
-    }
-
-    .assessment-container .assessment-title-section p{
-        font-size:12px;
-    }
-
-    .assessment-container .top-buttons{
-        flex-direction:column;
-    }
-
-    .assessment-container .report-btn,
-    .assessment-container .draft-btn{
-        width:100%;
-    }
-
-    .assessment-container .bottom-buttons button{
-        width:100%;
-    }
-
-    .assessment-container .file-input{
-        width:100%;
-    }
-
-}
-.evolution-container .page-buttons{
-    display:flex !important;
-    justify-content:center !important;
-    align-items:center !important;
-    gap:14px !important;
-    flex-wrap:wrap !important;
-    margin-top:28px !important;
+.assessment-container .calculation-table th:nth-child(2),
+.assessment-container .calculation-table td:nth-child(2) {
+    width: 105px !important;
+    min-width: 105px !important;
 }
 
-.evolution-container .page-buttons button{
-    min-width:115px !important;
-    height:46px !important;
-    padding:0 22px !important;
-    border:none !important;
-    border-radius:8px !important;
-    color:#fff !important;
-    font-size:15px !important;
-    font-weight:600 !important;
-    cursor:pointer !important;
+.assessment-container .calculation-table th:nth-child(3),
+.assessment-container .calculation-table td:nth-child(3) {
+    width: 120px !important;
+    min-width: 120px !important;
+}
+
+.assessment-container .calculation-table th:nth-child(n+4),
+.assessment-container .calculation-table td:nth-child(n+4) {
+    width: 90px !important;
+    min-width: 90px !important;
+}
+
+
+/* ==========================================================
+   ASSESSMENT COLUMN
+   ========================================================== */
+
+.assessment-container .calculation-table th:first-child {
+    text-align: center !important;
+}
+
+.assessment-container .calculation-table td.assessment-name {
+    width: 150px !important;
+    min-width: 150px !important;
+
+    padding: 9px 12px !important;
+
+    text-align: left !important;
+    vertical-align: middle !important;
+
+    background: #ffffff !important;
+    color: #374151 !important;
+
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+
+    display: table-cell !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
 }

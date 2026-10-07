@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "./VisionMission.css";
 import { MdDelete } from "react-icons/md";
 import { FaDownload, FaPrint } from "react-icons/fa";
 function VisionMission({ onNext }) {
-  const navigate = useNavigate();
 const [vision, setVision] = useState(
 "To be a premier institute recognized for excellence in technical education, research and innovation for the betterment of society."
 );
@@ -32,38 +30,42 @@ const [missionFile, setMissionFile] = useState(null);
 const [peoFile1, setPeoFile1] = useState(null);
 const [peoFile2, setPeoFile2] = useState(null);
 const [peoFile3, setPeoFile3] = useState(null);
+
 const handleSave = async () => {
-
   try {
-const formData = new FormData();
+    const formData = new FormData();
 
-formData.append("vision", vision);
-formData.append("mission", mission);
-formData.append("peo1", peo1);
-formData.append("peo2", peo2);
-formData.append("peo3", peo3);
-if (visionFile) formData.append("visionFile", visionFile);
-if (missionFile) formData.append("missionFile", missionFile);
-if (peoFile1) formData.append("peoFile1", peoFile1);
-if (peoFile2) formData.append("peoFile2", peoFile2);
-if (peoFile3) formData.append("peoFile3", peoFile3);
-const response = await fetch(
-  "http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/save-vision",
-  {
-    method: "POST",
-    body: formData
-  }
-);
+    formData.append("vision", vision);
+    formData.append("mission", mission);
+    formData.append("peo1", peo1);
+    formData.append("peo2", peo2);
+    formData.append("peo3", peo3);
 
-const data = await response.json();
+    if (visionFile) formData.append("visionFile", visionFile);
+    if (missionFile) formData.append("missionFile", missionFile);
+    if (peoFile1) formData.append("peoFile1", peoFile1);
+    if (peoFile2) formData.append("peoFile2", peoFile2);
+    if (peoFile3) formData.append("peoFile3", peoFile3);
 
-alert(data.message);
+    const response = await fetch("http://localhost:5000/save-vision", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.log(errorText);
+      alert("Save Failed");
+      return;
+    }
+
+    const data = await response.json();
+    alert(data.message);
 
   } catch (error) {
-    console.log(error);
+    console.error(error);
     alert("Save Error");
   }
-
 };
 const handleFileDownload = (file) => {
 
@@ -72,12 +74,8 @@ const handleFileDownload = (file) => {
     return;
   }
 
-  const handleNext = () => {
-  navigate("/curriculum");
-};
-
   window.open(
-    `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${file.name}`,
+    `http://localhost:5000/download/${file.name}`,
     "_blank"
   );
 
@@ -95,14 +93,14 @@ const handleView = (file) => {
   if (extension === "pdf") {
 
     window.open(
-      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/uploads/${fileName}`,
+      `http://localhost:5000/uploads/${fileName}`,
       "_blank"
     );
 
   } else {
 
     window.open(
-      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${fileName}`,
+      `http://localhost:5000/download/${fileName}`,
       "_blank"
     );
 
@@ -121,7 +119,7 @@ const handlePrint = (file) => {
   if (extension === "pdf") {
 
     const win = window.open(
-      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/uploads/${file.name}`,
+      `http://localhost:5000/uploads/${file.name}`,
       "_blank"
     );
 
@@ -135,7 +133,7 @@ const handlePrint = (file) => {
   } else {
 
     window.open(
-      `http://localhost:axios.get("https://nba-college-management-system-1.onrender.com/...");/download/${file.name}`,
+      `http://localhost:5000/download/${file.name}`,
       "_blank"
     );
 
@@ -156,7 +154,7 @@ const handleSubmit = () => {
   return (
     <div className="vision-container">
 
-      <h2>Vission And Mission</h2>
+
 
       <h3>1.1 Vision, Mission </h3>
 
@@ -170,7 +168,7 @@ const handleSubmit = () => {
             <th>Sr. No.</th>
             <th>Particulars</th>
             <th>Description</th>
-            <th>Action</th>
+            <th>Attachment (PDF only)</th>
           </tr>
         </thead>
 
@@ -356,7 +354,7 @@ Choose File
             <th>Sr. No.</th>
             <th>PEO No.</th>
             <th>Program Educational Objectives</th>
-            <th>Action</th>
+            <th>Attachment</th>
           </tr>
         </thead>
 
@@ -631,9 +629,9 @@ Choose File
 
 
 </div>
-  <button
+   <button
   className="next-page-btn"
-  onClick={() => navigate("/curriculum")}
+  onClick={onNext}
 >
   Next →
 </button>

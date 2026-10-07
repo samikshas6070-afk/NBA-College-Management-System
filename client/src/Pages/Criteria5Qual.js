@@ -1,18 +1,19 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./Criteria5Qual.css";
 
 function Criteria5Qual() {
   const navigate = useNavigate();
   const fileRef = useRef(null);
+const initialData = [
+  { id: 1, name: "Ph.D.", m1: "", m2: "", m3: "" },
+  { id: 2, name: "M.Tech / M.E.", m1: "", m2: "", m3: "" },
+  { id: 3, name: "B.Tech", m1: "", m2: "", m3: "" },
+  { id: 4, name: "Others", m1: "", m2: "", m3: "" },
+];
 
-  const [data, setData] = useState([
-    { id: 1, name: "Ph.D.", m1: 8, m2: 7, m3: 6 },
-    { id: 2, name: "M.Tech / M.E.", m1: 15, m2: 14, m3: 13 },
-    { id: 3, name: "B.Tech", m1: 2, m2: 2, m3: 2 },
-    { id: 4, name: "Others", m1: 1, m2: 2, m3: 2 },
-  ]);
-
+const [data, setData] = useState(initialData);
   const handleChange = (index, field, value) => {
     const updated = [...data];
     updated[index][field] = Number(value) || 0;
@@ -22,7 +23,8 @@ function Criteria5Qual() {
   const totalM1 = data.reduce((sum, item) => sum + Number(item.m1), 0);
   const totalM2 = data.reduce((sum, item) => sum + Number(item.m2), 0);
   const totalM3 = data.reduce((sum, item) => sum + Number(item.m3), 0);
-  
+  const [qualificationId, setQualificationId] = useState(null);
+const [documentName, setDocumentName] = useState("");
   const totalTeachers = {
   m1: totalM1,
   m2: totalM2,
@@ -41,13 +43,172 @@ const handlePrevious = () => {
 const handleNext = () => {
   navigate("/criteria5/cadre");
 };
+const handleSave = async () => {
 
-const handleSave = () => {
-  alert("Data Saved Successfully");
+try {
+
+let lastId = null;
+
+for(let item of data){
+
+const res = await axios.post(
+"http://localhost:5000/api/criteria5/qualification",
+{
+qualification:item.name,
+m1:item.m1,
+m2:item.m2,
+m3:item.m3
+}
+);
+
+lastId = res.data.id;
+
+}
+
+setQualificationId(lastId);
+
+alert("Data Saved Successfully");
+
+}
+catch(err){
+
+console.log(err);
+
+alert("Save Failed");
+
+}
+
 };
 
-const handleUpdate = () => {
-  alert("Data Updated Successfully");
+const handleUpdate = async () => {
+
+  try {
+
+    await axios.put(
+      "http://localhost:5000/api/criteria5/qualification",
+      {
+        data
+      }
+    );
+
+    alert("Updated Successfully");
+
+  } catch (err) {
+
+    console.log(err);
+
+    alert("Update Failed");
+
+  }
+
+};
+const handleClear = () => {
+
+  setData(initialData);
+
+  setSelectedYear("m1");
+
+  setDocumentName("");
+
+  setQualificationId(null);
+
+  if (fileRef.current) {
+    fileRef.current.value = null;
+  }
+
+};
+const handleDelete = async () => {
+
+  if(!qualificationId){
+
+    alert("Please Save Data First");
+
+    return;
+
+  }
+
+  try{
+
+    await axios.delete(
+      `http://localhost:5000/api/criteria5/qualification/${qualificationId}`
+    );
+
+
+    alert("Deleted Successfully");
+
+
+    setData(initialData);
+
+    setQualificationId(null);
+
+    setDocumentName("");
+
+
+  }
+  catch(err){
+
+    console.log(err);
+
+    alert("Delete Failed");
+
+  }
+
+};
+const handleUpload = async (e) => {
+
+const file = e.target.files[0];
+
+if(!file) return;
+
+if(!qualificationId){
+
+alert("Please Save First");
+return;
+
+}
+
+try{
+
+const formData = new FormData();
+
+formData.append(
+"document",
+file
+);
+
+formData.append(
+"id",
+qualificationId
+);
+
+const res = await axios.post(
+
+"http://localhost:5000/api/criteria5/qualification/upload",
+
+formData,
+{
+headers:{
+"Content-Type":"multipart/form-data"
+}
+}
+
+);
+
+setDocumentName(
+res.data.data.document
+);
+
+alert("Document Uploaded Successfully");
+
+}
+catch(err){
+
+console.log(err);
+
+alert("Upload Failed");
+
+}
+
 };
   return (
     <div className="criteria5qual">
@@ -262,18 +423,25 @@ const handleUpdate = () => {
 
           </div>
 
-          <input
-            type="file"
-            hidden
-            ref={fileRef}
-          />
+         <input
+  type="file"
+  hidden
+  ref={fileRef}
+  onChange={handleUpload}
+/>
 
-          <button
-            className="upload-btn"
-            onClick={() => fileRef.current.click()}
-          >
-            ⬆ Upload Supporting Document
-          </button>
+<button
+className="upload-btn"
+onClick={() => fileRef.current.click()}
+>
+⬆ Upload Supporting Document
+</button>
+
+{documentName && (
+<p style={{color:"green",marginTop:"10px"}}>
+📄 {documentName}
+</p>
+)}
 
         </div>
 <div className="action-buttons">
@@ -296,9 +464,21 @@ const handleUpdate = () => {
     className="btn update"
     onClick={handleUpdate}
   >
+    
     Update
   </button>
-
+  <button
+  className="btn clear"
+  onClick={handleClear}
+>
+  Clear
+</button>
+<button
+ className="btn delete"
+ onClick={handleDelete}
+>
+ Delete
+</button>
   <button
     className="btn next"
     onClick={handleNext}

@@ -1,14 +1,19 @@
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  user: "postgres",
+  host: "localhost",
+  database: "NBASoftware",
+  password: "1234",
+  port: 5432,
 });
 
 pool.connect()
-  .then(() => console.log("Database Connected Successfully"))
-  .catch(err => console.error("Database Connection Error:", err));
+  .then(() => {
+    console.log("✅ Database Connected Successfully");
+  })
+  .catch((err) => {
+    console.error("❌ Database Connection Error:", err);
+  });
 
 module.exports = pool;
